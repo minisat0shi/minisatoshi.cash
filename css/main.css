@@ -7,7 +7,7 @@ body {
   font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
   line-height: 1.6;
   font-weight: 400;
-  font-family: "Ubuntu","SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+  font-family: "Ubuntu","SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif !important;
   color: #222;
   z-index: 1;
 }
@@ -15,12 +15,12 @@ body {
 /* Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
-  margin-bottom: 2rem;
-  font-weight: 400;
+  margin-top: 0 !important;
+  margin-bottom: 2rem !important;
+  font-weight: 400 !important;
 }
-h1 { font-size: 4.0rem; line-height: 1.2;  letter-spacing: -.1rem !important;}
-h2 { font-size: 3.6rem; line-height: 1.25; letter-spacing: -.1rem !important; }
+h1 { font-size: 5.0rem; line-height: 1.2;  letter-spacing: -.1rem !important;}
+h2 { font-size: 4.6rem; line-height: 1.25; letter-spacing: -.1rem !important; }
 h3 { font-size: 3.0rem; line-height: 1.3;  letter-spacing: -.1rem !important; }
 h4 { font-size: 2.4rem; line-height: 1.35; letter-spacing: -.08rem !important; }
 h5 { font-size: 1.8rem; line-height: 1.5;  letter-spacing: -.05rem !important; }
@@ -29,7 +29,7 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0 !important; }
 /* Larger than phablet */
 @media (min-width: 550px) {
   h1 { font-size: 6.0rem !important; }
-  h2 { font-size: 4.2rem !important; }
+  h2 { font-size: 5.2rem !important; }
   h3 { font-size: 3.6rem !important; }
   h4 { font-size: 3.0rem !important; }
   h5 { font-size: 2.4rem !important; }
@@ -38,7 +38,7 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0 !important; }
 
 /* Navbar section */
 
-.nav {
+.custom_nav {
     width: 100%;
     height: 65px;
     position: fixed;
@@ -47,21 +47,21 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0 !important; }
     z-index: 2;
 }
 
-.nav div.logo {
+.custom_nav div.logo {
     float: left;
     width: auto;
     height: auto;
     padding-left: 3rem;
 }
 
-.nav div.logo a {
+.custom_nav div.logo a {
     text-decoration: none;
     color: #fff;
     font-size: 2.5rem;
     font-weight: 500;
 }
 
-.nav div.logo a:hover {
+.custom_nav div.logo a:hover {
     color: #00E676;
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out; /** Chrome & Safari **/
@@ -69,12 +69,12 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0 !important; }
     -o-transition: all 0.3s ease-in-out; /** Opera **/
 }
 
-.nav div.main_list {
+.custom_nav div.main_list {
     height: 65px;
     float: right;
 }
 
-.nav div.main_list ul {
+.custom_nav div.main_list ul {
     width: 100%;
     height: 65px;
     display: flex;
@@ -83,14 +83,14 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0 !important; }
     padding: 0;
 }
 
-.nav div.main_list ul li {
+.custom_nav div.main_list ul li {
     width: auto;
     height: 65px;
     padding: 0;
     padding-right: 3rem;
 }
 
-.nav div.main_list ul li a {
+.custom_nav div.main_list ul li a {
     text-decoration: none;
     color: #fff;
     line-height: 65px;
@@ -98,7 +98,7 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0 !important; }
     font-weight: 500;
 }
 
-.nav div.main_list ul li a:hover {
+.custom_nav div.main_list ul li a:hover {
     color: #0AC18E;
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out; /** Chrome & Safari **/
@@ -124,19 +124,35 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0 !important; }
   color:#fff;
   text-align: center;
   padding: 1em;
+  margin-top: 1em;
+  font-weight: 500;
 }
 
 .home-img {
-  max-width: calc(40% + 100px);
+  max-width: calc(40% + 60px);
   margin-top: 20em;
   position: absolute;
+}
+
+.P2P {
+  padding:4em;
+  text-align: center;
+  color: #505050;
+}
+
+.P2P_Title {
+
+}
+
+.P2P_Body {
+  font-size: 1.75em;
 }
 
 .navTrigger {
     display: none;
 }
 
-.nav {
+.custom_nav {
     padding-top: 20px;
     padding-bottom: 20px;
     -webkit-transition: all 0.4s ease;
@@ -156,19 +172,19 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0 !important; }
     .navTrigger {
         display: block;
     }
-    .nav div.logo {
+    .custom_nav div.logo {
         margin-left: 15px;
     }
-    .nav div.main_list {
+    .custom_nav div.main_list {
         width: 100%;
         height: 0;
         overflow: hidden;
     }
-    .nav div.show_list {
+    .custom_nav div.show_list {
         height: auto;
         display: none;
     }
-    .nav div.main_list ul {
+    .custom_nav div.main_list ul {
         flex-direction: column;
         width: 100%;
         height: 100vh;
@@ -181,17 +197,17 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0 !important; }
         /*same background color of navbar*/
         background-position: center top;
     }
-    .nav div.main_list ul li {
+    .custom_nav div.main_list ul li {
         width: 100%;
         text-align: right;
     }
-    .nav div.main_list ul li a {
+    .custom_nav div.main_list ul li a {
         text-align: center;
         width: 100%;
         font-size: 3rem;
         padding: 20px;
     }
-    .nav div.media_button {
+    .custom_nav div.media_button {
         display: block;
     }
     .home-img {
@@ -400,37 +416,6 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0 !important; }
 }
 
 
-
-
-
-
-.myH2 {
-  text-align:center;
-  font-size: 4rem;
-}
-.myP {
-  text-align: justify;
-  padding-left:15%;
-  padding-right:15%;
-  font-size: 20px;
-}
-@media all and (max-width:700px){
-  .myP {
-    padding:2%;
-  }
-}
-
-
-
-
-
-/*body{
-  height: 100%;
-  margin:0px;
-  padding: 0px;
-  background:#000;
-  font-family: "Quicksand", sans-serif;
-}*/
 
 /*
 #particles-js{
