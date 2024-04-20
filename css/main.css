@@ -101,6 +101,37 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0 !important; }
     -o-transition: all 0.3s ease-in-out; /** Opera **/
 }
 
+/* Social Float Buttons */
+
+.social {
+    position: fixed;
+    top: 100px;
+    right:0px;
+}
+
+.social ul {
+  padding: 0px;
+}
+
+.social ul li {
+    margin: 4px;
+    display: block;
+    background: #ac2bac;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.social ul li:hover {
+    background: #16a085;
+}
+
+.social ul li i {
+  color: #fff;
+  padding: 0.3em;
+}
+
+
 
 /* Home section */
 
@@ -131,10 +162,40 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0 !important; }
   padding-bottom: 4em;
 }
 
+.gray-text {
+    color: #343a40;
+}
+
+.twitter_highlight {
+    margin-top: 6em;
+    margin-bottom: 2em;
+}
+
+.twitter_profile_image {
+    max-width: 300px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.twitter_profile_image:hover {
+  -o-transition:.3s;
+  -ms-transition:.3s;
+  -moz-transition:.3s;
+  -webkit-transition:.3s;
+  transition:.3s;
+  box-shadow: 0 0 2px 2px #343a40;
+}
+
+.align-middle {
+    margin: 0 auto;
+}
+
+
 .P2P {
   padding:4em;
   text-align: center;
-  color: #505050;
+  color: #343a40;
 }
 
 .P2P_Title {
