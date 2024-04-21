@@ -166,12 +166,21 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0 !important; }
     color: #343a40;
 }
 
+.white-text {
+    color: #fff;
+}
+
+.steps {
+    padding: 4em;
+}
+
 .twitter_highlight {
     padding: 4em;
     background-color: #0AC18E;
 }
 
 .twitter_profile_image {
+    padding: 1em;
     max-width: 300px;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -185,6 +194,10 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0 !important; }
   -webkit-transition:.3s;
   transition:.3s;
   box-shadow: 0 0 2px 2px #343a40;
+}
+
+.twitter-link {
+    /*padding: 0.25em; */
 }
 
 .align-middle {
