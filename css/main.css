@@ -114,16 +114,11 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0 !important; }
 }
 
 .social ul li {
-    margin: 4px;
+    margin: 0.25em;
     display: block;
-    background: #ac2bac;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-}
-
-.social ul li:hover {
-    background: #16a085;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
 }
 
 .social ul li i {
@@ -131,6 +126,9 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0 !important; }
   padding: 0.3em;
 }
 
+.fa-github { /*fixing width -- width is standard at 39px*/
+    width: 40px !important;
+}
 
 
 /* Home section */
@@ -233,13 +231,13 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0 !important; }
 
 /* Media qurey section */
 
-@media screen and (min-width: 1020px) and (max-width: 1800px) {
+@media screen and (min-width: 1080px) and (max-width: 1800px) {
     .nav_container {
         margin: 0;
     }
 }
 
-@media screen and (max-width:1020px) {
+@media screen and (max-width:1080px) {
     .navTrigger {
         display: block;
     }
