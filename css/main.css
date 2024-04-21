@@ -167,8 +167,8 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0 !important; }
 }
 
 .twitter_highlight {
-    margin-top: 6em;
-    margin-bottom: 2em;
+    padding: 4em;
+    background-color: #0AC18E;
 }
 
 .twitter_profile_image {
