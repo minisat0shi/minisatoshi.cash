@@ -139,6 +139,103 @@
 
 			</div>
 		</div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12 section-heading text-center">
+	              <h2>Branding Guidelines</h2>
+	              <div class="row">
+	                <div class="col-md-8 col-md-offset-2 subtext">
+	                  <h3>Bitcoin Cash fonts, colors, and more.</h3>
+	                </div>
+	              </div>
+	            </div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+  <footer>
+    <div class="container">
+
+
+ <div id="donate" class="row white-text"> 
+  
+    <h6>Buy me a coffee:</h6>
+      <div class="custom-tooltip">
+        <h6 id="donateAddress">bitcoincash:qpjfgtygxf7gfy2d8q537kvfewctmte4uvlxl9m6xj</h6>
+        <button class="custom-tooltip" onclick="copyText()" onmouseout="outFunc">
+          <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+          <img class="copyIcon icon" src="images/copy.svg">
+        </button>
+      </div>
+
+
+<script>
+function copyText() {
+  var copyText = document.getElementById("donateAddress").innerText;
+  var elem = document.createElement("textarea");
+  document.body.appendChild(elem);
+  elem.value = copyText;
+  elem.select();
+  document.execCommand("copy");
+  document.body.removeChild(elem);
+
+  
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copied";
+}
+
+function outFunc() {
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copy to clipboard";
+}
+</script>
+<br>
+<br>
+</div>
+
+
+      
+      <div class="row">
+        <h6 style="font-size: 1.75rem;">   <a href="https://bch.info/">Learn about Bitcoin Cash</a> | <a href="http://www.reddit.com/r/btc">Uncensored Bitcoin Forum</a> | <a href="https://t.me/bchchannel">Telegram Chatroom</a> | <a href="https://cashaddress.org/">Paper Wallet</a>
+
+        </h6>
+      </div>
+
+ <div class="row">
+        <h6 style="font-size: 1.75rem;">
+        	<a href="https://blockchair.com">Blockchair Block Explorer</a>
+		</h6>
+      </div>
+
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

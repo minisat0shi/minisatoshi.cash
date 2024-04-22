@@ -229,6 +229,75 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0 !important; }
 }
 
 
+
+
+/* FOOTER */
+footer {
+  padding: 3em;
+  background-color: #0AC18E;
+  color: white;
+  text-align: center;
+}
+
+footer a {
+  color: white;
+}
+
+footer a:hover{
+  color: #A5ACBF;
+  text-decoration: none;
+}
+
+/*Copy Button*/
+.copyIcon {
+  filter:invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+}
+
+
+.custom-tooltip {
+  display: inline-block;
+}
+
+.custom-tooltip .tooltiptext {
+  visibility: hidden;
+  font-size: 0.8em;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 0%;
+  margin-left: -45px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.custom-tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.custom-tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
 /* Media qurey section */
 
 @media screen and (min-width: 1080px) and (max-width: 1800px) {
