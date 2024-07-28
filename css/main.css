@@ -178,14 +178,14 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0 !important; }
 }
 
 .twitter_profile_image {
-    padding: 1em;
-    max-width: 300px;
+    padding: 2rem;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
 }
 
 .twitter_profile_image:hover {
+  padding: 2rem;
   -o-transition:.3s;
   -ms-transition:.3s;
   -moz-transition:.3s;
@@ -249,13 +249,25 @@ footer a:hover{
 }
 
 /*Copy Button*/
-.copyIcon {
-  filter:invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+
+.copyButton:hover {
+    opacity:0.8;
 }
 
+.remove-button-stylings {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  text-align: inherit;
+  font: inherit;
+  border-radius: 0;
+  appearance: none; // Just in case we missed anything.
+}
 
 .custom-tooltip {
   display: inline-block;
+  position: relative;
 }
 
 .custom-tooltip .tooltiptext {
