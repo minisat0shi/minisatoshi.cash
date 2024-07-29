@@ -1,5 +1,13 @@
 @charset "UTF-8";
 
+/*
+html, body {
+    margin: 0;
+    display: block;
+    height: 100%;
+}
+*/
+
 /* Navbar section */
 
 .custom_nav {
