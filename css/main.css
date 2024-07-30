@@ -207,7 +207,6 @@ html, body {
     transition: all 0.4s ease;
 }
 
-
 .fork-map-header {
     padding-right:4rem;
     padding-left:4rem;
@@ -227,6 +226,7 @@ html, body {
     padding-bottom:1.5rem;
     margin-left:2rem;
     margin-right:2rem;
+    margin-bottom:2rem;
 }
 
 .card-text {
