@@ -3,7 +3,7 @@ deployment:
       tasks:
         - export DEPLOYPATH=/home/minifnrv/public_html  # Add /<app_folder> if required
         
-        #- cp -r * $DEPLOYPATH                        #copy all recursively to $DEPLOYPATH
-        - rsync -aP --exclude '.git' --exclude '.well-known' $DEPLOYPATH --delete-after
+        - cp -r * $DEPLOYPATH                        #copy all recursively to $DEPLOYPATH
+        #- rsync -aP --exclude '.git' --exclude '.well-known' $DEPLOYPATH --delete-after
         
         
