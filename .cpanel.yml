@@ -8,5 +8,6 @@ deployment:
         #- rm -rvf $DEPLOYPATH/{css,images,js,nodestatus,fontawesome*,favicon.*,*.html}
         #- rsync -a --exclude .git --exclude .well-known --exclude dev --exclude lib --exclude lib64 --exclude opt --exclude etc $DEPLOYPATH --delete-after
         #- rsync -aP --exclude '.git' --exclude '.well-known' $DEPLOYPATH --delete-after
+        #
         
         
