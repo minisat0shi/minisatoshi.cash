@@ -2,7 +2,8 @@
 deployment:
       tasks:
         - export DEPLOYPATH=/home/minifnrv/public_html  # Add /<app_folder> if required
-        #- rm -rf $DEPLOYPATH/!(".well-known"|"dev"|"etc"|"lib"|"lib64"|"opt"|"404.shtml")
+        - rm -rf $DEPLOYPATH/!(".well-known"|"dev"|"etc"|"lib"|"lib64"|"opt"|"404.shtml")
+        - sleep 1
         - cp -r * $DEPLOYPATH                        #copy all recursively to $DEPLOYPATH
         #- rm -rvf $DEPLOYPATH/{css,images,js,nodestatus,fontawesome*,favicon.*,*.html}
         #- rsync -a --exclude .git --exclude .well-known --exclude dev --exclude lib --exclude lib64 --exclude opt --exclude etc $DEPLOYPATH --delete-after
