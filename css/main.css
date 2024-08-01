@@ -239,11 +239,6 @@ html, body {
     clip-path: circle();
 }
 
-.carousel-control-prev-icon, .carousel-control-next-icon {
-  filter: invert(1) grayscale(100);
-}
-
-
 
 /* FOOTER */
 footer {
