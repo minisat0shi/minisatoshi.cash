@@ -58,29 +58,32 @@
 	</head>
 
 	<body>
-		<nav class="custom_nav">
-        	<div class="nav_container">
-            	<div class="logo">
-                	<a href="#">minisatoshi</a>
-            	</div>
-            	<div id="mainListDiv" class="main_list">
-                	<ul class="navlinks">
-                    	<li><a href="index.html">Home</a></li>
-                    	<li><a href="#_about">About</a></li>
-                    	<li><a href="#_socialmedia">Social</a></li>
-                    	<li><a href="#_getconnected">Get Connected</a></li>
-                    	<li><a href="forkmap.html">Fork Map</a></li>
-                    	<li><a href="resources.html">Resources</a></li>
-                    	<li><a href="#">Minecraft</a></li>
-                	</ul>
-            	</div>
-            	<span class="navTrigger">
-                	<i></i>
-                	<i></i>
-                	<i></i>
-            	</span>
-        	</div>
-    	</nav>
+		<nav class="navbar bg-dark border-bottom border-body navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+		  <div class="container-fluid">
+		    <a class="navbar-brand" href="#">
+		    	<img src="images/OmegaBlockLogoNavbar.png" alt="Logo" width="64" height="64" class="d-inline-block align-text-middle">
+		    </a>
+		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+		      <span class="navbar-toggler-icon"></span>
+		    </button>
+		    <div class="collapse navbar-collapse" id="navbarText">
+		      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+		        <li class="nav-item">
+		          <a class="nav-link active" aria-current="page" href="#">Home</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link" href="#">Features</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link" href="#">Pricing</a>
+		        </li>
+		      </ul>
+		      <span class="navbar-text">
+		        [UNDER CONSTRUCTION]
+		      </span>
+		    </div>
+		  </div>
+		</nav>
 
     	<!-- Floating Social Buttons -->
     	<div class="social">
@@ -98,21 +101,58 @@
 			</ul>
 		</div>
 
+		<section class="mcHome">
+			<div class="d-flex align-items-center justify-content-center mcAffix">
+	        <div class="mcServerStatus">
+	        	  <img style="height: 128px" src="https://cdn.pixabay.com/photo/2013/07/12/19/25/minecraft-154749_1280.png"  id="server-icon"/>
+	       	</div>
+	       	<div class="mcServerStatus white-text">
+	            <h1 id="server-ip">mc.minisatoshi.cash</h1>
+	            <span id="motd">Welcome to OmegaBlock!</span>
+	            <div><span id="player-count">200</span> Players Online</div>
+	        </div>
+			</div>
+		</section>
 
+		<script>
+    function initServerData(serverIp,serverPort){
+        const serverIpElement = document.getElementById('server-ip');
+        serverIpElement.innerHTML = serverIp;
+        fetch('https://mcapi.us/server/status?ip='+serverIp+'&port='+serverPort)
+        .then(response => response.json())
+        .then(data => handleServerStatus(data));
+  
+        function handleServerStatus(data){
+            if(data.status=='error'){
+                console.log(data.error);
+                return false;
+            }
+            const motd = document.getElementById("motd");
+            motd.innerHTML = data.motd;
 
+            const playerCounter = document.getElementById("player-count");
+            playerCounter.innerHTML = data.players.now;
 
-	    <section class="home">
-	    	<h1 class="home-text">We're all part of Satoshi's mission...</h1>
-	    	<img class="home-img" src="images/bitcoin-cash-logo-horizontal-wt.webp" alt="BitcoinCash Logo">
-	    </section>
-	    <div class="P2P" id="_minecraft">
-			<h1 class="P2P_Title">mc.minisatoshi.cash</h1>
-			<p class="P2P_Body">THIS IS A BETA SERVER
-			<br><br>
-			WORK IN PROGRESS!
-			</p>
-	    </div>
+            const logo = document.getElementById("server-icon");
+            logo.src = data.favicon;
+        } 
+    }
 
+    initServerData("mc.minisatoshi.cash","25565");
+</script>
+
+		<br>
+		<div class="container text-container">
+			<div class="row">
+				<div class="col-9">
+					THIS WILL BE THE NEWS SECTION
+				</div>
+				<div class="col">
+					THIS WILL BE THE QUICK ACCESS MENU SECTION
+				</div>
+			</div>
+		</div>
+		<br>
 
   <footer>
     	<div class="row white-text">
