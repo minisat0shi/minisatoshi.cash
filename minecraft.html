@@ -45,7 +45,7 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 		<!-- CSS -->
-		<link rel="stylesheet" href="css/main.css?v=0.9">
+		<link rel="stylesheet" href="css/main.scss?v=0.10">
 
 		<!-- Bootstrap -->
 			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -138,16 +138,46 @@
     }
 
     initServerData("mc.minisatoshi.cash","25565");
-</script>
+		</script>
 
 		<br>
-		<div class="container text-container">
-			<div class="row">
+		<div class="container-fluid px-5 text-container">
+			<div class="row gx-5">
 				<div class="col-9">
-					THIS WILL BE THE NEWS SECTION
+					<h1 class="text-center p-4 mb-3 text-info text-info-emphasis bg-info-subtle border border-info-subtle rounded-3 mcArticleTitle">News & Announcements</h1>
+					<div class="p-3 mb-3 bg-light-subtle border border-light-subtle rounded-3 mcArticle">
+						<h2 class="text-info-emphasis">Announcement 1</h2>
+						<p class="text-light-emphasis">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac fermentum purus, consequat fringilla justo. Quisque quam nunc, laoreet sit amet lacinia vel, efficitur sit amet nibh. Fusce dolor ligula, consequat sed posuere vitae, faucibus in diam. Mauris dapibus cursus eros non dignissim. Integer vulputate ipsum sed justo pretium, et consectetur quam convallis. Curabitur non est non libero tempor euismod. Etiam elementum lacus vel risus euismod, et porta tellus venenatis. Nunc iaculis consequat justo. Duis pharetra efficitur dolor, eget dictum ligula pretium ac. Vestibulum ac nisi feugiat, vehicula lorem ut, egestas quam. Fusce vestibulum massa eu nulla ornare, ut elementum lectus malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed felis nisi, euismod nec ligula nec, pharetra scelerisque neque.
+
+							Cras imperdiet dapibus dictum. Mauris ut suscipit eros. Integer at erat sed metus pulvinar molestie. In dignissim semper egestas. Phasellus mattis dictum turpis sed efficitur. Etiam gravida tincidunt mauris. Duis hendrerit purus a posuere consectetur. Nullam ac lorem ante.
+						</p>
+					</div>
+					<div class="p-3 mb-3 bg-light-subtle border border-light-subtle rounded-3 mcArticle">
+						<h2 class="text-info-emphasis">Announcement 1</h2>
+						<p class="text-light-emphasis">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac fermentum purus, consequat fringilla justo. Quisque quam nunc, laoreet sit amet lacinia vel, efficitur sit amet nibh. Fusce dolor ligula, consequat sed posuere vitae, faucibus in diam. Mauris dapibus cursus eros non dignissim. Integer vulputate ipsum sed justo pretium, et consectetur quam convallis. Curabitur non est non libero tempor euismod. Etiam elementum lacus vel risus euismod, et porta tellus venenatis. Nunc iaculis consequat justo. Duis pharetra efficitur dolor, eget dictum ligula pretium ac. Vestibulum ac nisi feugiat, vehicula lorem ut, egestas quam. Fusce vestibulum massa eu nulla ornare, ut elementum lectus malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed felis nisi, euismod nec ligula nec, pharetra scelerisque neque.
+
+							Cras imperdiet dapibus dictum. Mauris ut suscipit eros. Integer at erat sed metus pulvinar molestie. In dignissim semper egestas. Phasellus mattis dictum turpis sed efficitur. Etiam gravida tincidunt mauris. Duis hendrerit purus a posuere consectetur. Nullam ac lorem ante.
+						</p>
+					</div>
+					<div class="p-3 mb-3 bg-light-subtle border border-light-subtle rounded-3 mcArticle">
+						<h2 class="text-info-emphasis">Announcement 1</h2>
+						<p class="text-light-emphasis">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac fermentum purus, consequat fringilla justo. Quisque quam nunc, laoreet sit amet lacinia vel, efficitur sit amet nibh. Fusce dolor ligula, consequat sed posuere vitae, faucibus in diam. Mauris dapibus cursus eros non dignissim. Integer vulputate ipsum sed justo pretium, et consectetur quam convallis. Curabitur non est non libero tempor euismod. Etiam elementum lacus vel risus euismod, et porta tellus venenatis. Nunc iaculis consequat justo. Duis pharetra efficitur dolor, eget dictum ligula pretium ac. Vestibulum ac nisi feugiat, vehicula lorem ut, egestas quam. Fusce vestibulum massa eu nulla ornare, ut elementum lectus malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed felis nisi, euismod nec ligula nec, pharetra scelerisque neque.
+
+							Cras imperdiet dapibus dictum. Mauris ut suscipit eros. Integer at erat sed metus pulvinar molestie. In dignissim semper egestas. Phasellus mattis dictum turpis sed efficitur. Etiam gravida tincidunt mauris. Duis hendrerit purus a posuere consectetur. Nullam ac lorem ante.
+						</p>
+					</div>
 				</div>
-				<div class="col">
-					THIS WILL BE THE QUICK ACCESS MENU SECTION
+				<div class="col bg-dark-subtle border border-dark-subtle rounded-3"> <!--Remove/reposition on smaller devices?-->
+					<h1 class="text-center p-4 mb-3 text-info text-info-emphasis bg-info-subtle border border-info-subtle rounded-3 mcArticleTitle">Quick Access</h1>
+					<div class="p-3 mb-3 bg-light-subtle border border-light-subtle rounded-3 mcArticle">
+						<h2 class="text-info-emphasis">Discord</h2>
+						<p class="text-light-emphasis">
+							Discord iframe will go here.
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>
