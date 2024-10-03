@@ -560,12 +560,6 @@ footer a:hover{
 }
 
 @media screen and (max-width:625px) {
-    .mcServerIcon {
-        width: 64px;
-    }
-    .mcServerStatus {
-        font-size: 0.5em;
-    }
     .mcServerStatusInfo {
         text-align: center;
     }
