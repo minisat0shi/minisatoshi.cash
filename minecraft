@@ -11,14 +11,14 @@
 
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://minisatoshi.cash/minecraft.html" />
+		<meta property="og:url" content="https://minisatoshi.cash/minecraft" />
 		<meta property="og:title" content="OmegaBlock | Craft your future!" />
 		<meta property="og:description" content="Join our vibrant survival Minecraft server where community and adventure go hand in hand! Build, explore, and thrive together in a world where teamwork makes the dream work." />
 		<meta property="og:image" content="https://minisatoshi.cash/images/OmegaBlockSocialImg.jpg" />
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:url" content="https://minisatoshi.cash/minecraft.html" />
+		<meta property="twitter:url" content="https://minisatoshi.cash/minecraft" />
 		<meta name="twitter:site" content="@_minisatoshi">
 		<meta name="twitter:creator" content="@_minisatoshi">
 		<meta property="twitter:title" content="OmegaBlock | Craft your future!" />
@@ -69,7 +69,7 @@
 		    <div class="collapse navbar-collapse" id="navbarText">
 		      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 		        <li class="nav-item">
-		          <a class="nav-link active" aria-current="page" href="index.html#">Home</a>
+		          <a class="nav-link active" aria-current="page" href="#">Home</a>
 		        </li>
 		        <li class="nav-item">
 		          <a class="nav-link" href="#">Features</a>
@@ -146,7 +146,7 @@
 		</script>
 
 		<br>
-		<div class="container-fluid px-5 text-container">
+		<div class="container-fluid px-5 text-container" id="news">
 			<div class="row gx-5">
 				<div class="col-xxl-9">
 					<h1 class="text-center p-4 mb-3 text-info text-info-emphasis bg-info-subtle border border-info-subtle rounded-3 mcArticleTitle">News & Announcements</h1>

@@ -84,6 +84,7 @@ html, body {
 /* Social Float Buttons */
 
 .social {
+    z-index: 1000;
     position: fixed;
     top: 100px;
     right:0px;
