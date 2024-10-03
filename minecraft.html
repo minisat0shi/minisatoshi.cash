@@ -36,6 +36,7 @@
 
 
 		<!-- Favicon -->
+		<link rel="icon" type="image/x-icon" href="images/OmegaBlockLogoNavbar.ico">
 		<link rel="icon" type="images/png" href="images/OmegaBlockLogoNavbar.png">
 		
 		<!-- Fonts -->
@@ -100,18 +101,22 @@
 			</ul>
 		</div>
 
-		<section class="mcHome">
-			<div class="d-flex align-items-center justify-content-center mcAffix">
-	        <div class="mcServerStatus">
-	        	  <img style="height: 128px" src="https://cdn.pixabay.com/photo/2013/07/12/19/25/minecraft-154749_1280.png"  id="server-icon"/>
+		<div class="d-flex align-items-center justify-content-center container-fluid px-5 mcHome">
+			<div class="row gx-1 mcAffix">
+				<div class="col-sm-auto align-content-center">
+	        <div class="mcServerStatus p-3 text-center">
+	        	  <img class="mcServerIconNew mx-auto d-block" src="https://cdn.pixabay.com/photo/2013/07/12/19/25/minecraft-154749_1280.png"  id="server-icon"/>
 	       	</div>
-	       	<div class="mcServerStatus white-text">
+				</div>
+				<div class="col">
+	       	<div class="white-text p-3 mcServerStatusInfo">
 	            <h1 id="server-ip">mc.minisatoshi.cash</h1>
-	            <span id="motd">Welcome to OmegaBlock!</span>
+	            <span id="motd">Welcome to OmegaBlock! Build contests are ongoing!</span>
 	            <div><span id="player-count">200</span> Players Online</div>
 	        </div>
+				</div>
 			</div>
-		</section>
+		</div>
 
 		<script>
     function initServerData(serverIp,serverPort){

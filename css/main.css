@@ -536,8 +536,7 @@ footer a:hover{
 /* MINECRAFT */
 
 .mcHome {
-    width: 100%;
-    height: 40vh;
+    min-height: 40vh;
     background-image: url('../images/mcbackgroundimage.png');
     background-position: center top;
     background-size:cover;
@@ -554,8 +553,23 @@ footer a:hover{
     font-size: 1.25em;
 }
 
-.mcServerStatus {
-    padding: 1em;
+.mcServerIcon {
+    width: 128px;
+}
+.mcServerIconNew {
+    width: 128px;
+}
+
+@media screen and (max-width:625px) {
+    .mcServerIcon {
+        width: 64px;
+    }
+    .mcServerStatus {
+        font-size: 0.5em;
+    }
+    .mcServerStatusInfo {
+        text-align: center;
+    }
 }
 
 .mcAffix {
