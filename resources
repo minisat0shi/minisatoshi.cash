@@ -156,7 +156,7 @@
 
 
 		<!-- Function used to shrink nav bar removing paddings and adding black background -->
-	    <script type="text/javascript">
+	    <script>
 	        $(window).scroll(function() {
 	            if ($(document).scrollTop() > 50) {
 	                $('.custom_nav').addClass('affix');

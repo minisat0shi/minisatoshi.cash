@@ -189,7 +189,7 @@
 				<div class="col border border-dark-subtle rounded-3"> <!--Remove/reposition on smaller devices?-->
 					<h1 class="text-center p-4 mb-3 text-info text-info-emphasis border-bottom border-info-subtle rounded-3 mcArticleTitle">Quick Access</h1>
 					<div class="p-3 mb-3 bg-light-subtle border border-light-subtle rounded-3 mcArticle">
-						<iframe src="https://discord.com/widget?id=1268381886540025916&theme=dark" width="100%" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+						<iframe src="https://discord.com/widget?id=1268381886540025916&theme=dark" width="100%" height="500" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 					</div>
 					<div class="p-3 mb-3 bg-light-subtle border border-light-subtle rounded-3 mcArticle">
 						<h2 class="text-info-emphasis">Voting!</h2>
@@ -249,7 +249,7 @@
 
 
 		<!-- Function used to shrink nav bar removing paddings and adding black background -->
-	    <script type="text/javascript">
+	    <script>
 	        $(window).scroll(function() {
 	            if ($(document).scrollTop() > 50) {
 	                $('.custom_nav').addClass('affix');
