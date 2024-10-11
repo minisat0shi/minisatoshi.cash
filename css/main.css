@@ -8,7 +8,7 @@ html, body {
 }
 */
 
-html, body {
+html, head, body {
     max-width: 100%;
     overflow-x: hidden;
 }
