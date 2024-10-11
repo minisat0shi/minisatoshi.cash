@@ -25,6 +25,7 @@ html, head, body {
     line-height: 65px;
     text-align: center;
     z-index: 1;
+    overflow-x:hidden;
 }
 
 .custom_nav div.logo {
