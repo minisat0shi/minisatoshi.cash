@@ -23,6 +23,10 @@ html, head, body {
     line-height: 65px;
     text-align: center;
     z-index: 1;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
 }
 
 .custom_nav div.logo {
@@ -205,13 +209,6 @@ html, head, body {
 
 .navTrigger {
     display: none;
-}
-
-.custom_nav {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    -webkit-transition: all 0.4s ease;
-    transition: all 0.4s ease;
 }
 
 .fork-map-header {
@@ -662,19 +659,19 @@ footer a:hover{
 @media screen and (max-width:576px) {
     .timeline-main {
         padding-left: 0 !important;
-        padding-right: 0 !important;
+        padding-right: 1em !important;
     }
 
     .timelineTitle {
-        font-size: 0.825em;
+        font-size: 0.775em;
     }
 
     .timelineDate {
-        font-size: 0.825em;
+        font-size: 0.775em;
     }
 
     .upgradeInfo {
-        font-size: 0.725em;
+        font-size: 0.675em;
     }
 
     .upgrade-icon-large {
