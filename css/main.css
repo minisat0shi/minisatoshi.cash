@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+* {border:1px solid red}
+
 /*
 html, body {
     margin: 0;
@@ -93,7 +95,7 @@ html, head, body {
     z-index: 1000;
     position: fixed;
     top: 100px;
-    right:0.25em;
+    right:0;
 }
 
 .social ul {
