@@ -541,6 +541,7 @@ footer a:hover{
 .upgrade-history {
   background-color: #0c0c0c;
   color:#ddd;
+  overflow: hidden;
 }
 
 .upgrade-icon-large {
