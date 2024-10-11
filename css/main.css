@@ -8,6 +8,7 @@ html, body {
 }
 */
 
+
 /* Navbar section */
 
 .custom_nav {
@@ -58,7 +59,7 @@ html, body {
     width: auto;
     height: 65px;
     padding: 0;
-    padding-right: 3rem;
+    padding-right: 1.5rem;
 }
 
 .custom_nav div.main_list ul li a {
@@ -289,7 +290,7 @@ footer a:hover{
     }
 }
 
-@media screen and (max-width:1260px) {
+@media screen and (max-width:1160px) {
     .navTrigger {
         display: inline-block;
     }
@@ -533,6 +534,155 @@ footer a:hover{
     backdrop-filter: blur(5px);
 }
 
+
+
+
+/* UPGRADE HISTORY */
+.upgrade-history {
+  background-color: #0c0c0c;
+  color:#ddd;
+}
+
+.upgrade-icon-large {
+    margin-left: -8.5em;
+    position: absolute;
+    max-width: 5.5em;
+}
+.upgrade-icon-small {
+    margin-left: -6em;
+    position: absolute;
+    max-width: 3em;
+}
+
+.bch-split-logo {
+    max-width:20em;
+}
+
+.timeline-main {
+    padding-left: 3em !important;
+    padding-right: 3em !important;
+}
+
+#sharedHistory.timeline {
+  box-shadow:
+  -4px 0 0 0 #0AC18E,
+  -8px 0 0 0 #F7931A;
+  -webkit-shadow:
+  -4px 0 0 0 #0AC18E,
+  -8px 0 0 0 #F7931A;
+  -moz-box-shadow:
+  -4px 0 0 0 #0AC18E,
+  -8px 0 0 0 #F7931A;
+  /*border-left: 4px solid #0AC18E;*/
+  position: relative;
+  list-style: none;
+  margin-left: 5em;
+  padding-bottom: 1.5em;
+}
+
+#splitHistory.timeline {
+  margin-top:-1.5em;
+  box-shadow:
+  -8px 0 0 0 #0AC18E;
+  -webkit-shadow:
+  -8px 0 0 0 #0AC18E;
+  -moz-box-shadow:
+  -8px 0 0 0 #0AC18E;
+  /*border-left: 4px solid #0AC18E;*/
+  position: relative;
+  list-style: none;
+  margin-left: 5em;
+  padding-bottom: 1em;
+}
+
+.timeline-line {
+
+}
+
+.timeline .timeline-item {
+  position: relative;
+  top:-2px;
+}
+
+.timeline .timeline-item:after {
+  position: absolute;
+  display: block;
+  top: 0;
+}
+
+/*Timeline Box*/
+.timeline .timeline-item:after {
+  background-color: #fff;
+  border: 4px solid darkslategray;
+  left: -48px;
+  height: 24px;
+  width: 24px;
+  content: "";
+}
+#softFork.timeline-item:after {
+    border-radius: 50%;
+}
+#hardFork.timeline-item:after {
+    border-radius: 20%;
+}
+#final.timeline-item:after {
+    border-radius: 10%;
+    margin-top:0.5em;
+    height:16px;
+    width:40px;
+    left: -56px;
+}
+
+.timelineTitle {
+    margin-bottom:0;
+}
+
+/*.smallerText {
+    font-size: 0.5em;
+}*/
+
+/*SMALLER SCREENS TIMELINE CHANGES*/
+@media screen and (max-width:992px) {
+    .upgrade-detail-header {
+        font-size: 0.75em !important;
+    }
+
+    .small {
+        font-size: 0.6em !important;
+    }
+
+}
+
+/*SMALLER SCREENS TIMELINE CHANGES*/
+@media screen and (max-width:576px) {
+    .timeline-main {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .timelineTitle {
+        font-size: 0.875em;
+    }
+
+    .timelineDate {
+        font-size: 0.875em;
+    }
+
+    .upgradeInfo {
+        font-size: 0.75em;
+    }
+
+    .upgrade-icon-large {
+        margin-left: -5em;
+        position: absolute;
+        max-width: 2em;
+    }
+    .upgrade-icon-small {
+        margin-left: -5em;
+        position: absolute;
+        max-width: 2em;
+    }
+}
 
 /* MINECRAFT */
 

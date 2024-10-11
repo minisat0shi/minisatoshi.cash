@@ -1,0 +1,80 @@
+#timeline {
+  position: relative;
+  display: table;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5em;
+}
+#timeline div:after {
+  content: '';
+  width: 2px;
+  position: absolute;
+  top: 0.5em;
+  bottom: 0em;
+  left: 60px;
+  z-index: 1;
+  background: #C5C5C5;
+}
+#timeline h3 {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 5em;
+  color: #888;
+}
+#timeline section.year {
+  position: relative;
+}
+#timeline section.year:first-child section {
+}
+#timeline section.year section {
+  position: relative;
+  padding-bottom: 1.25em;
+  margin-bottom: 2.2em;
+}
+#timeline section.year section h4 {
+  position: absolute;
+  color: #C5C5C5;
+}
+#timeline section.year section ul {
+  list-style-type: none;
+  padding-left: 4em;
+  max-width: 32em;
+  font-size: 1em;
+}
+#timeline section.year section ul:last-child {
+  margin-bottom: 0;
+}
+#timeline section.year section ul:first-of-type:after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: #C5C5C5;
+  border: 2px solid #FFFFFF;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  position: absolute;
+  left: 54px;
+  top: 3px;
+  z-index: 2;
+}
+#timeline section.year section ul li {
+  margin-left: 1em;
+}
+#timeline section.year section ul li:before {
+  content: '•';
+  margin-left: -1em;
+  padding-right: 0.6em;
+}
+#timeline section.year section ul li:not(:first-child) {
+  margin-top: 1em;
+}
+#timeline section.year section ul li span.price {
+  color: mediumturquoise;
+  font-weight: 500;
+}
+.usd {
+  display: inline;
+}
