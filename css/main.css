@@ -549,11 +549,13 @@ footer a:hover{
     margin-left: -8.5em;
     position: absolute;
     max-width: 5.5em;
+    max-height: 7.5em;
 }
 .upgrade-icon-small {
     margin-left: -6em;
     position: absolute;
     max-width: 3em;
+    max-height: 3.5em;
 }
 
 .bch-split-logo {
