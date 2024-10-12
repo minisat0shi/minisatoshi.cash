@@ -140,6 +140,10 @@ html, head, body {
   max-width: 800px;
 }
 
+h2.steps {
+    font-size: 2.25em;
+}
+
 .home-img {
   max-width: min(calc(32% + 170px),1200px);
   position: absolute;
@@ -161,6 +165,10 @@ html, head, body {
 .twitter_highlight {
     padding: 2em;
     background-color: #0AC18E;
+}
+
+h2.twitter_highlight {
+    font-size: 2.5rem;
 }
 
 .twitter_profile_image {
