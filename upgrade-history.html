@@ -285,12 +285,14 @@
 	      <p class="mb-1 timelineDate">2019-05-15</p>
 	      <p class="mb-1 text-break upgradeInfo">Schnorr Signatures</p>
 		  <p class="text-dark-emphasis small text-break">
-		  	Schnorr signatures have some slightly improved properties over the ECDSA signatures currently used in bitcoin:<br>
-			* Known cryptographic proof of security<br>
-			* Proven that there are no unknown third-party malleability mechanisms<br>
-			* Linearity allows some simple multi-party signature aggregation protocols. (compactness / privacy / malleability benefits)<br>
-			* Possibility to do batch validation, resulting a slight speedup during validation of large transactions or initial block download
+		  	Schnorr signatures have some slightly improved properties over the ECDSA signatures currently used in bitcoin:
 		  </p>
+		  <ul class="text-dark-emphasis small text-break upgrade-bullets">
+			  <li>Known cryptographic proof of security</li>
+			  <li>Proven that there are no unknown third-party malleability mechanisms</li>
+			  <li>Linearity allows some simple multi-party signature aggregation protocols. (compactness / privacy / malleability benefits)</li>
+			  <li>Possibility to do batch validation, resulting a slight speedup during validation of large transactions or initial block download</li>
+		  </ul>
 	    </li>
 
 	    <li id="hardFork" class="timeline-item mb-5">
@@ -395,18 +397,23 @@
 		      </div>
 		      <div class="col">
 		      	<strong class="text-dark-emphasis lh-sm upgrade-detail-header">Native Layer 1, UTXO, Miner-validated Tokens:</strong><br>
-				<p class="text-dark-emphasis small text-break">BitcoinCash contracts lacked primitives for issuing messages that can be verified by other contracts, preventing the development of decentralized application ecosystems on BitcoinCash. This upgrade introduced Byte-String Commitments and Numeric Commitments.<br><br>
-				<bold>Contract-Issued Commitments</bold><br>
-				In the context of the Bitcoin Cash virtual machine (VM), a commitment can be defined as an irrevocable message that was provably issued by a particular entity. Two forms of commitments were already available to Bitcoin Cash contracts:<br>
-				* Transaction signatures – a commitment made by a private key attesting to the signing serialization of a transaction.<br>
-				* Data signatures – a commitment made by a private key attesting to the hash of an arbitrary message (introduced in 2018 by OP_CHECKDATASIG).<br><br>
+				<p class="text-dark-emphasis small text-break">Bitcoin Cash contracts lacked primitives for issuing messages that can be verified by other contracts, preventing the development of decentralized application ecosystems on Bitcoin Cash. This upgrade introduced Byte-String Commitments and Numeric Commitments.<br><br>
+				<strong>(Existing) Contract-Issued Commitments</strong><br>
+				In the context of the Bitcoin Cash virtual machine (VM), a commitment can be defined as an irrevocable message that was provably issued by a particular entity. Two forms of commitments were already available to Bitcoin Cash contracts:
+				</p>
+				<ul class="text-dark-emphasis small text-break upgrade-bullets">
+				  <li>Transaction signatures: a commitment made by a private key attesting to the signing serialization of a transaction</li>
+				  <li>Data signatures: a commitment made by a private key attesting to the hash of an arbitrary message (introduced in 2018 by OP_CHECKDATASIG)</li>
+		  		</ul>
+		  		<br>
+		  		<p class="text-dark-emphasis small text-break">
 				Each of these commitment types require the presence of a trusted private key. Because contracts cannot themselves hold a private key, any use case that requires a contract to issue a verifiable message must necessarily rely on trusted entities to provide signatures. This limitation prevented Bitcoin Cash contracts from oﬀering or using decentralized oracles – multiparty consensus systems that produce verifiable messages upon which other contracts can act.<br><br>
-				By providing a commitment primitive that can be used directly by contracts, the BitcoinCash contract system can support advanced, decentralized applications without increasing transaction or block validation costs.
+				By providing a commitment primitive that can be used directly by contracts, the Bitcoin Cash contract system can support advanced, decentralized applications without increasing transaction or block validation costs.<br><br>
 
-				<bold>Byte-String Commitments (“Non-Fungible Tokens” or “NFTs”)</bold><br>
+				<strong>Byte-String Commitments (“Non-Fungible Tokens” or “NFTs”)</strong><br>
 				The most general type of contract-issued commitment is a simple string of bytes. This type can be used to commit to any type of contract state: certifications of ownership, authorizations, credit, debt, contract-internal time or epoch, vote counts, receipts (e.g. to support refunds or future redemption), etc. Identities may commit to state within a hash structure (e.g. a merkle tree), or – to reduce transaction sizes – as a raw byte string (e.g. public keys, static numbers, boolean values).<br><br>
 
-				<bold>Numeric Commitments (“Fungible Tokens” or “FTs”)</bold><br>
+				<strong>Numeric Commitments (“Fungible Tokens” or “FTs”)</strong><br>
 				The BitcoinCash virtual machine (VM) supports two primary data types in VM bytecode evaluation: byte strings and numbers. Given the existence of a primitive allowing contracts to commit to byte strings, another commitment primitive can be inferred: numeric commitments.<br><br>
 				Numeric commitments are a specialization of byte-string commitments – they are commitments with numeric values which can be divided and merged in the same way as the Bitcoin Cash currency. With numeric commitments, contracts can eﬃciently represent fractional parts of abstract concepts – shares, pegged assets, bonds, loans, options, tickets, loyalty points, voting outcomes, etc.<br><br>
 				While many use cases for numeric commitments can be emulated with only byte-string commitments, a numeric primitive enables many contracts to reduce or oﬄoad state management altogether (e.g. shareholder voting), simplifying contract audits and reducing transaction sizes.

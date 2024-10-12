@@ -557,6 +557,13 @@ footer a:hover{
     max-height: 3.5em;
 }
 
+ul.upgrade-bullets {
+  list-style-type: none;
+}
+
+ul.upgrade-bullets > li::before {
+  content: "– ";
+}
 .bch-split-logo {
     max-width:20em;
 }
