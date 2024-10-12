@@ -742,6 +742,7 @@ ul.upgrade-bullets > li::before {
 
 .mcArticleTitle {
     fontolor: $indigo;
+    font-size:2.5rem;
 
 }
 
