@@ -13,6 +13,31 @@ html, head, body {
     overflow-x: hidden;
 }
 
+/* Define a custom darker background color for dark mode */
+:root {
+    --bs-body-bg: #0c0c0c; /* Very dark background for dark mode */
+    /*--bs-body-color: #eee;*/ /* Light text color for visibility */
+    --bs-dark-text-emphasis: #68737d;
+}
+
+/* Ensure these styles only apply when the dark theme is active */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--bs-body-bg);
+        /*color: var(--bs-body-color);*/
+        color: var(--bs-dark-text-emphasis);
+    }
+}
+
+/* For users who might have set OS dark mode but not the data-bs-theme */
+@media (prefers-color-scheme: dark) {
+    html:not([data-bs-theme="light"]) {
+        --bs-body-bg: #0c0c0c;
+        /*--bs-body-color: #eee;*/
+        --bs-dark-text-emphasis: #68737d;
+    }
+}
+
 /* Navbar section */
 
 .custom_nav {
@@ -548,8 +573,7 @@ footer a:hover{
 
 /* UPGRADE HISTORY */
 .upgrade-history {
-  background-color: #0c0c0c;
-  color:#ddd;
+
 }
 
 .upgrade-icon-large {
@@ -664,7 +688,7 @@ ul.upgrade-bullets > li::before {
     height:16px;
     width:40px;
     left: -56px;*/
-    background-color: #0c0c0c;
+    background-color: var(--bs-body-bg);
     border: solid darkslategray;
     border-width: 0 8px 8px 0;
     padding: 3px;
