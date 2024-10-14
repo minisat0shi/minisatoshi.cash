@@ -212,25 +212,6 @@
 		<!-- Jquery needed -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-
-		<!-- Function used to shrink nav bar removing paddings and adding black background -->
-	    <script>
-	        $(window).scroll(function() {
-	            if ($(document).scrollTop() > 50) {
-	                $('.custom_nav').addClass('affix');
-	                console.log("OK");
-	            } else {
-	                $('.custom_nav').removeClass('affix');
-	            }
-	        });
-			$('.navTrigger').click(function () {
-			    $(this).toggleClass('active');
-			    console.log("Clicked menu");
-			    $("#mainListDiv").toggleClass("show_list");
-			    $("#mainListDiv").fadeIn();
-			});
-	    </script>
-		
     	<!-- Include all compiled plugins (below), or include individual files as needed -->
     	<!--<script src="js/bootstrap.js"></script>-->
     	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
