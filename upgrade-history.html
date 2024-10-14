@@ -459,7 +459,8 @@
 		      </div>
 		    </div>
 	    </li>
-
+	   </ul>
+	   <ul id="lockedIn" class="timeline">
 	    <li id="hardFork" class="timeline-item mb-5">
 	  	  <img class="upgrade-icon-large" alt="ABLA graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/25.svg?v=0.04"/>
 	      <h3 class="fw-bold text-break timelineTitle">ABLA</h3>
@@ -471,14 +472,115 @@
 			The algorithm preserves the existing 32 MB limit as the floor "stand-by" value, and any increase by the algorithm can be thought of as a bonus on top of that, sustained by actual transaction load.
 		  </p>
 	    </li>
+	   </ul>
+	   <ul id="future" class="timeline">
+	    <li id="hardFork" class="timeline-item mb-5">
+	  	  <img class="upgrade-icon-large" alt="VM Limits + BigInts graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/VMLimits+BigInt.svg?v=0.04"/>
+	      <h3 class="fw-bold text-break timelineTitle">Quantum Surge</h3>
+	      <p class="timelineTitle">[Tentative for November Lock-In]</p>
+	      <p class="mb-1 timelineDate">2025-05-15</p>
+	      <p class="mb-1 text-break upgradeInfo">Targeted Virtual Machine Limits + BigInts</p>
+		  <p class="text-dark-emphasis small text-break">
+			Bitcoin Cash's virtual machine (VM) limits have been re-targeted to enable more advanced contracts, reduce transaction sizes, and reduce full node compute requirements.<br><br>
+			<p class="text-dark-emphasis small text-break"><strong>More advanced contracts:</strong><br>
+			The 201 opcode limit and 520-byte, Pay-to-Script-Hash (P2SH) contract length limit each raise the cost of developing Bitcoin Cash products by requiring contract authors to remove important features or otherwise complicate products with harder-to-audit, multi-input systems. Replacing these limits reduces the cost of contract development and security audits.<br><br>
+			<strong>Larger stack items:</strong><br>
+			Re-targeted limits enable new post-quantum cryptographic applications, stronger escrow and settlement strategies, larger hash preimages, more practical zero-knowledge proofs, homomorphic encryption, and other important developments for the future security and competitiveness of Bitcoin Cash.<br><br>
+			<strong>Simpler, easier-to-audit, high-precision math:</strong><br>
+			Lowers the cost of developing, maintaining, and auditing contract systems relying on high-precision math: automated market makers, decentralized exchanges, decentralized stablecoins, collateralized loan protocols, cross-chain and sidechain bridges, and other decentralized financial applications. By allowing Bitcoin Cash to offer contracts maximum-efficiency, native math operations, this proposal would significantly reduce transaction sizes, block space usage, and node CPU utilization vs. existing emulated-math solutions.
+		  </p>
+	    </li>
 
 	    <li id="final" class="timeline-item mb-5">
-	  	  <img class="upgrade-icon-large" src=""/>
-	      <h3 class="fw-bold text-break timelineTitle"></h3>
 	    </li>
 	  </ul>
 	</div>
 </section>
+
+<div class="container px-4 py-5">
+    <h2 class="pb-2 border-bottom text-center">Future Upgrades in Early Development</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="col d-flex align-items-start">
+        <div class="d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <i class="bi bi-toggles2 text-info" style="font-size:2em;"></i>
+        </div>
+        <div>
+          <h3 class="fs-2 text-info">Zero-Confirmation Escrows</h3>
+          <p class="text-light future-upgrade-info">Zero-Confirmation Escrows (ZCEs) are contracts which enable instant, incentive-secure payments on Bitcoin Cash. They’re particularly useful in point-of-sale, ATM, and vending applications where payers have no prior or ongoing relationship with the payee.</p>
+          <a href="https://bitcoincashresearch.org/t/chip-2021-08-zces-zero-confirmation-escrows/537/132" class="btn btn-info">
+            More Info
+          </a>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div class="d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <i class="bi bi-toggles2 text-info" style="font-size:2em;"></i>
+        </div>
+        <div>
+          <h3 class="fs-2 text-info">Bounded Looping Operations</h3>
+          <p class="text-light future-upgrade-info">This proposal includes two new BCH virtual machine (VM) operations, OP_BEGIN and OP_UNTIL , which enable a variety of loop constructions in BCH contracts without increasing the processing or memory requirements of the VM.</p>
+          <a href="https://bitcoincashresearch.org/t/chip-2021-05-bounded-looping-operations/463" class="btn btn-info">
+            More Info
+          </a>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div class="d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <i class="bi bi-toggles2 text-info" style="font-size:2em;"></i>
+        </div>
+        <div>
+          <h3 class="fs-2 text-info">UTXO FastSync + UTXO Committments</h3>
+          <p class="text-light future-upgrade-info">This proposal defines a method for nodes to generate, distribute, validate, and consume UTXO snapshots via the BCH P2P network. These snapshots allow for new peers to synchronize to the current state of the network without processing the entire blockchain block-by-block.</p>
+          <a href="https://bitcoincashresearch.org/t/chip-2021-07-utxo-fastsync/502" class="btn btn-info">
+            More Info
+          </a>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="container px-4 py-5">
+    <h2 class="pb-2 border-bottom text-center">Other Upgrades in Discussion</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="col d-flex align-items-start">
+        <div class="d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <i class="bi bi-toggles2 text-warning" style="font-size:2em;"></i>
+        </div>
+        <div>
+          <h3 class="fs-2 text-warning">SubSatoshis</h3>
+          <p class="text-light future-upgrade-info">This proposal is a small change to transactions in order to allow us to move from 8 digits dividing a whole Bitcoin Cash to add several more.</p>
+          <a href="https://bitcoincashresearch.org/t/pre-release-of-a-new-chip-subsatoshi/1213" class="btn btn-warning">
+            More Info
+          </a>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div class="d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <i class="bi bi-toggles2 text-warning" style="font-size:2em;"></i>
+        </div>
+        <div>
+          <h3 class="fs-2 text-warning">TailStorm</h3>
+          <p class="text-light future-upgrade-info">This proposal could offer fast sub-block confirmations (10 seconds for a sub-block) without negative impact to orphan rates that plain block time reduction would incur.</p>
+          <a href="https://bitcoincashresearch.org/t/tailstorm-a-secure-and-fair-blockchain-for-cash-transactions/1357/63" class="btn btn-warning">
+            More Info
+          </a>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div class="d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <i class="bi bi-toggles2 text-warning" style="font-size:2em;"></i>
+        </div>
+        <div>
+          <h3 class="fs-2 text-warning">2026 Protocol Update Ideas</h3>
+          <p class="text-light future-upgrade-info">A discussion thread of what should be prioritized next on the Bitcoin Cash network!</p>
+          <a href="https://bitcoincashresearch.org/t/2026-protocol-upgrade-ideas/1402/27" class="btn btn-warning">
+            More Info
+          </a>
+        </div>
+      </div>
+    </div>
+</div>
+
 <p style="padding-left:1em" class="text-muted small">
 	Graphics by <strong><a href="https://x.com/CM_Workzs" class="text-decoration-none text-muted">CM_Works</a></strong><br>
 	Modifications by <strong><a href="https://x.com/_minisatoshi" class="text-decoration-none text-muted">_minisatoshi</a></strong>

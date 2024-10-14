@@ -600,13 +600,28 @@ ul.upgrade-bullets > li::before {
 
 #splitHistory.timeline {
   margin-top:-1.5em;
-  box-shadow:
-  -8px 0 0 0 #0AC18E;
-  -webkit-shadow:
-  -8px 0 0 0 #0AC18E;
-  -moz-box-shadow:
-  -8px 0 0 0 #0AC18E;
-  /*border-left: 4px solid #0AC18E;*/
+  left:-8px;
+  border-left: 8px solid #0AC18E;
+  position: relative;
+  list-style: none;
+  margin-left: 5em;
+  padding-bottom: 1em;
+}
+
+#lockedIn.timeline {
+  margin-top:-1.5em;
+  left:-8px;
+  border-left: 8px dashed #0AC18E;
+  position: relative;
+  list-style: none;
+  margin-left: 5em;
+  padding-bottom: 1em;
+}
+
+#future.timeline {
+  margin-top:-1.5em;
+  left:-8px;
+  border-left: 8px dashed darkslategray;
   position: relative;
   list-style: none;
   margin-left: 5em;
@@ -653,6 +668,10 @@ ul.upgrade-bullets > li::before {
 
 .timelineTitle {
     margin-bottom:0;
+}
+
+.future-upgrade-info {
+    font-size: 0.75em;
 }
 
 /*.smallerText {
