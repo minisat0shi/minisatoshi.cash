@@ -659,11 +659,17 @@ ul.upgrade-bullets > li::before {
     border-radius: 20%;
 }
 #final.timeline-item:after {
-    border-radius: 10%;
+    /*border-radius: 10%;
     margin-top:0.5em;
     height:16px;
     width:40px;
-    left: -56px;
+    left: -56px;*/
+    background-color: #0c0c0c;
+    border: solid darkslategray;
+    border-width: 0 8px 8px 0;
+    padding: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
 }
 
 .timelineTitle {
