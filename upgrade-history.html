@@ -319,7 +319,7 @@
 				<p class="text-dark-emphasis small text-break">
 					With the exception of the coinbase transaction, transactions within a block MUST be sorted in numerically ascending order of the transaction id, interpreted as 256-bit little endian integers. The coinbase transaction MUST be the first transaction in a block.<br><br>
 					Context:<br>
-					All nodes already have all the transactions in the mempool. When a block is found, it is sending all transactions to all nodes a second time. This delays block propagation and block validation. In order to improve this, Compact/Xthin(er) utilize shorter transaction IDs to minimize the data needing to be send a second time when a block is found. Graphene takes this a step further by utilizing bloom filters to check which transactions are in which block. However, the bloom filters only allow us to know what transactions go into the block, not in what order. The ordering data makes up 80% of the data in a graphene block. By utilizing canonical ordering, 85% of the block data no longer needs to be sent, allowing for 7x faster block propagation and validation.<br><br>
+					All nodes already have all the transactions in the mempool. When a block is found, it is sending all transactions to all nodes a second time. This delays block propagation and block validation. In order to improve this, Compact/Xthin(er) utilize shorter transaction IDs to minimize the data needing to be send a second time when a block is found. Graphene takes this a step further by utilizing bloom filters to check which transactions are in which block. However, the bloom filters only allow knowledge of what transactions go into the block, not in what order. The ordering data makes up 80% of the data in a graphene block. By utilizing canonical ordering, 85% of the block data no longer needs to be sent, allowing for 7x faster block propagation and validation.<br><br>
 					CTOR also enables better parallelization which enables far better scaling with technology. An additional benefit of faster block propagation and validation is the mitigation of selfish mining (where miners that find the first block have an advantage over others for the time it takes their nodes to receive and validate the recently found block).
 				</p>
 		      </div>
@@ -338,7 +338,7 @@
 			  <li>Known cryptographic proof of security</li>
 			  <li>Proven that there are no unknown third-party malleability mechanisms</li>
 			  <li>Linearity allows some simple multi-party signature aggregation protocols. (compactness / privacy / malleability benefits)</li>
-			  <li>Possibility to do batch validation, resulting a slight speedup during validation of large transactions or initial block download</li>
+			  <li>Possibility to do batch validation, resulting a slight speedup during validation of large transactions or initial block downloads</li>
 		  </ul>
 	    </li>
 
@@ -367,8 +367,8 @@
 				<p class="text-dark-emphasis small text-break">OP_REVERSEBYTES reverses the bytes of the stackitem.</p>
 		      </div>
 		      <div class="col">
-				<p class="text-dark-emphasis small text-break">Although partly eﬀective, there are well known issues with sigops, which mainly stem from the fact that SigOps are judged by parsing scripts, rather than executing them. Bitcoin splits scripts into two transactions (the scriptPubKey of the transaction that creates a coin, and the scriptSig of the transaction that spends it), yet the actual CPU work of verifying a transaction solely happens in the spending transaction, and this leads to some paradoxical situations: a transaction/block that contains high sigops might involve very little CPU work, and conversely a transaction with low sigops may require very high CPU work.<br><br>
-				The essential idea of SigChecks is to perform counting solely in the spending transaction, and count actual executed signature check operations.</p>
+				<p class="text-dark-emphasis small text-break">Although partly eﬀective, there are well known issues with SigOps, which mainly stem from the fact that SigOps are judged by parsing scripts, rather than executing them. Bitcoin splits scripts into two transactions (the scriptPubKey of the transaction that creates a coin, and the scriptSig of the transaction that spends it), yet the actual CPU work of verifying a transaction solely happens in the spending transaction, and this leads to some paradoxical situations: a transaction/block that contains high SigOps might involve very little CPU work, and conversely a transaction with low SigOps may require very high CPU work.<br><br>
+				The essential idea of SigChecks is to count actual executed signature check operations solely in the spending transaction.</p>
 		      </div>
 		    </div>
 	    </li>
@@ -396,7 +396,7 @@
 		      </div>
 		      <div class="col">
 				<p class="text-dark-emphasis small text-break">When a transaction is first transmitted on the Bitcoin Cash network, it is considered “unconfirmed” until it is “mined” into a block. These transactions that are not yet mined are also referred to as “zero-conf” transactions. Transactions are dependent upon other transactions, such that they are chained together; the value allocated by one transaction is then spent by a subsequent transaction.<br><br>
-				Until this upgrade, the Bitcoin Cash network only permitted transactions to be chained together 50 times before a block must include them. Transactions exceeding the 50th chain wereoften ignored by the network, despite being valid. Once a transaction is submitted to the network, it cannot be revoked. This situation, when encountered, can be extremely diﬃcult to remedy with today’s available tools and simultaneously creates an unnecessary amount of complexity when being accounted for by network and applications developers.<br><br>
+				Until this upgrade, the Bitcoin Cash network only permitted transactions to be chained together 50 times before a block must include them. Transactions exceeding the 50th were often ignored by the network, despite being valid. Once a transaction is submitted to the network, it cannot be revoked. This situation, when encountered, can be extremely diﬃcult to remedy with today’s available tools and simultaneously creates an unnecessary amount of complexity when being accounted for by network and applications developers.<br><br>
 				The limit is now removed.
 				</p>
 		      </div>
