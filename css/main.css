@@ -165,6 +165,15 @@ html, head, body {
   font-size:1.5rem;
 }
 
+/* Theme Float Button */
+
+.theme {
+    z-index: 2;
+    position: fixed;
+    top: 100px;
+    left:0;
+}
+
 
 /* Home section */
 

@@ -135,14 +135,16 @@
 		</div>
 
   	<!-- Floating Theme Button -->
-  	<div class="theme">
-  		<ul>
-  			<li>
-		    	<a data-bs-ripple-init class="btn btn-primary btn-lg btn-floating" href="https://twitter.com/_minisatoshi" role="button">
-		    		<i class="bi bi-twitter-x"></i>
-		    	</a>
-				</li>
-			</ul>
+  	<div class="theme p-2">
+			<div class="dropdown theme-switcher">
+			  <button class="btn btn-secondary dropdown-toggle" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+			    <i id="themeIcon" class="bi bi-moon-stars-fill"></i>
+			  </button>
+			  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="themeDropdown">
+			    <li><a class="dropdown-item" href="#" data-theme="light"><i class="bi bi-brightness-high-fill"></i> Light</a></li>
+			    <li><a class="dropdown-item" href="#" data-theme="dark"><i class="bi bi-moon-fill"></i> Dark</a></li>
+			  </ul>
+			</div>
 		</div>
 
 
@@ -207,8 +209,8 @@
 		</div>
 
 
-    <div class="text-center py-4" id="_getconnected">
-		<h2 class="P2P_Title pb-3">Join BitcoinCash Social Channels!</h2>
+    <div class="text-center py-5" id="_getconnected">
+		<h2 class="P2P_Title pb-3">Join Bitcoin Cash Social Channels!</h2>
 		<div class="container p-3">
 			<h2 class="border-bottom border-3 pb-1 mb-3">Main Telegram Channels!</h2>
 		  <div class="row">
@@ -391,6 +393,57 @@
 
 		<!-- Jquery needed -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+		<script>
+		document.addEventListener('DOMContentLoaded', function() {
+		  function setTheme(theme) {
+		    document.documentElement.setAttribute('data-bs-theme', theme);
+		    localStorage.setItem('bs-theme', theme);
+		    updateThemeIcon(theme);
+		    updateActiveDropdownItem(theme);
+		    updateButtonStyles(); // Call this function to update button styles on theme change
+		  }
+
+		  function getCurrentTheme() {
+		    return localStorage.getItem('bs-theme') || 'dark';
+		  }
+
+		  function updateThemeIcon(theme) {
+		    const icon = document.getElementById('themeIcon');
+		    icon.className = `bi ${theme === 'light' ? 'bi-brightness-high-fill' : 'bi-moon-stars-fill'}`;
+		  }
+
+		  function updateActiveDropdownItem(theme) {
+		    document.querySelectorAll('.theme-switcher .dropdown-item').forEach(item => {
+		      item.classList.toggle('active', item.getAttribute('data-theme') === theme);
+		    });
+		  }
+
+		  function updateButtonStyles() {
+		    document.querySelectorAll('.btn-outline-secondary, .btn-secondary').forEach(button => {
+		      const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+		      if (currentTheme === 'light') {
+		        button.classList.remove('btn-outline-secondary');
+		        button.classList.add('btn-secondary');
+		      } else {
+		        button.classList.remove('btn-secondary');
+		        button.classList.add('btn-outline-secondary');
+		      }
+		    });
+		  }
+
+		  setTheme(getCurrentTheme());
+		  updateButtonStyles(); // Initial call to ensure buttons are styled correctly on load
+
+		  document.querySelectorAll('.theme-switcher .dropdown-item').forEach(item => {
+		    item.addEventListener('click', function(e) {
+		      e.preventDefault();
+		      const theme = this.getAttribute('data-theme');
+		      setTheme(theme);
+		    });
+		  });
+		});
+		</script>
 
 
 		<!-- Function used to shrink nav bar removing paddings and adding black background -->
