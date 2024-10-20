@@ -276,7 +276,7 @@
 	    <li id="hardFork" class="timeline-item mb-5">
 	  	  <img class="upgrade-icon-large" alt="Bitcoin Cash fork graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/14.svg?v=0.04"/>
 	      <!--<h1 class="fw-bold text-break timelineTitle" style="color:#0AC18E;">BitcoinCash<small class="smallerText"> ("BCH")</small></h1>-->
-	  	  <img class="bch-split-logo" alt="Bitcoin Cash logo" src="images/UpgradeGraphics/bchLogoFull.svg?v=0.04"/>
+	  	  <img id="bchSplitLogo" class="bch-split-logo" alt="Bitcoin Cash logo" src="images/UpgradeGraphics/bchLogoFullWhite.svg?v=0.04"/>
 	      <p class="mb-1 timelineDate">2017-08-01</p>
 	      <p class="fw-bold text-break upgradeInfo">User Activated Hard Fork</p>
 	      <p class="text-dark-emphasis small text-break">Block Size Limit to 8MB | Removal of RBF</p>
@@ -739,4 +739,30 @@
 		  });
 		});
 		</script>
+
+	    <script>
+	    document.addEventListener('DOMContentLoaded', function() {
+	        // Function to swap images
+	        function swapImage() {
+	            const img = document.getElementById('bchSplitLogo');
+	            const theme = document.documentElement.getAttribute('data-bs-theme');
+	            
+	            if (theme === 'dark') {
+	                img.src = 'images/UpgradeGraphics/bchLogoFullWhite.svg?v=0.04';
+	            } else {
+	                img.src = 'images/UpgradeGraphics/bchLogoFullDark.svg?v=0.04';
+	            }
+	        }
+
+	        // Initial check
+	        swapImage();
+
+	        // Listen for theme changes
+	        const observer = new MutationObserver(swapImage);
+	        observer.observe(document.documentElement, {
+	            attributes: true,
+	            attributeFilter: ['data-bs-theme']
+	        });
+	    });
+	    </script>
 	</body>
