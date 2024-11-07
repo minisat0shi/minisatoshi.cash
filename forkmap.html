@@ -90,13 +90,13 @@
 	</head>
 
 	<body>
-		<nav class="navbar bg-dark border-bottom border-body navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+		<nav class="navbar bg-dark-subtle border-bottom border-body navbar-expand-lg bg-body-tertiary">
 		  <div class="container-fluid">
 		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
 		      <span class="navbar-toggler-icon"></span>
 		    </button>
 		    <div class="collapse navbar-collapse" id="navbarText">
-		      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+		      <ul class="navbar-nav me-auto mb-1 mb-lg-0">
 		        <li class="nav-item">
 		          <a class="nav-link" href="index.html#">Home</a>
 		        </li>
@@ -113,13 +113,23 @@
 		          <a class="nav-link active" aria-current="page" href="#">Fork Map</a>
 		        </li>
 		        <li class="nav-item">
-		          <a class="nav-link" href="upgrade-history">Upgrade History</a>
+		          <a class="nav-link active" aria-current="page" href="upgrade-history">Upgrade History</a>
 		        </li>
 		        <li class="nav-item">
 		          <a class="nav-link" href="resources">Resources</a>
 		        </li>
 		      </ul>
 		    </div>
+			<div class="dropdown theme-switcher">
+			  <button class="btn btn-secondary dropdown-toggle" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+			    <i id="themeIcon" class="bi bi-moon-stars-fill"></i>
+			  </button>
+			  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="themeDropdown">
+			    <li><a class="dropdown-item" href="#" data-theme="light"><i class="bi bi-brightness-high-fill"></i> Light</a></li>
+			    <li><a class="dropdown-item" href="#" data-theme="dark"><i class="bi bi-moon-fill"></i> Dark</a></li>
+			  </ul>
+			</div>
+		  </div>
 		</nav>
 
     	<!-- Floating Social Buttons -->
@@ -247,4 +257,82 @@
 		  return new bootstrap.Tooltip(tooltipTriggerEl)
 		})
 		</script>
+
+
+		<script>
+		document.addEventListener('DOMContentLoaded', function() {
+		  function setTheme(theme) {
+		    document.documentElement.setAttribute('data-bs-theme', theme);
+		    localStorage.setItem('bs-theme', theme);
+		    updateThemeIcon(theme);
+		    updateActiveDropdownItem(theme);
+		    updateButtonStyles(); // Call this function to update button styles on theme change
+		  }
+
+		  function getCurrentTheme() {
+		    return localStorage.getItem('bs-theme') || 'dark';
+		  }
+
+		  function updateThemeIcon(theme) {
+		    const icon = document.getElementById('themeIcon');
+		    icon.className = `bi ${theme === 'light' ? 'bi-brightness-high-fill' : 'bi-moon-stars-fill'}`;
+		  }
+
+		  function updateActiveDropdownItem(theme) {
+		    document.querySelectorAll('.theme-switcher .dropdown-item').forEach(item => {
+		      item.classList.toggle('active', item.getAttribute('data-theme') === theme);
+		    });
+		  }
+
+		  function updateButtonStyles() {
+		    document.querySelectorAll('.btn-outline-secondary, .btn-secondary').forEach(button => {
+		      const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+		      if (currentTheme === 'light') {
+		        button.classList.remove('btn-outline-secondary');
+		        button.classList.add('btn-secondary');
+		      } else {
+		        button.classList.remove('btn-secondary');
+		        button.classList.add('btn-outline-secondary');
+		      }
+		    });
+		  }
+
+		  setTheme(getCurrentTheme());
+		  updateButtonStyles(); // Initial call to ensure buttons are styled correctly on load
+
+		  document.querySelectorAll('.theme-switcher .dropdown-item').forEach(item => {
+		    item.addEventListener('click', function(e) {
+		      e.preventDefault();
+		      const theme = this.getAttribute('data-theme');
+		      setTheme(theme);
+		    });
+		  });
+		});
+		</script>
+
+	    <script>
+	    document.addEventListener('DOMContentLoaded', function() {
+	        // Function to swap images
+	        function swapImage() {
+	            const img = document.getElementById('bchSplitLogo');
+	            const theme = document.documentElement.getAttribute('data-bs-theme');
+	            
+	            if (theme === 'dark') {
+	                img.src = 'images/UpgradeGraphics/bchLogoFullWhite.svg?v=0.04';
+	            } else {
+	                img.src = 'images/UpgradeGraphics/bchLogoFullDark.svg?v=0.04';
+	            }
+	        }
+
+	        // Initial check
+	        swapImage();
+
+	        // Listen for theme changes
+	        const observer = new MutationObserver(swapImage);
+	        observer.observe(document.documentElement, {
+	            attributes: true,
+	            attributeFilter: ['data-bs-theme']
+	        });
+	    });
+	    </script>
 	</body>
