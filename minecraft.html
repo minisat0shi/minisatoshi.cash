@@ -186,6 +186,28 @@
 					<div class="p-3 mb-3 bg-light-subtle border border-light-subtle rounded-3 mcArticle">
 						<div class="d-flex">
 				      <div>
+								<h2 class="text-info-emphasis">Holiday Build Contest!</h2>
+				      </div>
+				      <div class="ms-auto">
+				         <h4 class="text-light-emphasis">2024-12-10</h4>
+				      </div>
+						</div>
+						<p class="text-light-emphasis">
+							<img src="images/mc/contests/WinterContest.png" class="img-fluid" alt="Winter Contest Image">
+							<br>
+							<span style="color:deepskyblue;">With the holidays comes time for celebration... and creativity!</span>
+							<br><br>
+							Get ready to unleash your creativity in our holiday-themed Minecraft build contest! Show off your festive spirit by constructing incredible holiday builds for a chance to win exciting promotions, rare in-game items, and even Bitcoin Cash. Let's make this season merry and bright with your spectacular creations! 🎄🏆 
+							<br><br>
+							Contestants will have until January 1st to submit their creations. You can submit coordinates to your build <a href="https://forms.gle/hKiQyY2q6eZi3vUv8" class="link-info">here!</a>
+							<br><br>
+							Have fun!
+						</p>
+					</div>
+
+					<div class="p-3 mb-3 bg-light-subtle border border-light-subtle rounded-3 mcArticle">
+						<div class="d-flex">
+				      <div>
 								<h2 class="text-info-emphasis">Updated to Version 1.21.3!</h2>
 				      </div>
 				      <div class="ms-auto">
@@ -265,7 +287,11 @@
 					<div class="p-3 mb-3 bg-light-subtle border border-light-subtle rounded-3 mcArticle">
 						<h2 class="text-info-emphasis">Voting!</h2>
 						<p class="text-light-emphasis">
-							Voting boxes here.
+							<div class="d-grid gap-3 col-10 mx-auto">
+							  <a href="https://www.planetminecraft.com/server/omegablock-6420273/vote/" class="btn btn-primary btn-lg" type="button">PlanetMinecraft</a>
+							  <a href="https://minecraftservers.org/vote/666905" class="btn btn-primary btn-lg" type="button">MinecraftServers</a>
+							  <a href="https://servers-minecraft.net/server-omegablock.40628" class="btn btn-primary btn-lg" type="button">Servers-Minecraft</a>
+							</div>
 						</p>
 					</div>
 				</div>
@@ -274,65 +300,9 @@
 		<br>
 
   <footer>
-    	<div class="row white-text">
-    		<h3>Buy me a coffee!</h3>
-    		<div class="custom-tooltip">
-    			<h5 class="user-select-all" style="display:inline; word-wrap: break-word;">bitcoincash:qrvns4u27ngn6vf774rlep6873kzadqnavw0szkqx3</h5>
-    			<button id="copyButton" class="remove-button-stylings white-text" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to Clipboard">
-				  	<i class="bi bi-copy copyButton"></i>
-				  </button>
-    		</div>
-    	</div>
-
-			<script>
-			document.addEventListener('DOMContentLoaded', function() {
-				const button = document.getElementById('copyButton');
-				const tooltip = new bootstrap.Tooltip(button);
-				const copyToClipboard = async () => {
-					try {
-						const element = document.querySelector(".user-select-all");
-						await navigator.clipboard.writeText(element.textContent);
-						// Optional: Provide feedback or perform additional actions upon successful copy
-						// Update tooltip text
-						tooltip.setContent({ '.tooltip-inner': 'Copied!' });
-						// Show tooltip
-						tooltip.show();
-
-						// Hide tooltip after a short delay
-						setTimeout(() => {
-						tooltip.hide();
-						// Reset tooltip text for next use
-						tooltip.setContent({ '.tooltip-inner': 'Copy to Clipboard' });
-						}, 1500); // Adjust delay as needed
-					} catch (error) {
-						console.error("Failed to copy to clipboard:", error);
-						// Optional: Handle and display the error to the user
-						tooltip.setContent({ '.tooltip-inner': 'Copy Failed!' });
-						tooltip.show();
-						setTimeout(() => {
-						tooltip.hide();
-						tooltip.setContent({ '.tooltip-inner': 'Copy to Clipboard' });
-						}, 2000); // Adjust delay for error message
-					}
-				};
-				// Attach the function to the button's onclick event again or maintain your existing setup
-				button.addEventListener('click', copyToClipboard);
-			});
-			</script>
-			<br>
     <div class="row">
       <h5><a href="https://discover.cash/">Learn about Bitcoin Cash</a> | <a href="http://www.reddit.com/r/btc">Uncensored Bitcoin Forum</a> | <a href="https://t.me/bchchannel">Telegram Chatroom</a> | <a href="https://cashaddress.org/">Paper Wallet</a>
       </h5>
-    </div>
-
- 		<div class="row">
-        <h5>
-        	<a href="https://blockchair.com">Blockchair Block Explorer</a>
-				</h5>
-    </div>
-    <br>
- 		<div class="row">
-        <h5>Connect to my SPV Node! node.minisatoshi.cash</h5>
     </div>
   </footer>
 
