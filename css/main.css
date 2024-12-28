@@ -44,11 +44,6 @@ html, head, body {
   vertical-align: 0.25em;
 }
 
-.theme-switcher .dropdown-toggle i {
-  font-size: 1.25em;
-  line-height: 1;
-}
-
 .theme-switcher .dropdown-menu {
   right: 0;
   left: auto;
@@ -160,11 +155,6 @@ html, head, body {
     border-radius: 50%;
 }
 
-.social ul li i {
-  color: #fff;
-  font-size:1.5rem;
-}
-
 /* Theme Float Button */
 
 .theme {
@@ -259,10 +249,6 @@ html, head, body {
     padding-right:4rem;
     padding-left:4rem;
     padding-bottom:2rem;
-}
-
-.card-text {
-    font-size:1rem;
 }
 
 .card-image-standard {
@@ -698,10 +684,6 @@ ul.upgrade-bullets > li::before {
     margin-bottom:0;
 }
 
-.future-upgrade-info {
-    font-size: 0.75em;
-}
-
 [data-bs-theme="light"] .btn-outline-secondary {
     background-color: var(--bs-btn-color);
     border-color: var(--bs-secondary-border);
@@ -723,10 +705,6 @@ ul.upgrade-bullets > li::before {
 @media screen and (max-width:992px) {
     .upgrade-detail-header {
         font-size: 0.75em !important;
-    }
-
-    .small {
-        font-size: 0.6em !important;
     }
 
 }
