@@ -8,6 +8,11 @@ html, body {
 }
 */
 
+:root,
+[data-bs-theme=light] {
+    --bs-body-font-size: 1.5rem !important;
+}
+
 html, head, body {
     max-width: 100%;
     overflow-x: hidden;
