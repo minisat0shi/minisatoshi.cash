@@ -10,7 +10,7 @@ html, body {
 
 :root,
 [data-bs-theme=light] {
-    --bs-font-sans-serif: "Ubuntu", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --bs-font-sans-serif: "Ubuntu", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
     --bs-body-font-size: 1.5rem !important;
     --bs-body-line-height: 1.6 !important;
 }
