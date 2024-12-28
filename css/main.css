@@ -10,6 +10,7 @@ html, body {
 
 :root,
 [data-bs-theme=light] {
+    --bs-font-sans-serif: "Ubuntu", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --bs-body-font-size: 1.5rem !important;
     --bs-body-line-height: 1.6 !important;
 }
@@ -17,10 +18,6 @@ html, body {
 html, head, body {
     max-width: 100%;
     overflow-x: hidden;
-}
-
-head, body {
-  font-family: "Ubuntu","SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif !important;
 }
 
 /* Define a custom darker background color for dark mode */
