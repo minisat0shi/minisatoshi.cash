@@ -13,6 +13,10 @@ html, head, body {
     overflow-x: hidden;
 }
 
+head, body {
+  font-family: "Ubuntu","SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif !important;
+}
+
 /* Define a custom darker background color for dark mode */
 :root {
     --bs-body-bg: #0c0c0c; /* Very dark background for dark mode */
