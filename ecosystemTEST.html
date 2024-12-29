@@ -698,93 +698,61 @@
 
 	  <!-- Script for card filtering -->
 	  <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const searchInput = document.getElementById('searchInput');
-    const filterButtons = document.querySelectorAll('[data-filter]');
-    const cards = document.querySelectorAll('.card');
-    const cardContainer = document.getElementById('cardContainer');
-    let msnry;
+		document.addEventListener('DOMContentLoaded', function() {
+		    const searchInput = document.getElementById('searchInput');
+		    const filterButtons = document.querySelectorAll('[data-filter]');
+		    const cards = document.querySelectorAll('.card');
+		    const cardContainer = document.getElementById('cardContainer');
+		    let msnry;
 
-    // Function to check if an item is in the list of headers
-    function isInHeaders(headers, filter) {
-        return headers.split(',').map(h => h.trim().toLowerCase()).includes(filter.toLowerCase());
-    }
+		    function isInHeaders(headers, filter) {
+		        return headers.split(',').map(h => h.trim().toLowerCase()).includes(filter.toLowerCase());
+		    }
 
-    // Function to filter cards based on button click
-    function filterCards(filter) {
-        cards.forEach(card => {
-            const cardHeaders = card.getAttribute('data-header');
-            if (filter === 'all' || (cardHeaders && isInHeaders(cardHeaders, filter))) {
-                card.parentElement.style.display = 'block'; // Show card
-            } else {
-                card.parentElement.style.display = 'none';  // Hide card
-            }
-        });
+		    function updateLayout() {
+		        if (!msnry) {
+		            msnry = new Masonry(cardContainer, {
+		                itemSelector: '.col-lg-6',
+		                percentPosition: true
+		            });
+		        }
+		        cardContainer.offsetHeight; // Force repaint
+		        msnry.layout();
+		    }
 
-        // Ensure Masonry is initialized before layout
-        if (!msnry) {
-            msnry = new Masonry(cardContainer, {
-                itemSelector: '.col-lg-6:not(.dummy-column)',
-                percentPosition: true
-            });
-        }
-        
-        // Force a repaint to ensure Masonry sees the changes immediately
-        cardContainer.offsetHeight;
+		    function filterCards(filter) {
+		        cards.forEach(card => {
+		            const cardHeaders = card.getAttribute('data-header');
+		            card.parentElement.style.display = (filter === 'all' || (cardHeaders && isInHeaders(cardHeaders, filter))) ? 'block' : 'none';
+		        });
+		        updateLayout();
+		    }
 
-        // Re-layout Masonry after filtering
-        msnry.layout();
-    }
+		    searchInput.addEventListener('keyup', function() {
+		        const searchValue = this.value.toLowerCase();
+		        cards.forEach(card => {
+		            const cardText = card.textContent.toLowerCase();
+		            const cardHeaders = card.getAttribute('data-header') ? card.getAttribute('data-header').toLowerCase() : '';
+		            card.parentElement.style.display = cardText.includes(searchValue) || cardHeaders.includes(searchValue) ? 'block' : 'none';
+		        });
+		        updateLayout();
+		    });
 
-    // Event listener for search input
-    searchInput.addEventListener('keyup', function() {
-        const searchValue = this.value.toLowerCase();
-        
-        cards.forEach(card => {
-            const cardText = card.textContent.toLowerCase();
-            const cardHeaders = card.getAttribute('data-header') ? card.getAttribute('data-header').toLowerCase() : '';
-            
-            // Check if the search value is in either the card's text or its headers
-            if (cardText.includes(searchValue) || (cardHeaders && cardHeaders.includes(searchValue))) {
-                card.parentElement.style.display = 'block'; // Show card
-            } else {
-                card.parentElement.style.display = 'none';  // Hide card
-            }
-        });
+		    filterButtons.forEach(button => {
+		        button.addEventListener('click', function() {
+		            const filter = this.getAttribute('data-filter');
+		            filterCards(filter);
+		            searchInput.value = '';
+		        });
+		    });
 
-        // Ensure Masonry is initialized before layout
-        if (!msnry) {
-            msnry = new Masonry(cardContainer, {
-                itemSelector: '.col-lg-6:not(.dummy-column)',
-                percentPosition: true
-            });
-        }
-        
-        // Force a repaint
-        cardContainer.offsetHeight;
-
-        // Re-layout Masonry after search
-        msnry.layout();
-    });
-
-    // Event listeners for filter buttons
-    filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const filter = this.getAttribute('data-filter');
-            filterCards(filter);
-            // Clear the search input when filtering by category
-            searchInput.value = '';
-        });
-    });
-
-    // Initialize Masonry on load
-    if (window.Masonry) {
-        msnry = new Masonry(cardContainer, {
-            itemSelector: '.col-lg-6:not(.dummy-column)',
-            percentPosition: true
-        });
-    }
-});
+		    if (window.Masonry) {
+		        msnry = new Masonry(cardContainer, {
+		            itemSelector: '.col-lg-6',
+		            percentPosition: true
+		        });
+		    }
+		});
 	  </script>
 
 		<!--Script to swap images based on theme-->
