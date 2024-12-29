@@ -180,12 +180,12 @@
 	      </div>
 	      <div class="mb-3">
           <button class="btn btn-outline-secondary m-1" data-filter="all">All</button>
-          <button class="btn btn-outline-primary m-1" data-filter="Health">Wallets</button>
-          <button class="btn btn-outline-success m-1" data-filter="Technology">dApps</button>
+          <button class="btn btn-outline-primary m-1" data-filter="Wallets">Wallets</button>
+          <button class="btn btn-outline-success m-1" data-filter="dApps">dApps</button>
           <button class="btn btn-outline-warning m-1" data-filter="DeFi">DeFi</button>
           <button class="btn btn-outline-info m-1" data-filter="Informational">Informational</button>
           <button class="btn btn-outline-info m-1" data-filter="Social">Social</button>
-          <button class="btn btn-outline-danger m-1" data-filter="Nodes">Nodes</button>
+          <button class="btn btn-outline-danger m-1" data-filter="Node">Node</button>
           <button class="btn btn-outline-danger m-1" data-filter="Technical">Technical</button>
 	      </div>
 	      <div class="row" id="cardContainer">
@@ -211,8 +211,8 @@
 	          </div>
 	        </div>
 	        <div class="col-xl-6 col-md-12 mb-4">
-	          <div class="card h-100">
-	            <div class="card-header fs-6 fs-6">Informational</div>
+	          <div class="card h-100" data-header="Informational, Educational">
+	            <div class="card-header fs-6">Informational</div>
 	            <div class="card-body">
 	              <div class="d-flex justify-content-between p-md-1">
 	                <div class="d-flex flex-row">
@@ -232,7 +232,7 @@
 	          </div>
 	        </div>
 	        <div class="col-xl-6 col-md-12 mb-4">
-	          <div class="card h-100">
+	          <div class="card h-100" data-header="Informational, Educational">
 	            <div class="card-header fs-6">Informational</div>
 	            <div class="card-body">
 	              <div class="d-flex justify-content-between p-md-1">
@@ -253,7 +253,7 @@
 	          </div>
 	        </div>
 	        <div class="col-xl-6 col-md-12 mb-4">
-	          <div class="card h-100">
+	          <div class="card h-100" data-header="Informational, Educational">
 	            <div class="card-header fs-6">Informational</div>
 	            <div class="card-body">
 	              <div class="d-flex justify-content-between p-md-1">
@@ -274,7 +274,7 @@
 	          </div>
 	        </div>
 	        <div class="col-xl-6 col-md-12 mb-4">
-	          <div class="card h-100">
+	          <div class="card h-100" data-header="Informational, Educational">
 	            <div class="card-header fs-6">Informational</div>
 	            <div class="card-body">
 	              <div class="d-flex justify-content-between p-md-1">
@@ -295,7 +295,7 @@
 	          </div>
 	        </div>
 	        <div class="col-xl-6 col-md-12 mb-4">
-	          <div class="card h-100">
+	          <div class="card h-100" data-header="Informational">
 	            <div class="card-header fs-6">Social</div>
 	            <div class="card-body">
 	              <div class="d-flex justify-content-between p-md-1">
@@ -316,7 +316,7 @@
 	          </div>
 	        </div>
 	        <div class="col-xl-6 col-md-12 mb-4">
-	          <div class="card h-100">
+	          <div class="card h-100" data-header="Social, Informational">
 	            <div class="card-header fs-6">Social</div>
 	            <div class="card-body">
 	              <div class="d-flex justify-content-between p-md-1">
@@ -337,8 +337,50 @@
 	          </div>
 	        </div>
 	        <div class="col-xl-6 col-md-12 mb-4">
-	          <div class="card h-100">
-	            <div class="card-header fs-6">Technical</div>
+	          <div class="card h-100" data-header="Informational, Educational">
+	            <div class="card-header fs-6">Informational</div>
+	            <div class="card-body">
+	              <div class="d-flex justify-content-between p-md-1">
+	                <div class="d-flex flex-row">
+	                  <div class="align-self-center">
+	                    <img src="images/logosForEcosystem/square/BCHPodcast.svg" alt="Bitcoin Cash Podcast logo" class="card-img-standard me-3">
+	                  </div>
+	                  <div>
+	                    <h4>Bitcoin Cash Podcast FAQ</h4>
+	                    <p class="mb-0 fs-6">An extensive FAQ provided by the Bitcoin Cash Podcast.</p>
+	                  </div>
+	                </div>
+	                <div class="align-self-center ms-3">
+	                  <a href="https://bitcoincashpodcast.com/faqs" class="btn btn-lg btn-primary">Visit</a>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="col-xl-6 col-md-12 mb-4">
+	          <div class="card h-100" data-header="Informational, Educational">
+	            <div class="card-header fs-6">Informational</div>
+	            <div class="card-body">
+	              <div class="d-flex justify-content-between p-md-1">
+	                <div class="d-flex flex-row">
+	                  <div class="align-self-center">
+	                    <img src="images/logosForEcosystem/square/BCHFAQ.png" alt="Bitcoin Cash FAQ logo" class="card-img-standard me-3">
+	                  </div>
+	                  <div>
+	                    <h4>Bitcoin Cash FAQ</h4>
+	                    <p class="mb-0 fs-6">A handy FAQ for all kinds of questions about Bitcoin Cash.</p>
+	                  </div>
+	                </div>
+	                <div class="align-self-center ms-3">
+	                  <a href="https://bitcoincashpodcast.com/faqs" class="btn btn-lg btn-primary">Visit</a>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="col-xl-6 col-md-12 mb-4">
+	          <div class="card h-100" data-header="Node">
+	            <div class="card-header fs-6">Node</div>
 	            <div class="card-body">
 	              <div class="d-flex justify-content-between p-md-1">
 	                <div class="d-flex flex-row">
@@ -357,6 +399,96 @@
 	            </div>
 	          </div>
 	        </div>
+	        <div class="col-xl-6 col-md-12 mb-4">
+	          <div class="card h-100" data-header="Node">
+	            <div class="card-header fs-6">Node</div>
+	            <div class="card-body">
+	              <div class="d-flex justify-content-between p-md-1">
+	                <div class="d-flex flex-row">
+	                  <div class="align-self-center">
+	                    <img src="images/logosForEcosystem/square/verde.png" alt="Bitcoin Verde logo" class="card-img-standard me-3">
+	                  </div>
+	                  <div>
+	                    <h4>Bitcoin Verde</h4>
+	                    <p class="mb-0 fs-6">A Bitcoin Cash full-node written in Java.</p>
+	                  </div>
+	                </div>
+	                <div class="align-self-center ms-3">
+	                  <a href="https://bitcoinverde.org" class="btn btn-lg btn-primary">Visit</a>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="col-xl-6 col-md-12 mb-4">
+	          <div class="card h-100" data-header="Node">
+	            <div class="card-header fs-6">Node</div>
+	            <div class="card-body">
+	              <div class="d-flex justify-content-between p-md-1">
+	                <div class="d-flex flex-row">
+	                  <div class="align-self-center">
+	                    <img src="images/logosForEcosystem/square/bchd.svg" alt="BCHD logo" class="card-img-standard me-3">
+	                  </div>
+	                  <div>
+	                    <h4>BCHD</h4>
+	                    <p class="mb-0 fs-6">A Bitcoin Cash full-node written in Go. Includes support for Neutrino and SLP.</p>
+	                  </div>
+	                </div>
+	                <div class="align-self-center ms-3">
+	                  <a href="https://bchn.cash" class="btn btn-lg btn-primary">Visit</a>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="col-xl-6 col-md-12 mb-4">
+	          <div class="card h-100" data-header="Node">
+	            <div class="card-header fs-6">Node</div>
+	            <div class="card-body">
+	              <div class="d-flex justify-content-between p-md-1">
+	                <div class="d-flex flex-row">
+	                  <div class="align-self-center">
+	                    <img src="images/logosForEcosystem/square/bchc.png" alt="BCHC logo" class="card-img-standard me-3">
+	                  </div>
+	                  <div>
+	                    <h4>BCHC</h4>
+	                    <p class="mb-0 fs-6">A high performance full node & indexer which acts as the blockchain gateway for apps built on Bitcoin Cash.</p>
+	                  </div>
+	                </div>
+	                <div class="align-self-center ms-3">
+	                  <a href="https://github.com/PayButton/bchc" class="btn btn-lg btn-primary">Visit</a>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="col-xl-6 col-md-12 mb-4">
+	          <div class="card h-100" data-header="Node">
+	            <div class="card-header fs-6">Node</div>
+	            <div class="card-body">
+	              <div class="d-flex justify-content-between p-md-1">
+	                <div class="d-flex flex-row">
+	                  <div class="align-self-center">
+	                    <img src="images/logosForEcosystem/square/kth.svg" alt="KTH logo" class="card-img-standard me-3">
+	                  </div>
+	                  <div>
+	                    <h4>K•th</h4>
+	                    <p class="mb-0 fs-6">A full-node implementation with a vast collection of libraries including Java, Python, TypeScript, C#, C++, C, JavaScript, Rust, and Go.</p>
+	                  </div>
+	                </div>
+	                <div class="align-self-center ms-3">
+	                  <a href="https://kth.cash" class="btn btn-lg btn-primary">Visit</a>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+
+
+
+
+
+
 	        <div class="col-xl-6 col-md-12 mb-4">
 	          <div class="card h-100">
 	            <div class="card-header fs-6">Technical</div>
