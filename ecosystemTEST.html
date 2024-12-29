@@ -189,6 +189,7 @@
           <button class="btn btn-outline-danger m-1" data-filter="Technical">Technical</button>
 	      </div>
 	      <div class="row row-cols-12 row-cols-lg-2" data-masonry='{"percentPosition": true }' id="cardContainer">
+	        <div class="col"></div> <!-- dummy row so masonry can properly sort elements. This is the only fix I could find! -->
 	        <div class="col mb-4">
 	          <div class="card" data-header="Informational">
 	            <div class="card-header fs-6">Informational</div>
