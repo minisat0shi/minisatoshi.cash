@@ -181,9 +181,11 @@
 	      <div class="mb-3">
           <button class="btn btn-outline-secondary m-1" data-filter="all">All</button>
           <button class="btn btn-outline-primary m-1" data-filter="Wallet">Wallets</button>
-          <button class="btn btn-outline-success m-1" data-filter="dApp">dApps</button>
+          <button class="btn btn-outline-warning m-1" data-filter="dApp">dApps</button>
           <button class="btn btn-outline-warning m-1" data-filter="DeFi">DeFi</button>
+          <button class="btn btn-outline-success m-1" data-filter="Merchant">Merchants</button>
           <button class="btn btn-outline-info m-1" data-filter="Informational">Informational</button>
+          <button class="btn btn-outline-info m-1" data-filter="Media">Media</button>
           <button class="btn btn-outline-info m-1" data-filter="Social">Social</button>
           <button class="btn btn-outline-danger m-1" data-filter="Node">Nodes</button>
           <button class="btn btn-outline-danger m-1" data-filter="Technical">Technical</button>
@@ -197,7 +199,7 @@
 	              <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
 	                <div class="d-flex flex-sm-row flex-column">
 	                  <div class="align-self-center">
-	                    <img src="images/logosForEcosystem/square/bitcoincash.svg" alt="Bitcoin Cash Podcast logo" class="card-img-standard me-0 me-sm-3 mb-3 mb-sm-0">
+	                    <img src="images/logosForEcosystem/square/bitcoincash.svg" alt="Bitcoin Cash logo" class="card-img-standard me-0 me-sm-3 mb-3 mb-sm-0">
 	                  </div>
 	                  <div>
 	                    <h4 class="text-break">BitcoinCash.Org</h4>
@@ -317,8 +319,8 @@
 	          </div>
 	        </div>
 	        <div class="col mb-4">
-	          <div class="card" data-header="Social, Informational">
-	            <div class="card-header fs-6">Social</div>
+	          <div class="card" data-header="Media, Informational">
+	            <div class="card-header fs-6">Media</div>
 	            <div class="card-body text-center text-sm-start">
 	              <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
 	                <div class="d-flex flex-sm-row flex-column">
@@ -331,7 +333,7 @@
 	                  </div>
 	                </div>
 	                <div class="align-self-center ms-0 ms-sm-3 mt-3 mt-sm-0">
-	                  <a href="https://www.bitcoincashpodcast.com" class="btn btn-lg btn-primary">Visit</a>
+	                  <a href="https://bitcoincashpodcast.com" class="btn btn-lg btn-primary">Visit</a>
 	                </div>
 	              </div>
 	            </div>
@@ -436,7 +438,7 @@
 	                  </div>
 	                </div>
 	                <div class="align-self-center ms-0 ms-sm-3 mt-3 mt-sm-0">
-	                  <a href="https://www.bitcoinunlimited.info" class="btn btn-lg btn-primary">Visit</a>
+	                  <a href="https://bitcoinunlimited.info" class="btn btn-lg btn-primary">Visit</a>
 	                </div>
 	              </div>
 	            </div>
@@ -527,7 +529,7 @@
 	          </div>
 	        </div>
 	        <div class="col mb-4">
-	          <div class="card">
+	          <div class="card" data-header="Technical">
 	            <div class="card-header fs-6">Technical</div>
 	            <div class="card-body text-center text-sm-start">
 	              <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
@@ -548,7 +550,7 @@
 	          </div>
 	        </div>
 	        <div class="col mb-4">
-	          <div class="card">
+	          <div class="card" data-header="Technical">
 	            <div class="card-header fs-6">Technical</div>
 	            <div class="card-body text-center text-sm-start">
 	              <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
@@ -611,7 +613,7 @@
 	          </div>
 	        </div>
 	        <div class="col mb-4">
-	          <div class="card">
+	          <div class="card" data-header="DeFi">
 	            <div class="card-header fs-6">DEX</div>
 	            <div class="card-body text-center text-sm-start">
 	              <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
@@ -632,7 +634,7 @@
 	          </div>
 	        </div>
 	        <div class="col mb-4">
-	          <div class="card">
+	          <div class="card" data-header="DeFi">
 	            <div class="card-header fs-6">DEX</div>
 	            <div class="card-body text-center text-sm-start">
 	              <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
@@ -653,7 +655,49 @@
 	          </div>
 	        </div>
 	        <div class="col mb-4">
-	          <div class="card">
+	          <div class="card" data-header="DeFi">
+	            <div class="card-header fs-6">DEX</div>
+	            <div class="card-body text-center text-sm-start">
+	              <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
+	                <div class="d-flex flex-sm-row flex-column">
+	                  <div class="align-self-center">
+	                    <img src="images/logosForEcosystem/square/basicswap.svg" alt="Basic Swap logo" class="card-img-standard me-0 me-sm-3 mb-3 mb-sm-0">
+	                  </div>
+	                  <div>
+	                    <h4 class="text-break">BasicSwap</h4>
+	                    <p class="mb-0 fs-6">A DEX specializing in atomic swaps with Bitcoin Cash support. Includes a BCH \<\> XMR (Monero) atomic swap.</p>
+	                  </div>
+	                </div>
+	                <div class="align-self-center ms-0 ms-sm-3 mt-3 mt-sm-0">
+	                  <a href="https://basicswapdex.com" class="btn btn-lg btn-primary">Visit</a>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="col mb-4">
+	          <div class="card" data-header="DeFi">
+	            <div class="card-header fs-6">DEX</div>
+	            <div class="card-body text-center text-sm-start">
+	              <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
+	                <div class="d-flex flex-sm-row flex-column">
+	                  <div class="align-self-center">
+	                    <img src="images/logosForEcosystem/square/thorswap.svg" alt="Thor swap logo" class="card-img-standard me-0 me-sm-3 mb-3 mb-sm-0">
+	                  </div>
+	                  <div>
+	                    <h4 class="text-break">ThorSwap</h4>
+	                    <p class="mb-0 fs-6">DEX with support for nine native assets including BCH. Directly connect with any non-custodial wallet.</p>
+	                  </div>
+	                </div>
+	                <div class="align-self-center ms-0 ms-sm-3 mt-3 mt-sm-0">
+	                  <a href="https://thorswap.finance" class="btn btn-lg btn-primary">Visit</a>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="col mb-4">
+	          <div class="card" data-header="dApp">
 	            <div class="card-header fs-6">dApp</div>
 	            <div class="card-body text-center text-sm-start">
 	              <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
@@ -674,7 +718,7 @@
 	          </div>
 	        </div>
 	        <div class="col mb-4">
-	          <div class="card">
+	          <div class="card" data-header="dApp">
 	            <div class="card-header fs-6">dApp</div>
 	            <div class="card-body text-center text-sm-start">
 	              <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
@@ -835,7 +879,7 @@
 				</script>
 				<br>
 		  <div class="row">
-		    <h5><a href="https://discover.cash">Learn about Bitcoin Cash</a> | <a href="http://www.reddit.com/r/btc">Uncensored Bitcoin Forum</a> | <a href="https://t.me/bchchannel">Telegram Chatroom</a> | <a href="https://cashaddress.org">Paper Wallet</a>
+		    <h5><a href="https://discover.cash">Learn about Bitcoin Cash</a> | <a href="http://reddit.com/r/btc">Uncensored Bitcoin Forum</a> | <a href="https://t.me/bchchannel">Telegram Chatroom</a> | <a href="https://cashaddress.org">Paper Wallet</a>
 		    </h5>
 		  </div>
 
