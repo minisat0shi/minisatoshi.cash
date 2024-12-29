@@ -1,19 +1,9 @@
 @charset "UTF-8";
 
-/*
-html, body {
-    margin: 0;
-    display: block;
-    height: 100%;
-}
-*/
-
 /* Adjusting Bootstrap */
 :root,
 [data-bs-theme=light] {
     --bs-font-sans-serif: "Ubuntu", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
-    /*--bs-body-font-size: 1.5rem !important;
-    --bs-body-line-height: 1.6 !important;*/
 }
 
 /* Adding responsive fs-5 */
