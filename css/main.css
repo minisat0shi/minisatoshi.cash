@@ -85,7 +85,6 @@ html, head, body {
 .custom_nav div.logo a {
     text-decoration: none;
     color: #fff;
-    font-weight: 500;
 }
 
 .custom_nav div.logo a:hover {
@@ -121,7 +120,6 @@ html, head, body {
     text-decoration: none;
     color: #fff;
     line-height: 65px;
-    font-weight: 500;
 }
 
 .custom_nav div.main_list ul li a:hover {
@@ -236,14 +234,6 @@ html, head, body {
     transition: all .3s ease-in-out allow-discrete;
 }
 
-.twitter-link {
-    /*padding: 0.25em; */
-}
-
-.P2P_Title {
-    font-size:3em;
-}
-
 .navTrigger {
     display: none;
 }
@@ -341,6 +331,7 @@ footer a:hover{
     .custom_nav div.main_list ul li {
         width: 100%;
         text-align: right;
+        height: 50px;
     }
     .custom_nav div.main_list ul li a {
         text-align: center;
