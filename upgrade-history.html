@@ -65,7 +65,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&amp;display=swap" rel="stylesheet" type="text/css" media="all">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="css/main.css?v=0.35">
+    <link rel="stylesheet" href="css/main.css?v=0.36">
     
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -89,63 +89,47 @@
 </head>
 
 <body class="upgrade-history" data-bs-smooth-scroll="true">
-    <nav class="navbar bg-dark-subtle border-bottom border-body navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-1 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#_about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#_socialmedia">Social</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#_getconnected">Get Connected</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="forkmap">Fork Map</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Upgrade History</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="ecosystem">Ecosystem</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="dropdown theme-switcher">
-                <button class="btn btn-secondary dropdown-toggle fs-5" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i id="themeIcon" class="bi bi-moon-stars-fill"></i>
-                </button>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="themeDropdown">
-                    <li><a class="dropdown-item fs-5" href="#" data-theme="light"><i class="bi bi-brightness-high-fill"></i> Light</a></li>
-                    <li><a class="dropdown-item fs-5" href="#" data-theme="dark"><i class="bi bi-moon-fill"></i> Dark</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    
-    <!-- Floating Social Buttons -->
-    <div class="social">
-        <ul>
-            <li>
-                <a data-mdb-ripple-init class="btn btn-primary btn-lg btn-floating" href="https://twitter.com/_minisatoshi" role="button">
-                    <i class="bi bi-twitter-x"></i>
-                </a>
-            </li>
-            <li>
-                <a data-mdb-ripple-init class="btn btn-primary btn-lg btn-floating" href="https://github.com/minisat0shi" role="button">
-                    <i class="bi bi-github"></i>
-                </a>
-            </li>
-        </ul>
+  <nav class="navbar bg-dark-subtle border-bottom border-success navbar-expand-lg">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav fs-5 me-auto mb-1 mb-lg-0">
+              <li class="nav-item">
+                  <a class="nav-link" href="index.html#">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="index.html#_about">About</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="index.html#_socialmedia">Social</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="index.html#_getconnected">Get Connected</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="forkmap">Fork Map</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Upgrade History</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="ecosystem">Ecosystem</a>
+              </li>
+          </ul>
+      </div>
+      <div class="dropdown theme-switcher">
+          <button class="btn btn-secondary dropdown-toggle fs-6" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              <i id="themeIcon" class="bi bi-moon-stars-fill"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="themeDropdown">
+              <li><a class="dropdown-item fs-6" href="#" data-theme="light"><i class="bi bi-brightness-high-fill"></i> Light</a></li>
+              <li><a class="dropdown-item fs-6" href="#" data-theme="dark"><i class="bi bi-moon-fill"></i> Dark</a></li>
+          </ul>
+      </div>
     </div>
+  </nav>
 
 		<!-- Back to top button -->
 		<button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-info btn-floating" id="btn-back-to-top">
@@ -189,39 +173,45 @@
 		</script>
     
     <!-- Section: Timeline -->
-    <h1 class="fw-bold text-break text-center pt-5">Bitcoin Cash Upgrade History</h1>
+    <h1 class="fw-bold text-break text-center pt-5 px-3">Bitcoin Cash Upgrade History</h1>
     <section class="py-5">
         <div class="container timeline-main">
             <ul id="sharedHistory" class="timeline">
                 <li id="hardFork" class="timeline-item mb-5 pb-5">
                     <img class="upgrade-icon-large" alt="Original Bitcoin Logo" src="images/UpgradeGraphics/bitcoinOgLogo.png" />
-                    <h3 id="upgrade0-Creation" class="fw-bold text-break timelineTitle share-item share-item">Bitcoin Released<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
-                    <p class="mb-1 pb-5">2009-01-03</p>
+                    <h3 id="upgrade0-Creation" class="fw-bold text-break share-item share-item">Bitcoin Released<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2009-01-03</p>
+
                 </li>
                 <li id="softFork" class="timeline-item mb-5">
                     <img class="upgrade-icon-small" alt="nLockTime Enforcement graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/1.svg?v=0.04" />
-                    <h3 id="upgrade1-nLockTime" class="fw-bold text-break timelineTitle share-item share-item">Addition of nLockTime Enforcement<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
-                    <p class="mb-1">2009-10-28</p>
+                    <h3 id="upgrade1-nLockTime" class="fw-bold text-break share-item share-item">Addition of nLockTime Enforcement<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2009-10-28</p>
+
                 </li>
                 <li id="hardFork" class="timeline-item mb-5">
                     <img class="upgrade-icon-small" alt="OP_NOP Functions graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/2.svg?v=0.04" />
-                    <h3 id="upgrade2-OP_NOP" class="fw-bold text-break timelineTitle share-item share-item">Addition of OP_NOP Functions<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
-                    <p class="mb-1">2010-07-31</p>
+                    <h3 id="upgrade2-OP_NOP" class="fw-bold text-break share-item share-item">Addition of OP_NOP Functions<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2010-07-31</p>
+
                 </li>
                 <li id="hardFork" class="timeline-item mb-5">
                     <img class="upgrade-icon-small" alt="Separation of Evaluation of scriptSig and scriptPubKey graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/3.svg?v=0.04" />
-                    <h3 id="upgrade3-scriptSig_scriptPubKey" class="fw-bold text-break timelineTitle share-item">Separation of Evaluation of scriptSig and scriptPubKey<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
-                    <p class="mb-1">2010-08-01</p>
+                    <h3 id="upgrade3-scriptSig_scriptPubKey" class="fw-bold text-break share-item">Separation of Evaluation of scriptSig and scriptPubKey<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2010-08-01</p>
+
                 </li>
                 <li id="softFork" class="timeline-item mb-5">
                     <img class="upgrade-icon-small" alt="Value Overflow Incident graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/4.svg?v=0.04" />
-                    <h3 id="upgrade4-ValOverflowIncident" class="fw-bold text-break timelineTitle share-item">Value Overflow Incident<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
-                    <p class="mb-1">2010-08-15</p>
+                    <h3 id="upgrade4-ValOverflowIncident" class="fw-bold text-break share-item">Value Overflow Incident<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2010-08-15</p>
+
                 </li>
                 <li id="softFork" class="timeline-item mb-5">
                     <img class="upgrade-icon-large" alt="1MB Block Size Limit graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/5.svg?v=0.04" />
-                    <h3 id="upgrade5-1MB_limit" class="fw-bold text-break timelineTitle share-item">1MB Block Size Limit<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
-                    <p class="mb-1">2010-10-12</p>
+                    <h3 id="upgrade5-1MB_limit" class="fw-bold text-break share-item">1MB Block Size Limit<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2010-10-12</p>
+
                     <p class="small">
                         <figure>
                             <blockquote class="blockquote">
@@ -255,87 +245,97 @@
                 </li>
                 <li id="softFork" class="timeline-item mb-5">
                     <img class="upgrade-icon-small" alt="Disallow Transactions with Same TXID graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/6.svg?v=0.04" />
-                    <h3 id="upgrade6-DisallowSameTxID" class="fw-bold text-break timelineTitle share-item">Disallow Transactions with Same TXID<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
-                    <p class="mb-1 timelineDate">2012-03-15</p>
+                    <h3 id="upgrade6-DisallowSameTxID" class="fw-bold text-break share-item">Disallow Transactions with Same TXID<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2012-03-15</p>
+
                 </li>
                 <li id="softFork" class="timeline-item mb-5">
                     <img class="upgrade-icon-small" alt="Pay-to-Script-Hash graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/7.svg?v=0.04" />
-                    <h3 id="upgrade7-PaytoScriptHash" class="fw-bold text-break timelineTitle share-item">Pay-to-Script-Hash<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
-                    <p class="mb-1 timelineDate">2012-04-01</p>
+                    <h3 id="upgrade7-PaytoScriptHash" class="fw-bold text-break share-item">Pay-to-Script-Hash<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2012-04-01</p>
+
                 </li>
                 <li id="softFork" class="timeline-item mb-5">
                     <img class="upgrade-icon-small" alt="Block Height in Coinbase" src="images/UpgradeGraphics/BCHUpgrades_Icons/8.svg?v=0.04" />
-                    <h3 id="upgrade8-BlockHeightinCoinbase" class="fw-bold text-break timelineTitle share-item">Block Height in Coinbase<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
-                    <p class="mb-1 timelineDate">2013-03-24</p>
+                    <h3 id="upgrade8-BlockHeightinCoinbase" class="fw-bold text-break share-item">Block Height in Coinbase<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2013-03-24</p>
+
                 </li>
                 <li id="hardFork" class="timeline-item mb-5">
                     <img class="upgrade-icon-small" alt="Migration from Berkeley DB to LevelDB graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/9.svg?v=0.04" />
-                    <h3 id="upgrade9-DatabaseMigration" class="fw-bold text-break timelineTitle share-item">Migration from Berkeley DB to LevelDB<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
-                    <p class="mb-1 timelineDate">2013-05-15</p>
+                    <h3 id="upgrade9-DatabaseMigration" class="fw-bold text-break share-item">Migration from Berkeley DB to LevelDB<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2013-05-15</p>
+
                 </li>
                 <li id="softFork" class="timeline-item mb-5">
                     <img class="upgrade-icon-small" alt="Strict DER Encoding for Signatures graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/10.svg?v=0.04" />
-                    <h3 id="upgrade10-DER_Encoding" class="fw-bold text-break timelineTitle share-item">Strict DER Encoding for Signatures<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
-                    <p class="mb-1 timelineDate">2015-07-04</p>
+                    <h3 id="upgrade10-DER_Encoding" class="fw-bold text-break share-item">Strict DER Encoding for Signatures<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2015-07-04</p>
+
                 </li>
                 <li id="softFork" class="timeline-item mb-5">
                     <img class="upgrade-icon-small" alt="OP_CHECKLOCKTIMEVERIFY graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/11.svg?v=0.04" />
-                    <h3 id="upgrade11-OP_CHECKLOCKTIMEVERIFY" class="fw-bold text-break timelineTitle share-item">OP_CHECKLOCKTIMEVERIFY<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
-                    <p class="mb-1 timelineDate">2015-12-14</p>
+                    <h3 id="upgrade11-OP_CHECKLOCKTIMEVERIFY" class="fw-bold text-break share-item">OP_CHECKLOCKTIMEVERIFY<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2015-12-14</p>
+
                 </li>
                 <li id="softFork" class="timeline-item mb-5">
                     <img class="upgrade-icon-small" alt="Addition of Opt-In Replace-By-Fee (”RBF”) graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/12.svg?v=0.04" />
-                    <h3 id="upgrade12-RBF" class="fw-bold text-break timelineTitle share-item">Addition of Opt-In Replace-By-Fee (”RBF”)<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
-                    <p class="mb-1 timelineDate">2016-02-23</p>
+                    <h3 id="upgrade12-RBF" class="fw-bold text-break share-item">Addition of Opt-In Replace-By-Fee (”RBF”)<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2016-02-23</p>
+
                 </li>
                 <li id="softFork" class="timeline-item mb-5">
                     <img class="upgrade-icon-small" alt="OP_CHECKSEQUENCEVERIFY graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/13.svg?v=0.04" />
-                    <h3 id="upgrade13-OP_CHECKSEQUENCEVERIFY" class="fw-bold text-break timelineTitle share-item">OP_CHECKSEQUENCEVERIFY<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
-                    <p class="mb-1 timelineDate">2016-07-04</p>
+                    <h3 id="upgrade13-OP_CHECKSEQUENCEVERIFY" class="fw-bold text-break share-item">OP_CHECKSEQUENCEVERIFY<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2016-07-04</p>
+
                 </li>
             </ul>
             <ul id="splitHistory" class="timeline">
                 <li id="hardFork" class="timeline-item mb-5">
                     <img class="upgrade-icon-large" alt="Bitcoin Cash fork graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/14.svg?v=0.04" />
-                    <!--<h1 class="fw-bold text-break timelineTitle share-item" style="color:#0AC18E;">BitcoinCash<small class="smallerText"> ("BCH")</small></h1>-->
                     <img id="bchSplitLogo" class="bch-split-logo" alt="Bitcoin Cash logo" src="images/UpgradeGraphics/bchLogoFullWhite.svg?v=0.04" />
-                    <p class="mb-1 timelineDate share-item" id="upgrade14-BCH" style="scroll-margin-top:70px;">2017-08-01<span class="ms-2 fs-3 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></p>
+                    <p class="fs-4 mb-1 share-item" id="upgrade14-BCH" style="scroll-margin-top:70px;">2017-08-01<span class="ms-2 fs-3 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></p>
                     <p class="fw-bold text-break upgradeInfo">User Activated Hard Fork</p>
-                    <p class="text-dark-emphasis small text-break">Block Size Limit to 8MB | Removal of RBF</p>
+                    <p class="fs-5r text-dark-emphasis text-break">Block Size Limit to 8MB | Removal of RBF</p>
                 </li>
                 <li id="hardFork" class="timeline-item mb-5">
                     <img class="upgrade-icon-large" alt="Diﬃculty Adjustment Algorithm Change graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/15.svg?v=0.04" />
-                    <h3 id="upgrade15-DAA" class="fw-bold text-break timelineTitle share-item">Diﬃculty Adjustment Algorithm Change<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
-                    <p class="mb-1 timelineDate">2017-11-13</p>
-                    <p class="mb-1 text-break upgradeInfo">cw-144 algorithm</p>
-                    <p class="text-dark-emphasis small text-break">With rapid price, and thereby hash, fluctuations, particularly in relation to BTC, an algorithm change was necessary to ensure more reliable blocktimes.</p>
+                    <h3 id="upgrade15-DAA" class="fw-bold text-break share-item">Diﬃculty Adjustment Algorithm Change<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2017-11-13</p>
+
+                    <p class="fs-4 mb-1 text-break upgradeInfo">cw-144 algorithm</p>
+                    <p class="fs-5r text-dark-emphasis text-break">With rapid price, and thereby hash, fluctuations, particularly in relation to BTC, an algorithm change was necessary to ensure more reliable blocktimes.</p>
                 </li>
                 <li id="hardFork" class="timeline-item mb-5">
                     <img class="upgrade-icon-large" alt="Monolith graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/16.svg?v=0.04" />
-                    <h3 id="upgrade16-Monolith" class="fw-bold text-break timelineTitle share-item">Monolith<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
-                    <p class="mb-1 timelineDate">2018-05-15</p>
-                    <p class="mb-1 text-break upgradeInfo">Block Size Limit to 32MB | Extra Opcodes (including OP_CAT)</p>
+                    <h3 id="upgrade16-Monolith" class="fw-bold text-break share-item">Monolith<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2018-05-15</p>
+
+                    <p class="fs-4 mb-1 text-break upgradeInfo">Block Size Limit to 32MB | Extra Opcodes (including OP_CAT)</p>
                     <div class="row">
                         <div class="col-lg-3">
-                            <p class="text-dark-emphasis small text-break">OP_CAT, OP_SPLIT, OP_AND, OP_OR, OP_XOR, OP_DIV, OP_MOD, OP_NUM2BIN, OP_BIN2NUM</p>
+                            <p class="fs-5r text-dark-emphasis text-break">OP_CAT, OP_SPLIT, OP_AND, OP_OR, OP_XOR, OP_DIV, OP_MOD, OP_NUM2BIN, OP_BIN2NUM</p>
                         </div>
                         <div class="col">
-                            <p class="text-dark-emphasis small text-break">In 2010 and 2011 the discovery of serious bugs prompted the deactivation of many opcodes in the Bitcoin script language. Rather than simply re-enable the opcodes, the functionality that they provide has been re-examined and in some cases the opcodes have been re-designed or new opcodes have been added to address specific issues.</p>
+                            <p class="fs-5r text-dark-emphasis text-break">In 2010 and 2011 the discovery of serious bugs prompted the deactivation of many opcodes in the Bitcoin script language. Rather than simply re-enable the opcodes, the functionality that they provide has been re-examined and in some cases the opcodes have been re-designed or new opcodes have been added to address specific issues.</p>
                         </div>
                     </div>
                 </li>
                 <li id="hardFork" class="timeline-item mb-5">
                     <img class="upgrade-icon-large" alt="Magnetic Anomaly graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/17.svg?v=0.04" />
-                    <h3 id="upgrade17-MagneticAnomaly" class="fw-bold text-break timelineTitle share-item">Magnetic Anomaly<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
-                    <p class="mb-1 timelineDate">2018-11-15</p>
-                    <p class="mb-1 text-break upgradeInfo">OP_CHECKDATASIG & OP_CHECKDATASIGVERIFY | Canonical Transaction Ordering (“CTOR”)</p>
+                    <h3 id="upgrade17-MagneticAnomaly" class="fw-bold text-break share-item">Magnetic Anomaly<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2018-11-15</p>
+
+                    <p class="fs-4 mb-1 text-break upgradeInfo">OP_CHECKDATASIG & OP_CHECKDATASIGVERIFY | Canonical Transaction Ordering (“CTOR”)</p>
                     <div class="row">
                         <div class="col-lg-4">
-                            <p class="text-dark-emphasis small text-break">OP_CHECKDATASIG and OP_CHECKDATASIGVERIFY check whether a signature is valid with respect to a message and a public key.<br><br>
+                            <p class="fs-5r text-dark-emphasis text-break">OP_CHECKDATASIG and OP_CHECKDATASIGVERIFY check whether a signature is valid with respect to a message and a public key.<br><br>
                                 OP_CHECKDATASIG permits data to be imported into a script, and have its validity checked against some signing authority such as an "Oracle."</p>
                         </div>
                         <div class="col">
-                            <p class="text-dark-emphasis small text-break">
+                            <p class="fs-5r text-dark-emphasis text-break">
                                 With the exception of the coinbase transaction, transactions within a block MUST be sorted in numerically ascending order of the transaction id, interpreted as 256-bit little endian integers. The coinbase transaction MUST be the first transaction in a block.<br><br>
                                 Context:<br>
                                 All nodes already have all the transactions in the mempool. When a block is found, it is sending all transactions to all nodes a second time. This delays block propagation and block validation. In order to improve this, Compact/Xthin(er) utilize shorter transaction IDs to minimize the data needing to be sent a second time when a block is found. Graphene takes this a step further by utilizing bloom filters to check which transactions are in which block. However, the bloom filters only allow knowledge of what transactions go into the block, not in what order. The ordering data makes up 80% of the data in a graphene block. By utilizing canonical ordering, 85% of the block data no longer needs to be sent, allowing for 7x faster block propagation and validation.<br><br>
@@ -346,13 +346,14 @@
                 </li>
                 <li id="hardFork" class="timeline-item mb-5">
                     <img class="upgrade-icon-large" alt="Great Wall graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/18.svg?v=0.04" />
-                    <h3 id="upgrade18-GreatWall" class="fw-bold text-break timelineTitle share-item">Great Wall<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
-                    <p class="mb-1 timelineDate">2019-05-15</p>
-                    <p class="mb-1 text-break upgradeInfo">Schnorr Signatures</p>
-                    <p class="text-dark-emphasis small text-break">
+                    <h3 id="upgrade18-GreatWall" class="fw-bold text-break share-item">Great Wall<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2019-05-15</p>
+
+                    <p class="fs-4 mb-1 text-break upgradeInfo">Schnorr Signatures</p>
+                    <p class="fs-5r text-dark-emphasis text-break">
                         Schnorr signatures have some slightly improved properties over the ECDSA signatures currently used in bitcoin:
                     </p>
-                    <ul class="text-dark-emphasis small text-break upgrade-bullets">
+                    <ul class="text-dark-emphasis text-break upgrade-bullets">
                         <li>Known cryptographic proof of security</li>
                         <li>Proven that there are no unknown third-party malleability mechanisms</li>
                         <li>Linearity allows some simple multi-party signature aggregation protocols. (compactness / privacy / malleability benefits)</li>
@@ -361,39 +362,42 @@
                 </li>
                 <li id="hardFork" class="timeline-item mb-5">
                     <img class="upgrade-icon-large" alt="Graviton graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/19.svg?v=0.04" />
-                    <h3 id="upgrade19-Graviton" class="fw-bold text-break timelineTitle share-item">Graviton<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
-                    <p class="mb-1 timelineDate">2019-11-15</p>
-                    <p class="mb-1 text-break upgradeInfo">Schnorr for Multisig | MINIMALDATAINSCRIPT</p>
+                    <h3 id="upgrade19-Graviton" class="fw-bold text-break share-item">Graviton<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2019-11-15</p>
+
+                    <p class="fs-4 mb-1 text-break upgradeInfo">Schnorr for Multisig | MINIMALDATAINSCRIPT</p>
                     <div class="row">
                         <div class="col-lg-4">
-                            <p class="text-dark-emphasis small text-break">OP_CHECKMULTISIG(VERIFY) upgraded to accept Schnorr signatures in a way that increases verification efficiency and is compatible with batch verification.</p>
+                            <p class="fs-5r text-dark-emphasis text-break">OP_CHECKMULTISIG(VERIFY) upgraded to accept Schnorr signatures in a way that increases verification efficiency and is compatible with batch verification.</p>
                         </div>
                         <div class="col">
-                            <p class="text-dark-emphasis small text-break">MINIMALDATA flag, which restricts malleability vectors, has been active at the mempool layer of most nodes but not at the consensus layer. The upgrade converts the existing MINIMALDATA rules to consensus.</p>
+                            <p class="fs-5r text-dark-emphasis text-break">MINIMALDATA flag, which restricts malleability vectors, has been active at the mempool layer of most nodes but not at the consensus layer. The upgrade converts the existing MINIMALDATA rules to consensus.</p>
                         </div>
                     </div>
                 </li>
                 <li id="hardFork" class="timeline-item mb-5">
                     <img class="upgrade-icon-large" alt="Phonon graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/20.svg?v=0.04" />
-                    <h3 id="upgrade20-Phonon" class="fw-bold text-break timelineTitle share-item">Phonon<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
-                    <p class="mb-1 timelineDate">2020-05-15</p>
-                    <p class="mb-1 text-break upgradeInfo">OP_REVERSEBYTES | SigChecks</p>
+                    <h3 id="upgrade20-Phonon" class="fw-bold text-break share-item">Phonon<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2020-05-15</p>
+
+                    <p class="fs-4 mb-1 text-break upgradeInfo">OP_REVERSEBYTES | SigChecks</p>
                     <div class="row">
                         <div class="col-lg-4">
-                            <p class="text-dark-emphasis small text-break">OP_REVERSEBYTES reverses the bytes of the stackitem.</p>
+                            <p class="fs-5r text-dark-emphasis text-break">OP_REVERSEBYTES reverses the bytes of the stackitem.</p>
                         </div>
                         <div class="col">
-                            <p class="text-dark-emphasis small text-break">Although partly eﬀective, there are well known issues with SigOps, which mainly stem from the fact that SigOps are judged by parsing scripts, rather than executing them. Bitcoin splits scripts into two transactions (the scriptPubKey of the transaction that creates a coin, and the scriptSig of the transaction that spends it), yet the actual CPU work of verifying a transaction solely happens in the spending transaction, and this leads to some paradoxical situations: a transaction/block that contains high SigOps might involve very little CPU work, and conversely a transaction with low SigOps may require very high CPU work.<br><br>
+                            <p class="fs-5r text-dark-emphasis text-break">Although partly eﬀective, there are well known issues with SigOps, which mainly stem from the fact that SigOps are judged by parsing scripts, rather than executing them. Bitcoin splits scripts into two transactions (the scriptPubKey of the transaction that creates a coin, and the scriptSig of the transaction that spends it), yet the actual CPU work of verifying a transaction solely happens in the spending transaction, and this leads to some paradoxical situations: a transaction/block that contains high SigOps might involve very little CPU work, and conversely a transaction with low SigOps may require very high CPU work.<br><br>
                                 The essential idea of SigChecks is to count actual executed signature check operations solely in the spending transaction.</p>
                         </div>
                     </div>
                 </li>
                 <li id="hardFork" class="timeline-item mb-5">
                     <img class="upgrade-icon-large" alt="Axion graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/21.svg?v=0.04" />
-                    <h3 id="upgrade21-Axion" class="fw-bold text-break timelineTitle share-item">Axion<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
-                    <p class="mb-1 timelineDate">2020-11-15</p>
-                    <p class="mb-1 text-break upgradeInfo">Diﬃculty Adjustment Algorithm Change: ASERT (aserti3-2d DAA)</p>
-                    <p class="text-dark-emphasis small text-break">
+                    <h3 id="upgrade21-Axion" class="fw-bold text-break share-item">Axion<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2020-11-15</p>
+
+                    <p class="fs-4 mb-1 text-break upgradeInfo">Diﬃculty Adjustment Algorithm Change: ASERT (aserti3-2d DAA)</p>
+                    <p class="fs-5r text-dark-emphasis text-break">
                         The DAA introduced in November 2017 exhibited susceptibility to a daily periodic diﬃculty oscillation stemming directly from the simple moving average design of the algorithm. The periodic diﬃculty oscillations incentivized switch mining and disincentivized steady hashrate mining.<br><br>
                         The oscillations in diﬃculty and hashrate have resulted in a daily pattern of long confirmation times followed by bursts of rapid blocks. Average confirmation time of transactions are significantly increased as few transactions are included in the rapidly mined blocks.<br><br>
                         ASERT does not exhibit the above-mentioned oscillations and has a range of other attractive qualities such as robustness against singularities without a need for additional rules, and absence of accumulation of rounding/approximation error.
@@ -401,15 +405,16 @@
                 </li>
                 <li id="hardFork" class="timeline-item mb-5">
                     <img class="upgrade-icon-large" alt="BigBlockIfTrue graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/22.svg?v=0.04" />
-                    <h3 id="upgrade22-BigBlockIfTrue" class="fw-bold text-break timelineTitle share-item">BigBlockIfTrue<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
-                    <p class="mb-1 timelineDate">2021-05-15</p>
-                    <p class="mb-1 text-break upgradeInfo">Enabling Transactions with Multiple OP_RETURNs | Removal of Unconfirmed Transaction Chain Limit</p>
+                    <h3 id="upgrade22-BigBlockIfTrue" class="fw-bold text-break share-item">BigBlockIfTrue<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2021-05-15</p>
+
+                    <p class="fs-4 mb-1 text-break upgradeInfo">Enabling Transactions with Multiple OP_RETURNs | Removal of Unconfirmed Transaction Chain Limit</p>
                     <div class="row">
                         <div class="col-lg-4">
-                            <p class="text-dark-emphasis small text-break">Multiple OP_RETURNs enable developers to use OP_RETURN in a manner that justifies its core benefit - experimentation of new features/protocol updates without breaking existing systems or stressing the block chain with extraneous UTXOs. This is still subject to the existing 223 byte limit.</p>
+                            <p class="fs-5r text-dark-emphasis text-break">Multiple OP_RETURNs enable developers to use OP_RETURN in a manner that justifies its core benefit - experimentation of new features/protocol updates without breaking existing systems or stressing the block chain with extraneous UTXOs. This is still subject to the existing 223 byte limit.</p>
                         </div>
                         <div class="col">
-                            <p class="text-dark-emphasis small text-break">When a transaction is first transmitted on the Bitcoin Cash network, it is considered “unconfirmed” until it is “mined” into a block. These transactions that are not yet mined are also referred to as “zero-conf” transactions. Transactions are dependent upon other transactions, such that they are chained together; the value allocated by one transaction is then spent by a subsequent transaction.<br><br>
+                            <p class="fs-5r text-dark-emphasis text-break">When a transaction is first transmitted on the Bitcoin Cash network, it is considered “unconfirmed” until it is “mined” into a block. These transactions that are not yet mined are also referred to as “zero-conf” transactions. Transactions are dependent upon other transactions, such that they are chained together; the value allocated by one transaction is then spent by a subsequent transaction.<br><br>
                                 Until this upgrade, the Bitcoin Cash network only permitted transactions to be chained together 50 times before a block must include them. Transactions exceeding the 50th were often ignored by the network, despite being valid. Once a transaction is submitted to the network, it cannot be revoked. This situation, when encountered, can be extremely diﬃcult to remedy with today’s available tools and simultaneously creates an unnecessary amount of complexity when being accounted for by network and applications developers.<br><br>
                                 The limit is now removed.
                             </p>
@@ -418,18 +423,19 @@
                 </li>
                 <li id="hardFork" class="timeline-item mb-5">
                     <img class="upgrade-icon-large" alt="U8 graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/23.svg?v=0.04" />
-                    <h3 id="upgrade23-U8" class="fw-bold text-break timelineTitle share-item">U8<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
-                    <p class="mb-1 timelineDate">2022-05-15</p>
-                    <p class="mb-1 text-break upgradeInfo">Addition of Introspection Op-codes | Bigger Integers & OP_MUL Re-enabling</p>
+                    <h3 id="upgrade23-U8" class="fw-bold text-break share-item">U8<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2022-05-15</p>
+
+                    <p class="fs-4 mb-1 text-break upgradeInfo">Addition of Introspection Op-codes | Bigger Integers & OP_MUL Re-enabling</p>
                     <div class="row">
                         <div class="col-lg-6">
-                            <p class="text-dark-emphasis small text-break">Since the introduction of OP_CHECKDATASIG, it has been possible to implement practical Bitcoin Cash covenants – contracts which validate properties of the transaction in which the contract funds are spent.<br><br>
+                            <p class="fs-5r text-dark-emphasis text-break">Since the introduction of OP_CHECKDATASIG, it has been possible to implement practical Bitcoin Cash covenants – contracts which validate properties of the transaction in which the contract funds are spent.<br><br>
                                 Covenants enable a wide range of new innovation, but the strategy by which they were implemented was extremely ineﬃcient: most of a transaction’s content must be duplicated for each input which utilizes a covenant. In practice, this doubles or triples the size of even the simplest covenant transactions, and advanced covenant applications quickly exceed VM limits. This severely limited the extent of BCH covenant development and usage.<br><br>
                                 This upgrade adds a set of new virtual machine (VM) operations which enable BCH contracts to eﬃciently access details about the current transaction like output values, recipients, and more – without increasing transaction validation costs.
                             </p>
                         </div>
                         <div class="col">
-                            <p class="text-dark-emphasis small text-break">BCH virtual machine (VM) math operations were limited to signed 32-bit integers, preventing contracts from operating on values larger than 2147483647. Workarounds which allow contracts to emulate higher-precision math are often impractical, difficult to secure, and significantly increase transaction fees.<br><br>
+                            <p class="fs-5r text-dark-emphasis text-break">BCH virtual machine (VM) math operations were limited to signed 32-bit integers, preventing contracts from operating on values larger than 2147483647. Workarounds which allow contracts to emulate higher-precision math are often impractical, difficult to secure, and significantly increase transaction fees.<br><br>
                                 This unusually-low limit on arithmetic operations has been present since the earliest Bitcoin release to avoid standardizing a strategy for overflow handling (though 64-bit math was always used internally). Since the development of covenants, this unusual overflow-handling strategy has become a source of contract vulnerabilities and a barrier to real-world applications. Few remaining computing environments operate using 32-bit integers, and this limit has never been relevant to worst-case transaction validation performance.<br><br>
                                 This upgrade expands the integer range allowed in BCH contracts (from 32-bit to 64-bit numbers) and re-enables the multiplication opcode.
                             </p>
@@ -438,34 +444,35 @@
                 </li>
                 <li id="hardFork" class="timeline-item mb-5">
                     <img class="upgrade-icon-large" alt="CashTokens graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/24.svg?v=0.04" />
-                    <h3 id="upgrade24-CashTokens" class="fw-bold text-break timelineTitle share-item">CashTokens<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
-                    <p class="mb-1 timelineDate">2023-05-15</p>
-                    <p class="mb-1 text-break upgradeInfo">P2SH32 | Restrict Transaction Version | Minimum Transaction Size | Native Layer 1, UTXO, Miner-validated Tokens</p>
+                    <h3 id="upgrade24-CashTokens" class="fw-bold text-break share-item">CashTokens<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2023-05-15</p>
+
+                    <p class="fs-4 mb-1 text-break upgradeInfo">P2SH32 | Restrict Transaction Version | Minimum Transaction Size | Native Layer 1, UTXO, Miner-validated Tokens</p>
                     <div class="row">
                         <div class="col-lg-3">
-                            <strong class="text-dark-emphasis lh-sm upgrade-detail-header">P2SH32</strong><br>
-                            <p class="text-dark-emphasis small text-break">Increases cryptographic security of existing P2SH feature by enabling a 32-byte variant of it.
+                            <strong class="fs-5r text-dark-emphasis lh-sm">P2SH32</strong><br>
+                            <p class="fs-5r text-dark-emphasis text-break">Increases cryptographic security of existing P2SH feature by enabling a 32-byte variant of it.
                             </p>
-                            <strong class="text-dark-emphasis lh-sm upgrade-detail-header">Restrict Transaction Version:</strong><br>
-                            <p class="text-dark-emphasis small text-break">Tightens enforcement of allowed transaction version field values by making it a consensus rule instead of the network relay rule that is currently in force.<br><br>
+                            <strong class="fs-5r text-dark-emphasis lh-sm">Restrict Transaction Version:</strong><br>
+                            <p class="fs-5r text-dark-emphasis text-break">Tightens enforcement of allowed transaction version field values by making it a consensus rule instead of the network relay rule that is currently in force.<br><br>
                                 Making allowed values part of consensus specification enables its use in tracking future consensus specification upgrades. This would make it easier to roll-out future hard-fork upgrades in a non-breaking and backwards-compatible way for non-node software.
                             </p>
-                            <strong class="text-dark-emphasis lh-sm upgrade-detail-header">Minimum Transaction Size:</strong><br>
-                            <p class="text-dark-emphasis small text-break">Reduces the current consensus minimum transaction size of 100 bytes down to a minimum size of 65 bytes. This more relaxed 65-byte minimum size, like the previous 100-byte minimum size, applies to both coinbase and non-coinbase transactions uniformly.
+                            <strong class="text-dark-emphasis lh-sm">Minimum Transaction Size:</strong><br>
+                            <p class="fs-5r text-dark-emphasis text-break">Reduces the current consensus minimum transaction size of 100 bytes down to a minimum size of 65 bytes. This more relaxed 65-byte minimum size, like the previous 100-byte minimum size, applies to both coinbase and non-coinbase transactions uniformly.
                             </p>
                         </div>
                         <div class="col">
-                            <strong class="text-dark-emphasis lh-sm upgrade-detail-header">Native Layer 1, UTXO, Miner-validated Tokens:</strong><br>
-                            <p class="text-dark-emphasis small text-break">Bitcoin Cash contracts lacked primitives for issuing messages that can be verified by other contracts, preventing the development of decentralized application ecosystems on Bitcoin Cash. This upgrade introduced Byte-String Commitments and Numeric Commitments.<br><br>
+                            <strong class="fs-5r text-dark-emphasis lh-sm">Native Layer 1, UTXO, Miner-validated Tokens:</strong><br>
+                            <p class="fs-5r text-dark-emphasis text-break">Bitcoin Cash contracts lacked primitives for issuing messages that can be verified by other contracts, preventing the development of decentralized application ecosystems on Bitcoin Cash. This upgrade introduced Byte-String Commitments and Numeric Commitments.<br><br>
                                 <strong>(Existing) Contract-Issued Commitments</strong><br>
                                 In the context of the Bitcoin Cash virtual machine (VM), a commitment can be defined as an irrevocable message that was provably issued by a particular entity. Two forms of commitments were already available to Bitcoin Cash contracts:
                             </p>
-                            <ul class="text-dark-emphasis small text-break upgrade-bullets">
+                            <ul class="text-dark-emphasis text-break upgrade-bullets">
                                 <li>Transaction signatures: a commitment made by a private key attesting to the signing serialization of a transaction</li>
                                 <li>Data signatures: a commitment made by a private key attesting to the hash of an arbitrary message (introduced in 2018 by OP_CHECKDATASIG)</li>
                             </ul>
                             <br>
-                            <p class="text-dark-emphasis small text-break">
+                            <p class="fs-5r text-dark-emphasis text-break">
                                 Each of these commitment types require the presence of a trusted private key. Because contracts cannot themselves hold a private key, any use case that requires a contract to issue a verifiable message must necessarily rely on trusted entities to provide signatures. This limitation prevented Bitcoin Cash contracts from oﬀering or using decentralized oracles – multiparty consensus systems that produce verifiable messages upon which other contracts can act.<br><br>
                                 By providing a commitment primitive that can be used directly by contracts, the Bitcoin Cash contract system can support advanced, decentralized applications without increasing transaction or block validation costs.<br><br>
                                 <strong>Byte-String Commitments (“Non-Fungible Tokens” or “NFTs”)</strong><br>
@@ -482,10 +489,11 @@
             <ul id="lockedIn" class="timeline">
                 <li id="hardFork" class="timeline-item mb-5">
                     <img class="upgrade-icon-large" alt="ABLA graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/25.svg?v=0.04" />
-                    <h3 id="upgrade25-ABLA" class="fw-bold text-break timelineTitle share-item">ABLA<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
-                    <p class="mb-1 timelineDate">2024-05-15</p>
-                    <p class="mb-1 text-break upgradeInfo">Adaptive Blocksize Limit Algorithm</p>
-                    <p class="text-dark-emphasis small text-break">
+                    <h3 id="upgrade25-ABLA" class="fw-bold text-break share-item">ABLA<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2024-05-15</p>
+
+                    <p class="fs-4 mb-1 text-break upgradeInfo">Adaptive Blocksize Limit Algorithm</p>
+                    <p class="fs-5r text-dark-emphasis text-break">
                         Needing to coordinate manual increases to BitcoinCash's blocksize limit incurs a meta cost on all network participants. The need to regularly come to agreement makes the network vulnerable to social attacks, as had occured on Bitcoin Core from its early history.<br><br>
                         To reduce Bitcoin Cash's social attack surface and save on meta costs for all network participants, ABLA automatically adjusts the blocksize limit after each block, based on the exponentially weighted moving average size of previous blocks.<br><br>
                         The algorithm preserves the existing 32 MB limit as the floor "stand-by" value, and any increase by the algorithm can be thought of as a bonus on top of that, sustained by actual transaction load.
@@ -495,11 +503,12 @@
             <ul id="future" class="timeline">
                 <li id="hardFork" class="timeline-item mb-5">
                     <img class="upgrade-icon-large" alt="VM Limits + BigInts graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/VMLimits+BigInt.svg?v=0.04" />
-                    <h3 id="upgrade26-VMLA" class="fw-bold text-break timelineTitle share-item">VMLA<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <h3 id="upgrade26-VMLA" class="fw-bold text-break share-item">VMLA<span class="ms-2 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
                     <p class="timelineTitle">[Locked-In]</p>
-                    <p class="mb-1 timelineDate">2025-05-15</p>
-                    <p class="mb-1 text-break upgradeInfo">Targeted Virtual Machine Limits + BigInts</p>
-                    <p class="text-dark-emphasis small text-break">
+                    <p class="fs-4 mb-1">2025-05-15</p>
+
+                    <p class="fs-4 mb-1 text-break upgradeInfo">Targeted Virtual Machine Limits + BigInts</p>
+                    <p class="fs-5r text-dark-emphasis text-break">
                         Bitcoin Cash's virtual machine (VM) limits have been re-targeted to enable more advanced contracts, reduce transaction sizes, and reduce full node compute requirements.<br><br>
                         <strong>More advanced contracts:</strong><br>
                         The 201 opcode limit and 520-byte, Pay-to-Script-Hash (P2SH) contract length limit each raise the cost of developing Bitcoin Cash products by requiring contract authors to remove important features or otherwise complicate products with harder-to-audit, multi-input systems. Replacing these limits reduces the cost of contract development and security audits.<br><br>
@@ -524,7 +533,7 @@
                 </div>
                 <div>
                     <h3 class="fs-2 text-info">Zero-Confirmation Escrows</h3>
-                    <p class="text-light-emphasis fs-5">Zero-Confirmation Escrows (ZCEs) are contracts which enable instant, incentive-secure payments on Bitcoin Cash. They’re particularly useful in point-of-sale, ATM, and vending applications where payers have no prior or ongoing relationship with the payee.</p>
+                    <p class="text-light-emphasis fs-5r">Zero-Confirmation Escrows (ZCEs) are contracts which enable instant, incentive-secure payments on Bitcoin Cash. They’re particularly useful in point-of-sale, ATM, and vending applications where payers have no prior or ongoing relationship with the payee.</p>
                     <a href="https://bitcoincashresearch.org/t/chip-2021-08-zces-zero-confirmation-escrows/537/132" class="btn btn-info">
                         More Info
                     </a>
@@ -536,7 +545,7 @@
                 </div>
                 <div>
                     <h3 class="fs-2 text-info">Bounded Looping Operations</h3>
-                    <p class="text-light-emphasis fs-5">This proposal includes two new BCH virtual machine (VM) operations, OP_BEGIN and OP_UNTIL , which enable a variety of loop constructions in BCH contracts without increasing the processing or memory requirements of the VM.</p>
+                    <p class="text-light-emphasis fs-5r">This proposal includes two new BCH virtual machine (VM) operations, OP_BEGIN and OP_UNTIL , which enable a variety of loop constructions in BCH contracts without increasing the processing or memory requirements of the VM.</p>
                     <a href="https://bitcoincashresearch.org/t/chip-2021-05-bounded-looping-operations/463" class="btn btn-info">
                         More Info
                     </a>
@@ -548,7 +557,7 @@
                 </div>
                 <div>
                     <h3 class="fs-2 text-info">UTXO FastSync + UTXO Committments</h3>
-                    <p class="text-light-emphasis fs-5">This proposal defines a method for nodes to generate, distribute, validate, and consume UTXO snapshots via the BCH P2P network. These snapshots allow for new peers to synchronize to the current state of the network without processing the entire blockchain block-by-block.</p>
+                    <p class="text-light-emphasis fs-5r">This proposal defines a method for nodes to generate, distribute, validate, and consume UTXO snapshots via the BCH P2P network. These snapshots allow for new peers to synchronize to the current state of the network without processing the entire blockchain block-by-block.</p>
                     <a href="https://bitcoincashresearch.org/t/chip-2021-07-utxo-fastsync/502" class="btn btn-info">
                         More Info
                     </a>
@@ -566,7 +575,7 @@
                 </div>
                 <div>
                     <h3 class="fs-2 text-warning">SubSatoshis</h3>
-                    <p class="text-light-emphasis fs-5">This proposal is a small change to transactions in order to allow us to move from 8 digits dividing a whole Bitcoin Cash to add several more.</p>
+                    <p class="text-light-emphasis fs-5r">This proposal is a change to transactions in order to allow us to move from 8 digits dividing a whole Bitcoin Cash to add several more.</p>
                     <a href="https://bitcoincashresearch.org/t/pre-release-of-a-new-chip-subsatoshi/1213" class="btn btn-warning">
                         More Info
                     </a>
@@ -578,7 +587,7 @@
                 </div>
                 <div>
                     <h3 class="fs-2 text-warning">TailStorm</h3>
-                    <p class="text-light-emphasis fs-5">This proposal could offer fast sub-block confirmations (10 seconds for a sub-block) without negative impact to orphan rates that plain block time reduction would incur.</p>
+                    <p class="text-light-emphasis fs-5r">This proposal could offer fast sub-block confirmations (10 seconds for a sub-block) without negative impact to orphan rates that plain block time reduction would incur.</p>
                     <a href="https://bitcoincashresearch.org/t/tailstorm-a-secure-and-fair-blockchain-for-cash-transactions/1357/63" class="btn btn-warning">
                         More Info
                     </a>
@@ -590,7 +599,7 @@
                 </div>
                 <div>
                     <h3 class="fs-2 text-warning">2026 Protocol Update Ideas</h3>
-                    <p class="text-light-emphasis fs-5">A discussion thread of what should be prioritized next on the Bitcoin Cash network!</p>
+                    <p class="text-light-emphasis fs-5r">A discussion thread of what should be prioritized next on the Bitcoin Cash network!</p>
                     <a href="https://bitcoincashresearch.org/t/2026-protocol-upgrade-ideas/1402/27" class="btn btn-warning">
                         More Info
                     </a>
@@ -607,7 +616,7 @@
             </a>
         </div>
     </div>
-    <p class="text-muted fs-5 ps-3">
+    <p class="text-muted fs-5r ps-3">
         Graphics by <strong><a href="https://x.com/CM_Workzs" class="text-decoration-none text-muted">CM_Works</a></strong>
     </p>
     

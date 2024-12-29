@@ -8,11 +8,17 @@ html, body {
 }
 */
 
+/* Adjusting Bootstrap */
 :root,
 [data-bs-theme=light] {
     --bs-font-sans-serif: "Ubuntu", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
-    --bs-body-font-size: 1.5rem !important;
-    --bs-body-line-height: 1.6 !important;
+    /*--bs-body-font-size: 1.5rem !important;
+    --bs-body-line-height: 1.6 !important;*/
+}
+
+/* Adding responsive fs-5 */
+.fs-5r {
+  font-size: calc(1rem + 0.2vw) !important;
 }
 
 html, head, body {
@@ -189,7 +195,7 @@ html, head, body {
   color:#fff;
   text-align: center;
   padding-bottom: 3.5em;
-  font-size:2.75em;
+  font-size:4.125em;
   position: absolute;
   max-width: 800px;
 }
@@ -198,7 +204,7 @@ html, head, body {
   /*max-width: min(calc(10% + 600px),1200px);*/
   max-width: 700px;
   position: absolute;
-  padding-bottom: 4em;
+  padding-bottom: 6em;
 }
 
 @media screen and (max-width:768px) {
@@ -206,7 +212,7 @@ html, head, body {
         max-width: 90%;
     }
     .home-text {
-        font-size: 2.25em;
+        font-size: 3.375em;
     }
 }
 
@@ -245,7 +251,7 @@ html, head, body {
 }
 
 .P2P_Title {
-    font-size:2.25em;
+    font-size:3em;
 }
 
 .navTrigger {
@@ -313,15 +319,12 @@ footer a:hover{
     }
 }
 
-@media screen and (max-width:1300px) {
+@media screen and (max-width:1200px) {
     .navTrigger {
         display: inline-block;
     }
     .custom_nav {
         z-index: 3;
-    }
-    .custom_nav div.logo {
-        margin-left: 15px;
     }
     .custom_nav div.main_list {
         width: 100%;
@@ -352,7 +355,7 @@ footer a:hover{
     .custom_nav div.main_list ul li a {
         text-align: center;
         width: 100%;
-        padding: 20px;
+        padding-left:3rem;
     }
     .custom_nav div.media_button {
         display: block;
@@ -562,21 +565,17 @@ footer a:hover{
 
 
 /* UPGRADE HISTORY */
-.upgrade-history {
-
-}
-
 .upgrade-icon-large {
-    margin-left: -8.5em;
+    margin-left: -11em;
     position: absolute;
-    max-width: 5.5em;
-    max-height: 7.5em;
+    max-width: 7em;
+    max-height: 9em;
 }
 .upgrade-icon-small {
-    margin-left: -6em;
+    margin-left: -8em;
     position: absolute;
-    max-width: 3em;
-    max-height: 3.5em;
+    max-width: 4em;
+    max-height: 5em;
 }
 
 ul.upgrade-bullets {
@@ -608,7 +607,7 @@ ul.upgrade-bullets > li::before {
   /*border-left: 4px solid #0AC18E;*/
   position: relative;
   list-style: none;
-  margin-left: 5em;
+  margin-left: 7em;
   padding-bottom: 1.5em;
 }
 
@@ -618,7 +617,7 @@ ul.upgrade-bullets > li::before {
   border-left: 8px solid #0AC18E;
   position: relative;
   list-style: none;
-  margin-left: 5em;
+  margin-left: 7em;
   padding-bottom: 1em;
 }
 
@@ -628,7 +627,7 @@ ul.upgrade-bullets > li::before {
   border-left: 8px dashed #0AC18E;
   position: relative;
   list-style: none;
-  margin-left: 5em;
+  margin-left: 7em;
   padding-bottom: 1em;
 }
 
@@ -638,12 +637,8 @@ ul.upgrade-bullets > li::before {
   border-left: 8px dashed darkslategray;
   position: relative;
   list-style: none;
-  margin-left: 5em;
+  margin-left: 7em;
   padding-bottom: 1em;
-}
-
-.timeline-line {
-
 }
 
 .timeline .timeline-item {
@@ -687,10 +682,6 @@ ul.upgrade-bullets > li::before {
     -moz-transform: rotate(45deg);
 }
 
-.timelineTitle {
-    margin-bottom:0;
-}
-
 [data-bs-theme="light"] .btn-outline-secondary {
     background-color: var(--bs-btn-color);
     border-color: var(--bs-secondary-border);
@@ -704,18 +695,6 @@ ul.upgrade-bullets > li::before {
     color: var(--bs-secondary-color);
 }*/
 
-/*.smallerText {
-    font-size: 0.5em;
-}*/
-
-/*SMALLER SCREENS TIMELINE CHANGES*/
-@media screen and (max-width:992px) {
-    .upgrade-detail-header {
-        font-size: 0.75em !important;
-    }
-
-}
-
 /*SMALLER SCREENS TIMELINE CHANGES*/
 @media screen and (max-width:576px) {
     .timeline-main {
@@ -723,28 +702,22 @@ ul.upgrade-bullets > li::before {
         padding-right: 1em !important;
     }
 
-    .timelineTitle {
-        font-size: 0.775em;
-    }
-
-    .timelineDate {
-        font-size: 0.775em;
-    }
-
-    .upgradeInfo {
-        font-size: 0.675em;
-    }
-
     .upgrade-icon-large {
-        margin-left: -5em;
+        margin-left: -7em;
         position: absolute;
-        max-width: 2em;
+        max-width: 3em;
     }
     .upgrade-icon-small {
-        margin-left: -5em;
+        margin-left: -7em;
         position: absolute;
-        max-width: 2em;
+        max-width: 3em;
     }
+}
+
+/* Ecosystem */
+.card-img-standard {
+    height:6rem;
+    object-fit: contain;
 }
 
 /* MINECRAFT */
