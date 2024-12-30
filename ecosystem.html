@@ -643,27 +643,6 @@
 	            </div>
 	          </div>
 	        </div>
-	        <!--<div class="col mb-4">
-	          <div class="card" data-header="Technical, Tool, Wallet">
-	            <div class="card-header fs-6">Development</div>
-	            <div class="card-body text-center text-sm-start">
-	              <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
-	                <div class="d-flex flex-sm-row flex-column">
-	                  <div class="align-self-center">
-	                    <img src="images/logosForEcosystem/square/XO.svg" alt="XO logo" class="card-img-standard me-0 me-sm-3 mb-3 mb-sm-0">
-	                  </div>
-	                  <div>
-	                    <h4 class="text-break">XO.cash</h4>
-	                    <p class="mb-0 fs-6">The XO system powers smart contracts through a full feature stack and wallet, enabling developers to create, and users to interact with, a whole new ecosystem of integrated financial applications on Bitcoin Cash.</p>
-	                  </div>
-	                </div>
-	                <div class="align-self-center ms-0 ms-sm-3 mt-3 mt-sm-0">
-	                  <a href="https://xo.cash" class="btn btn-lg btn-primary">Visit</a>
-	                </div>
-	              </div>
-	            </div>
-	          </div>
-	        </div>-->
 	        <div class="col mb-4">
 	          <div class="card" data-header="Technical, Tool">
 	            <div class="card-header fs-6">Development</div>
@@ -722,6 +701,27 @@
 	                </div>
 	                <div class="align-self-center ms-0 ms-sm-3 mt-3 mt-sm-0">
 	                  <a href="https://cashscript.org" class="btn btn-lg btn-primary">Visit</a>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="col mb-4">
+	          <div class="card" data-header="Technical, Tool, Wallet">
+	            <div class="card-header fs-6">Development</div>
+	            <div class="card-body text-center text-sm-start">
+	              <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
+	                <div class="d-flex flex-sm-row flex-column">
+	                  <div class="align-self-center">
+	                    <img src="images/logosForEcosystem/square/XO-cash-lightmode.svg" alt="XO logo" class="card-img-standard me-0 me-sm-3 mb-3 mb-sm-0" id="XOCash">
+	                  </div>
+	                  <div>
+	                    <h4 class="text-break">XO.cash</h4>
+	                    <p class="mb-0 fs-6">The XO system powers smart contracts through a full feature stack and wallet, enabling developers to create, and users to interact with, a whole new ecosystem of integrated financial applications on Bitcoin Cash.</p>
+	                  </div>
+	                </div>
+	                <div class="align-self-center ms-0 ms-sm-3 mt-3 mt-sm-0">
+	                  <a href="https://xo.cash" class="btn btn-lg btn-primary">Visit</a>
 	                </div>
 	              </div>
 	            </div>
@@ -1348,14 +1348,17 @@
         function swapImage() {
             const img1 = document.getElementById('bchbull')
             const img2 = document.getElementById('tapswap')
+            const img3 = document.getElementById('XOCash')
             const theme = document.documentElement.getAttribute('data-bs-theme');
             
             if (theme === 'dark') {
                 img1.src = 'images/logosForEcosystem/square/bchbull-dark.png?v=0.01';
                 img2.src = 'images/logosForEcosystem/square/tapswap-dark.png?v=0.01';
+                img3.src = 'images/logosForEcosystem/square/XO-cash-darkmode.svg?v=0.01';
             } else {
                 img1.src = 'images/logosForEcosystem/square/bchbull-light.png?v=0.01';
                 img2.src = 'images/logosForEcosystem/square/tapswap-light.png?v=0.01';
+                img3.src = 'images/logosForEcosystem/square/XO-cash-lightmode.svg?v=0.01';
             }
         }
 
