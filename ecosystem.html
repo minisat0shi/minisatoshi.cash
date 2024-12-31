@@ -207,6 +207,21 @@
 	      </div>
 	      <div class="row row-cols-12 row-cols-lg-2" data-masonry='{"percentPosition": true }' id="cardContainer">
 	        <div class="col"></div> <!-- dummy row so masonry can properly sort elements. This is the only fix I could find! -->
+	        <div class="col EcoStart mb-4">
+	          <div class="card" data-header="">
+	            <div class="card-header fs-6 EcoStart text-center">Start Here!</div>
+	            <div class="card-body text-center">
+                  <div class="align-self-center">
+                    <img src="images/UpgradeGraphics/bchLogoFullDark.svg" alt="Bitcoin Cash full logo" class="card-img-top EcoStartImg mb-2" id="bchFullLogo">
+                  </div>
+                  <div>
+                    <h2 class="text-break mb-4"><i>is Money for Everyone</i></h2>
+                    <p class="mb-3 fs-6">Bitcoin Cash (BCH) is a financial system without barriers, enabling easy transactions anytime, anywhere. It’s not just a currency, but a movement for change that fosters innovation and connects users globally. BCH is designed for everyone, facilitating quick, low-cost transactions. It empowers individuals, whether a farmer or a trader, to participate in the global economy in new ways. BCH is about creating connections, not just about money. It speaks every language and belongs to everyone.</p>
+                    <p class="mb-0 fs-6">Below is a comprehensive collection of the vast Bitcoin Cash ecosystem; whether you are an individual banking on freedom, a merchant looking to get started, a new or experienced developer, or anything else, there is plenty to learn and to get involved in!</p>
+                  </div>
+	            </div>
+	          </div>
+	        </div>
 	        <div class="col mb-4">
 	          <div class="card" data-header="Informational">
 	            <div class="card-header fs-6">Informational</div>
@@ -388,6 +403,27 @@
 	            </div>
 	            <div class="card-footer">
 	            	<a href="https://t.me/flipstarter" class="fs-5r text-secondary me-2"><i class="bi bi-telegram"></i></a>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="col mb-4">
+	          <div class="card" data-header="Crowdfunding">
+	            <div class="card-header fs-6">Crowdfunding</div>
+	            <div class="card-body text-center text-sm-start">
+	              <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
+	                <div class="d-flex flex-sm-row flex-column">
+	                  <div class="align-self-center">
+	                    <img src="images/logosForEcosystem/square/verdeflipstarter.png" alt="Verde flip starter logo" class="card-img-standard me-0 me-sm-3 mb-3 mb-sm-0">
+	                  </div>
+	                  <div>
+	                    <h4 class="text-break">Verde Flipstarter</h4>
+	                    <p class="mb-0 fs-6">A modified version of Flipstarter that also integrates QR codes so anyone can donate, even without the flipstarter plugin for the Electron Cash wallet.</p>
+	                  </div>
+	                </div>
+	                <div class="align-self-center ms-0 ms-sm-3 mt-3 mt-sm-0">
+	                  <a href="https://github.com/SoftwareVerde/flipstarter/tree/master" class="btn btn-lg btn-primary">Visit</a>
+	                </div>
+	              </div>
 	            </div>
 	          </div>
 	        </div>
@@ -2374,16 +2410,19 @@
         // Function to swap images
 
         function swapImage() {
+        	const img0 = document.getElementById('bchFullLogo')
             const img1 = document.getElementById('bchbull')
             const img2 = document.getElementById('tapswap')
             const img3 = document.getElementById('XOCash')
             const theme = document.documentElement.getAttribute('data-bs-theme');
             
             if (theme === 'dark') {
+            	img0.src = 'images/UpgradeGraphics/bchLogoFullWhite.svg?v=0.01'
                 img1.src = 'images/logosForEcosystem/square/bchbull-dark.png?v=0.01';
                 img2.src = 'images/logosForEcosystem/square/tapswap-dark.png?v=0.01';
                 img3.src = 'images/logosForEcosystem/square/XO-cash-darkmode.svg?v=0.01';
             } else {
+            	img0.src = 'images/UpgradeGraphics/bchLogoFullDark.svg?v=0.01'
                 img1.src = 'images/logosForEcosystem/square/bchbull-light.png?v=0.01';
                 img2.src = 'images/logosForEcosystem/square/tapswap-light.png?v=0.01';
                 img3.src = 'images/logosForEcosystem/square/XO-cash-lightmode.svg?v=0.01';

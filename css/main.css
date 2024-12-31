@@ -700,6 +700,13 @@ ul.upgrade-bullets > li::before {
     height:6rem;
     object-fit: contain;
 }
+.EcoStart {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+}
+.EcoStartImg {
+    max-width: min(50vw,600px);
+}
 
 /* MINECRAFT */
 
