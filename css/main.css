@@ -10,6 +10,10 @@
 .fs-5r {
   font-size: calc(1rem + 0.2vw) !important;
 }
+/* Adding fs-7 */
+.fs-7 {
+  font-size: 0.7rem !important;
+}
 
 html, head, body {
     max-width: 100%;

@@ -302,66 +302,78 @@
 	    
 	    <footer>
 	        <div class="row white-text">
-	            <h3>Buy me a coffee!</h3>
+	            <h3 class="fs-3">Buy me a coffee!</h3>
 	            <div class="custom-tooltip">
-	                <h5 class="user-select-all" style="display:inline; word-wrap: break-word;">bitcoincash:qrvns4u27ngn6vf774rlep6873kzadqnavw0szkqx3</h5>
+	                <h5 class="user-select-all fs-5r" style="display:inline; word-wrap: break-word;">bitcoincash:qrvns4u27ngn6vf774rlep6873kzadqnavw0szkqx3</h5>
 	                <button id="copyButton" class="remove-button-stylings white-text" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to Clipboard">
 	                    <i class="bi bi-copy copyButton"></i>
-	                </button>
+	                  </button>
 	            </div>
 	        </div>
-	        <script>
-	        document.addEventListener('DOMContentLoaded', function() {
-	            const button = document.getElementById('copyButton');
-	            const tooltip = new bootstrap.Tooltip(button);
-	            const copyToClipboard = async () => {
-	                try {
-	                    const element = document.querySelector(".user-select-all");
-	                    await navigator.clipboard.writeText(element.textContent);
-	                    // Optional: Provide feedback or perform additional actions upon successful copy
-	                    // Update tooltip text
-	                    tooltip.setContent({ '.tooltip-inner': 'Copied!' });
-	                    // Show tooltip
-	                    tooltip.show();
-	                    // Hide tooltip after a short delay
-	                    setTimeout(() => {
-	                        tooltip.hide();
-	                        // Reset tooltip text for next use
-	                        tooltip.setContent({ '.tooltip-inner': 'Copy to Clipboard' });
-	                    }, 1500); // Adjust delay as needed
-	                } catch (error) {
-	                    console.error("Failed to copy to clipboard:", error);
-	                    // Optional: Handle and display the error to the user
-	                    tooltip.setContent({ '.tooltip-inner': 'Copy Failed!' });
-	                    tooltip.show();
-	                    setTimeout(() => {
-	                        tooltip.hide();
-	                        tooltip.setContent({ '.tooltip-inner': 'Copy to Clipboard' });
-	                    }, 2000); // Adjust delay for error message
-	                }
-	            };
-	            // Attach the function to the button's onclick event again or maintain your existing setup
-	            button.addEventListener('click', copyToClipboard);
-	        });
-	        </script>
 	        <br>
 	        <div class="row">
-	            <h5><a href="https://discover.cash">Learn about Bitcoin Cash</a> | <a href="http://www.reddit.com/r/btc">Uncensored Bitcoin Forum</a> | <a href="https://t.me/bchchannel">Telegram Chatroom</a> | <a href="https://cashaddress.org">Paper Wallet</a>
-	            </h5>
+	            <h5 class="fs-5r"><a href="https://discover.cash">Learn about Bitcoin Cash</a> | <a href="http://reddit.com/r/btc">Uncensored Bitcoin Forum</a> | <a href="https://t.me/bchchannel">Telegram Chatroom</a> | <a href="https://cashaddress.org">Paper Wallet</a></h5>
 	        </div>
 	        <div class="row">
-	            <h5>
-	                <a href="https://blockchair.com">Blockchair Block Explorer</a>
-	            </h5>
+	          <h5 class="fs-5r"><a href="https://blockchair.com">Blockchair Block Explorer</a></h5>
 	        </div>
 	        <br>
 	        <div class="row">
-	            <h5>Connect to my SPV Node! node.minisatoshi.cash</h5>
+	            <h5 class="fs-5r">Connect to my SPV Node! node.minisatoshi.cash</h5>
 	        </div>
 	    </footer>
 	    
 	    <!-- Jquery needed -->
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	    
+	    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+	    <!--Copy to Clipboard Script for donation address-->
+	    <script>
+	    document.addEventListener('DOMContentLoaded', function() {
+	        const button = document.getElementById('copyButton');
+	        const tooltip = new bootstrap.Tooltip(button);
+	        const copyToClipboard = async () => {
+	            try {
+	                const element = document.querySelector(".user-select-all");
+	                await navigator.clipboard.writeText(element.textContent);
+	                // Optional: Provide feedback or perform additional actions upon successful copy
+	                // Update tooltip text
+	                tooltip.setContent({ '.tooltip-inner': 'Copied!' });
+	                // Show tooltip
+	                tooltip.show();
+
+	                // Hide tooltip after a short delay
+	                setTimeout(() => {
+	                tooltip.hide();
+	                // Reset tooltip text for next use
+	                tooltip.setContent({ '.tooltip-inner': 'Copy to Clipboard' });
+	                }, 1500); // Adjust delay as needed
+	            } catch (error) {
+	                console.error("Failed to copy to clipboard:", error);
+	                // Optional: Handle and display the error to the user
+	                tooltip.setContent({ '.tooltip-inner': 'Copy Failed!' });
+	                tooltip.show();
+	                setTimeout(() => {
+	                tooltip.hide();
+	                tooltip.setContent({ '.tooltip-inner': 'Copy to Clipboard' });
+	                }, 2000); // Adjust delay for error message
+	            }
+	        };
+	        // Attach the function to the button's onclick event again or maintain your existing setup
+	        button.addEventListener('click', copyToClipboard);
+	    });
+	    </script>
+
+	    <!-- Initializing tooltips -->
+	    <script>
+	    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+	    var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+	        return new bootstrap.Tooltip(tooltipTriggerEl)
+	    })
+	    </script>
+
 	    <script>
 	    document.addEventListener('DOMContentLoaded', function() {
 	        function setTheme(theme) {
@@ -429,15 +441,5 @@
 	    });
 	    </script>
 	    
-	    <!-- Include all compiled plugins (below), or include individual files as needed -->
-	    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-	    
-	    <!-- Initializing tooltips -->
-	    <script>
-	    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-	    var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
-	        return new bootstrap.Tooltip(tooltipTriggerEl)
-	    })
-	    </script>
 	</body>
 </html>
