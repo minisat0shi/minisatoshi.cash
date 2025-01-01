@@ -212,9 +212,9 @@ html, head, body {
     color: white;
 }
 
-.twitter_highlight {
+/*.twitter_highlight {
     background-color: #0AC18E;
-}
+}*/
 
 .twitter_profile_image {
     padding: 1rem;
@@ -252,6 +252,13 @@ html, head, body {
     height:10rem;
     object-fit: contain;
     clip-path: circle();
+}
+
+/* Gradients */
+.icon-gradient {
+    background: -webkit-gradient(linear, left top, right bottom, from(#0AC18E), to(#23a6d5));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 
