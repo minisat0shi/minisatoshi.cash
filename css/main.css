@@ -181,11 +181,10 @@ html, head, body {
 
 /* Home section */
 
-.home:first-of-type {
+.home {
     width: 100vw;
     height: 100vh;
     background-image: url('../images/FallingStarBackground_upscaled.jpg');
-    padding-top: env(safe-area-inset-top);
     background-position: center bottom;
     background-size:cover;
     display: flex;
