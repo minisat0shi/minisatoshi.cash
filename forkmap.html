@@ -297,31 +297,5 @@
 		  });
 		});
 		</script>
-
-	    <script>
-	    document.addEventListener('DOMContentLoaded', function() {
-	        // Function to swap images
-	        function swapImage() {
-	            const img = document.getElementById('bchSplitLogo');
-	            const theme = document.documentElement.getAttribute('data-bs-theme');
-	            
-	            if (theme === 'dark') {
-	                img.src = 'images/UpgradeGraphics/bchLogoFullWhite.svg?v=0.04';
-	            } else {
-	                img.src = 'images/UpgradeGraphics/bchLogoFullDark.svg?v=0.04';
-	            }
-	        }
-
-	        // Initial check
-	        swapImage();
-
-	        // Listen for theme changes
-	        const observer = new MutationObserver(swapImage);
-	        observer.observe(document.documentElement, {
-	            attributes: true,
-	            attributeFilter: ['data-bs-theme']
-	        });
-	    });
-	    </script>
 	</body>
 </html>
