@@ -211,23 +211,24 @@ html, head, body {
 @media screen and (max-width:768px) {
     .home-img {
         max-width: 90%;
+        padding-bottom: 6em;
     }
     .home-text {
-        font-size: 3.375em;
-        padding-bottom:3.5em;
+        font-size: 3.5em;
+        padding-bottom: 2.75em;
         max-width: 650px;
     }
 }
-@media screen and (max-width:500px) {
-    .home-text {
-        font-size: 3.375em;
-        padding-bottom:3.25em;
-        max-width: 400px;
-    }
-}
 
-.white-text {
-    color: white;
+@media screen and (max-width:400px) {
+    .home-img {
+        max-width: 80%;
+        padding-bottom: 6em;
+    }
+    .home-text {
+        font-size: 3em;
+        padding-bottom: 3em;
+    }
 }
 
 .twitter_profile_image {
