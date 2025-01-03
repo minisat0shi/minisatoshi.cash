@@ -218,6 +218,13 @@ html, head, body {
         max-width: 650px;
     }
 }
+@media screen and (max-width:500px) {
+    .home-text {
+        font-size: 3.375em;
+        padding-bottom:3.25em;
+        max-width: 400px;
+    }
+}
 
 .white-text {
     color: white;
