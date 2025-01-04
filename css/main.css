@@ -24,6 +24,23 @@
   font-size: 0.7rem !important;
 }
 
+/* Adding extension of container class to go wider */
+@media (min-width:1600px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 1400px !important;
+    }
+}
+@media (min-width:1800px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 1450px !important;
+    }
+}
+@media (min-width:2000px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 1500px !important;
+    }
+}
+
 html, head, body {
     max-width: 100%;
     overflow-x: hidden;
