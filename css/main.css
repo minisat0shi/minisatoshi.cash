@@ -31,26 +31,22 @@ html, head, body {
 
 /* Define a custom darker background color for dark mode */
 :root {
-    --bs-body-bg: #0c0c0c; /* Very dark background for dark mode */
-    /*--bs-body-color: #eee;*/ /* Light text color for visibility */
-    --bs-dark-text-emphasis: #68737d;
+    --bs-body-bg: #07080A; /* Very dark background for dark mode */
+    --bs-body-bg-rgb: 7, 8 ,10;
 }
 
 /* Ensure these styles only apply when the dark theme is active */
 @media (prefers-color-scheme: dark) {
     body {
         background-color: var(--bs-body-bg);
-        /*color: var(--bs-body-color);*/
-        color: var(--bs-dark-text-emphasis);
     }
 }
 
 /* For users who might have set OS dark mode but not the data-bs-theme */
 @media (prefers-color-scheme: dark) {
     html:not([data-bs-theme="light"]) {
-        --bs-body-bg: #0c0c0c;
-        /*--bs-body-color: #eee;*/
-        --bs-dark-text-emphasis: #68737d;
+        --bs-body-bg: #07080A;
+        --bs-body-bg-rgb: 7, 8 ,10;
     }
 }
 
@@ -191,43 +187,32 @@ html, head, body {
     justify-content: center; /* Align horizontal */
     align-items: flex-end; /* Align bottom */
 }
+/* This corrects viewheight when certain system UI elements overlap shrinking the section */
+  @supports (height: 100dvh) {
+    .home {
+      height: 100dvh;
+    }
+  }
 
 .home-text {
   color:#fff;
-  text-align: center;
-  padding-bottom: 3.5em;
-  font-size:4.125em;
-  position: absolute;
   max-width: 800px;
 }
 
 .home-img {
   /*max-width: min(calc(10% + 600px),1200px);*/
-  max-width: 700px;
-  position: absolute;
-  padding-bottom: 6em;
+  max-width: 800px;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:850px) {
     .home-img {
         max-width: 90%;
-        padding-bottom: 6em;
-    }
-    .home-text {
-        font-size: 3.5em;
-        padding-bottom: 2.75em;
-        max-width: 650px;
     }
 }
 
 @media screen and (max-width:400px) {
     .home-img {
         max-width: 80%;
-        padding-bottom: 6em;
-    }
-    .home-text {
-        font-size: 3em;
-        padding-bottom: 3em;
     }
 }
 
@@ -564,8 +549,8 @@ footer a:hover{
 .affix {
     padding: 0;
     background-color: rgba(30,30,30,0.5);
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
 }
 
 
