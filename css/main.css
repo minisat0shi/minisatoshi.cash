@@ -32,12 +32,12 @@
 }
 @media (min-width:1800px) {
     .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-        max-width: 1450px !important;
+        max-width: 1425px !important;
     }
 }
 @media (min-width:2000px) {
     .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-        max-width: 1500px !important;
+        max-width: 1450px !important;
     }
 }
 
@@ -269,6 +269,31 @@ html, head, body {
     height:10rem;
     object-fit: contain;
     clip-path: circle();
+}
+@media (max-width:768px) {
+    .card-image-standard {
+        height:6rem;
+    }
+}
+@media (max-width:480px) {
+    .card-image-standard {
+        height:4rem;
+    }
+}
+.card-image-standard-md {
+    height:8rem;
+    object-fit: contain;
+    clip-path: circle();
+}
+@media (max-width:768px) {
+    .card-image-standard-md {
+        height:6rem;
+    }
+}
+@media (max-width:480px) {
+    .card-image-standard-md {
+        height:4rem;
+    }
 }
 
 /* Gradients */
