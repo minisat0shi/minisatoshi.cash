@@ -319,7 +319,6 @@ html, head, body {
 
 /* FOOTER */
 footer {
-  padding: 1.5em;
   background-color: #0AC18E;
   color: white;
   text-align: center;
@@ -329,9 +328,8 @@ footer a {
   color: white;
 }
 
-footer a:hover{
-  color: #A5ACBF;
-  text-decoration: none;
+footer i {
+  color: white;
 }
 
 /*Copy Button*/
