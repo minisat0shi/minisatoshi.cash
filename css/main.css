@@ -611,7 +611,9 @@ footer i {
       0px 4px 8px rgba(10,193,142,0.5), 
       0px 6px 16px rgba(10,193,142,0.5);
 }
-
+.fixed-nav-adjustment {
+    padding-top:56px;
+}
 
 /* UPGRADE HISTORY */
 .upgrade-icon-large {
