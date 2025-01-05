@@ -166,7 +166,7 @@ html, head, body {
 .social {
     z-index: 2;
     position: fixed;
-    top: 100px;
+    top: 80px;
     right:0;
 }
 
@@ -181,6 +181,12 @@ html, head, body {
     -moz-border-radius: 50%;
     border-radius: 50%;
 }
+@media (max-width:480px) {
+    .social {
+        display:none;
+    }
+}
+
 
 /* Theme Float Button */
 
@@ -189,6 +195,7 @@ html, head, body {
   position: fixed;
   top: 80px;
   left:0;
+  margin: 0.25em;
 }
 
 
@@ -295,6 +302,12 @@ html, head, body {
         height:4rem;
     }
 }
+@media (max-width:480px) {
+    .card-body-socials {
+        padding: var(--bs-card-spacer-y) 0 !important;
+    }
+}
+
 
 /* Gradients */
 .icon-gradient {
@@ -352,7 +365,7 @@ footer a:hover{
     }
 }
 
-@media screen and (max-width:1200px) {
+@media screen and (max-width:1400px) {
     .navTrigger {
         display: inline-block;
     }
