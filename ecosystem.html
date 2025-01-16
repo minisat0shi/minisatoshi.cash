@@ -184,6 +184,7 @@
         	<input type="text" id="searchInput" class="form-control" placeholder="Search cards..." name="query">
 		    </div>
 	      <div class="mb-3">
+          <button id="shareCategoryBtn" class="btn btn-outline-secondary mb-2 me-1" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Share category"><i class="bi bi-share"></i></button>
           <button class="btn btn-outline-secondary mb-2 me-1 filter-btn" data-filter="all">All</button>
           <button class="btn btn-outline-primary mb-2 me-1 filter-btn" data-filter="Wallet">Wallets</button>
           <button class="btn btn-outline-primary mb-2 me-1 filter-btn" data-filter="Privacy">Privacy</button>
@@ -243,22 +244,54 @@
 				});
 				</script>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const shareCategoryBtn = document.getElementById('shareCategoryBtn');
+
+    if (shareCategoryBtn) {
+        shareCategoryBtn.addEventListener('click', function() {
+            // Find the active filter button
+            const activeFilter = document.querySelector('.filter-btn.active');
+            if (activeFilter) {
+                const filterValue = activeFilter.getAttribute('data-filter');
+                let urlToCopy = new URL(window.location.href);
+                
+                // Clear all existing query parameters
+                urlToCopy.search = '';
+                
+                // Set the new filter parameter
+                urlToCopy.searchParams.set('filter', filterValue);
+
+                // Create a temporary input element to copy the URL
+                const tempInput = document.createElement('input');
+                tempInput.value = urlToCopy.href;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempInput);
+
+                // Update tooltip to show "Copied!"
+                const tooltipInstance = bootstrap.Tooltip.getInstance(this);
+                if (tooltipInstance) {
+                    tooltipInstance.setContent({ '.tooltip-inner': 'URL Copied!' });
+                    tooltipInstance.show();
+                    setTimeout(() => {
+                        tooltipInstance.hide();
+                        tooltipInstance.setContent({ '.tooltip-inner': 'Share category' });
+                    }, 1500);
+                }
+            } else {
+                console.warn('No active filter selected.');
+            }
+        });
+    } else {
+        console.error('Share category button not found.');
+    }
+});
+</script>
+
 	      <div class="row row-cols-12 row-cols-lg-2" data-masonry='{"percentPosition": true }' id="cardContainer">
 	        <div class="col"></div> <!-- dummy row so masonry can properly sort elements. This is the only fix I could find! -->
-	        <!--<div class="col EcoStart mb-4">
-	          <div class="card border-success" data-header="">
-	            <div class="card-header fs-5r fw-medium EcoStart text-center text-bg-success">Start Here!</div>
-	            <div class="card-body text-center">
-                <div class="align-self-center">
-                  <img src="images/UpgradeGraphics/bchLogoFullDark.svg" alt="Bitcoin Cash full logo" class="card-img-top EcoStartImg my-2" id="bchFullLogo">
-                </div>
-                <div>
-                  <h2 class="text-break mb-4"><i>is Money for Everyone</i></h2>
-                  <p class="mb-3 fs-6">Bitcoin Cash (BCH) is a financial system without barriers, enabling easy transactions anytime, anywhere. It’s not just a currency, but a movement for change that fosters innovation and connects users globally. BCH is designed for everyone, facilitating near-instant, low-cost transactions. It empowers individuals, whether a farmer or a trader, to participate in the global economy in new ways. BCH is about creating connections, not just about money. It speaks every language and belongs to everyone.</p>
-                </div>
-	            </div>
-	          </div>
-	        </div>-->
 	        <div class="col mb-4">
 	          <div class="card" data-header="Informational">
 	            <div class="card-header fs-6">Informational</div>
@@ -4494,82 +4527,88 @@
 	  </script>
 
 	  <!-- Script to search by URL -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-      const searchInput = document.getElementById('searchInput');
-      const cardContainer = document.getElementById('cardContainer');
+		<script>
+		  document.addEventListener('DOMContentLoaded', function() {
+		      const searchInput = document.getElementById('searchInput');
+		      const cardContainer = document.getElementById('cardContainer');
 
-      function performSearch(query) {
-          // Perform your search logic here (e.g., show/hide cards based on query)
-          const cards = cardContainer.querySelectorAll('.card');
-          query = query.toLowerCase();
-          cards.forEach(card => {
-              const cardText = card.textContent.toLowerCase();
-              if (cardText.includes(query)) {
-                  card.parentElement.style.display = 'block';
-              } else {
-                  card.parentElement.style.display = 'none';
-              }
-          });
-          if (window.Masonry) {
-              new Masonry(cardContainer, {
-                  itemSelector: '.col',
-                  percentPosition: true
-              }).layout(); // Re-layout Masonry after filtering
-          }
-      }
+		      function performSearch(query) {
+		          // Perform your search logic here (e.g., show/hide cards based on query)
+		          const cards = cardContainer.querySelectorAll('.card');
+		          query = query.toLowerCase();
+		          cards.forEach(card => {
+		              const cardText = card.textContent.toLowerCase();
+		              if (cardText.includes(query)) {
+		                  card.parentElement.style.display = 'block';
+		              } else {
+		                  card.parentElement.style.display = 'none';
+		              }
+		          });
+		          if (window.Masonry) {
+		              new Masonry(cardContainer, {
+		                  itemSelector: '.col',
+		                  percentPosition: true
+		              }).layout(); // Re-layout Masonry after filtering
+		          }
+		      }
 
-      // Event listener for search input
-      searchInput.addEventListener('keyup', function(e) {
-          if (e.key === 'Enter') {
-              performSearch(this.value);
-          }
-      });
+		      // Event listener for search input
+		      searchInput.addEventListener('keyup', function(e) {
+		          if (e.key === 'Enter') {
+		              performSearch(this.value);
+		          }
+		      });
 
-      // Check if there's already a query in the URL when the page loads
-      const urlParams = new URLSearchParams(window.location.search);
-      const query = urlParams.get('query');
-      if (query) {
-          searchInput.value = query;
-          performSearch(query);
-      }
-  });
-</script>
+		      // Check if there's already a query in the URL when the page loads
+		      const urlParams = new URLSearchParams(window.location.search);
+		      const query = urlParams.get('query');
+		      if (query) {
+		          searchInput.value = query;
+		          performSearch(query);
+		      }
+		  });
+		</script>
 
-<!-- Script to copy search URL -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const copyButton = document.querySelector('.input-group .btn-outline-secondary');
-  
-  copyButton.addEventListener('click', function() {
-    const searchInput = document.getElementById('searchInput');
-    const query = searchInput.value.trim();
-    const currentUrl = new URL(window.location.href); // Get the current URL
-    currentUrl.searchParams.set('query', encodeURIComponent(query)); // Set or update the query parameter
-    
-    const url = currentUrl.href; // Get the full URL with the query parameter
-    
-    // Create a temporary input element for clipboard copying
-    const tempInput = document.createElement('input');
-    tempInput.value = url;
-    document.body.appendChild(tempInput);
-    tempInput.select();
-    document.execCommand('copy');
-    document.body.removeChild(tempInput);
-    
-    // Notify user that URL was copied
-    const tooltip = new bootstrap.Tooltip(this);
-    tooltip.setContent({ '.tooltip-inner': 'URL Copied!' });
-    tooltip.show();
+		<!-- Script to copy search URL -->
+		<script>
+		document.addEventListener('DOMContentLoaded', function() {
+		  const copyButton = document.querySelector('.input-group .btn-outline-secondary');
+		  
+		  // Initialize tooltip once
+		  const tooltip = new bootstrap.Tooltip(copyButton, {
+		    title: 'Share query',
+		    trigger: 'manual' // Manual control over showing/hiding
+		  });
 
-    // Reset tooltip after a delay
-    setTimeout(() => {
-      tooltip.hide();
-      tooltip.setContent({ '.tooltip-inner': 'Share query' });
-    }, 1500);
-  });
-});
-</script>
+		  copyButton.addEventListener('click', function() {
+		    const searchInput = document.getElementById('searchInput');
+		    const query = searchInput.value.trim();
+		    const currentUrl = new URL(window.location.href);
+		    currentUrl.search = '';
+		    currentUrl.searchParams.set('query', encodeURIComponent(query));
+		    
+		    const url = currentUrl.href;
+		    
+		    // Copy to clipboard
+		    const tempInput = document.createElement('input');
+		    tempInput.value = url;
+		    document.body.appendChild(tempInput);
+		    tempInput.select();
+		    document.execCommand('copy');
+		    document.body.removeChild(tempInput);
+		    
+		    // Update tooltip content and show it
+		    tooltip.setContent({ '.tooltip-inner': 'URL Copied!' });
+		    tooltip.show();
+
+		    // Reset tooltip after a delay
+		    setTimeout(() => {
+		      tooltip.setContent({ '.tooltip-inner': 'Share query' });
+		      tooltip.hide();
+		    }, 1500);
+		  });
+		});
+		</script>
 
 		<!--Script to swap images based on theme-->
     <script>
