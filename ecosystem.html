@@ -184,34 +184,65 @@
         	<input type="text" id="searchInput" class="form-control" placeholder="Search cards..." name="query">
 		    </div>
 	      <div class="mb-3">
-          <button class="btn btn-outline-secondary m-1" data-filter="all">All</button>
-          <button class="btn btn-outline-primary m-1" data-filter="Wallet">Wallets</button>
-          <button class="btn btn-outline-primary m-1" data-filter="Privacy">Privacy</button>
-          <button class="btn btn-outline-warning m-1" data-filter="dApp">dApps</button>
-          <button class="btn btn-outline-warning m-1" data-filter="Tool">Tools</button>
-          <button class="btn btn-outline-warning m-1" data-filter="DeFi">DeFi</button>
-          <button class="btn btn-outline-warning m-1" data-filter="DEX">DEX</button>
-          <button class="btn btn-outline-warning m-1" data-filter="NFT">NFTs</button>
-          <button class="btn btn-outline-warning m-1" data-filter="CashToken">CashTokens</button>
-          <button class="btn btn-outline-success m-1" data-filter="Commerce">Commerce</button>
-          <button class="btn btn-outline-success m-1" data-filter="Map">Merchant Maps</button>
-          <button class="btn btn-outline-success m-1" data-filter="CrowdFunding">Crowdfunding</button>
-          <button class="btn btn-outline-success m-1" data-filter="Charity">Charities</button>
-          <button class="btn btn-outline-info m-1" data-filter="Informational">Informational</button>
-          <button class="btn btn-outline-info m-1" data-filter="FAQ">FAQs</button>
-          <button class="btn btn-outline-info m-1" data-filter="Faucet">Faucets</button>
-          <button class="btn btn-outline-info m-1" data-filter="Explorer">Explorers</button>
-          <button class="btn btn-outline-info m-1" data-filter="Media">Media</button>
-          <button class="btn btn-outline-info m-1" data-filter="Social">Social</button>
-          <button class="btn btn-outline-info m-1" data-filter="Community">Communities</button>
-          <button class="btn btn-outline-info m-1" data-filter="Entertainment">Entertainment</button>
-          <button class="btn btn-outline-info m-1" data-filter="Art">Art</button>
-          <button class="btn btn-outline-danger m-1" data-filter="Node">Nodes</button>
-          <button class="btn btn-outline-danger m-1" data-filter="Technical">Technical</button>
-          <button class="btn btn-outline-danger m-1" data-filter="DevTool">Dev Tools</button>
-          <button class="btn btn-outline-danger m-1" data-filter="DevTeam">Dev Teams</button>
-          <button class="btn btn-outline-danger m-1" data-filter="Network">Network</button>
+          <button class="btn btn-outline-secondary m-1 filter-btn" data-filter="all">All</button>
+          <button class="btn btn-outline-primary m-1 filter-btn" data-filter="Wallet">Wallets</button>
+          <button class="btn btn-outline-primary m-1 filter-btn" data-filter="Privacy">Privacy</button>
+          <button class="btn btn-outline-warning m-1 filter-btn" data-filter="dApp">dApps</button>
+          <button class="btn btn-outline-warning m-1 filter-btn" data-filter="Tool">Tools</button>
+          <button class="btn btn-outline-warning m-1 filter-btn" data-filter="DeFi">DeFi</button>
+          <button class="btn btn-outline-warning m-1 filter-btn" data-filter="DEX">DEX</button>
+          <button class="btn btn-outline-warning m-1 filter-btn" data-filter="NFT">NFTs</button>
+          <button class="btn btn-outline-warning m-1 filter-btn" data-filter="CashToken">CashTokens</button>
+          <button class="btn btn-outline-success m-1 filter-btn" data-filter="Commerce">Commerce</button>
+          <button class="btn btn-outline-success m-1 filter-btn" data-filter="Map">Merchant Maps</button>
+          <button class="btn btn-outline-success m-1 filter-btn" data-filter="CrowdFunding">Crowdfunding</button>
+          <button class="btn btn-outline-success m-1 filter-btn" data-filter="Charity">Charities</button>
+          <button class="btn btn-outline-info m-1 filter-btn" data-filter="Informational">Informational</button>
+          <button class="btn btn-outline-info m-1 filter-btn" data-filter="FAQ">FAQs</button>
+          <button class="btn btn-outline-info m-1 filter-btn" data-filter="Faucet">Faucets</button>
+          <button class="btn btn-outline-info m-1 filter-btn" data-filter="Explorer">Explorers</button>
+          <button class="btn btn-outline-info m-1 filter-btn" data-filter="Media">Media</button>
+          <button class="btn btn-outline-info m-1 filter-btn" data-filter="Social">Social</button>
+          <button class="btn btn-outline-info m-1 filter-btn" data-filter="Community">Communities</button>
+          <button class="btn btn-outline-info m-1 filter-btn" data-filter="Entertainment">Entertainment</button>
+          <button class="btn btn-outline-info m-1 filter-btn" data-filter="Art">Art</button>
+          <button class="btn btn-outline-danger m-1 filter-btn" data-filter="Node">Nodes</button>
+          <button class="btn btn-outline-danger m-1 filter-btn" data-filter="Technical">Technical</button>
+          <button class="btn btn-outline-danger m-1 filter-btn" data-filter="DevTool">Dev Tools</button>
+          <button class="btn btn-outline-danger m-1 filter-btn" data-filter="DevTeam">Dev Teams</button>
+          <button class="btn btn-outline-danger m-1 filter-btn" data-filter="Network">Network</button>
 	      </div>
+
+				<!-- Script for activating buttons on click -->
+				<script>
+				document.addEventListener('DOMContentLoaded', function() {
+				    const filterButtons = document.querySelectorAll('.filter-btn');
+
+				    function setActiveButton(button) {
+				        filterButtons.forEach(btn => {
+				            btn.classList.remove('active');
+				        });
+				        button.classList.add('active');
+				    }
+
+				    filterButtons.forEach(button => {
+				        button.addEventListener('click', function(e) {
+				            e.preventDefault();
+				            const filter = this.getAttribute('data-filter');
+				            filterCards(filter);
+				            setActiveButton(this);
+				        });
+				    });
+
+				    // Your existing filterCards function (assuming it's already defined)
+				    function filterCards(filter) {
+				        // ... (your existing code to filter cards)
+				    }
+
+				    // Other existing code for masonry, search functionality, etc.
+				});
+				</script>
+
 	      <div class="row row-cols-12 row-cols-lg-2" data-masonry='{"percentPosition": true }' id="cardContainer">
 	        <div class="col"></div> <!-- dummy row so masonry can properly sort elements. This is the only fix I could find! -->
 	        <!--<div class="col EcoStart mb-4">
@@ -4469,9 +4500,6 @@
       const cardContainer = document.getElementById('cardContainer');
 
       function performSearch(query) {
-          // Update the URL
-          window.history.pushState({}, '', `?query=${encodeURIComponent(query)}`);
-          
           // Perform your search logic here (e.g., show/hide cards based on query)
           const cards = cardContainer.querySelectorAll('.card');
           query = query.toLowerCase();
