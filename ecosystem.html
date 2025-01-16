@@ -235,60 +235,57 @@
 				        });
 				    });
 
-				    // Your existing filterCards function (assuming it's already defined)
+				    // Your existing filterCards function
 				    function filterCards(filter) {
-				        // ... (your existing code to filter cards)
 				    }
-
-				    // Other existing code for masonry, search functionality, etc.
 				});
 				</script>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const shareCategoryBtn = document.getElementById('shareCategoryBtn');
+				<script>
+				document.addEventListener('DOMContentLoaded', function() {
+				    const shareCategoryBtn = document.getElementById('shareCategoryBtn');
 
-    if (shareCategoryBtn) {
-        shareCategoryBtn.addEventListener('click', function() {
-            // Find the active filter button
-            const activeFilter = document.querySelector('.filter-btn.active');
-            if (activeFilter) {
-                const filterValue = activeFilter.getAttribute('data-filter');
-                let urlToCopy = new URL(window.location.href);
-                
-                // Clear all existing query parameters
-                urlToCopy.search = '';
-                
-                // Set the new filter parameter
-                urlToCopy.searchParams.set('filter', filterValue);
+				    if (shareCategoryBtn) {
+				        shareCategoryBtn.addEventListener('click', function() {
+				            // Find the active filter button
+				            const activeFilter = document.querySelector('.filter-btn.active');
+				            if (activeFilter) {
+				                const filterValue = activeFilter.getAttribute('data-filter');
+				                let urlToCopy = new URL(window.location.href);
+				                
+				                // Clear all existing query parameters
+				                urlToCopy.search = '';
+				                
+				                // Set the new filter parameter
+				                urlToCopy.searchParams.set('filter', filterValue);
 
-                // Create a temporary input element to copy the URL
-                const tempInput = document.createElement('input');
-                tempInput.value = urlToCopy.href;
-                document.body.appendChild(tempInput);
-                tempInput.select();
-                document.execCommand('copy');
-                document.body.removeChild(tempInput);
+				                // Create a temporary input element to copy the URL
+				                const tempInput = document.createElement('input');
+				                tempInput.value = urlToCopy.href;
+				                document.body.appendChild(tempInput);
+				                tempInput.select();
+				                document.execCommand('copy');
+				                document.body.removeChild(tempInput);
 
-                // Update tooltip to show "Copied!"
-                const tooltipInstance = bootstrap.Tooltip.getInstance(this);
-                if (tooltipInstance) {
-                    tooltipInstance.setContent({ '.tooltip-inner': 'URL Copied!' });
-                    tooltipInstance.show();
-                    setTimeout(() => {
-                        tooltipInstance.hide();
-                        tooltipInstance.setContent({ '.tooltip-inner': 'Share category' });
-                    }, 1500);
-                }
-            } else {
-                console.warn('No active filter selected.');
-            }
-        });
-    } else {
-        console.error('Share category button not found.');
-    }
-});
-</script>
+				                // Update tooltip to show "Copied!"
+				                const tooltipInstance = bootstrap.Tooltip.getInstance(this);
+				                if (tooltipInstance) {
+				                    tooltipInstance.setContent({ '.tooltip-inner': 'URL Copied!' });
+				                    tooltipInstance.show();
+				                    setTimeout(() => {
+				                        tooltipInstance.hide();
+				                        tooltipInstance.setContent({ '.tooltip-inner': 'Share category' });
+				                    }, 1500);
+				                }
+				            } else {
+				                console.warn('No active filter selected.');
+				            }
+				        });
+				    } else {
+				        console.error('Share category button not found.');
+				    }
+				});
+				</script>
 
 	      <div class="row row-cols-12 row-cols-lg-2" data-masonry='{"percentPosition": true }' id="cardContainer">
 	        <div class="col"></div> <!-- dummy row so masonry can properly sort elements. This is the only fix I could find! -->
@@ -2837,7 +2834,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	                  <div>
 	                    <h4 class="text-break">CashShuffle</h4>
 	                    <p class="mb-0 fs-6">A fully decentralized privacy protocol that shuffles BCH with other network participants.<br></p>
-	                    <div class="alert alert-warning mt-2 p-2" role="alert">
+	                    <div class="alert alert-warning mt-2 mb-0 p-2" role="alert">
 											  <small>[This is a legacy tool which still functions but has been replaced by <b>CashFusion</b> which is vastly superior]</small>
 											</div>
 	                  </div>
@@ -4531,45 +4528,89 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	  <!-- Script to search by URL -->
 		<script>
-		  document.addEventListener('DOMContentLoaded', function() {
-		      const searchInput = document.getElementById('searchInput');
-		      const cardContainer = document.getElementById('cardContainer');
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('searchInput');
+    const cardContainer = document.getElementById('cardContainer');
+    const filterButtons = document.querySelectorAll('.filter-btn');
 
-		      function performSearch(query) {
-		          // Perform your search logic here (e.g., show/hide cards based on query)
-		          const cards = cardContainer.querySelectorAll('.card');
-		          query = query.toLowerCase();
-		          cards.forEach(card => {
-		              const cardText = card.textContent.toLowerCase();
-		              if (cardText.includes(query)) {
-		                  card.parentElement.style.display = 'block';
-		              } else {
-		                  card.parentElement.style.display = 'none';
-		              }
-		          });
-		          if (window.Masonry) {
-		              new Masonry(cardContainer, {
-		                  itemSelector: '.col',
-		                  percentPosition: true
-		              }).layout(); // Re-layout Masonry after filtering
-		          }
-		      }
+    // Function to perform search
+    function performSearch(query) {
+        const cards = cardContainer.querySelectorAll('.card');
+        query = query.toLowerCase();
+        cards.forEach(card => {
+            const cardText = card.textContent.toLowerCase();
+            if (cardText.includes(query)) {
+                card.parentElement.style.display = 'block';
+            } else {
+                card.parentElement.style.display = 'none';
+            }
+        });
+        if (window.Masonry) {
+            new Masonry(cardContainer, {
+                itemSelector: '.col',
+                percentPosition: true
+            }).layout(); // Re-layout Masonry after filtering
+        }
+    }
 
-		      // Event listener for search input
-		      searchInput.addEventListener('keyup', function(e) {
-		          if (e.key === 'Enter') {
-		              performSearch(this.value);
-		          }
-		      });
+    // Function to filter cards based on filter value
+    function filterCards(filter) {
+        const cards = cardContainer.querySelectorAll('.card');
+        cards.forEach(card => {
+            const cardHeaders = card.getAttribute('data-header');
+            if (filter === 'all' || !cardHeaders || cardHeaders.toLowerCase().includes(filter.toLowerCase())) {
+                card.parentElement.style.display = 'block';
+            } else {
+                card.parentElement.style.display = 'none';
+            }
+        });
+        
+        // Update active button
+        filterButtons.forEach(button => {
+            button.classList.remove('active');
+            if (button.getAttribute('data-filter') === filter) {
+                button.classList.add('active');
+            }
+        });
 
-		      // Check if there's already a query in the URL when the page loads
-		      const urlParams = new URLSearchParams(window.location.search);
-		      const query = urlParams.get('query');
-		      if (query) {
-		          searchInput.value = query;
-		          performSearch(query);
-		      }
-		  });
+        if (window.Masonry) {
+            new Masonry(cardContainer, {
+                itemSelector: '.col',
+                percentPosition: true
+            }).layout(); // Re-layout Masonry after filtering
+        }
+    }
+
+    // Event listener for search input - triggers on every input change
+    searchInput.addEventListener('input', function() {
+        // Deactivate all filter buttons when search input is used
+        filterButtons.forEach(button => button.classList.remove('active'));
+        
+        // If search input is empty, you might want to revert to the last filter or show all
+        if (this.value.trim() === '') {
+            filterCards('all'); // or restore last filter state if that's what you want
+        } else {
+            performSearch(this.value);
+        }
+    });
+
+    // Check for both query and filter in the URL when the page loads
+    const urlParams = new URLSearchParams(window.location.search);
+    const query = urlParams.get('query');
+    const filter = urlParams.get('filter');
+
+    if (query) {
+        searchInput.value = query;
+        performSearch(query);
+    } else if (filter) {
+        // If there's a filter but no query, activate the corresponding filter button
+        searchInput.value = ''; // Clear the search input if a filter is active
+        filterCards(filter);
+    } else {
+        // Default behavior, maybe show all if neither query nor filter is specified
+        filterCards('all');
+    }
+});
 		</script>
 
 		<!-- Script to copy search URL -->
