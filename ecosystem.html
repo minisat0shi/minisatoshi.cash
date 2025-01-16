@@ -179,9 +179,10 @@
 			<h3 class="text-secondary fw-normal lh-base text-break text-center py-3">Below is a comprehensive collection of the vast Bitcoin Cash ecosystem; there is plenty to learn and to get involved in!</h3>
 		</div>
 	  <div class="container mt-4">
-	      <div class="mb-3">
-	          <input type="text" id="searchInput" class="form-control" placeholder="Search cards..." name="query">
-	      </div>
+		  	<div class="input-group pb-3">
+          <button class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share query"><i class="bi bi-share"></i></button>
+        	<input type="text" id="searchInput" class="form-control" placeholder="Search cards..." name="query">
+		    </div>
 	      <div class="mb-3">
           <button class="btn btn-outline-secondary m-1" data-filter="all">All</button>
           <button class="btn btn-outline-primary m-1" data-filter="Wallet">Wallets</button>
@@ -4460,6 +4461,87 @@
 		    }
 		});
 	  </script>
+
+	  <!-- Script to search by URL -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const searchInput = document.getElementById('searchInput');
+      const cardContainer = document.getElementById('cardContainer');
+
+      function performSearch(query) {
+          // Update the URL
+          window.history.pushState({}, '', `?query=${encodeURIComponent(query)}`);
+          
+          // Perform your search logic here (e.g., show/hide cards based on query)
+          const cards = cardContainer.querySelectorAll('.card');
+          query = query.toLowerCase();
+          cards.forEach(card => {
+              const cardText = card.textContent.toLowerCase();
+              if (cardText.includes(query)) {
+                  card.parentElement.style.display = 'block';
+              } else {
+                  card.parentElement.style.display = 'none';
+              }
+          });
+          if (window.Masonry) {
+              new Masonry(cardContainer, {
+                  itemSelector: '.col',
+                  percentPosition: true
+              }).layout(); // Re-layout Masonry after filtering
+          }
+      }
+
+      // Event listener for search input
+      searchInput.addEventListener('keyup', function(e) {
+          if (e.key === 'Enter') {
+              performSearch(this.value);
+          }
+      });
+
+      // Check if there's already a query in the URL when the page loads
+      const urlParams = new URLSearchParams(window.location.search);
+      const query = urlParams.get('query');
+      if (query) {
+          searchInput.value = query;
+          performSearch(query);
+      }
+  });
+</script>
+
+<!-- Script to copy search URL -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const copyButton = document.querySelector('.input-group .btn-outline-secondary');
+  
+  copyButton.addEventListener('click', function() {
+    const searchInput = document.getElementById('searchInput');
+    const query = searchInput.value.trim();
+    const currentUrl = new URL(window.location.href); // Get the current URL
+    currentUrl.searchParams.set('query', encodeURIComponent(query)); // Set or update the query parameter
+    
+    const url = currentUrl.href; // Get the full URL with the query parameter
+    
+    // Create a temporary input element for clipboard copying
+    const tempInput = document.createElement('input');
+    tempInput.value = url;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand('copy');
+    document.body.removeChild(tempInput);
+    
+    // Notify user that URL was copied
+    const tooltip = new bootstrap.Tooltip(this);
+    tooltip.setContent({ '.tooltip-inner': 'URL Copied!' });
+    tooltip.show();
+
+    // Reset tooltip after a delay
+    setTimeout(() => {
+      tooltip.hide();
+      tooltip.setContent({ '.tooltip-inner': 'Share query' });
+    }, 1500);
+  });
+});
+</script>
 
 		<!--Script to swap images based on theme-->
     <script>
