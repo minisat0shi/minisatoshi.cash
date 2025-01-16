@@ -215,33 +215,30 @@
 	      </div>
 
 				<!-- Script for activating buttons on click -->
-				<script>
-				document.addEventListener('DOMContentLoaded', function() {
-				    const filterButtons = document.querySelectorAll('.filter-btn');
-
-				    function setActiveButton(button) {
-				        filterButtons.forEach(btn => {
-				            btn.classList.remove('active');
-				        });
-				        button.classList.add('active');
-				    }
-
-				    filterButtons.forEach(button => {
-				        button.addEventListener('click', function(e) {
-				            e.preventDefault();
-				            const filter = this.getAttribute('data-filter');
-				            filterCards(filter);
-				            setActiveButton(this);
-				        });
-				    });
-
-				    // Your existing filterCards function
-				    function filterCards(filter) {
-				    }
-				});
-				</script>
 
 				<script>
+		    const filterButtons = document.querySelectorAll('.filter-btn');
+
+		    function setActiveButton(button) {
+		        filterButtons.forEach(btn => {
+		            btn.classList.remove('active');
+		        });
+		        button.classList.add('active');
+		    }
+
+		    filterButtons.forEach(button => {
+		        button.addEventListener('click', function(e) {
+		            e.preventDefault();
+		            const filter = this.getAttribute('data-filter');
+		            filterCards(filter);
+		            setActiveButton(this);
+		        });
+		    });
+
+		    // Your existing filterCards function
+		    function filterCards(filter) {
+		    }
+				
 				document.addEventListener('DOMContentLoaded', function() {
 				    const shareCategoryBtn = document.getElementById('shareCategoryBtn');
 
