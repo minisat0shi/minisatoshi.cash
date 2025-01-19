@@ -160,6 +160,9 @@ html, head, body {
 [id^='_'] {
   scroll-margin-top: 65px;
 }
+[id^='upgrade'] {
+  scroll-margin-top: 100px;
+}
 
 /* Social Float Buttons */
 
