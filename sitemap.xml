@@ -9,43 +9,53 @@
 
 <url>
   <loc>https://minisatoshi.cash/</loc>
-  <lastmod>2024-12-10T23:21:06+00:00</lastmod>
+  <lastmod>2025-01-19T19:17:25+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://minisatoshi.cash/forkmap</loc>
-  <lastmod>2024-12-10T23:21:05+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2025-01-19T19:17:25+00:00</lastmod>
+  <priority>0.85</priority>
 </url>
 <url>
   <loc>https://minisatoshi.cash/upgrade-history</loc>
-  <lastmod>2024-12-10T23:21:06+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2025-01-19T19:17:25+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://minisatoshi.cash/ecosystem</loc>
+  <lastmod>2025-01-19T19:17:24+00:00</lastmod>
+  <priority>0.90</priority>
 </url>
 <url>
   <loc>https://minisatoshi.cash/minecraft</loc>
-  <lastmod>2024-12-10T23:21:06+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2025-01-19T19:17:25+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://minisatoshi.cash/ecosystem?filter=Node</loc>
+  <lastmod>2025-01-19T19:17:24+00:00</lastmod>
+  <priority>0.50</priority>
+</url>
+<url>
+  <loc>https://minisatoshi.cash/ecosystem?filter=Wallet</loc>
+  <lastmod>2025-01-19T19:17:24+00:00</lastmod>
+  <priority>0.50</priority>
 </url>
 <url>
   <loc>https://minisatoshi.cash/index</loc>
-  <lastmod>2024-12-10T23:21:06+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://minisatoshi.cash/resources</loc>
-  <lastmod>2024-12-10T23:21:06+00:00</lastmod>
-  <priority>0.64</priority>
+  <lastmod>2025-01-19T19:17:25+00:00</lastmod>
+  <priority>0.20</priority>
 </url>
 <url>
   <loc>https://minisatoshi.cash/images/bitcoin-forks-v4.7.pdf</loc>
-  <lastmod>2024-12-10T23:21:05+00:00</lastmod>
-  <priority>0.64</priority>
+  <lastmod>2025-01-19T19:17:25+00:00</lastmod>
+  <priority>0.20</priority>
 </url>
 <url>
   <loc>https://minisatoshi.cash/images/BTC-BCH-Upgrade-Forkmap.pdf</loc>
-  <lastmod>2024-12-10T23:21:05+00:00</lastmod>
-  <priority>0.64</priority>
+  <lastmod>2025-01-19T19:17:25+00:00</lastmod>
+  <priority>0.20</priority>
 </url>
 
 
