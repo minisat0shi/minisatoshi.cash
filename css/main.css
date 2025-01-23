@@ -225,6 +225,11 @@ html, head, body {
   color:#fff;
   max-width: 800px;
 }
+.home-text-small-mobile {
+  color:#fff;
+  max-width: 800px;
+  display:none;
+}
 
 .home-img {
   /*max-width: min(calc(10% + 600px),1200px);*/
@@ -240,6 +245,12 @@ html, head, body {
 @media screen and (max-width:400px) {
     .home-img {
         max-width: 80%;
+    }
+    .home-text {
+        display:none;
+    }
+    .home-text-small-mobile {
+      display:block;
     }
 }
 
