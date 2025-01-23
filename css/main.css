@@ -280,13 +280,36 @@ html, head, body {
     object-fit: contain;
     clip-path: circle();
 }
+.card-image-standard-no-circle-desktop {
+    height:10rem;
+}
+.card-image-standard-no-circle-mobile {
+    height:10rem;
+    display:none;
+    object-fit: contain;
+    clip-path: circle();
+}
+@media (max-width:992px) {
+    .card-image-standard-no-circle-desktop {
+        display:none;
+    }
+    .card-image-standard-no-circle-mobile {
+        display:inline;
+    }
+}
 @media (max-width:768px) {
     .card-image-standard {
+        height:6rem;
+    }
+    .card-image-standard-no-circle-mobile {
         height:6rem;
     }
 }
 @media (max-width:480px) {
     .card-image-standard {
+        height:4rem;
+    }
+    .card-image-standard-no-circle-mobile {
         height:4rem;
     }
 }
