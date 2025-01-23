@@ -254,6 +254,12 @@ html, head, body {
     }
 }
 
+.custom-alert-title {
+    padding-right:1.25rem;
+    padding-left:1.25rem;
+    display:block;
+}
+
 .twitter_profile_image {
     padding: 1rem;
     -webkit-border-radius: 50%;
