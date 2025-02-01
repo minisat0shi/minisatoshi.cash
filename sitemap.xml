@@ -11,9 +11,6 @@
   <loc>https://minisatoshi.cash/</loc>
   <lastmod>2025-01-19T19:17:25+00:00</lastmod>
   <priority>1.00</priority>
-  <image:image>
-    <image:loc>http://minisatoshi.cash/favicon/favicon.ico</image:loc>
-  </image:image>
 </url>
 <url>
   <loc>https://minisatoshi.cash/forkmap</loc>
