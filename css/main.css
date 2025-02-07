@@ -815,7 +815,7 @@ ul.upgrade-bullets > li::before {
 }
 .card-img-small {
     height:3rem;
-    min-height: 1px;
+    min-height: 1px; /* This fixes odd Safari issue where "0x0 pixels (natural: 500 x 500 pixels)" causes the image to show up as 0x0" */
     object-fit: contain;
 }
 .EcoStart {
