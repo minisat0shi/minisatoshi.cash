@@ -815,6 +815,7 @@ ul.upgrade-bullets > li::before {
 }
 .card-img-small {
     height:3rem;
+    min-height: 1px;
     object-fit: contain;
 }
 .EcoStart {
