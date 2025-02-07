@@ -2,7 +2,7 @@
 
 
 ###Full Card with Media & Attribution
-'''
+```
 <div class="col mb-4">
   <div class="card" data-header="Media, Informational, Social"> <!--Tags for search. Please have these match the options listed in the data filters | data-filter="<tag>"-->
     <div class="card-header d-flex justify-content-between align-items-center">
@@ -35,10 +35,10 @@
     </div>
   </div>
 </div>
-'''
+```
 
 ###Full Card without Media nor Attribution
-'''
+```
 <div class="col mb-4">
   <div class="card" data-header="Media, Informational, Social"> <!--Tags for search. Please have these match the options listed in the data filters | data-filter="<tag>"-->
 	  <div class="card-header fs-6">Media</div> <!--If no attribution, replace the four lines above with this singular line-->
@@ -60,4 +60,4 @@
     </div>
   </div>
 </div>
-'''
+```
