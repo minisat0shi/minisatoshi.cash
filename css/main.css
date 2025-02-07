@@ -813,9 +813,13 @@ ul.upgrade-bullets > li::before {
     height:6rem;
     object-fit: contain;
 }
+.card-img-small {
+    height:3rem;
+    object-fit: contain;
+}
 .EcoStart {
     flex: 0 0 auto !important;
-    width: 100% !important;
+    width: 20% !important;
 }
 .EcoStartImg {
     max-width: min(50vw,600px);

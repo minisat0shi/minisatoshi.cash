@@ -180,15 +180,27 @@
 			<h3 class="text-secondary fw-normal lh-base text-break text-center py-3">Below is a comprehensive collection of the vast Bitcoin Cash ecosystem; there is plenty to learn and to get involved in!</h3>
 		</div>
 	  <div class="container mt-4">
-		  	<div class="input-group pb-3">
-          <button class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share query"><i class="bi bi-share"></i></button>
-        	<input type="text" id="searchInput" class="form-control" placeholder="Search cards..." name="query">
-		    </div>
-	      <div class="mb-3">
+	  	<div class="input-group pb-3">
+      		<button class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share query"><i class="bi bi-share"></i></button>
+    		<input type="text" id="searchInput" class="form-control" placeholder="Search cards..." name="query">
+	    </div>
+	    <div class="mb-3">
           <button id="shareCategoryBtn" class="btn btn-outline-secondary mb-2 me-1" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Share category"><i class="bi bi-share"></i></button>
           <button class="btn btn-outline-secondary mb-2 me-1 filter-btn" data-filter="all">All</button>
           <button class="btn btn-outline-primary mb-2 me-1 filter-btn" data-filter="Wallet">Wallets</button>
           <button class="btn btn-outline-primary mb-2 me-1 filter-btn" data-filter="Privacy">Privacy</button>
+          <button class="btn btn-outline-info mb-2 me-1 filter-btn" data-filter="Informational">Informational</button>
+          <button class="btn btn-outline-info mb-2 me-1 filter-btn" data-filter="FAQ">FAQs</button>
+          <button class="btn btn-outline-info mb-2 me-1 filter-btn" data-filter="Exchange">Exchanges (CEX)</button>
+          <button class="btn btn-outline-info mb-2 me-1 filter-btn" data-filter="Faucet">Faucets</button>
+          <button class="btn btn-outline-info mb-2 me-1 filter-btn" data-filter="Explorer">Explorers</button>
+          <button class="btn btn-outline-info mb-2 me-1 filter-btn" data-filter="Media">Media</button>
+          <button class="btn btn-outline-info mb-2 me-1 filter-btn" data-filter="Social">Social</button>
+          <button class="btn btn-outline-info mb-2 me-1 filter-btn" data-filter="Community">Communities</button>
+          <button class="btn btn-outline-info mb-2 me-1 filter-btn" data-filter="Entertainment">Entertainment</button>
+          <button class="btn btn-outline-info mb-2 me-1 filter-btn" data-filter="Game">Gaming</button>
+          <button class="btn btn-outline-info mb-2 me-1 filter-btn" data-filter="Gambling">Gambling</button>
+          <button class="btn btn-outline-info mb-2 me-1 filter-btn" data-filter="Art">Art</button>
           <button class="btn btn-outline-warning mb-2 me-1 filter-btn" data-filter="dApp">dApps</button>
           <button class="btn btn-outline-warning mb-2 me-1 filter-btn" data-filter="Tool">Tools</button>
           <button class="btn btn-outline-warning mb-2 me-1 filter-btn" data-filter="DeFi">DeFi</button>
@@ -199,95 +211,86 @@
           <button class="btn btn-outline-success mb-2 me-1 filter-btn" data-filter="Map">Merchant Maps</button>
           <button class="btn btn-outline-success mb-2 me-1 filter-btn" data-filter="CrowdFunding">Crowdfunding</button>
           <button class="btn btn-outline-success mb-2 me-1 filter-btn" data-filter="Charity">Charities</button>
-          <button class="btn btn-outline-info mb-2 me-1 filter-btn" data-filter="Informational">Informational</button>
-          <button class="btn btn-outline-info mb-2 me-1 filter-btn" data-filter="FAQ">FAQs</button>
-          <button class="btn btn-outline-info mb-2 me-1 filter-btn" data-filter="Faucet">Faucets</button>
-          <button class="btn btn-outline-info mb-2 me-1 filter-btn" data-filter="Explorer">Explorers</button>
-          <button class="btn btn-outline-info mb-2 me-1 filter-btn" data-filter="Media">Media</button>
-          <button class="btn btn-outline-info mb-2 me-1 filter-btn" data-filter="Social">Social</button>
-          <button class="btn btn-outline-info mb-2 me-1 filter-btn" data-filter="Community">Communities</button>
-          <button class="btn btn-outline-info mb-2 me-1 filter-btn" data-filter="Entertainment">Entertainment</button>
-          <button class="btn btn-outline-info mb-2 me-1 filter-btn" data-filter="Art">Art</button>
           <button class="btn btn-outline-danger mb-2 me-1 filter-btn" data-filter="Node">Nodes</button>
           <button class="btn btn-outline-danger mb-2 me-1 filter-btn" data-filter="Technical">Technical</button>
           <button class="btn btn-outline-danger mb-2 me-1 filter-btn" data-filter="DevTool">Dev Tools</button>
           <button class="btn btn-outline-danger mb-2 me-1 filter-btn" data-filter="DevTeam">Dev Teams</button>
           <button class="btn btn-outline-danger mb-2 me-1 filter-btn" data-filter="Developer">Developers</button>
           <button class="btn btn-outline-danger mb-2 me-1 filter-btn" data-filter="Network">Network</button>
-	      </div>
+	    </div>
 
-				<!-- Script for activating buttons on click -->
-				<script>
-				document.addEventListener('DOMContentLoaded', function() {
-				    const filterButtons = document.querySelectorAll('.filter-btn');
+		<!-- Script for activating buttons on click -->
+		<script>
+		document.addEventListener('DOMContentLoaded', function() {
+		    const filterButtons = document.querySelectorAll('.filter-btn');
 
-				    function setActiveButton(button) {
-				        filterButtons.forEach(btn => {
-				            btn.classList.remove('active');
-				        });
-				        button.classList.add('active');
-				    }
+		    function setActiveButton(button) {
+		        filterButtons.forEach(btn => {
+		            btn.classList.remove('active');
+		        });
+		        button.classList.add('active');
+		    }
 
-				    filterButtons.forEach(button => {
-				        button.addEventListener('click', function(e) {
-				            e.preventDefault();
-				            const filter = this.getAttribute('data-filter');
-				            filterCards(filter);
-				            setActiveButton(this);
-				        });
-				    });
+		    filterButtons.forEach(button => {
+		        button.addEventListener('click', function(e) {
+		            e.preventDefault();
+		            const filter = this.getAttribute('data-filter');
+		            filterCards(filter);
+		            setActiveButton(this);
+		        });
+		    });
 
-				    // Existing filterCards function
-				    function filterCards(filter) {
-				    }
-				});
-				</script>
+		    // Existing filterCards function
+		    function filterCards(filter) {
+		    }
+		});
+		</script>
 
-				<script>
-				document.addEventListener('DOMContentLoaded', function() {
-				    const shareCategoryBtn = document.getElementById('shareCategoryBtn');
+		<script>
+		document.addEventListener('DOMContentLoaded', function() {
+		    const shareCategoryBtn = document.getElementById('shareCategoryBtn');
 
-				    if (shareCategoryBtn) {
-				        shareCategoryBtn.addEventListener('click', function() {
-				            // Find the active filter button
-				            const activeFilter = document.querySelector('.filter-btn.active');
-				            if (activeFilter) {
-				                const filterValue = activeFilter.getAttribute('data-filter');
-				                let urlToCopy = new URL(window.location.href);
-				                
-				                // Clear all existing query parameters
-				                urlToCopy.search = '';
-				                
-				                // Set the new filter parameter
-				                urlToCopy.searchParams.set('filter', filterValue);
+		    if (shareCategoryBtn) {
+		        shareCategoryBtn.addEventListener('click', function() {
+		            // Find the active filter button
+		            const activeFilter = document.querySelector('.filter-btn.active');
+		            if (activeFilter) {
+		                const filterValue = activeFilter.getAttribute('data-filter');
+		                let urlToCopy = new URL(window.location.href);
+		                
+		                // Clear all existing query parameters
+		                urlToCopy.search = '';
+		                
+		                // Set the new filter parameter
+		                urlToCopy.searchParams.set('filter', filterValue);
 
-				                // Create a temporary input element to copy the URL
-				                const tempInput = document.createElement('input');
-				                tempInput.value = urlToCopy.href;
-				                document.body.appendChild(tempInput);
-				                tempInput.select();
-				                document.execCommand('copy');
-				                document.body.removeChild(tempInput);
+		                // Create a temporary input element to copy the URL
+		                const tempInput = document.createElement('input');
+		                tempInput.value = urlToCopy.href;
+		                document.body.appendChild(tempInput);
+		                tempInput.select();
+		                document.execCommand('copy');
+		                document.body.removeChild(tempInput);
 
-				                // Update tooltip to show "Copied!"
-				                const tooltipInstance = bootstrap.Tooltip.getInstance(this);
-				                if (tooltipInstance) {
-				                    tooltipInstance.setContent({ '.tooltip-inner': 'URL Copied!' });
-				                    tooltipInstance.show();
-				                    setTimeout(() => {
-				                        tooltipInstance.hide();
-				                        tooltipInstance.setContent({ '.tooltip-inner': 'Share category' });
-				                    }, 1500);
-				                }
-				            } else {
-				                console.warn('No active filter selected.');
-				            }
-				        });
-				    } else {
-				        console.error('Share category button not found.');
-				    }
-				});
-				</script>
+		                // Update tooltip to show "Copied!"
+		                const tooltipInstance = bootstrap.Tooltip.getInstance(this);
+		                if (tooltipInstance) {
+		                    tooltipInstance.setContent({ '.tooltip-inner': 'URL Copied!' });
+		                    tooltipInstance.show();
+		                    setTimeout(() => {
+		                        tooltipInstance.hide();
+		                        tooltipInstance.setContent({ '.tooltip-inner': 'Share category' });
+		                    }, 1500);
+		                }
+		            } else {
+		                console.warn('No active filter selected.');
+		            }
+		        });
+		    } else {
+		        console.error('Share category button not found.');
+		    }
+		});
+		</script>
 
 	      <div class="row row-cols-12 row-cols-lg-2" data-masonry='{"percentPosition": true }' id="cardContainer">
 	        <div class="col"></div> <!-- dummy row so masonry can properly sort elements. This is the only fix I could find! -->
@@ -2211,7 +2214,7 @@
 	          </div>
 	        </div>
 	        <div class="col mb-4">
-	          <div class="card" data-header="Wallet, Entertainment">
+	          <div class="card" data-header="Wallet, Game">
 	            <div class="card-header fs-6">Wallet</div>
 	            <div class="card-body text-center text-sm-start">
 	              <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
@@ -3089,7 +3092,7 @@
 	          </div>
 	        </div>
 	        <div class="col mb-4">
-	          <div class="card" data-header="Entertainment, Game, Faucet">
+	          <div class="card" data-header="Gambling, Faucet">
 	            <div class="card-header fs-6">Gambling</div>
 	            <div class="card-body text-center text-sm-start">
 	              <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
@@ -3113,7 +3116,7 @@
 	          </div>
 	        </div>
 	        <div class="col mb-4">
-	          <div class="card" data-header="Entertainment, Game">
+	          <div class="card" data-header="Gambling">
 	            <div class="card-header fs-6">Gambling</div>
 	            <div class="card-body text-center text-sm-start">
 	              <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
@@ -3138,7 +3141,7 @@
 	          </div>
 	        </div>
 	        <div class="col mb-4">
-	          <div class="card" data-header="Entertainment, Game">
+	          <div class="card" data-header="Gambling, Game">
 	            <div class="card-header fs-6">Entertainment</div>
 	            <div class="card-body text-center text-sm-start">
 	              <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
@@ -3420,8 +3423,8 @@
 	          </div>
 	        </div>
 	        <div class="col mb-4">
-	          <div class="card" data-header="Entertainment, Game">
-	            <div class="card-header fs-6">Entertainment</div>
+	          <div class="card" data-header="Gambling, Game">
+	            <div class="card-header fs-6">Gaming</div>
 	            <div class="card-body text-center text-sm-start">
 	              <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
 	                <div class="d-flex flex-sm-row flex-column">
@@ -4767,7 +4770,7 @@
 	          </div>
 	        </div>
 	        <div class="col mb-4">
-	          <div class="card" data-header="dApp, Wallet, Entertainment, CashToken, Map">
+	          <div class="card" data-header="dApp, Wallet, Entertainment, Game, CashToken, Map">
 	            <div class="card-header fs-6">Merchant Map</div>
 	            <div class="card-body text-center text-sm-start">
 	              <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
@@ -4906,7 +4909,7 @@
 	          </div>
 	        </div>
 	        <div class="col mb-4">
-	          <div class="card" data-header="Entertainment">
+	          <div class="card" data-header="Game">
 	            <div class="card-header fs-6">Gaming</div>
 	            <div class="card-body text-center text-sm-start">
 	              <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
@@ -5292,6 +5295,206 @@
 	                </div>
 	                <div class="align-self-center ms-0 ms-sm-3 mt-3 mt-sm-0">
 	                  <a href="https://ismikekomaranskyalive.com" class="btn btn-lg btn-primary">Visit</a>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="col mb-4">
+	          <div class="card" data-header="Exchange, CEX">
+	            <div class="card-header fs-6">Exchange (CEX)</div>
+	            <div class="card-body text-center text-sm-start">
+	              <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
+	                <div class="d-flex flex-sm-row flex-column align-items-center">
+	                  <div class="align-self-center">
+	                    <img src="images/logosForEcosystem/square/coinbase.svg" alt="Coinbase logo" class="card-img-small me-0 me-sm-3 mb-3 mb-sm-0">
+	                  </div>
+	                  <div>
+	                    <h4 class="text-break mb-0">Coinbase</h4>
+	                  </div>
+	                </div>
+	                <div class="align-self-center ms-0 ms-sm-3 mt-3 mt-sm-0">
+	                  <a href="https://coinbase.com" class="btn btn-lg btn-primary">Visit</a>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="col mb-4">
+	          <div class="card" data-header="Exchange, CEX">
+	            <div class="card-header fs-6">Exchange (CEX)</div>
+	            <div class="card-body text-center text-sm-start">
+	              <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
+	                <div class="d-flex flex-sm-row flex-column align-items-center">
+	                  <div class="align-self-center">
+	                    <img src="images/logosForEcosystem/square/kraken.svg" alt="Kraken logo" class="card-img-small me-0 me-sm-3 mb-3 mb-sm-0">
+	                  </div>
+	                  <div>
+	                    <h4 class="text-break mb-0">Kraken</h4>
+	                  </div>
+	                </div>
+	                <div class="align-self-center ms-0 ms-sm-3 mt-3 mt-sm-0">
+	                  <a href="https://kraken.com" class="btn btn-lg btn-primary">Visit</a>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="col mb-4">
+	          <div class="card" data-header="Exchange, CEX">
+	            <div class="card-header fs-6">Exchange (CEX)</div>
+	            <div class="card-body text-center text-sm-start">
+	              <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
+	                <div class="d-flex flex-sm-row flex-column align-items-center">
+	                  <div class="align-self-center">
+	                    <img src="images/logosForEcosystem/square/coinex.svg" alt="CoinEx logo" class="card-img-small me-0 me-sm-3 mb-3 mb-sm-0">
+	                  </div>
+	                  <div>
+	                    <h4 class="text-break mb-0">CoinEx</h4>
+	                  </div>
+	                </div>
+	                <div class="align-self-center ms-0 ms-sm-3 mt-3 mt-sm-0">
+	                  <a href="https://coinex.com" class="btn btn-lg btn-primary">Visit</a>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="col mb-4">
+	          <div class="card" data-header="Exchange, CEX">
+	            <div class="card-header fs-6">Exchange (CEX)</div>
+	            <div class="card-body text-center text-sm-start">
+	              <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
+	                <div class="d-flex flex-sm-row flex-column align-items-center">
+	                  <div class="align-self-center">
+	                    <img src="images/logosForEcosystem/square/gemini.svg" alt="Gemini logo" class="card-img-small me-0 me-sm-3 mb-3 mb-sm-0">
+	                  </div>
+	                  <div>
+	                    <h4 class="text-break mb-0">Gemini</h4>
+	                  </div>
+	                </div>
+	                <div class="align-self-center ms-0 ms-sm-3 mt-3 mt-sm-0">
+	                  <a href="https://gemini.com" class="btn btn-lg btn-primary">Visit</a>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="col mb-4">
+	          <div class="card" data-header="Exchange, CEX">
+	            <div class="card-header fs-6">Exchange (CEX)</div>
+	            <div class="card-body text-center text-sm-start">
+	              <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
+	                <div class="d-flex flex-sm-row flex-column align-items-center">
+	                  <div class="align-self-center">
+	                    <img src="images/logosForEcosystem/square/bitstamp.svg" alt="Bitstamp logo" class="card-img-small me-0 me-sm-3 mb-3 mb-sm-0">
+	                  </div>
+	                  <div>
+	                    <h4 class="text-break mb-0">Bitstamp</h4>
+	                  </div>
+	                </div>
+	                <div class="align-self-center ms-0 ms-sm-3 mt-3 mt-sm-0">
+	                  <a href="https://bitstamp.net" class="btn btn-lg btn-primary">Visit</a>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="col mb-4">
+	          <div class="card" data-header="Exchange, CEX">
+	            <div class="card-header fs-6">Exchange (CEX)</div>
+	            <div class="card-body text-center text-sm-start">
+	              <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
+	                <div class="d-flex flex-sm-row flex-column align-items-center">
+	                  <div class="align-self-center">
+	                    <img src="images/logosForEcosystem/square/upbit.svg" alt="Upbit logo" class="card-img-small me-0 me-sm-3 mb-3 mb-sm-0">
+	                  </div>
+	                  <div>
+	                    <h4 class="text-break mb-0">Upbit</h4>
+	                  </div>
+	                </div>
+	                <div class="align-self-center ms-0 ms-sm-3 mt-3 mt-sm-0">
+	                  <a href="https://upbit.com" class="btn btn-lg btn-primary">Visit</a>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="col mb-4">
+	          <div class="card" data-header="Exchange, CEX">
+	            <div class="card-header fs-6">Exchange (CEX)</div>
+	            <div class="card-body text-center text-sm-start">
+	              <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
+	                <div class="d-flex flex-sm-row flex-column align-items-center">
+	                  <div class="align-self-center">
+	                    <img src="images/logosForEcosystem/square/cryptocom.svg" alt="Crypto.com logo" class="card-img-small me-0 me-sm-3 mb-3 mb-sm-0">
+	                  </div>
+	                  <div>
+	                    <h4 class="text-break mb-0">Crypto.com</h4>
+	                  </div>
+	                </div>
+	                <div class="align-self-center ms-0 ms-sm-3 mt-3 mt-sm-0">
+	                  <a href="https://crypto.com" class="btn btn-lg btn-primary">Visit</a>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="col mb-4">
+	          <div class="card" data-header="Exchange, CEX">
+	            <div class="card-header fs-6">Exchange (CEX)</div>
+	            <div class="card-body text-center text-sm-start">
+	              <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
+	                <div class="d-flex flex-sm-row flex-column align-items-center">
+	                  <div class="align-self-center">
+	                    <img src="images/logosForEcosystem/square/okx.svg" alt="OKX logo" class="card-img-small me-0 me-sm-3 mb-3 mb-sm-0">
+	                  </div>
+	                  <div>
+	                    <h4 class="text-break mb-0">OKX</h4>
+	                  </div>
+	                </div>
+	                <div class="align-self-center ms-0 ms-sm-3 mt-3 mt-sm-0">
+	                  <a href="https://okx.com" class="btn btn-lg btn-primary">Visit</a>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="col mb-4">
+	          <div class="card" data-header="Exchange, CEX">
+	            <div class="card-header fs-6">Exchange (CEX)</div>
+	            <div class="card-body text-center text-sm-start">
+	              <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
+	                <div class="d-flex flex-sm-row flex-column align-items-center">
+	                  <div class="align-self-center">
+	                    <img src="images/logosForEcosystem/square/bitget.svg" alt="Bitget logo" class="card-img-small me-0 me-sm-3 mb-3 mb-sm-0">
+	                  </div>
+	                  <div>
+	                    <h4 class="text-break mb-0">Bitget</h4>
+	                  </div>
+	                </div>
+	                <div class="align-self-center ms-0 ms-sm-3 mt-3 mt-sm-0">
+	                  <a href="https://bitget.com" class="btn btn-lg btn-primary">Visit</a>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="col mb-4">
+	          <div class="card" data-header="Exchange, CEX">
+	            <div class="card-header fs-6">Exchange (CEX)</div>
+	            <div class="card-body text-center text-sm-start">
+	              <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
+	                <div class="d-flex flex-sm-row flex-column align-items-center">
+	                  <div class="align-self-center">
+	                    <img src="images/logosForEcosystem/square/binance.svg" alt="Binance logo" class="card-img-small me-0 me-sm-3 mb-3 mb-sm-0">
+	                  </div>
+	                  <div>
+	                    <h4 class="text-break mb-0">Binance</h4>
+	                  </div>
+	                </div>
+	                <div class="align-self-center ms-0 ms-sm-3 mt-3 mt-sm-0">
+	                  <a href="https://binance.com" class="btn btn-lg btn-primary">Visit</a>
 	                </div>
 	              </div>
 	            </div>
