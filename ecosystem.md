@@ -1,5 +1,6 @@
 ## If you would like to submit a PR for the ecosystem page, please follow the following formats!
 
+#### For media icons, we use bootstrap icons. Please find the icon you'd like from this list if you don't see below: https://icons.getbootstrap.com. Additionally, we use "twitter-x" to display the X logo rather than the old "twitter" logo.
 
 ### Full Card with Media & Attribution
 ```
