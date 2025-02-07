@@ -1,7 +1,7 @@
-##If you would like to submit a PR for the ecosystem page, please follow the following formats!
+## If you would like to submit a PR for the ecosystem page, please follow the following formats!
 
 
-###Full Card with Media & Attribution
+### Full Card with Media & Attribution
 ```
 <div class="col mb-4">
   <div class="card" data-header="Media, Informational, Social"> <!--Tags for search. Please have these match the options listed in the data filters | data-filter="<tag>"-->
@@ -37,7 +37,7 @@
 </div>
 ```
 
-###Full Card without Media nor Attribution
+### Full Card without Media nor Attribution
 ```
 <div class="col mb-4">
   <div class="card" data-header="Media, Informational, Social"> <!--Tags for search. Please have these match the options listed in the data filters | data-filter="<tag>"-->
