@@ -7,7 +7,9 @@
 - If there is any pure white or black background to an image, please swap it for an in-between gray. Two images can be used, but the javascript for image swapping will need to be updated. If the javascript is not updated correctly, it will break all image swaps on the page. Unless you are very comfortable with JS, please default to using a single image.
 - Target file size should be <50kb, this is crucial for fast page load times
 - If there is a square image, rounding corners is preferred, however, not at the expense of a larger file size.
-- There is a class for all images "card-img-standard" -- this should be used for most cards. However, if adding a very limited card (such as an Exchange (CEX), or any other card which won't have a description, please use the class "card-img-small"
+- There is a class for all images "card-img-standard" -- this should be used for most cards. However, if adding a very limited card (such as an Exchange (CEX), or any other card which won't have a description, please use the class "card-img-small". When using this smaller image format, other changes are needed as well:
+  - \<h4> class needs the added "mb-0"
+  - \<div class="d-flex flex-sm-row flex-column"> needs to be modified to \<div class="d-flex flex-sm-row flex-column align-items-center"> (adding the align-items-center class)
 
 ### Full Card with Media & Attribution
 ```
