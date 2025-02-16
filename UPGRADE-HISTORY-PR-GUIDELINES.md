@@ -1,11 +1,13 @@
 ## If you would like to submit a PR for the Upgrade History page, please follow the following formats!
 
-### When adding any new upgrades, first copy the third to last \<li> item that is found in the \<ul> tag with id="lockedIn" into the above \<ul> section above the "\</ul> <!--Make sure second to last upgrade implemented goes above the \<ul>-->". Next, copy the \<li> item that is found in the \<ul> tag with id="future" into the above \<ul> section with id="lockedIn". Then add the new expected/future upgrade(s) as an \<li> following the existing formats in the \<ul> section with the id="future"
+#### When adding any new upgrades, first copy the third to last \<li> item that is found in the \<ul> tag with id="lockedIn" into the above \<ul> section above the "\</ul> <!--Make sure second to last upgrade implemented goes above the \<ul>-->". Next, copy the \<li> item that is found in the \<ul> tag with id="future" into the above \<ul> section with id="lockedIn". Then add the new expected/future upgrade(s) as an \<li> following the existing formats in the \<ul> section with the id="future"
 
-### Most recently implemented upgrade and expected/locked-in upgrade
-#### The most recently implemented upgrade needs to have its \<ul> with an id="lockedIn" -- this is a bit counterintuitive but is meant to represent the forward line leading to the next upgrade, which is the one "lockedIn"
-#### The locked-in upgrade, or the upgrade that is expected to be locked in, should have its \<ul> with an id="future" -- again, this id represents the future, and has a faded dotted line continuing
-#### The final \<li> item at the bottom is the arrow shape pointing downwards (aka the future)
+#### Most recently implemented upgrade and expected/locked-in upgrade
+- The most recently implemented upgrade needs to have its \<ul> with an id="lockedIn" -- this is a bit counterintuitive but is meant to represent the forward line leading to the next upgrade, which is the one "lockedIn"
+- The locked-in upgrade, or the upgrade that is expected to be locked in, should have its \<ul> with an id="future" -- again, this id represents the future, and has a faded dotted line continuing
+- The final \<li> item at the bottom is the arrow shape pointing downwards (aka the future)
+
+For new upgrade images, please reach out to CM_Works on Telegram: @CM_Workz
 
 ```
 <ul id="lockedIn" class="timeline"> <!--Most recently implemented upgrade goes here-->
