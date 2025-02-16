@@ -2,6 +2,12 @@
 
 #### For media icons, we use bootstrap icons. Please find the icon you'd like from this list if you don't see below: https://icons.getbootstrap.com. Additionally, we use "twitter-x" to display the X logo rather than the old "twitter" logo.
 
+### Image guidelines:
+- When adding images, the order of file type preference is: .svg>.webp>.png>.jpg
+- If there is any pure white or black background to an image, please swap it for an in-between gray. Two images can be used, but the javascript for image swapping will need to be updated. If the javascript is not updated correctly, it will break all image swaps on the page. Unless you are very comfortable with JS, please default to using a single image.
+- Target file size should be <50kb, this is crucial for fast page load times
+- If there is a square image, rounding corners is preferred, however, not at the expense of a larger file size.
+
 ### Full Card with Media & Attribution
 ```
 <div class="col mb-4">
