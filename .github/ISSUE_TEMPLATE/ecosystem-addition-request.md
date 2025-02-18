@@ -3,12 +3,12 @@ name: Ecosystem Addition Request
 about: Want something added to the Ecosystem page? Please provide the below information!
 title: "[Ecosystem Addition Request]"
 labels: Ecosystem Addition
-assignees: minisat0shi, e14tech
+assignees: e14tech, minisat0shi
 
 ---
 
-**Preferred Image Link (Please try to keep under 50kb)**
-<link>
+**Preferred Image Link (Please try to keep under 50kb; order of file type preference: .svg>.webp>.png>.jpg, .gif also acceptable)**
+<link/upload>
 
 **Name of Project/Individual/Otherwise**
 <Name>
