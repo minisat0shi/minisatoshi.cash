@@ -825,6 +825,16 @@ ul.upgrade-bullets > li::before {
 .EcoStartImg {
     max-width: min(50vw,600px);
 }
+#ecosystemCircle {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+#ecosystemRound {
+    -webkit-border-radius: 10%;
+    -moz-border-radius: 10%;
+    border-radius: 10%;
+}
 
 /* MINECRAFT */
 
