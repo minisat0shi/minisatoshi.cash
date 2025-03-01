@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1080" height="1080" viewBox="0 0 1080 1080" xml:space="preserve">
+<desc>Created with Fabric.js 5.2.4</desc>
+<defs>
+</defs>
+<g transform="matrix(1 0 0 1 540 540)" id="94520f10-8d72-4e4c-a793-f0997e716f8a"  >
+<rect style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1; visibility: hidden;" vector-effect="non-scaling-stroke"  x="-540" y="-540" rx="0" ry="0" width="1080" height="1080" />
+</g>
+<g transform="matrix(1 0 0 1 540 540)" id="7b77311f-31d4-48cc-9f45-15cf904526bf"  >
+</g>
+<g transform="matrix(3.83 0 0 3.83 540 540)"  >
+<g style=""   >
+		<g transform="matrix(1 0 0 1 -0.02 0)" clip-path="url(#CLIPPATH_3)"  >
+<clipPath id="CLIPPATH_3" >
+	<rect transform="matrix(1 0 0 1 0.02 0)" id="clip0" x="-141" y="-141" rx="0" ry="0" width="282" height="282" />
+</clipPath>
+<circle style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(123,26,247); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke"  cx="0" cy="0" r="141" />
+</g>
+		<g transform="matrix(1 0 0 1 0.26 -1.08)" clip-path="url(#CLIPPATH_4)"  >
+<clipPath id="CLIPPATH_4" >
+	<rect transform="matrix(1 0 0 1 -0.26 1.08)" id="clip0" x="-141" y="-141" rx="0" ry="0" width="282" height="282" />
+</clipPath>
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke"  transform=" translate(-141.26, -139.92)" d="M 79.7609 144.047 L 173.761 63.0466 C 177.857 60.4235 181.761 63.0466 179.261 67.5466 L 149.261 126.547 L 202.761 126.547 C 202.761 126.547 211.261 126.547 202.761 133.547 L 110.261 215.047 C 103.761 220.547 99.261 217.547 103.761 209.047 L 132.761 151.547 L 79.7609 151.547 C 79.7609 151.547 71.2609 151.547 79.7609 144.047 Z" stroke-linecap="round" />
+</g>
+</g>
+</g>
+</svg>

@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="svg8" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svg="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" version="1.1" viewBox="0 0 2383.9 3370.4">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 32px;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-15, .cls-16 {
+        isolation: isolate;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-13, .cls-14, .cls-16 {
+        font-family: Helvetica-Bold, Helvetica;
+        font-weight: 700;
+      }
+
+      .cls-1, .cls-5, .cls-8, .cls-17, .cls-12 {
+        fill: #000;
+      }
+
+      .cls-2, .cls-4, .cls-9, .cls-11, .cls-16 {
+        font-size: 26px;
+      }
+
+      .cls-2, .cls-18, .cls-14 {
+        fill: #2db300;
+      }
+
+      .cls-19 {
+        stroke-width: 9px;
+      }
+
+      .cls-19, .cls-20, .cls-21, .cls-22, .cls-23, .cls-24, .cls-25, .cls-26, .cls-27, .cls-28, .cls-29, .cls-30, .cls-31, .cls-32, .cls-33, .cls-34, .cls-35, .cls-36, .cls-37, .cls-38, .cls-39 {
+        fill: none;
+        stroke-miterlimit: 11.3;
+      }
+
+      .cls-19, .cls-21, .cls-23, .cls-25, .cls-26, .cls-27, .cls-32, .cls-33, .cls-35, .cls-37, .cls-38, .cls-39 {
+        stroke-linecap: round;
+      }
+
+      .cls-19, .cls-30, .cls-35 {
+        stroke: #0074c2;
+      }
+
+      .cls-40, .cls-3, .cls-16 {
+        fill: #0074c2;
+      }
+
+      .cls-40, .cls-41, .cls-42, .cls-17, .cls-18, .cls-43, .cls-44, .cls-45 {
+        stroke-width: 0px;
+      }
+
+      .cls-3, .cls-5, .cls-6, .cls-7, .cls-8, .cls-10, .cls-13, .cls-14 {
+        font-size: 20px;
+      }
+
+      .cls-4, .cls-13, .cls-44 {
+        fill: #f7931a;
+      }
+
+      .cls-41 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-46 {
+        stroke-linejoin: round;
+      }
+
+      .cls-46, .cls-25, .cls-32, .cls-36 {
+        stroke-width: 7.5px;
+      }
+
+      .cls-46, .cls-28, .cls-29 {
+        stroke: #000;
+      }
+
+      .cls-46, .cls-45 {
+        fill: #fff;
+      }
+
+      .cls-5 {
+        font-family: Helvetica, Helvetica;
+      }
+
+      .cls-20 {
+        stroke-width: 9.7px;
+      }
+
+      .cls-20, .cls-21, .cls-22, .cls-23, .cls-24, .cls-31, .cls-34, .cls-36 {
+        stroke: #f7931a;
+      }
+
+      .cls-21 {
+        stroke-width: 13.6px;
+      }
+
+      .cls-6, .cls-42, .cls-11 {
+        fill: #132365;
+      }
+
+      .cls-22, .cls-30, .cls-35, .cls-38 {
+        stroke-width: 9px;
+      }
+
+      .cls-7 {
+        fill: #646464;
+      }
+
+      .cls-23 {
+        stroke-width: 15px;
+      }
+
+      .cls-24 {
+        stroke-width: 10.5px;
+      }
+
+      .cls-9, .cls-10, .cls-43 {
+        fill: #eab300;
+      }
+
+      .cls-25 {
+        stroke: #646464;
+        stroke-dasharray: 0 0 15 15;
+      }
+
+      .cls-12 {
+        font-family: ArialMT, Arial;
+        font-size: 18px;
+      }
+
+      .cls-26 {
+        stroke-width: 11.3px;
+      }
+
+      .cls-26, .cls-27 {
+        stroke: #2db300;
+      }
+
+      .cls-27 {
+        stroke-width: 11.3px;
+      }
+
+      .cls-28 {
+        stroke-width: 1.7px;
+      }
+
+      .cls-29 {
+        stroke-width: 1.5px;
+      }
+
+      .cls-31 {
+        stroke-width: 8.3px;
+      }
+
+      .cls-32, .cls-33, .cls-37 {
+        stroke: #132365;
+      }
+
+      .cls-33 {
+        stroke-width: 7.7px;
+      }
+
+      .cls-34 {
+        stroke-width: 7.5px;
+      }
+
+      .cls-35 {
+        stroke-dasharray: 0 0 36 18;
+      }
+
+      .cls-37 {
+        stroke-width: 6px;
+      }
+
+      .cls-38, .cls-39 {
+        stroke: #eab300;
+      }
+
+      .cls-39 {
+        stroke-width: 8.4px;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="-1182.1" y1="9917.5" x2="-876.4" y2="9454.9" gradientTransform="translate(1218.8 4540.4) scale(.1 -.1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f1d200"/>
+      <stop offset="1" stop-color="#d27d00"/>
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview id="base" bordercolor="#666666" borderopacity="1.0" inkscape:current-layer="layer1" inkscape:cx="744.84507" inkscape:cy="-586.23925" inkscape:document-units="mm" inkscape:lockguides="true" inkscape:pagecheckerboard="0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="827" inkscape:window-maximized="1" inkscape:window-width="1600" inkscape:window-x="0" inkscape:window-y="0" inkscape:zoom="0.24904508" pagecolor="#ffffff" showgrid="true" showguides="false">
+    <inkscape:grid id="grid10" type="xygrid"/>
+  </sodipodi:namedview>
+  <g id="layer1" inkscape:groupmode="layer" inkscape:label="Calque 1">
+    <path id="path1529" class="cls-27" d="M401.2,2730v195.1" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <path id="path12352" class="cls-27" d="M408.8,2512.4v195.1" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <path id="path314" class="cls-36" d="M663.8,697.6v67.5" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <path id="path1134" class="cls-30" d="M408.1,2248.9l-213.1,43.2" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <path id="path1136" class="cls-19" d="M195,2292v273.9" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <path id="path1113-9-7" class="cls-32" d="M855,1482l195,63.1" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <path id="path122-0-6-8-0-5" class="cls-33" d="M1050,1545.8v101.3" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <path id="path122-0-6-8-0-5-3" class="cls-37" d="M1065,1662v1390.5" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <path id="path122-0-6-8-7-3-0" class="cls-38" d="M641.3,1947v115.6" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <path id="path122-0-6-8-7-1" class="cls-26" d="M442.5,1902v97.5" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <path id="path122-0-6-1-7-0-3" class="cls-27" d="M540,1617v101.2" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <path id="path122-5-6-7-3-6" class="cls-34" d="M633.7,517.6v67.5" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <g id="g1062">
+      <g id="g1060">
+        <circle id="circle1012" class="cls-45" cx="1065" cy="3112.3" r="32.9"/>
+        <path id="path1019" class="cls-41" d="M1065,3074.8c-20.7,0-37.5,16.8-37.5,37.5s16.8,37.5,37.5,37.5,37.5-16.8,37.5-37.5-16.8-37.5-37.5-37.5ZM1065,3141.2c-15.9,0-28.9-12.9-28.9-28.9s12.9-28.9,28.9-28.9,28.9,12.9,28.9,28.9-12.9,28.9-28.9,28.9Z" inkscape:connector-curvature="0"/>
+        <g id="g1056">
+          <g id="g1024">
+            <path class="cls-42" d="M1052.5,3125.2l1.4-2.9h17.3c2.4,0,4.3-1.9,4.3-4.3h0c0-2.4-1.9-4.3-4.3-4.3h-14.4v-2.9h14.4c4,0,7.2,3.2,7.2,7.2h0c0,4-3.2,7.2-7.2,7.2h-18.7Z" inkscape:connector-curvature="0"/>
+            <path id="path1022" class="cls-42" d="M1071.3,3126h-20l2.3-4.5h17.8c1.9,0,3.5-1.6,3.5-3.5s-1.6-3.5-3.5-3.5h-15.2v-4.5h15.2c4.4,0,8,3.6,8,8s-3.6,8-8,8ZM1053.8,3124.4h17.5c3.5,0,6.4-2.9,6.4-6.4s-2.9-6.4-6.4-6.4h-13.6v1.3h13.6c2.8,0,5.1,2.3,5.1,5.1s-2.3,5.1-5.1,5.1h-16.8l-.6,1.3Z" inkscape:connector-curvature="0"/>
+          </g>
+          <g id="g1029">
+            <path class="cls-42" d="M1052.5,3099.1l1.4,2.9h15.4c2.4,0,4.3,1.9,4.3,4.3h0c0,2.4-1.9,4.3-4.3,4.3h-11.1v2.9h11.1c4,0,7.2-3.2,7.2-7.2h0c0-4-3.2-7.2-7.2-7.2h-16.8Z" inkscape:connector-curvature="0"/>
+            <path id="path1027" class="cls-42" d="M1069.4,3114.3h-11.9v-4.5h11.9c1.9,0,3.5-1.6,3.5-3.5s-1.6-3.5-3.5-3.5h-15.9l-2.3-4.5h18.1c4.4,0,8,3.6,8,8,0,4.4-3.6,8-8,8ZM1059.1,3112.7h10.3c3.5,0,6.4-2.9,6.4-6.4s-2.9-6.4-6.4-6.4h-15.5l.6,1.3h14.9c2.8,0,5.1,2.3,5.1,5.1s-2.3,5.1-5.1,5.1h-10.2v1.3Z" inkscape:connector-curvature="0"/>
+          </g>
+          <g id="g1034">
+            <rect class="cls-42" x="1056.9" y="3099.2" width="2.9" height="26"/>
+            <path id="path1032" class="cls-42" d="M1060.5,3126h-4.5v-27.6h4.5v27.6ZM1057.7,3124.4h1.3v-24.4h-1.3v24.4Z" inkscape:connector-curvature="0"/>
+          </g>
+          <g id="g1039">
+            <rect class="cls-42" x="1060.4" y="3094.7" width="2.9" height="5.8"/>
+            <path id="path1037" class="cls-42" d="M1063.7,3100.9h-3.7v-6.6h3.7v6.6ZM1060.8,3100.1h2.1v-5h-2.1v5Z" inkscape:connector-curvature="0"/>
+          </g>
+          <g id="g1044">
+            <rect class="cls-42" x="1066.6" y="3094.7" width="2.9" height="5.8"/>
+            <path id="path1042" class="cls-42" d="M1069.9,3100.9h-3.7v-6.6h3.7v6.6ZM1067,3100.1h2.1v-5h-2.1v5Z" inkscape:connector-curvature="0"/>
+          </g>
+          <g id="g1049">
+            <rect class="cls-42" x="1060.4" y="3123.6" width="2.9" height="5.8"/>
+            <path id="path1047" class="cls-42" d="M1063.7,3129.7h-3.7v-6.6h3.7v6.6ZM1060.8,3128.9h2.1v-5h-2.1v5Z" inkscape:connector-curvature="0"/>
+          </g>
+          <g id="g1054">
+            <rect class="cls-42" x="1066.6" y="3123.6" width="2.9" height="5.8"/>
+            <path id="path1052" class="cls-42" d="M1069.9,3129.7h-3.7v-6.6h3.7v6.6ZM1067,3128.9h2.1v-5h-2.1v5Z" inkscape:connector-curvature="0"/>
+          </g>
+        </g>
+        <path id="path1058" class="cls-42" d="M1065,3137.9c-14.1,0-25.6-11.5-25.6-25.6s11.5-25.6,25.6-25.6,25.6,11.5,25.6,25.6-11.5,25.6-25.6,25.6ZM1065,3089.3c-12.7,0-23,10.3-23,23s10.3,23,23,23,23-10.3,23-23-10.3-23-23-23Z" inkscape:connector-curvature="0"/>
+      </g>
+    </g>
+    <g id="text4822" class="cls-15">
+      <text class="cls-8" transform="translate(680.7 334.8)"><tspan x="0" y="0">Bitcoin</tspan></text>
+      <text class="cls-5" transform="translate(663.4 354.8)"><tspan x="0" y="0">2009-01-03</tspan></text>
+    </g>
+    <g id="text5965-6" class="cls-15">
+      <text class="cls-8" transform="translate(671.1 512.8)"><tspan x="0" y="0">Value Overflow Incident</tspan></text>
+      <text class="cls-8" transform="translate(896.7 512.8)"><tspan x="0" y="0" xml:space="preserve"> (soft fork)</tspan></text>
+    </g>
+    <g id="text5965-7-9" class="cls-15">
+      <text class="cls-8" transform="translate(725.1 875.9)"><tspan x="0" y="0">Migration from Berkeley DB to LevelDB (hard fork)</tspan></text>
+    </g>
+    <g id="text5965-7-9-0-2" class="cls-15">
+      <text class="cls-8" transform="translate(801.9 1343.2)"><tspan x="0" y="0">SegWit</tspan></text>
+      <text class="cls-8" transform="translate(789 1363.2)"><tspan x="0" y="0">(soft fork)</tspan></text>
+    </g>
+    <path id="path1113" class="cls-27" d="M725.3,1242l-84,45" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <path id="path122-0-6-1" class="cls-27" d="M641.3,1287v225" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <path id="path122-0-6-8" class="cls-23" d="M740.3,1144.5v195" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <path id="path1113-9" class="cls-21" d="M753.8,1362l101.3,81.8" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <path id="path122-0-6-8-0-9" class="cls-23" d="M855,1444.5v985.5" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <path id="path1113-8-9" class="cls-39" d="M547.5,1733.3l78.8,45" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <path id="path122-0-6-8-7" class="cls-27" d="M453.8,1782v97.5" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <path id="path122-0-6-8-7-3" class="cls-38" d="M626.3,1782v150" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <g id="g903-6">
+      <circle id="circle899-1" class="cls-44" cx="866.9" cy="3112.3" r="37.5"/>
+      <path id="path901-2" class="cls-45" d="M883.7,3107.7c.7-4.9-3-7.6-8.1-9.3l1.7-6.7-4.1-1-1.6,6.5c-1.1-.3-2.2-.5-3.2-.8l1.6-6.5-4-1-1.7,6.7c-.9-.2-1.7-.4-2.6-.6h0s-5.6-1.4-5.6-1.4l-1.1,4.3s3,.7,2.9.7c1.6.4,1.9,1.5,1.9,2.4l-1.9,7.6c.1,0,.3,0,.4.1h-.4c0-.1-2.6,10.5-2.6,10.5-.2.5-.7,1.2-1.9,1,0,0-2.9-.7-2.9-.7l-2,4.6,5.3,1.3c1,.2,1.9.5,2.9.7l-1.7,6.7,4,1,1.7-6.7c1.1.3,2.2.6,3.2.8l-1.7,6.6,4,1,1.7-6.7c6.9,1.3,12.1.8,14.3-5.5,1.8-5,0-7.9-3.7-9.8,2.6-.6,4.6-2.4,5.2-5.9ZM874.5,3120.7c-1.2,5-9.7,2.3-12.5,1.6l2.2-8.9c2.7.7,11.6,2,10.2,7.3ZM875.7,3107.6c-1.1,4.6-8.2,2.3-10.5,1.7l2-8.1c2.3.6,9.7,1.6,8.5,6.4Z" inkscape:connector-curvature="0"/>
+    </g>
+    <g id="g853-9">
+      <circle id="circle849-3" class="cls-18" cx="410.1" cy="3111.8" r="37.5"/>
+      <path id="path851-1" class="cls-45" d="M422.3,3099c-1.8-4.6-6.4-5-11.7-4l-1.9-6.6-4,1.2,1.8,6.4c-1.1.3-2.1.6-3.2,1l-1.9-6.5-4,1.1,1.9,6.6c-.9.3-1.7.5-2.5.8h0s-5.5,1.6-5.5,1.6l1.2,4.3s2.9-.9,2.9-.8c1.6-.5,2.4.3,2.8,1.1l2.2,7.5c.1,0,.3,0,.4,0h-.4c0,.1,3,10.6,3,10.6,0,.5,0,1.4-1.1,1.8,0,0-2.9.8-2.9.8l.6,5,5.2-1.5c1-.3,1.9-.5,2.9-.8l1.9,6.7,4-1.1-1.9-6.6c1.1-.3,2.1-.6,3.2-.9l1.9,6.6,4-1.2-1.9-6.7c6.6-2.3,10.9-5.4,9.6-11.9-1-5.2-4-6.8-8.1-6.6,2-1.9,2.8-4.4,1.5-7.7h0ZM420.8,3114.9c1.4,5-7.3,6.9-10,7.6l-2.5-8.8c2.7-.8,11-4,12.5,1.2h0ZM415.4,3102.9c1.3,4.5-6,6-8.2,6.7l-2.3-8c2.3-.6,9.2-3.4,10.5,1.3h0Z" inkscape:connector-curvature="0"/>
+      <path id="path1168" class="cls-45" d="M206.7,2882.4c-1.8-4.6-6.4-5-11.7-4l-1.9-6.6-4,1.2,1.8,6.4c-1.1.3-2.1.6-3.2,1l-1.9-6.5-4,1.1,1.9,6.6c-.9.3-1.7.5-2.5.8h0s-5.5,1.6-5.5,1.6l1.2,4.3s2.9-.9,2.9-.8c1.6-.5,2.4.3,2.8,1.1l2.2,7.5c.1,0,.3,0,.4,0h-.4c0,.1,3,10.6,3,10.6,0,.5,0,1.4-1.1,1.8,0,0-2.9.8-2.9.8l.6,5,5.2-1.5c1-.3,1.9-.5,2.9-.8l1.9,6.7,4-1.1-1.9-6.6c1.1-.3,2.1-.6,3.2-.9l1.9,6.6,4-1.2-1.9-6.7c6.6-2.3,10.9-5.4,9.6-11.9-1-5.2-4-6.8-8.1-6.6,2-1.9,2.8-4.4,1.5-7.7h0ZM205.1,2898.3c1.4,5-7.3,6.9-10,7.6l-2.5-8.8c2.7-.8,11-4,12.5,1.2h0ZM199.7,2886.4c1.3,4.5-6,6-8.2,6.7l-2.3-8c2.3-.6,9.2-3.4,10.5,1.3h0Z" inkscape:connector-curvature="0"/>
+    </g>
+    <g id="g897-9">
+      <path id="path877-4" class="cls-43" d="M708.1,3112.3c0,20.7-16.8,37.5-37.5,37.5-20.7,0-37.5-16.8-37.5-37.5,0-20.7,16.8-37.5,37.5-37.5s37.5,16.8,37.5,37.5Z" inkscape:connector-curvature="0"/>
+      <g id="g883-7">
+        <path id="path879-8" class="cls-45" d="M685.3,3103.2c-.5-5-4.8-6.7-10.3-7.2v-7h-4.2v6.8c-1.1,0-2.3,0-3.4,0v-6.8h-4.2v7c-.9,0-1.8,0-2.7,0h0s-5.8,0-5.8,0v4.5s3.1,0,3.1,0c1.7,0,2.3,1,2.4,1.9v7.9c.1,0,.3,0,.4,0h-.4v11.1c0,.5-.4,1.4-1.6,1.4,0,0-3.1,0-3.1,0l-.8,5.1h5.5c1,0,2,0,3,0v7h4.2v-7c1.2,0,2.3,0,3.4,0v6.9s4.2,0,4.2,0v-7c7.1-.4,12.1-2.2,12.7-8.9.5-5.4-2-7.8-6.1-8.8,2.5-1.2,4-3.5,3.6-7.1ZM679.4,3118.2c0,5.3-9,4.7-11.9,4.7v-9.3c2.9,0,11.9-.8,11.9,4.7ZM677.4,3105.1c0,4.8-7.5,4.2-9.9,4.2v-8.5c2.4,0,9.9-.8,9.9,4.2Z" inkscape:connector-curvature="0"/>
+        <path id="path881-4" class="cls-45" d="M660.1,3110.1h.6v.5h-.6v-.5Z" inkscape:connector-curvature="0"/>
+      </g>
+    </g>
+    <g id="text1569" class="cls-15">
+      <text class="cls-14" transform="translate(466.7 1313.9)"><tspan x="0" y="0">Bitcoin Cash</tspan></text>
+    </g>
+    <g id="text1569-7" class="cls-15">
+      <text class="cls-13" transform="translate(767.2 1196.1)"><tspan x="0" y="0">&quot;Bitcoin Legacy&quot; </tspan></text>
+    </g>
+    <g id="text1569-4" class="cls-15">
+      <text class="cls-10" transform="translate(650.8 1795.3)"><tspan x="0" y="0">&quot;Bitcoin Cash SV&quot;</tspan></text>
+      <text class="cls-10" transform="translate(678.9 1815.3)"><tspan x="0" y="0">= Bitcoin SV</tspan></text>
+    </g>
+    <g id="text1569-4-1" class="cls-15">
+      <text class="cls-6" transform="translate(1013.4 1516.1)"><tspan x="0" y="0">Bitcoin Gold</tspan></text>
+    </g>
+    <g id="text5965-6-6" class="cls-15">
+      <text class="cls-8" transform="translate(397.7 1227.3)"><tspan x="0" y="0">User Activated Hard Fork</tspan></text>
+      <text class="cls-5" transform="translate(397.7 1247.3)"><tspan x="0" y="0">Block Size Limit to 8MB</tspan></text>
+    </g>
+    <g id="text1010" class="cls-15">
+      <text class="cls-5" transform="translate(472.7 512.1)"><tspan x="0" y="0">2010-08-15</tspan></text>
+    </g>
+    <path id="path122-5-3" class="cls-36" d="M603.8,370.7v45" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <path id="path122-5-6-7-3" class="cls-36" d="M648.8,607.6v67.5" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <g id="text5965-7-9-0" class="cls-15">
+      <text class="cls-8" transform="translate(687.8 598.6)"><tspan x="0" y="0">1MB Block Size Limit (soft fork)</tspan></text>
+    </g>
+    <path id="path122-5-6-7-3-6-2" class="cls-31" d="M678.7,792v67.5" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <path id="path122-5-6-7-3-61" class="cls-22" d="M693.8,882v67.5" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <path id="path122-5-6-7-3-61-7" class="cls-20" d="M708.8,972v67.5" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <path id="path122-5-6-7-3-61-2" class="cls-24" d="M723.7,1062v67.5" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <g id="text5965-7-9-0-23" class="cls-15">
+      <text class="cls-8" transform="translate(698.7 691.5)"><tspan x="0" y="0">Pay-to-Script-Hash (soft fork)</tspan></text>
+    </g>
+    <g id="text1010-5" class="cls-15">
+      <text class="cls-5" transform="translate(526.3 878)"><tspan x="0" y="0">2013-05-15</tspan></text>
+    </g>
+    <g id="text5965-7-9-7" class="cls-15">
+      <text class="cls-8" transform="translate(747.9 967.4)"><tspan x="0" y="0">Strict DER Encoding for Signatures (soft fork)</tspan></text>
+    </g>
+    <g id="text5965-7-9-7-6" class="cls-15">
+      <text class="cls-8" transform="translate(762.4 1054.1)"><tspan x="0" y="0">OP_CHECKLOCKTIMEVERIFY (soft fork)</tspan></text>
+    </g>
+    <g id="text5965-7-9-7-6-2" class="cls-15">
+      <text class="cls-8" transform="translate(776 1144.1)"><tspan x="0" y="0">OP_CHECKSEQUENCEVERIFY (soft fork)</tspan></text>
+    </g>
+    <g id="text1010-9" class="cls-15">
+      <text class="cls-5" transform="translate(482.3 601.9)"><tspan x="0" y="0">2010-10-12</tspan></text>
+    </g>
+    <g id="text1010-9-7" class="cls-15">
+      <text class="cls-5" transform="translate(497.4 694.9)"><tspan x="0" y="0">2012-04-01</tspan></text>
+    </g>
+    <g id="text1010-9-7-4" class="cls-15">
+      <text class="cls-5" transform="translate(541 967.1)"><tspan x="0" y="0">2015-07-04</tspan></text>
+    </g>
+    <g id="text1010-9-7-4-0" class="cls-15">
+      <text class="cls-5" transform="translate(556.1 1057.2)"><tspan x="0" y="0">2015-12-14</tspan></text>
+    </g>
+    <g id="text1010-9-7-4-6" class="cls-15">
+      <text class="cls-5" transform="translate(569.6 1150.1)"><tspan x="0" y="0">2016-07-04</tspan></text>
+    </g>
+    <circle id="path5667-3-5-9" class="cls-46" cx="656.2" cy="687.4" r="15"/>
+    <circle id="path5667-3-5" class="cls-46" cx="640.8" cy="596.5" r="15"/>
+    <circle id="path5667-3-5-8" class="cls-46" cx="685.8" cy="870.9" r="15"/>
+    <circle id="path5667-3-5-8-9" class="cls-46" cx="700.8" cy="960.9" r="15"/>
+    <circle id="path5667-3-5-8-0" class="cls-46" cx="715.8" cy="1050.9" r="15" transform="translate(-383.2 1690.4) rotate(-85.9)"/>
+    <circle id="path5667-3-5-8-0-2" class="cls-46" cx="731.9" cy="1140.9" r="15" transform="translate(-380.9 366.9) rotate(-22.5)"/>
+    <circle id="path5667-3-7-3" class="cls-46" cx="739" cy="1234.1" r="15" transform="translate(-416 376.7) rotate(-22.5)"/>
+    <g id="text1010-9-7-4-6-0" class="cls-15">
+      <text class="cls-5" transform="translate(767.8 1240.1)"><tspan x="0" y="0">2017-08-01</tspan></text>
+    </g>
+    <g id="text1010-9-7-4-6-0-3" class="cls-15">
+      <text class="cls-5" transform="translate(908.1 1353.7)"><tspan x="0" y="0">2017-08-24</tspan></text>
+    </g>
+    <g id="text1010-9-7-4-6-0-0" class="cls-15">
+      <text class="cls-5" transform="translate(717.1 1473.7)"><tspan x="0" y="0">2017-10-24</tspan></text>
+    </g>
+    <g id="text1010-9-7-4-6-0-1-5" class="cls-15">
+      <text class="cls-5" transform="translate(481.2 1787)"><tspan x="0" y="0">2018-11-15</tspan></text>
+    </g>
+    <circle id="path5667-3-7-3-7-2" class="cls-46" cx="856.3" cy="1483.2" r="15"/>
+    <circle id="path5667-3-7-3-7" class="cls-46" cx="740.1" cy="1354.1" r="15" transform="translate(-461.9 386.3) rotate(-22.5)"/>
+    <g id="text1498" class="cls-15">
+      <text class="cls-1" transform="translate(282.6 238.5)"><tspan x="0" y="0">Main Consensus Forks of Bitcoin (2009 — 2024)</tspan></text>
+    </g>
+    <circle id="path5667-3-7-3-7-2-9" class="cls-46" cx="1055.6" cy="1663.2" r="15"/>
+    <g id="text5965-7-9-0-2-6" class="cls-15">
+      <text class="cls-8" transform="translate(907.6 1473.9)"><tspan x="0" y="0">Bitcoin Gold Snapshot</tspan></text>
+    </g>
+    <g id="text5965-7-9-0-2-6-3" class="cls-15">
+      <text class="cls-8" transform="translate(1104.1 1657.6)"><tspan x="0" y="0">Equihash-BTG</tspan></text>
+      <text class="cls-8" transform="translate(1123.5 1677.6)"><tspan x="0" y="0">(hard fork)</tspan></text>
+    </g>
+    <path id="path1113-2" class="cls-27" d="M635.3,1527l-84,45" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <path id="path122-0-6-1-7-0" class="cls-27" d="M551.3,1572v30" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <g id="text1569-9" class="cls-15">
+      <text class="cls-7" transform="translate(671 1567.1)"><tspan x="0" y="0">Bitcoin Clashic</tspan></text>
+    </g>
+    <circle id="path5667-3-7-3-0" class="cls-46" cx="545.4" cy="1604.1" r="15"/>
+    <g id="text1010-9-7-4-6-0-0-6" class="cls-15">
+      <text class="cls-5" transform="translate(670 1525.1)"><tspan x="0" y="0">2017-11-13</tspan></text>
+    </g>
+    <g id="text1010-9-7-4-6-0-0-6-7" class="cls-15">
+      <text class="cls-5" transform="translate(568.5 1612)"><tspan x="0" y="0">2018-05-15</tspan></text>
+    </g>
+    <g id="text5965-6-6-2" class="cls-15">
+      <text class="cls-8" transform="translate(316.6 1600.2)"><tspan x="0" y="0">Monolith (hard fork)</tspan></text>
+      <text class="cls-5" transform="translate(275.4 1620.2)"><tspan x="0" y="0">32MB limit, extra opcodes</tspan></text>
+    </g>
+    <g id="flowRoot1251">
+      <g id="flowRegion1253">
+        <rect id="rect1255" class="cls-17" x="-170.1" y="6544.9" width="453.5" height="56.7"/>
+      </g>
+    </g>
+    <g id="text1010-9-7-4-6-0-0-6-7-7" class="cls-15">
+      <text class="cls-5" transform="translate(906.9 1669.3)"><tspan x="0" y="0">2018-07-03</tspan></text>
+    </g>
+    <g id="text5965-6-6-2-9" class="cls-15">
+      <text class="cls-8" transform="translate(218.1 1699.3)"><tspan x="0" y="0">Magnetic Anomaly (hard fork)</tspan></text>
+      <text class="cls-5" transform="translate(227.7 1719.3)"><tspan x="0" y="0">OP_CHECKDATASIG, CTOR</tspan></text>
+    </g>
+    <path id="path1113-2-8" class="cls-27" d="M528.8,1737l-75,41.3" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <circle id="path5667-3-7-3-7-22" class="cls-46" cx="539.4" cy="1728.3" r="15"/>
+    <g id="text5965-6-6-2-9-9" class="cls-15">
+      <text class="cls-8" transform="translate(578.5 1699.6)"><tspan x="0" y="0">Satoshi Vision (hard fork)</tspan></text>
+      <text class="cls-5" transform="translate(585.5 1719.6)"><tspan x="0" y="0">128 MB limit, old opcodes</tspan></text>
+    </g>
+    <circle id="path5667-3-7-3-7-22-6" class="cls-46" cx="447.8" cy="1889.1" r="15"/>
+    <g id="text5965-6-6-2-9-2" class="cls-15">
+      <text class="cls-8" transform="translate(180 1886.2)"><tspan x="0" y="0">Great Wall (hard fork)</tspan></text>
+      <text class="cls-5" transform="translate(197.9 1906.2)"><tspan x="0" y="0">Schnorr signatures</tspan></text>
+    </g>
+    <g id="text1010-9-7-4-6-0-1-5-9" class="cls-15">
+      <text class="cls-5" transform="translate(474.8 1893.3)"><tspan x="0" y="0">2019-05-15</tspan></text>
+    </g>
+    <path id="path122-0-6-8-7-1-7" class="cls-26" d="M431.3,2014.5v97.5" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <circle id="path5667-3-7-3-7-22-6-8" class="cls-46" cx="437.6" cy="2004.8" r="15"/>
+    <g id="text5965-6-6-2-9-2-4" class="cls-15">
+      <text class="cls-8" transform="translate(189.9 1999.8)"><tspan x="0" y="0">Graviton (hard fork)</tspan></text>
+      <text class="cls-5" transform="translate(197.7 2019.8)"><tspan x="0" y="0">Schnorr for multisig</tspan></text>
+    </g>
+    <g id="text1010-9-7-4-6-0-1-5-9-3" class="cls-15">
+      <text class="cls-5" transform="translate(467.9 2012.6)"><tspan x="0" y="0">2019-11-15</tspan></text>
+    </g>
+    <circle id="path5667-3-7-3-7-22-6-1" class="cls-46" cx="633.8" cy="1950.1" r="15"/>
+    <g id="text5965-6-6-2-9-2-6" class="cls-15">
+      <text class="cls-8" transform="translate(702.9 1938)"><tspan x="0" y="0">Quasar</tspan></text>
+      <text class="cls-8" transform="translate(687.4 1958)"><tspan x="0" y="0">(hard fork)</tspan></text>
+      <text class="cls-5" transform="translate(685.2 1978)"><tspan x="0" y="0">512MB limit</tspan></text>
+    </g>
+    <g id="flowRoot1544">
+      <g id="flowRegion1546">
+        <rect id="rect1548" class="cls-17" x="2834.6" y="7905.6" width="56.7" height="56.7"/>
+      </g>
+    </g>
+    <g id="text1569-0" class="cls-15">
+      <text class="cls-14" transform="translate(233.3 1791.3)"><tspan x="0" y="0">&quot;Bitcoin Cash ABC&quot;</tspan></text>
+      <text class="cls-14" transform="translate(258.3 1811.3)"><tspan x="0" y="0">= Bitcoin Cash</tspan></text>
+    </g>
+    <path id="path122-0-6-1-7-5" class="cls-25" d="M641.3,1538.3v41.3" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <circle id="path5667-3-7-3-7-6" class="cls-46" cx="639.3" cy="1520.7" r="15"/>
+    <g id="text1569-0-4" class="cls-15">
+      <text class="cls-2" transform="translate(328.4 3183.5)"><tspan x="0" y="0">Bitcoin Cash</tspan></text>
+      <text class="cls-2" transform="translate(371 3209.5)"><tspan x="0" y="0">(BCH)</tspan></text>
+    </g>
+    <g id="text1569-4-5" class="cls-15">
+      <text class="cls-9" transform="translate(603.8 3187.7)"><tspan x="0" y="0">Bitcoin SV</tspan></text>
+      <text class="cls-9" transform="translate(633.4 3213.7)"><tspan x="0" y="0">(BSV)</tspan></text>
+    </g>
+    <g id="text1569-7-1-3" class="cls-15">
+      <text class="cls-4" transform="translate(825.8 3187.7)"><tspan x="0" y="0">Bitcoin</tspan></text>
+      <text class="cls-4" transform="translate(834.5 3213.7)"><tspan x="0" y="0">(BTC)</tspan></text>
+    </g>
+    <g id="text1569-4-1-4" class="cls-15">
+      <text class="cls-11" transform="translate(987 3187.7)"><tspan x="0" y="0">Bitcoin Gold</tspan></text>
+      <text class="cls-11" transform="translate(1028.2 3213.7)"><tspan x="0" y="0">(BTG)</tspan></text>
+    </g>
+    <g id="text5965-6-6-25" class="cls-15">
+      <text class="cls-8" transform="translate(351.6 1500.6)"><tspan x="0" y="0">DAA Change (hard fork)</tspan></text>
+      <text class="cls-5" transform="translate(389 1520.6)"><tspan x="0" y="0">cw-144 algorithm</tspan></text>
+    </g>
+    <g id="text1010-9-7-4-6-0-1-5-9-4" class="cls-15">
+      <text class="cls-5" transform="translate(488.3 1954.7)"><tspan x="0" y="0">2019-07-24</tspan></text>
+    </g>
+    <g id="text1756" class="cls-15">
+      <text class="cls-12" transform="translate(959 3302.5)"><tspan x="0" y="0">&quot;Main Consensus Forks of Bitcoin&quot; v9.0</tspan></text>
+      <text class="cls-12" transform="translate(1187.6 3320.5)"><tspan x="0" y="0">@lugaxker</tspan></text>
+    </g>
+    <path id="path1774" class="cls-29" d="M539.6,1743.3l.4,23.7" inkscape:connection-start="#path5667-3-7-3-7-22" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <path id="path122-5-6-7-3-6-3" class="cls-34" d="M618.8,430.7v67.5" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <circle id="path5667-3" class="cls-46" cx="625.8" cy="505.9" r="15"/>
+    <circle id="path5667-3-6" class="cls-46" cx="611.9" cy="426.6" r="15"/>
+    <g id="text1010-53" class="cls-15">
+      <text class="cls-5" transform="translate(455.1 432.2)"><tspan x="0" y="0">2010-07-31</tspan></text>
+    </g>
+    <g id="text5965-6-62" class="cls-15">
+      <text class="cls-8" transform="translate(653.7 432.1)"><tspan x="0" y="0">Addition of OP_NOP Functions (hard fork)</tspan></text>
+    </g>
+    <path id="path122-0-6-8-7-3-0-3" class="cls-38" d="M648.8,2058.8v326.2" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <circle id="path5667-3-7-3-7-22-6-1-6" class="cls-46" cx="641.3" cy="2062" r="15"/>
+    <g id="text5965-6-6-2-9-2-6-7" class="cls-15">
+      <text class="cls-8" transform="translate(709.9 2054.2)"><tspan x="0" y="0">Genesis</tspan></text>
+      <text class="cls-8" transform="translate(698.8 2074.2)"><tspan x="0" y="0">(hard fork)</tspan></text>
+      <text class="cls-5" transform="translate(681 2094.7)"><tspan x="0" y="0">Unlimited block</tspan></text>
+      <text class="cls-5" transform="translate(668.9 2115.7)"><tspan x="0" y="0">size, P2SH/CLTV/</tspan></text>
+      <text class="cls-5" transform="translate(678.2 2136.7)"><tspan x="0" y="0">CSV phase-out,</tspan></text>
+      <text class="cls-5" transform="translate(675.4 2157.7)"><tspan x="0" y="0">legacy timelocks</tspan></text>
+    </g>
+    <path id="path122-0-6-8-7-1-7-6" class="cls-27" d="M424.5,2130.1v99" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <circle id="path5667-3-7-3-7-22-6-8-2" class="cls-46" cx="430.8" cy="2120.4" r="15"/>
+    <g id="text1010-9-7-4-6-0-1-5-9-3-9" class="cls-15">
+      <text class="cls-5" transform="translate(497 2069.7)"><tspan x="0" y="0">2020-02-04</tspan></text>
+    </g>
+    <g id="text5965-6-6-2-9-2-4-2" class="cls-15">
+      <text class="cls-8" transform="translate(197.4 2116.4)"><tspan x="0" y="0">Phonon (hard fork)</tspan></text>
+      <text class="cls-5" transform="translate(231.2 2136.9)"><tspan x="0" y="0" xml:space="preserve">SigChecks,  </tspan></text>
+      <text class="cls-5" transform="translate(186.8 2157.9)"><tspan x="0" y="0">OP_REVERSEBYTES</tspan></text>
+    </g>
+    <g id="text1010-9-7-4-6-0-1-5-9-3-9-9" class="cls-15">
+      <text class="cls-5" transform="translate(458.2 2126)"><tspan x="0" y="0">2020-05-15</tspan></text>
+    </g>
+    <path id="path255" class="cls-27" d="M416.3,2253v237" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <circle id="circle257" class="cls-46" cx="422.6" cy="2244.8" r="15"/>
+    <g id="text1096" class="cls-15">
+      <text class="cls-8" transform="translate(462.8 2239.6)"><tspan x="0" y="0">Axion (hard fork)</tspan></text>
+      <text class="cls-5" transform="translate(475.6 2260.1)"><tspan x="0" y="0">aserti3-2d DAA</tspan></text>
+    </g>
+    <g id="text1010-9-7-4-6-0-1-5-9-3-9-9-3" class="cls-15">
+      <text class="cls-5" transform="translate(265.4 2315.5)"><tspan x="0" y="0">2020-11-15</tspan></text>
+    </g>
+    <g id="text1142" class="cls-15">
+      <text class="cls-14" transform="translate(456.7 2300.4)"><tspan x="0" y="0">&quot;Bitcoin Cash</tspan></text>
+      <text class="cls-14" transform="translate(492.8 2320.4)"><tspan x="0" y="0">Node&quot;</tspan></text>
+      <text class="cls-14" transform="translate(452.8 2340.4)"><tspan x="0" y="0">= Bitcoin Cash</tspan></text>
+    </g>
+    <g id="text1150" class="cls-15">
+      <text class="cls-3" transform="translate(34.7 2300.6)"><tspan x="0" y="0">&quot;Bitcoin Cash</tspan></text>
+      <text class="cls-3" transform="translate(74.1 2320.6)"><tspan x="0" y="0">ABC&quot;</tspan></text>
+      <text class="cls-3" transform="translate(61.9 2340.6)"><tspan x="0" y="0">= eCash</tspan></text>
+    </g>
+    <g id="text1158" class="cls-15">
+      <text class="cls-8" transform="translate(127.9 2241.2)"><tspan x="0" y="0">Coinbase Rule (soft fork)</tspan></text>
+      <text class="cls-5" transform="translate(214 2261.7)"><tspan x="0" y="0">8% IFP</tspan></text>
+    </g>
+    <path id="path1160" class="cls-28" d="M345,2292l66.1-37.6" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <g id="text1105" class="cls-15">
+      <text class="cls-16" transform="translate(141.3 3183.5)"><tspan x="0" y="0">eCash</tspan></text>
+      <text class="cls-16" transform="translate(144.9 3209.5)"><tspan x="0" y="0">(XEC)</tspan></text>
+    </g>
+    <g id="g1333">
+      <path id="path1321" class="cls-45" d="M185,3103.5l-9.3,5.4c-.2.1-.4.4-.4.7v4.5c0,.3.1.5.4.7l3.9,2.3c.2.1.5.1.7,0l16.2-9.3c2.7-1.6,2.7-6.2,0-7.7l-14.5-8.4c-1.2-.7-2.8-.7-4,0l-14.5,8.4c-1.3.7-2,2-2,3.5,0,5.6,0,11.2,0,16.7,0,1.4.8,2.8,2,3.5l14.5,8.4c1.2.7,2.8.7,4,0l14.5-8.4c1.3-.7,2-2,2-3.5v-7.3l-17.3,10c-.8.5-1.7.5-2.5,0l-7.7-4.5c-.8-.4-1.3-1.3-1.2-2.2v-8.9c0-.9.5-1.7,1.2-2.1,2.6-1.5,5.2-3,7.7-4.5.8-.5,1.7-.5,2.5,0l3.8,2.2c.2.1.2.3.1.5,0,0,0,0-.1.1Z" inkscape:connector-curvature="0"/>
+      <path id="path1323" class="cls-40" d="M180,3074.1c-20.8,0-37.7,16.9-37.7,37.7s16.9,37.7,37.7,37.7,37.7-16.9,37.7-37.7-16.9-37.7-37.7-37.7ZM185,3102.9l-3.8-2.2c-.8-.5-1.7-.5-2.5,0-2.6,1.5-5.2,3-7.7,4.5-.8.4-1.2,1.3-1.2,2.1v8.9c0,.9.5,1.7,1.2,2.2l7.7,4.5c.8.5,1.7.5,2.5,0l17.3-10v7.3c0,1.4-.7,2.8-2,3.5l-14.5,8.4c-1.2.7-2.8.7-4,0l-14.5-8.4c-1.3-.7-2-2-2-3.5,0-5.6,0-11.1,0-16.7,0-1.4.8-2.8,2-3.5l14.5-8.4c1.2-.7,2.8-.7,4,0l14.5,8.4c2.7,1.6,2.7,6.2,0,7.7l-16.2,9.3c-.2.1-.5.1-.7,0l-3.9-2.3c-.2-.1-.4-.4-.4-.7v-4.5c0-.3.1-.5.4-.7l9.3-5.4c.2,0,.2-.3.1-.5,0,0,0,0-.1-.1Z" inkscape:connector-curvature="0"/>
+    </g>
+    <path id="path1335" class="cls-23" d="M870,2445v603.8" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <circle id="circle1337" class="cls-46" cx="861.7" cy="2441.4" r="15"/>
+    <g id="text1343" class="cls-15">
+      <text class="cls-5" transform="translate(714.8 2448)"><tspan x="0" y="0">2021-11-14</tspan></text>
+    </g>
+    <g id="text1357" class="cls-15">
+      <text class="cls-8" transform="translate(927 2394.2)"><tspan x="0" y="0">Taproot</tspan></text>
+      <text class="cls-8" transform="translate(916.8 2414.2)"><tspan x="0" y="0">(soft fork)</tspan></text>
+      <text class="cls-5" transform="translate(928.5 2434.7)"><tspan x="0" y="0">Schnorr</tspan></text>
+      <text class="cls-5" transform="translate(914.6 2455.7)"><tspan x="0" y="0">signatures,</tspan></text>
+      <text class="cls-5" transform="translate(927.3 2476.7)"><tspan x="0" y="0">Taproot,</tspan></text>
+      <text class="cls-5" transform="translate(923.5 2497.7)"><tspan x="0" y="0">Tapscript</tspan></text>
+    </g>
+    <circle id="circle303" class="cls-46" cx="416.1" cy="2502.9" r="15"/>
+    <g id="text1126" class="cls-15">
+      <text class="cls-8" transform="translate(467.3 2506.2)"><tspan x="0" y="0">U8 (hard fork)</tspan></text>
+      <text class="cls-5" transform="translate(458.4 2526.7)"><tspan x="0" y="0">Introspection op-</tspan></text>
+      <text class="cls-5" transform="translate(456.7 2547.7)"><tspan x="0" y="0">codes, OP_MUL,</tspan></text>
+      <text class="cls-5" transform="translate(466.7 2568.7)"><tspan x="0" y="0">bigger integers</tspan></text>
+    </g>
+    <g id="text314" class="cls-15">
+      <text class="cls-5" transform="translate(268.7 2508.1)"><tspan x="0" y="0">2022-05-15</tspan></text>
+    </g>
+    <circle id="circle316" class="cls-46" cx="671.2" cy="777.4" r="15"/>
+    <g id="text320" class="cls-15">
+      <text class="cls-5" transform="translate(514.3 785)"><tspan x="0" y="0">2013-03-24</tspan></text>
+    </g>
+    <g id="text324" class="cls-15">
+      <text class="cls-8" transform="translate(710 783.1)"><tspan x="0" y="0">Block Height in Coinbase (soft fork)</tspan></text>
+    </g>
+    <g id="text1304" class="cls-15">
+      <text class="cls-8" transform="translate(253.7 2562.2)"><tspan x="0" y="0">Avalanche</tspan></text>
+      <text class="cls-8" transform="translate(226.6 2582.2)"><tspan x="0" y="0">post-consensus</tspan></text>
+      <text class="cls-8" transform="translate(253.3 2602.2)"><tspan x="0" y="0">(hard fork)</tspan></text>
+    </g>
+    <g id="text1308" class="cls-15">
+      <text class="cls-5" transform="translate(37.5 2573)"><tspan x="0" y="0">2022-09-14</tspan></text>
+    </g>
+    <path id="path2132" class="cls-35" d="M180,2561.1v487.6" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <circle id="circle1294" class="cls-46" cx="189.8" cy="2566.1" r="15"/>
+    <circle id="circle12761" class="cls-46" cx="407.6" cy="2719.4" r="15"/>
+    <g id="text12851" class="cls-15">
+      <text class="cls-8" transform="translate(463.6 2718)"><tspan x="0" y="0">CashTokens</tspan></text>
+      <text class="cls-8" transform="translate(472.3 2738)"><tspan x="0" y="0">(hard fork)</tspan></text>
+      <text class="cls-5" transform="translate(459 2758.5)"><tspan x="0" y="0">Native tokens,</tspan></text>
+      <text class="cls-5" transform="translate(485.1 2779.5)"><tspan x="0" y="0">P2SH32</tspan></text>
+    </g>
+    <g id="text12855" class="cls-15">
+      <text class="cls-5" transform="translate(253 2730.3)"><tspan x="0" y="0">2023-05-15</tspan></text>
+    </g>
+    <path id="path19759" class="cls-38" d="M660,2389.4v235.6" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <circle id="circle19761" class="cls-46" cx="652.5" cy="2392.6" r="15"/>
+    <g id="text19922" class="cls-15">
+      <text class="cls-5" transform="translate(499.5 2401)"><tspan x="0" y="0">2021-10-21</tspan></text>
+    </g>
+    <path id="path29180" class="cls-38" d="M675,2629.4v423.1" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <circle id="circle29182" class="cls-46" cx="667.5" cy="2623" r="15"/>
+    <g id="text29188" class="cls-15">
+      <text class="cls-8" transform="translate(708.1 2317.3)"><tspan x="0" y="0">Blacklist</tspan></text>
+      <text class="cls-8" transform="translate(708.1 2337.3)"><tspan x="0" y="0">Manager</tspan></text>
+      <text class="cls-8" transform="translate(699.3 2357.3)"><tspan x="0" y="0">(hard fork)</tspan></text>
+      <text class="cls-5" transform="translate(698.1 2377.8)"><tspan x="0" y="0">UTXO free-</tspan></text>
+      <text class="cls-5" transform="translate(697 2398.8)"><tspan x="0" y="0">zing feature</tspan></text>
+    </g>
+    <g id="text46250" class="cls-15">
+      <text class="cls-8" transform="translate(700.7 2605.5)"><tspan x="0" y="0">Digital Asset</tspan></text>
+      <text class="cls-8" transform="translate(715.9 2625.5)"><tspan x="0" y="0">Recovery</tspan></text>
+      <text class="cls-8" transform="translate(710.9 2645.5)"><tspan x="0" y="0">(hard fork)</tspan></text>
+      <text class="cls-5" transform="translate(700.9 2666)"><tspan x="0" y="0">UTXO confis-</tspan></text>
+      <text class="cls-5" transform="translate(700.3 2687)"><tspan x="0" y="0">cation feature</tspan></text>
+    </g>
+    <g id="text56626" class="cls-15">
+      <text class="cls-5" transform="translate(517.4 2625.8)"><tspan x="0" y="0">2022-11-11</tspan></text>
+    </g>
+    <path id="path1531" class="cls-27" d="M408.8,2947.6v101.3" inkscape:connector-curvature="0" inkscape:connector-type="polyline"/>
+    <circle id="circle1533" class="cls-46" cx="400.1" cy="2937" r="15"/>
+    <g id="text1725" class="cls-15">
+      <text class="cls-8" transform="translate(491.8 2935.4)"><tspan x="0" y="0">ABLA</tspan></text>
+      <text class="cls-8" transform="translate(469.6 2955.4)"><tspan x="0" y="0">(hard fork)</tspan></text>
+      <text class="cls-5" transform="translate(436.8 2975.9)"><tspan x="0" y="0">Adaptive blocksize</tspan></text>
+      <text class="cls-5" transform="translate(457.9 2996.9)"><tspan x="0" y="0">limit algorithm</tspan></text>
+    </g>
+    <g id="text14698" class="cls-15">
+      <text class="cls-5" transform="translate(243.6 2941.6)"><tspan x="0" y="0">2024-05-15</tspan></text>
+    </g>
+  </g>
+</svg>
