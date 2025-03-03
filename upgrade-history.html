@@ -334,7 +334,7 @@
                     <p class="fs-4 mb-1">2018-09-17</p>
 
                     <p class="fs-4 mb-1 text-break">CVE-2018-17144 Inflation Bug</p>
-                    <p class="fs-5r text-secondary text-break">CVE-2018-17144 was a bug that could have allowed an attacker to spend the same BTC more than once.<br><br>
+                    <p class="fs-5r text-secondary text-break">CVE-2018-17144 was a bug that could have allowed an attacker to spend the same Bitcoin more than once.<br><br>
                     An optimization included in Bitcoin Core 0.14.0 skipped a check on newly-received blocks that was thought to be redundant, making the node willing to partly process blocks that tried to spend the same input more than once. This would trigger some code meant to catch unexpected node operation and cause the node to deliberately crash. This allowed a denial-of-service attack that could be exploited by miners.<br><br>
                     The code meant to catch unexpected operation (an assert) was rewritten for Bitcoin Core 0.15.0, unintentionally allowing the node to continue operation in the case of duplication inputs. This allowed a miner to spend the same BTC more than once.<br><br>
                     These changes were ported to Bitcoin Cash as well.<br><br>
