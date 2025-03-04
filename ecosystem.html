@@ -6928,8 +6928,8 @@
 	      </div>
 	  </div>
 
-	  <!-- Script for card filtering -->
-	  <script>
+		<!-- Script for card filtering -->
+		<script>
 		document.addEventListener('DOMContentLoaded', function() {
 		    const searchInput = document.getElementById('searchInput');
 		    const filterButtons = document.querySelectorAll('[data-filter]');
@@ -6985,93 +6985,93 @@
 		        });
 		    }
 		});
-	  </script>
+		</script>
 
-	  <!-- Script to search by URL -->
+		<!-- Script to search by URL -->
 		<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const searchInput = document.getElementById('searchInput');
-    const cardContainer = document.getElementById('cardContainer');
-    const filterButtons = document.querySelectorAll('.filter-btn');
+		document.addEventListener('DOMContentLoaded', function() {
+		    const searchInput = document.getElementById('searchInput');
+		    const cardContainer = document.getElementById('cardContainer');
+		    const filterButtons = document.querySelectorAll('.filter-btn');
 
-    // Function to perform search
-    function performSearch(query) {
-        const cards = cardContainer.querySelectorAll('.card');
-        query = query.toLowerCase();
-        cards.forEach(card => {
-            const cardText = card.textContent.toLowerCase();
-            if (cardText.includes(query)) {
-                card.parentElement.style.display = 'block';
-            } else {
-                card.parentElement.style.display = 'none';
-            }
-        });
-        if (window.Masonry) {
-            new Masonry(cardContainer, {
-                itemSelector: '.col',
-                percentPosition: true
-            }).layout(); // Re-layout Masonry after filtering
-        }
-    }
+		    // Function to perform search
+		    function performSearch(query) {
+		        const cards = cardContainer.querySelectorAll('.card');
+		        query = query.toLowerCase();
+		        cards.forEach(card => {
+		            const cardText = card.textContent.toLowerCase();
+		            if (cardText.includes(query)) {
+		                card.parentElement.style.display = 'block';
+		            } else {
+		                card.parentElement.style.display = 'none';
+		            }
+		        });
+		        if (window.Masonry) {
+		            new Masonry(cardContainer, {
+		                itemSelector: '.col',
+		                percentPosition: true
+		            }).layout(); // Re-layout Masonry after filtering
+		        }
+		    }
 
-    // Function to filter cards based on filter value
-    function filterCards(filter) {
-        const cards = cardContainer.querySelectorAll('.card');
-        cards.forEach(card => {
-            const cardHeaders = card.getAttribute('data-header');
-            if (filter === 'all' || !cardHeaders || cardHeaders.toLowerCase().includes(filter.toLowerCase())) {
-                card.parentElement.style.display = 'block';
-            } else {
-                card.parentElement.style.display = 'none';
-            }
-        });
-        
-        // Update active button
-        filterButtons.forEach(button => {
-            button.classList.remove('active');
-            if (button.getAttribute('data-filter') === filter) {
-                button.classList.add('active');
-            }
-        });
+		    // Function to filter cards based on filter value
+		    function filterCards(filter) {
+		        const cards = cardContainer.querySelectorAll('.card');
+		        cards.forEach(card => {
+		            const cardHeaders = card.getAttribute('data-header');
+		            if (filter === 'all' || !cardHeaders || cardHeaders.toLowerCase().includes(filter.toLowerCase())) {
+		                card.parentElement.style.display = 'block';
+		            } else {
+		                card.parentElement.style.display = 'none';
+		            }
+		        });
+		        
+		        // Update active button
+		        filterButtons.forEach(button => {
+		            button.classList.remove('active');
+		            if (button.getAttribute('data-filter') === filter) {
+		                button.classList.add('active');
+		            }
+		        });
 
-        if (window.Masonry) {
-            new Masonry(cardContainer, {
-                itemSelector: '.col',
-                percentPosition: true
-            }).layout(); // Re-layout Masonry after filtering
-        }
-    }
+		        if (window.Masonry) {
+		            new Masonry(cardContainer, {
+		                itemSelector: '.col',
+		                percentPosition: true
+		            }).layout(); // Re-layout Masonry after filtering
+		        }
+		    }
 
-    // Event listener for search input - triggers on every input change
-    searchInput.addEventListener('input', function() {
-        // Deactivate all filter buttons when search input is used
-        filterButtons.forEach(button => button.classList.remove('active'));
-        
-        // If search input is empty, you might want to revert to the last filter or show all
-        if (this.value.trim() === '') {
-            filterCards('all'); // or restore last filter state if that's what you want
-        } else {
-            performSearch(this.value);
-        }
-    });
+		    // Event listener for search input - triggers on every input change
+		    searchInput.addEventListener('input', function() {
+		        // Deactivate all filter buttons when search input is used
+		        filterButtons.forEach(button => button.classList.remove('active'));
+		        
+		        // If search input is empty, you might want to revert to the last filter or show all
+		        if (this.value.trim() === '') {
+		            filterCards('all'); // or restore last filter state if that's what you want
+		        } else {
+		            performSearch(this.value);
+		        }
+		    });
 
-    // Check for both query and filter in the URL when the page loads
-    const urlParams = new URLSearchParams(window.location.search);
-    const query = urlParams.get('query');
-    const filter = urlParams.get('filter');
+		    // Check for both query and filter in the URL when the page loads
+		    const urlParams = new URLSearchParams(window.location.search);
+		    const query = urlParams.get('query');
+		    const filter = urlParams.get('filter');
 
-    if (query) {
-        searchInput.value = query;
-        performSearch(query);
-    } else if (filter) {
-        // If there's a filter but no query, activate the corresponding filter button
-        searchInput.value = ''; // Clear the search input if a filter is active
-        filterCards(filter);
-    } else {
-        // Default behavior, maybe show all if neither query nor filter is specified
-        filterCards('all');
-    }
-});
+		    if (query) {
+		        searchInput.value = query;
+		        performSearch(query);
+		    } else if (filter) {
+		        // If there's a filter but no query, activate the corresponding filter button
+		        searchInput.value = ''; // Clear the search input if a filter is active
+		        filterCards(filter);
+		    } else {
+		        // Default behavior, maybe show all if neither query nor filter is specified
+		        filterCards('all');
+		    }
+		});
 		</script>
 
 		<!-- Script to copy search URL -->
@@ -7170,110 +7170,110 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-		<!-- Jquery needed -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<!-- Jquery needed -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-	    <!-- Masonry for grids -->
-	    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+    <!-- Masonry for grids -->
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
 
-	  	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  	<!-- Include all compiled plugins (below), or include individual files as needed -->
+  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-        <!--Copy to Clipboard Script for donation address-->
-		<script>
-		document.addEventListener('DOMContentLoaded', function() {
-			const button = document.getElementById('copyButton');
-			const tooltip = new bootstrap.Tooltip(button);
-			const copyToClipboard = async () => {
-				try {
-					const element = document.querySelector(".user-select-all");
-					await navigator.clipboard.writeText(element.textContent);
-					// Optional: Provide feedback or perform additional actions upon successful copy
-					// Update tooltip text
-					tooltip.setContent({ '.tooltip-inner': 'Copied!' });
-					// Show tooltip
-					tooltip.show();
+    <!--Copy to Clipboard Script for donation address-->
+	<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		const button = document.getElementById('copyButton');
+		const tooltip = new bootstrap.Tooltip(button);
+		const copyToClipboard = async () => {
+			try {
+				const element = document.querySelector(".user-select-all");
+				await navigator.clipboard.writeText(element.textContent);
+				// Optional: Provide feedback or perform additional actions upon successful copy
+				// Update tooltip text
+				tooltip.setContent({ '.tooltip-inner': 'Copied!' });
+				// Show tooltip
+				tooltip.show();
 
-					// Hide tooltip after a short delay
-					setTimeout(() => {
-					tooltip.hide();
-					// Reset tooltip text for next use
-					tooltip.setContent({ '.tooltip-inner': 'Copy to Clipboard' });
-					}, 1500); // Adjust delay as needed
-				} catch (error) {
-					console.error("Failed to copy to clipboard:", error);
-					// Optional: Handle and display the error to the user
-					tooltip.setContent({ '.tooltip-inner': 'Copy Failed!' });
-					tooltip.show();
-					setTimeout(() => {
-					tooltip.hide();
-					tooltip.setContent({ '.tooltip-inner': 'Copy to Clipboard' });
-					}, 2000); // Adjust delay for error message
-				}
-			};
-			// Attach the function to the button's onclick event again or maintain existing setup
-			button.addEventListener('click', copyToClipboard);
-		});
-		</script>
+				// Hide tooltip after a short delay
+				setTimeout(() => {
+				tooltip.hide();
+				// Reset tooltip text for next use
+				tooltip.setContent({ '.tooltip-inner': 'Copy to Clipboard' });
+				}, 1500); // Adjust delay as needed
+			} catch (error) {
+				console.error("Failed to copy to clipboard:", error);
+				// Optional: Handle and display the error to the user
+				tooltip.setContent({ '.tooltip-inner': 'Copy Failed!' });
+				tooltip.show();
+				setTimeout(() => {
+				tooltip.hide();
+				tooltip.setContent({ '.tooltip-inner': 'Copy to Clipboard' });
+				}, 2000); // Adjust delay for error message
+			}
+		};
+		// Attach the function to the button's onclick event again or maintain existing setup
+		button.addEventListener('click', copyToClipboard);
+	});
+	</script>
 
 
-	  	<!-- Initializing tooltips -->
-	  	<script>
-		var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-		var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-		  return new bootstrap.Tooltip(tooltipTriggerEl)
-		})
-		</script>
+  	<!-- Initializing tooltips -->
+  	<script>
+	var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+	var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+	  return new bootstrap.Tooltip(tooltipTriggerEl)
+	})
+	</script>
 
-		<script>
-		document.addEventListener('DOMContentLoaded', function() {
-		  function setTheme(theme) {
-		    document.documentElement.setAttribute('data-bs-theme', theme);
-		    localStorage.setItem('bs-theme', theme);
-		    updateThemeIcon(theme);
-		    updateActiveDropdownItem(theme);
-		    updateButtonStyles(); // Call this function to update button styles on theme change
-		  }
+	<script>
+	document.addEventListener('DOMContentLoaded', function() {
+	  function setTheme(theme) {
+	    document.documentElement.setAttribute('data-bs-theme', theme);
+	    localStorage.setItem('bs-theme', theme);
+	    updateThemeIcon(theme);
+	    updateActiveDropdownItem(theme);
+	    updateButtonStyles(); // Call this function to update button styles on theme change
+	  }
 
-		  function getCurrentTheme() {
-		    return localStorage.getItem('bs-theme') || 'dark';
-		  }
+	  function getCurrentTheme() {
+	    return localStorage.getItem('bs-theme') || 'dark';
+	  }
 
-		  function updateThemeIcon(theme) {
-		    const icon = document.getElementById('themeIcon');
-		    icon.className = `bi ${theme === 'light' ? 'bi-brightness-high-fill' : 'bi-moon-stars-fill'}`;
-		  }
+	  function updateThemeIcon(theme) {
+	    const icon = document.getElementById('themeIcon');
+	    icon.className = `bi ${theme === 'light' ? 'bi-brightness-high-fill' : 'bi-moon-stars-fill'}`;
+	  }
 
-		  function updateActiveDropdownItem(theme) {
-		    document.querySelectorAll('.theme-switcher .dropdown-item').forEach(item => {
-		      item.classList.toggle('active', item.getAttribute('data-theme') === theme);
-		    });
-		  }
+	  function updateActiveDropdownItem(theme) {
+	    document.querySelectorAll('.theme-switcher .dropdown-item').forEach(item => {
+	      item.classList.toggle('active', item.getAttribute('data-theme') === theme);
+	    });
+	  }
 
-		  function updateButtonStyles() {
-		    document.querySelectorAll('.btn-outline-secondary, .btn-secondary').forEach(button => {
-		      const currentTheme = document.documentElement.getAttribute('data-bs-theme');
-		      if (currentTheme === 'light') {
-		        button.classList.remove('btn-outline-secondary');
-		        button.classList.add('btn-secondary');
-		      } else {
-		        button.classList.remove('btn-secondary');
-		        button.classList.add('btn-outline-secondary');
-		      }
-		    });
-		  }
+	  function updateButtonStyles() {
+	    document.querySelectorAll('.btn-outline-secondary, .btn-secondary').forEach(button => {
+	      const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+	      if (currentTheme === 'light') {
+	        button.classList.remove('btn-outline-secondary');
+	        button.classList.add('btn-secondary');
+	      } else {
+	        button.classList.remove('btn-secondary');
+	        button.classList.add('btn-outline-secondary');
+	      }
+	    });
+	  }
 
-		  setTheme(getCurrentTheme());
-		  updateButtonStyles(); // Initial call to ensure buttons are styled correctly on load
+	  setTheme(getCurrentTheme());
+	  updateButtonStyles(); // Initial call to ensure buttons are styled correctly on load
 
-		  document.querySelectorAll('.theme-switcher .dropdown-item').forEach(item => {
-		    item.addEventListener('click', function(e) {
-		      e.preventDefault();
-		      const theme = this.getAttribute('data-theme');
-		      setTheme(theme);
-		    });
-		  });
-		});
-		</script>
+	  document.querySelectorAll('.theme-switcher .dropdown-item').forEach(item => {
+	    item.addEventListener('click', function(e) {
+	      e.preventDefault();
+	      const theme = this.getAttribute('data-theme');
+	      setTheme(theme);
+	    });
+	  });
+	});
+	</script>
 	</body>
 </html>
