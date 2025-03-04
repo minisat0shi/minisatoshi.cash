@@ -186,30 +186,35 @@
 
 
 		    <style>
-        .gallery {
-            width: 100%;
-            position: relative;
-            overflow: hidden;
-        }
-        .gallery-item {
-            margin-bottom: 1rem;
-            overflow: hidden;
-            float: left;
-            width: 100%;
-        }
-        .gallery-image, .gallery-video {
+       .card-img, .card-video {
             height: auto;
-            max-height: 12em; /* Limit maximum height */
-            display: block;
-            transition: transform 0.3s ease;
+            max-height: 12em; /* Updated max height */
+            border-radius: 0.25rem 0.25rem 0 0;
         }
-        .gallery-image:hover, .gallery-video:hover {
-            transform: scale(1.05);
-        }
-        .gallery-video {
+        .card-video {
             background: #000;
         }
+        .card {
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
 		    </style>
+
+	      <div class="row row-cols-12 row-cols-lg-2" data-masonry='{"percentPosition": true }'>
+	        <div class="col mb-4">
+	          <div class="card">
+	            <img src="..." class="card-img" alt="...">
+	          </div>
+	        </div>
+	      </div>
+
+
+
+
+
+
 		    <div class="container py-5">
 		        <h1 class="text-center mb-4">Masonry Media Gallery</h1>
 		        <div class="gallery" id="gallery">
