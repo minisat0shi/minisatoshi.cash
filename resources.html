@@ -228,7 +228,7 @@
         async function loadGallery() {
             const gallery = document.getElementById('gallery');
             try {
-                const response = await fetch('/api/images.php');
+                const response = await fetch('/api/resources.php');
                 if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
                 const media = await response.json();
 
