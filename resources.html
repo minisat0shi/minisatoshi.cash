@@ -185,112 +185,133 @@
 
 
 
-	    <style>
-       .card-img, .card-video {
+		    <style>
+        .gallery {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        .gallery-item {
+            margin-bottom: 1rem;
+            overflow: hidden;
+            float: left;
+            width: 100%;
+        }
+        .gallery-image, .gallery-video {
             height: auto;
-            max-height: 12em; /* Updated max height */
-        }
-        .card-video {
-            background: #000;
-        }
-        .card {
+            max-height: 12em; /* Limit maximum height */
+            display: block;
             transition: transform 0.3s ease;
+            background: #fff;
         }
-        .card:hover {
+        .gallery-image:hover, .gallery-video:hover {
             transform: scale(1.05);
         }
-	    </style>
-
-	    <div class="container py-5">
-	        <h1 class="text-center mb-4">Media Gallery</h1>
-	        <div class="row row-cols-12 row-cols-lg-2" data-masonry='{"percentPosition": true}' id="gallery">
-	            <!-- Cards will be loaded here -->
-	        </div>
-	    </div>
+        .gallery-video {
+            background: #000;
+        }
+		    </style>
+		    
+		    <div class="container py-5">
+		        <h1 class="text-center mb-4">Masonry Media Gallery</h1>
+		        <div class="gallery" id="gallery">
+		            <!-- Media will be loaded here -->
+		        </div>
+		    </div>
 
 		    <!-- Custom JavaScript for gallery-->
-		    <script>
-		        async function loadGallery() {
-		            const gallery = document.getElementById('gallery');
-		            try {
-		                const response = await fetch('/api/resources.php');
-		                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-		                const media = await response.json();
+    <script>
+        async function loadGallery() {
+            const gallery = document.getElementById('gallery');
+            try {
+                const response = await fetch('/api/resources.php');
+                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+                const media = await response.json();
 
-		                if (!Array.isArray(media) || media.length === 0) {
-		                    gallery.innerHTML = '<p class="text-center">No media found.</p>';
-		                    return;
-		                }
+                if (!Array.isArray(media) || media.length === 0) {
+                    gallery.innerHTML = '<p class="text-center">No media found.</p>';
+                    return;
+                }
 
-		                let itemsLoaded = 0;
-		                const totalItems = media.length;
+                let itemsLoaded = 0;
+                const totalItems = media.length;
 
-		                media.forEach(item => {
-		                    const colDiv = document.createElement('div');
-		                    colDiv.className = 'col mb-4';
+                media.forEach(item => {
+                    const divItem = document.createElement('div');
+                    divItem.className = 'gallery-item';
 
-		                    const cardDiv = document.createElement('div');
-		                    cardDiv.className = 'card';
+                    if (item.type === 'image') {
+                        const img = document.createElement('img');
+                        img.src = item.url;
+                        img.className = 'gallery-image';
+                        img.alt = item.name;
+                        img.loading = 'lazy';
+                        img.onerror = function() {
+                            this.style.display = 'none';
+                            itemsLoaded++;
+                            if (itemsLoaded === totalItems) initializeMasonry();
+                        };
+                        img.onload = function() {
+                            divItem.appendChild(img);
+                            gallery.appendChild(divItem);
+                            itemsLoaded++;
+                            if (itemsLoaded === totalItems) initializeMasonry();
+                        };
+                    } else if (item.type === 'video') {
+                        const video = document.createElement('video');
+                        video.src = item.url;
+                        video.className = 'gallery-video';
+                        video.controls = true;
+                        video.muted = true;
+                        video.loop = true;
+                        video.preload = 'metadata';
+                        video.onloadedmetadata = function() {
+                            divItem.appendChild(video);
+                            gallery.appendChild(divItem);
+                            itemsLoaded++;
+                            if (itemsLoaded === totalItems) initializeMasonry();
+                        };
+                        video.onerror = function() {
+                            this.style.display = 'none';
+                            itemsLoaded++;
+                            if (itemsLoaded === totalItems) initializeMasonry();
+                        };
+                    }
+                });
+            } catch (error) {
+                console.error('Error loading gallery:', error);
+                gallery.innerHTML = '<p class="text-center">Error loading media: ' + error.message + '</p>';
+            }
+        }
 
-		                    if (item.type === 'image') {
-		                        const img = document.createElement('img');
-		                        img.src = item.url;
-		                        img.className = 'card-img';
-		                        img.alt = item.name;
-		                        img.loading = 'lazy';
-		                        img.onerror = function() {
-		                            this.style.display = 'none';
-		                            colDiv.style.display = 'none';
-		                            itemsLoaded++;
-		                            if (itemsLoaded === totalItems) initializeMasonry();
-		                        };
-		                        img.onload = function() {
-		                            cardDiv.appendChild(img);
-		                            colDiv.appendChild(cardDiv);
-		                            gallery.appendChild(colDiv);
-		                            itemsLoaded++;
-		                            if (itemsLoaded === totalItems) initializeMasonry();
-		                        };
-		                    } else if (item.type === 'video') {
-		                        const video = document.createElement('video');
-		                        video.src = item.url;
-		                        video.className = 'card-video';
-		                        video.controls = true;
-		                        video.muted = true;
-		                        video.loop = true;
-		                        video.preload = 'metadata';
-		                        video.onloadedmetadata = function() {
-		                            cardDiv.appendChild(video);
-		                            colDiv.appendChild(cardDiv);
-		                            gallery.appendChild(colDiv);
-		                            itemsLoaded++;
-		                            if (itemsLoaded === totalItems) initializeMasonry();
-		                        };
-		                        video.onerror = function() {
-		                            this.style.display = 'none';
-		                            colDiv.style.display = 'none';
-		                            itemsLoaded++;
-		                            if (itemsLoaded === totalItems) initializeMasonry();
-		                        };
-		                    }
-		                });
-		            } catch (error) {
-		                console.error('Error loading gallery:', error);
-		                gallery.innerHTML = '<p class="text-center">Error loading media: ' + error.message + '</p>';
-		            }
-		        }
+        let msnry;
+        function initializeMasonry() {
+            msnry = new Masonry('#gallery', {
+                itemSelector: '.gallery-item',
+                columnWidth: '.gallery-item',
+                percentPosition: true,
+                gutter: 16,
+                fitWidth: true // Center the layout within the container
+            });
+            updateGalleryHeight(); // Set height after Masonry initializes
+        }
 
-		        let msnry;
-		        function initializeMasonry() {
-		            msnry = new Masonry('#gallery', {
-		                itemSelector: '.col',
-		                percentPosition: true,
-		                gutter: 16
-		            });
-		        }
+        function updateGalleryHeight() {
+            const gallery = document.getElementById('gallery');
+            const items = gallery.querySelectorAll('.gallery-item');
+            let maxBottom = 0;
 
-		        window.onload = loadGallery;
-		    </script>
+            items.forEach(item => {
+                const rect = item.getBoundingClientRect();
+                const bottom = rect.top + rect.height - gallery.getBoundingClientRect().top;
+                if (bottom > maxBottom) maxBottom = bottom;
+            });
+
+            gallery.style.height = `${maxBottom + 16}px`;
+        }
+
+        window.onload = loadGallery;
+    </script>
 
 
     <footer class="py-3 mt-auto">
