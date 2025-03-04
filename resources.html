@@ -201,13 +201,14 @@
         .gallery {
             width: 100%;
             position: relative;
-            overflow: hidden;
+            overflow: visible; /* Ensure content isn’t clipped */
         }
         .gallery-item {
             margin-bottom: 1rem;
-            overflow: hidden;
+            overflow: visible;
             float: left;
             width: 100%;
+            min-height: 1px; /* Ensure divs are visible */
         }
         .gallery-image, .gallery-video {
             height: auto;
@@ -246,7 +247,6 @@
                     return;
                 }
 
-                // Initialize Masonry early
                 const msnry = new Masonry('#gallery', {
                     itemSelector: '.gallery-item',
                     columnWidth: '.gallery-item',
@@ -255,7 +255,6 @@
                     fitWidth: true
                 });
 
-                // Append all items
                 media.forEach(item => {
                     const divItem = document.createElement('div');
                     divItem.className = 'gallery-item';
@@ -268,12 +267,12 @@
                         img.loading = 'lazy';
                         img.onerror = function() {
                             this.style.display = 'none';
-                            console.log(`Image failed to load: ${item.url}`);
-                            msnry.layout(); // Re-layout on error
+                            console.log(`Image failed: ${item.url}`);
+                            msnry.layout();
                         };
                         img.onload = function() {
-                            console.log(`Image loaded manually: ${item.url}`);
-                            msnry.layout(); // Fallback manual trigger
+                            console.log(`Image loaded: ${item.url}`);
+                            msnry.layout();
                         };
                         divItem.appendChild(img);
                     } else if (item.type === 'video') {
@@ -286,32 +285,26 @@
                         video.preload = 'metadata';
                         video.onerror = function() {
                             this.style.display = 'none';
-                            console.log(`Video failed to load: ${item.url}`);
-                            msnry.layout(); // Re-layout on error
+                            console.log(`Video failed: ${item.url}`);
+                            msnry.layout();
                         };
                         video.onloadedmetadata = function() {
-                            console.log(`Video metadata loaded manually: ${item.url}`);
-                            msnry.layout(); // Fallback manual trigger
+                            console.log(`Video loaded: ${item.url}`);
+                            msnry.layout();
                         };
                         divItem.appendChild(video);
                     }
                     gallery.appendChild(divItem);
-                    console.log(`Added item: ${item.url}`); // Debug: Confirm addition
+                    console.log(`Added: ${item.url}`);
                 });
 
-                // Use imagesLoaded to manage layout
-                const imgLoad = imagesLoaded(gallery, { background: false });
-                imgLoad.on('progress', function(instance, item) {
-                    console.log(`Item loaded via imagesLoaded: ${item.element.src}`);
-                    msnry.layout(); // Layout after each item loads
-                });
-                imgLoad.on('always', function() {
-                    console.log('All items processed by imagesLoaded');
-                    msnry.layout(); // Final layout
-                });
-                imgLoad.on('fail', function(instance) {
-                    console.log('Some items failed to load:', instance.elements);
-                    msnry.layout(); // Layout despite failures
+                // Use imagesLoaded for layout triggering
+                imagesLoaded(gallery, { background: false }, function() {
+                    console.log('All items processed');
+                    msnry.layout();
+                }).on('progress', function(instance) {
+                    console.log('Progress: Item loaded');
+                    msnry.layout();
                 });
 
             } catch (error) {
