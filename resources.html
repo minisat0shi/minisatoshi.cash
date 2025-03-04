@@ -198,28 +198,16 @@
 
 
     <style>
-        .gallery {
-            width: 100%;
-            position: relative;
-            overflow: visible;
-        }
-        .gallery-item {
-            margin-bottom: 1rem;
-            overflow: visible;
-            /* Removed float: left and width: 100% to let Masonry position */
-        }
         .gallery-image, .gallery-video {
             height: auto;
-            max-height: 12em;
+            max-height: 20em;
             display: block;
             border-radius: 0.25rem;
             transition: transform 0.3s ease;
+            background: #fff;
         }
         .gallery-image:hover, .gallery-video:hover {
             transform: scale(1.05);
-        }
-        .gallery-video {
-            background: #000;
         }
     </style>
 
