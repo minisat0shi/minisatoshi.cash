@@ -198,16 +198,29 @@
 
 
     <style>
+        .gallery {
+            width: 100%;
+            position: relative;
+            overflow: visible;
+        }
+        .gallery-item {
+            margin-bottom: 1rem;
+            overflow: visible;
+            display: none; /* Hide until Masonry initializes */
+        }
         .gallery-image, .gallery-video {
             height: auto;
-            max-height: 20em;
+            max-height: 12em;
             display: block;
             border-radius: 0.25rem;
             transition: transform 0.3s ease;
-            background: #fff;
+            background: #fff; /* Added white background */
         }
         .gallery-image:hover, .gallery-video:hover {
             transform: scale(1.05);
+        }
+        .masonry-loaded .gallery-item {
+            display: block; /* Show items after Masonry runs */
         }
     </style>
 
@@ -233,7 +246,7 @@
                     return;
                 }
 
-                // Append all items first
+                // Append all items first, hidden
                 media.forEach(item => {
                     const divItem = document.createElement('div');
                     divItem.className = 'gallery-item';
@@ -267,22 +280,18 @@
                     console.log(`Added: ${item.url}`);
                 });
 
-                // Initialize Masonry after items are added
-                const msnry = new Masonry('#gallery', {
-                    itemSelector: '.gallery-item',
-                    columnWidth: 200, // Fixed width for consistency (adjust as needed)
-                    percentPosition: true,
-                    gutter: 16,
-                    fitWidth: true
-                });
-
-                // Use imagesLoaded to trigger layout as items load
+                // Initialize Masonry only after all items are loaded
                 imagesLoaded(gallery, { background: false }, function() {
-                    console.log('All items processed');
-                    msnry.layout(); // Final layout
-                }).on('progress', function() {
-                    console.log('Progress: Item loaded');
-                    msnry.layout(); // Layout after each item
+                    console.log('All items loaded or failed');
+                    const msnry = new Masonry('#gallery', {
+                        itemSelector: '.gallery-item',
+                        columnWidth: 200,
+                        percentPosition: true,
+                        gutter: 16,
+                        fitWidth: true
+                    });
+                    gallery.classList.add('masonry-loaded');
+                    msnry.layout();
                 });
 
             } catch (error) {
