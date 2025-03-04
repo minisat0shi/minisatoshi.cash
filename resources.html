@@ -222,12 +222,12 @@
 		            <!-- Media will be loaded here -->
 		        </div>
 		    </div>
-		    
+
 		    <!-- Custom JavaScript for gallery-->
 		    <script>
 		        async function loadGallery() {
 		            try {
-		                const response = await fetch('/api/images.php');
+		                const response = await fetch('/api/resources.php');
 		                if (!response.ok) throw new Error('Network response was not ok');
 		                const media = await response.json();
 
