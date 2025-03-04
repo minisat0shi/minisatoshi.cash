@@ -185,7 +185,19 @@
 
 
 
-		    <style>
+
+
+
+
+
+
+
+
+
+
+
+
+    <style>
         .gallery {
             width: 100%;
             position: relative;
@@ -199,10 +211,10 @@
         }
         .gallery-image, .gallery-video {
             height: auto;
-            max-height: 12em; /* Limit maximum height */
+            max-height: 12em;
             display: block;
+            border-radius: 0.25rem;
             transition: transform 0.3s ease;
-            background: #fff;
         }
         .gallery-image:hover, .gallery-video:hover {
             transform: scale(1.05);
@@ -210,14 +222,14 @@
         .gallery-video {
             background: #000;
         }
-		    </style>
-		    
-		    <div class="container py-5">
-		        <h1 class="text-center mb-4">Masonry Media Gallery</h1>
-		        <div class="gallery" id="gallery">
-		            <!-- Media will be loaded here -->
-		        </div>
-		    </div>
+    </style>
+
+    <div class="container py-5">
+        <h1 class="text-center mb-4">Masonry Media Gallery</h1>
+        <div class="gallery" id="gallery">
+            <!-- Media will be loaded here -->
+        </div>
+    </div>
 
 		    <!-- Custom JavaScript for gallery-->
     <script>
@@ -233,8 +245,17 @@
                     return;
                 }
 
-                let itemsLoaded = 0;
-                const totalItems = media.length;
+                // Initialize Masonry immediately with an empty container
+                const msnry = new Masonry('#gallery', {
+                    itemSelector: '.gallery-item',
+                    columnWidth: '.gallery-item',
+                    percentPosition: true,
+                    gutter: 16,
+                    fitWidth: true
+                });
+
+                // Use imagesLoaded to track loading progress
+                const imgLoad = imagesLoaded(gallery, { background: false });
 
                 media.forEach(item => {
                     const divItem = document.createElement('div');
@@ -248,15 +269,10 @@
                         img.loading = 'lazy';
                         img.onerror = function() {
                             this.style.display = 'none';
-                            itemsLoaded++;
-                            if (itemsLoaded === totalItems) initializeMasonry();
+                            msnry.layout(); // Re-layout even on error
                         };
-                        img.onload = function() {
-                            divItem.appendChild(img);
-                            gallery.appendChild(divItem);
-                            itemsLoaded++;
-                            if (itemsLoaded === totalItems) initializeMasonry();
-                        };
+                        divItem.appendChild(img);
+                        gallery.appendChild(divItem);
                     } else if (item.type === 'video') {
                         const video = document.createElement('video');
                         video.src = item.url;
@@ -265,53 +281,45 @@
                         video.muted = true;
                         video.loop = true;
                         video.preload = 'metadata';
-                        video.onloadedmetadata = function() {
-                            divItem.appendChild(video);
-                            gallery.appendChild(divItem);
-                            itemsLoaded++;
-                            if (itemsLoaded === totalItems) initializeMasonry();
-                        };
                         video.onerror = function() {
                             this.style.display = 'none';
-                            itemsLoaded++;
-                            if (itemsLoaded === totalItems) initializeMasonry();
+                            msnry.layout(); // Re-layout even on error
                         };
+                        divItem.appendChild(video);
+                        gallery.appendChild(divItem);
                     }
                 });
+
+                // Trigger Masonry layout after each item loads
+                imgLoad.on('progress', function(instance, image) {
+                    msnry.layout();
+                });
+
+                // Ensure final layout after all items are processed
+                imgLoad.on('always', function() {
+                    msnry.layout();
+                });
+
             } catch (error) {
                 console.error('Error loading gallery:', error);
                 gallery.innerHTML = '<p class="text-center">Error loading media: ' + error.message + '</p>';
             }
         }
 
-        let msnry;
-        function initializeMasonry() {
-            msnry = new Masonry('#gallery', {
-                itemSelector: '.gallery-item',
-                columnWidth: '.gallery-item',
-                percentPosition: true,
-                gutter: 16,
-                fitWidth: true // Center the layout within the container
-            });
-            updateGalleryHeight(); // Set height after Masonry initializes
-        }
-
-        function updateGalleryHeight() {
-            const gallery = document.getElementById('gallery');
-            const items = gallery.querySelectorAll('.gallery-item');
-            let maxBottom = 0;
-
-            items.forEach(item => {
-                const rect = item.getBoundingClientRect();
-                const bottom = rect.top + rect.height - gallery.getBoundingClientRect().top;
-                if (bottom > maxBottom) maxBottom = bottom;
-            });
-
-            gallery.style.height = `${maxBottom + 16}px`;
-        }
-
         window.onload = loadGallery;
     </script>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <footer class="py-3 mt-auto">
@@ -339,6 +347,9 @@
 
 	    <!-- Masonry for grids -->
 	    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+
+		<!-- imagesLoaded CDN -->
+	    <script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-ueFb6A3vbPQXov HovKQEkbTOrg7oA9W8Nkb4vGINec=" crossorigin="anonymous"></script>
 
 	  	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
