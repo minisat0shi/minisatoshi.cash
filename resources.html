@@ -186,27 +186,32 @@
 
 
 		    <style>
-		        .gallery {
-		            width: 100%;
-		            position: relative; /* Ensure it contains absolutely positioned items */
-		        }
-		        .gallery-item {
-		            margin-bottom: 1rem;
-		            overflow: hidden;
-		        }
-		        .gallery-image, .gallery-video {
-		            width: 100%;
-		            height: auto;
-		            display: block;
-		            border-radius: 0.25rem;
-		            transition: transform 0.3s ease;
-		        }
-		        .gallery-image:hover, .gallery-video:hover {
-		            transform: scale(1.05);
-		        }
-		        .gallery-video {
-		            background: #000;
-		        }
+        .gallery {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        .gallery-item {
+            margin-bottom: 1rem;
+            overflow: hidden;
+            float: left;
+            width: 100%;
+        }
+        .gallery-image, .gallery-video {
+            width: 100%;
+            height: auto;
+            max-height: 5em; /* Limit maximum height */
+            display: block;
+            border-radius: 0.25rem;
+            transition: transform 0.3s ease;
+            object-fit: cover; /* Ensure content fits within bounds */
+        }
+        .gallery-image:hover, .gallery-video:hover {
+            transform: scale(1.05);
+        }
+        .gallery-video {
+            background: #000;
+        }
 		    </style>
 		    <div class="container py-5">
 		        <h1 class="text-center mb-4">Masonry Media Gallery</h1>
