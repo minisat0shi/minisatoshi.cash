@@ -188,6 +188,7 @@
 		    <style>
 		        .gallery {
 		            width: 100%;
+		            position: relative; /* Ensure it contains absolutely positioned items */
 		        }
 		        .gallery-item {
 		            margin-bottom: 1rem;
@@ -204,7 +205,15 @@
 		            transform: scale(1.05);
 		        }
 		        .gallery-video {
-		            background: #000; /* Black background for video */
+		            background: #000;
+		        }
+		        /* Footer styling */
+		        footer {
+		            background-color: #f8f9fa;
+		            padding: 1rem;
+		            text-align: center;
+		            border-top: 1px solid #e9ecef;
+		            margin-top: 2rem;
 		        }
 		    </style>
 		    <div class="container py-5">
@@ -213,16 +222,19 @@
 		            <!-- Media will be loaded here -->
 		        </div>
 		    </div>
-
+		    
 		    <!-- Custom JavaScript for gallery-->
 		    <script>
 		        async function loadGallery() {
 		            try {
-		                const response = await fetch('/api/resources.php');
+		                const response = await fetch('/api/images.php');
 		                if (!response.ok) throw new Error('Network response was not ok');
 		                const media = await response.json();
 
 		                const gallery = document.getElementById('gallery');
+		                let itemsLoaded = 0;
+		                const totalItems = media.length;
+
 		                media.forEach(item => {
 		                    const divItem = document.createElement('div');
 		                    divItem.className = 'gallery-item';
@@ -235,27 +247,35 @@
 		                        img.loading = 'lazy';
 		                        img.onerror = function() {
 		                            this.style.display = 'none';
+		                            itemsLoaded++;
+		                            if (itemsLoaded === totalItems) updateGalleryHeight();
 		                        };
 		                        img.onload = function() {
 		                            divItem.appendChild(img);
 		                            gallery.appendChild(divItem);
 		                            masonryLayout();
+		                            itemsLoaded++;
+		                            if (itemsLoaded === totalItems) updateGalleryHeight();
 		                        };
 		                    } else if (item.type === 'video') {
 		                        const video = document.createElement('video');
 		                        video.src = item.url;
 		                        video.className = 'gallery-video';
-		                        video.controls = true; // Add playback controls
-		                        video.muted = true; // Mute by default (optional)
-		                        video.loop = true; // Loop playback (optional)
-		                        video.preload = 'metadata'; // Load metadata only initially
+		                        video.controls = true;
+		                        video.muted = true;
+		                        video.loop = true;
+		                        video.preload = 'metadata';
 		                        video.onloadedmetadata = function() {
 		                            divItem.appendChild(video);
 		                            gallery.appendChild(divItem);
 		                            masonryLayout();
+		                            itemsLoaded++;
+		                            if (itemsLoaded === totalItems) updateGalleryHeight();
 		                        };
 		                        video.onerror = function() {
 		                            this.style.display = 'none';
+		                            itemsLoaded++;
+		                            if (itemsLoaded === totalItems) updateGalleryHeight();
 		                        };
 		                    }
 		                });
@@ -277,6 +297,20 @@
 		            } else {
 		                msnry.layout();
 		            }
+		        }
+
+		        function updateGalleryHeight() {
+		            const gallery = document.getElementById('gallery');
+		            const items = gallery.querySelectorAll('.gallery-item');
+		            let maxBottom = 0;
+
+		            items.forEach(item => {
+		                const rect = item.getBoundingClientRect();
+		                const bottom = rect.top + rect.height - gallery.getBoundingClientRect().top;
+		                if (bottom > maxBottom) maxBottom = bottom;
+		            });
+
+		            gallery.style.height = `${maxBottom + 16}px`; // Add gutter for padding
 		        }
 
 		        window.onload = loadGallery;
