@@ -239,13 +239,14 @@
                 const response = await fetch('/api/resources.php');
                 if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
                 const media = await response.json();
+                console.log('API Response:', media);
 
                 if (!Array.isArray(media) || media.length === 0) {
                     gallery.innerHTML = '<p class="text-center">No media found.</p>';
                     return;
                 }
 
-                // Initialize Masonry immediately with an empty container
+                // Initialize Masonry early
                 const msnry = new Masonry('#gallery', {
                     itemSelector: '.gallery-item',
                     columnWidth: '.gallery-item',
@@ -254,9 +255,7 @@
                     fitWidth: true
                 });
 
-                // Use imagesLoaded to track loading progress
-                const imgLoad = imagesLoaded(gallery, { background: false });
-
+                // Append all items
                 media.forEach(item => {
                     const divItem = document.createElement('div');
                     divItem.className = 'gallery-item';
@@ -269,10 +268,14 @@
                         img.loading = 'lazy';
                         img.onerror = function() {
                             this.style.display = 'none';
-                            msnry.layout(); // Re-layout even on error
+                            console.log(`Image failed to load: ${item.url}`);
+                            msnry.layout(); // Re-layout on error
+                        };
+                        img.onload = function() {
+                            console.log(`Image loaded manually: ${item.url}`);
+                            msnry.layout(); // Fallback manual trigger
                         };
                         divItem.appendChild(img);
-                        gallery.appendChild(divItem);
                     } else if (item.type === 'video') {
                         const video = document.createElement('video');
                         video.src = item.url;
@@ -283,21 +286,32 @@
                         video.preload = 'metadata';
                         video.onerror = function() {
                             this.style.display = 'none';
-                            msnry.layout(); // Re-layout even on error
+                            console.log(`Video failed to load: ${item.url}`);
+                            msnry.layout(); // Re-layout on error
+                        };
+                        video.onloadedmetadata = function() {
+                            console.log(`Video metadata loaded manually: ${item.url}`);
+                            msnry.layout(); // Fallback manual trigger
                         };
                         divItem.appendChild(video);
-                        gallery.appendChild(divItem);
                     }
+                    gallery.appendChild(divItem);
+                    console.log(`Added item: ${item.url}`); // Debug: Confirm addition
                 });
 
-                // Trigger Masonry layout after each item loads
-                imgLoad.on('progress', function(instance, image) {
-                    msnry.layout();
+                // Use imagesLoaded to manage layout
+                const imgLoad = imagesLoaded(gallery, { background: false });
+                imgLoad.on('progress', function(instance, item) {
+                    console.log(`Item loaded via imagesLoaded: ${item.element.src}`);
+                    msnry.layout(); // Layout after each item loads
                 });
-
-                // Ensure final layout after all items are processed
                 imgLoad.on('always', function() {
-                    msnry.layout();
+                    console.log('All items processed by imagesLoaded');
+                    msnry.layout(); // Final layout
+                });
+                imgLoad.on('fail', function(instance) {
+                    console.log('Some items failed to load:', instance.elements);
+                    msnry.layout(); // Layout despite failures
                 });
 
             } catch (error) {
