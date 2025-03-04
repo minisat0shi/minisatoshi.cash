@@ -224,97 +224,98 @@
 		    </div>
 
 		    <!-- Custom JavaScript for gallery-->
-		    <script>
-		        async function loadGallery() {
-		            try {
-		                const response = await fetch('/api/resources.php');
-		                if (!response.ok) throw new Error('Network response was not ok');
-		                const media = await response.json();
+    <script>
+        async function loadGallery() {
+            const gallery = document.getElementById('gallery');
+            try {
+                const response = await fetch('/api/images.php');
+                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+                const media = await response.json();
 
-		                const gallery = document.getElementById('gallery');
-		                let itemsLoaded = 0;
-		                const totalItems = media.length;
+                if (!Array.isArray(media) || media.length === 0) {
+                    gallery.innerHTML = '<p class="text-center">No media found.</p>';
+                    return;
+                }
 
-		                media.forEach(item => {
-		                    const divItem = document.createElement('div');
-		                    divItem.className = 'gallery-item';
+                let itemsLoaded = 0;
+                const totalItems = media.length;
 
-		                    if (item.type === 'image') {
-		                        const img = document.createElement('img');
-		                        img.src = item.url;
-		                        img.className = 'gallery-image';
-		                        img.alt = item.name;
-		                        img.loading = 'lazy';
-		                        img.onerror = function() {
-		                            this.style.display = 'none';
-		                            itemsLoaded++;
-		                            if (itemsLoaded === totalItems) updateGalleryHeight();
-		                        };
-		                        img.onload = function() {
-		                            divItem.appendChild(img);
-		                            gallery.appendChild(divItem);
-		                            masonryLayout();
-		                            itemsLoaded++;
-		                            if (itemsLoaded === totalItems) updateGalleryHeight();
-		                        };
-		                    } else if (item.type === 'video') {
-		                        const video = document.createElement('video');
-		                        video.src = item.url;
-		                        video.className = 'gallery-video';
-		                        video.controls = true;
-		                        video.muted = true;
-		                        video.loop = true;
-		                        video.preload = 'metadata';
-		                        video.onloadedmetadata = function() {
-		                            divItem.appendChild(video);
-		                            gallery.appendChild(divItem);
-		                            masonryLayout();
-		                            itemsLoaded++;
-		                            if (itemsLoaded === totalItems) updateGalleryHeight();
-		                        };
-		                        video.onerror = function() {
-		                            this.style.display = 'none';
-		                            itemsLoaded++;
-		                            if (itemsLoaded === totalItems) updateGalleryHeight();
-		                        };
-		                    }
-		                });
-		            } catch (error) {
-		                console.error('Error loading gallery:', error);
-		                document.getElementById('gallery').innerHTML = '<p class="text-center">Error loading media.</p>';
-		            }
-		        }
+                media.forEach(item => {
+                    const divItem = document.createElement('div');
+                    divItem.className = 'gallery-item';
 
-		        let msnry;
-		        function masonryLayout() {
-		            if (!msnry) {
-		                msnry = new Masonry('#gallery', {
-		                    itemSelector: '.gallery-item',
-		                    columnWidth: '.gallery-item',
-		                    percentPosition: true,
-		                    gutter: 16
-		                });
-		            } else {
-		                msnry.layout();
-		            }
-		        }
+                    if (item.type === 'image') {
+                        const img = document.createElement('img');
+                        img.src = item.url;
+                        img.className = 'gallery-image';
+                        img.alt = item.name;
+                        img.loading = 'lazy';
+                        img.onerror = function() {
+                            this.style.display = 'none';
+                            itemsLoaded++;
+                            if (itemsLoaded === totalItems) initializeMasonry();
+                        };
+                        img.onload = function() {
+                            divItem.appendChild(img);
+                            gallery.appendChild(divItem);
+                            itemsLoaded++;
+                            if (itemsLoaded === totalItems) initializeMasonry();
+                        };
+                    } else if (item.type === 'video') {
+                        const video = document.createElement('video');
+                        video.src = item.url;
+                        video.className = 'gallery-video';
+                        video.controls = true;
+                        video.muted = true;
+                        video.loop = true;
+                        video.preload = 'metadata';
+                        video.onloadedmetadata = function() {
+                            divItem.appendChild(video);
+                            gallery.appendChild(divItem);
+                            itemsLoaded++;
+                            if (itemsLoaded === totalItems) initializeMasonry();
+                        };
+                        video.onerror = function() {
+                            this.style.display = 'none';
+                            itemsLoaded++;
+                            if (itemsLoaded === totalItems) initializeMasonry();
+                        };
+                    }
+                });
+            } catch (error) {
+                console.error('Error loading gallery:', error);
+                gallery.innerHTML = '<p class="text-center">Error loading media: ' + error.message + '</p>';
+            }
+        }
 
-		        function updateGalleryHeight() {
-		            const gallery = document.getElementById('gallery');
-		            const items = gallery.querySelectorAll('.gallery-item');
-		            let maxBottom = 0;
+        let msnry;
+        function initializeMasonry() {
+            msnry = new Masonry('#gallery', {
+                itemSelector: '.gallery-item',
+                columnWidth: '.gallery-item',
+                percentPosition: true,
+                gutter: 16,
+                fitWidth: true // Center the layout within the container
+            });
+            updateGalleryHeight(); // Set height after Masonry initializes
+        }
 
-		            items.forEach(item => {
-		                const rect = item.getBoundingClientRect();
-		                const bottom = rect.top + rect.height - gallery.getBoundingClientRect().top;
-		                if (bottom > maxBottom) maxBottom = bottom;
-		            });
+        function updateGalleryHeight() {
+            const gallery = document.getElementById('gallery');
+            const items = gallery.querySelectorAll('.gallery-item');
+            let maxBottom = 0;
 
-		            gallery.style.height = `${maxBottom + 16}px`; // Add gutter for padding
-		        }
+            items.forEach(item => {
+                const rect = item.getBoundingClientRect();
+                const bottom = rect.top + rect.height - gallery.getBoundingClientRect().top;
+                if (bottom > maxBottom) maxBottom = bottom;
+            });
 
-		        window.onload = loadGallery;
-		    </script>
+            gallery.style.height = `${maxBottom + 16}px`;
+        }
+
+        window.onload = loadGallery;
+    </script>
 
 
     <footer class="py-3 mt-auto">
