@@ -23,7 +23,7 @@
       <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
         <div class="d-flex flex-sm-row flex-column">
           <div class="align-self-center">
-            <img src="images/logosForEcosystem/square/BCHPodcast.svg" alt="Bitcoin Cash Podcast logo" class="card-img-standard me-0 me-sm-3 mb-3 mb-sm-0"> <!--Make sure to have an image and to properly update the alt tag--> <!--Additionally, if needing to round corners add: id="ecosystemRound" or if needing to crop image to circle add: id="ecosystemCircle"-->
+            <img src="images/logosForEcosystem/BCHPodcast.svg" alt="Bitcoin Cash Podcast logo" class="card-img-standard me-0 me-sm-3 mb-3 mb-sm-0"> <!--Make sure to have an image and to properly update the alt tag--> <!--Additionally, if needing to round corners add: id="ecosystemRound" or if needing to crop image to circle add: id="ecosystemCircle"-->
           </div>
           <div>
             <h4 class="text-break">Bitcoin Cash Podcast</h4> <!--Title-->
@@ -56,7 +56,7 @@
       <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
         <div class="d-flex flex-sm-row flex-column">
           <div class="align-self-center">
-            <img src="images/logosForEcosystem/square/BCHPodcast.svg" alt="Bitcoin Cash Podcast logo" class="card-img-standard me-0 me-sm-3 mb-3 mb-sm-0"> <!--Make sure to have an image and to properly update the alt tag--> <!--Additionally, if needing to round corners add: id="ecosystemRound" or if needing to crop image to circle add: id="ecosystemCircle"-->
+            <img src="images/logosForEcosystem/BCHPodcast.svg" alt="Bitcoin Cash Podcast logo" class="card-img-standard me-0 me-sm-3 mb-3 mb-sm-0"> <!--Make sure to have an image and to properly update the alt tag--> <!--Additionally, if needing to round corners add: id="ecosystemRound" or if needing to crop image to circle add: id="ecosystemCircle"-->
           </div>
           <div>
             <h4 class="text-break">Bitcoin Cash Podcast</h4> <!--Title-->
@@ -81,7 +81,7 @@
       <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
 	<div class="d-flex flex-sm-row flex-column align-items-center">
 	  <div class="align-self-center">
-	    <img src="images/logosForEcosystem/square/coinbase.svg" alt="Coinbase logo" class="card-img-small me-0 me-sm-3 mb-3 mb-sm-0">
+	    <img src="images/logosForEcosystem/coinbase.svg" alt="Coinbase logo" class="card-img-small me-0 me-sm-3 mb-3 mb-sm-0">
 	  </div>
 	  <div>
 	    <h4 class="text-break mb-0">Coinbase</h4>
