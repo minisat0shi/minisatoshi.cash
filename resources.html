@@ -201,14 +201,12 @@
         .gallery {
             width: 100%;
             position: relative;
-            overflow: visible; /* Ensure content isn’t clipped */
+            overflow: visible;
         }
         .gallery-item {
             margin-bottom: 1rem;
             overflow: visible;
-            float: left;
-            width: 100%;
-            min-height: 1px; /* Ensure divs are visible */
+            /* Removed float: left and width: 100% to let Masonry position */
         }
         .gallery-image, .gallery-video {
             height: auto;
@@ -247,14 +245,7 @@
                     return;
                 }
 
-                const msnry = new Masonry('#gallery', {
-                    itemSelector: '.gallery-item',
-                    columnWidth: '.gallery-item',
-                    percentPosition: true,
-                    gutter: 16,
-                    fitWidth: true
-                });
-
+                // Append all items first
                 media.forEach(item => {
                     const divItem = document.createElement('div');
                     divItem.className = 'gallery-item';
@@ -268,11 +259,6 @@
                         img.onerror = function() {
                             this.style.display = 'none';
                             console.log(`Image failed: ${item.url}`);
-                            msnry.layout();
-                        };
-                        img.onload = function() {
-                            console.log(`Image loaded: ${item.url}`);
-                            msnry.layout();
                         };
                         divItem.appendChild(img);
                     } else if (item.type === 'video') {
@@ -286,11 +272,6 @@
                         video.onerror = function() {
                             this.style.display = 'none';
                             console.log(`Video failed: ${item.url}`);
-                            msnry.layout();
-                        };
-                        video.onloadedmetadata = function() {
-                            console.log(`Video loaded: ${item.url}`);
-                            msnry.layout();
                         };
                         divItem.appendChild(video);
                     }
@@ -298,13 +279,22 @@
                     console.log(`Added: ${item.url}`);
                 });
 
-                // Use imagesLoaded for layout triggering
+                // Initialize Masonry after items are added
+                const msnry = new Masonry('#gallery', {
+                    itemSelector: '.gallery-item',
+                    columnWidth: 200, // Fixed width for consistency (adjust as needed)
+                    percentPosition: true,
+                    gutter: 16,
+                    fitWidth: true
+                });
+
+                // Use imagesLoaded to trigger layout as items load
                 imagesLoaded(gallery, { background: false }, function() {
                     console.log('All items processed');
-                    msnry.layout();
-                }).on('progress', function(instance) {
+                    msnry.layout(); // Final layout
+                }).on('progress', function() {
                     console.log('Progress: Item loaded');
-                    msnry.layout();
+                    msnry.layout(); // Layout after each item
                 });
 
             } catch (error) {
