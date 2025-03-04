@@ -2,8 +2,8 @@
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 
-$imageFolder = '../images/';
-$baseUrl = '/images/';
+$imageFolder = '../images/Resources/Stickers/';
+$baseUrl = '/images/Resources/Stickers/';
 
 $allowedTypes = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg', 'mp4'];
 $images = glob($imageFolder . "*.{" . implode(',', $allowedTypes) . "}", GLOB_BRACE);
