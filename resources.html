@@ -270,11 +270,21 @@
             transform: translate(-50%, -50%); /* Adjust for true centering */
         }
 
-        /* Move indicators below */
+        /* Move indicators below and style with secondary color */
         .carousel-indicators {
             position: relative; /* Remove absolute positioning */
             bottom: 0; /* Reset Bootstrap's default bottom offset */
             margin-top: 10px; /* Space below the carousel */
+        }
+
+        .carousel-indicators button {
+            background-color: var(--bs-secondary); /* Inactive indicators */
+            opacity: 0.5; /* Match Bootstrap's default inactive opacity */
+        }
+
+        .carousel-indicators .active {
+            background-color: var(--bs-secondary); /* Active indicator */
+            opacity: 1; /* Full opacity for active state */
         }
     </style>
 
