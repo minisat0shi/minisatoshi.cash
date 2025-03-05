@@ -306,13 +306,21 @@
             filter: invert(80%) sepia(10%) saturate(200%) hue-rotate(180deg);
         }
 
-        /* Download button in header */
-        .modal-header .carousel-download-btn {
-            margin-left: auto; /* Push to the right before close button */
+        /* Download icon styling */
+        .carousel-download-icon {
+            font-size: 1.5rem; /* Larger icon */
+        }
+
+        [data-bs-theme="light"] .carousel .carousel-download-icon {
+            color: #6c757d; /* Match indicators in light mode */
+        }
+
+        [data-bs-theme="dark"] .carousel .carousel-download-icon {
+            color: #adb5bd; /* Match indicators in dark mode */
         }
     </style>
 
-    <div class="container">
+        <div class="container">
         <div class="section">
             <h1 class="mb-4">Branding</h1>
             <div class="grid" id="branding-gallery">
@@ -350,8 +358,8 @@
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <!-- Replaced title with download button -->
-                    <a href="#" id="downloadButton" class="btn btn-primary carousel-download-btn" download>
+                    <!-- Download icon on the left -->
+                    <a href="#" id="downloadButton" class="carousel-download-icon" download>
                         <i class="bi bi-download"></i>
                     </a>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
