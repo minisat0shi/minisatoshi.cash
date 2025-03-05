@@ -208,6 +208,7 @@
             margin-bottom: 20px;
             break-inside: avoid;
             width: 100%;
+            cursor: pointer; /* Indicates clickability */
         }
         
         .grid-item img {
@@ -216,11 +217,11 @@
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             padding: 4px;
-            transition: transform 0.3s ease; /* Smooth transition */
+            transition: transform 0.3s ease;
         }
         
         .grid-item img:hover {
-            transform: scale(1.05); /* Grows 5% larger */
+            transform: scale(1.05);
         }
         
         .loading {
@@ -230,6 +231,30 @@
 
         .section {
             margin-bottom: 40px;
+        }
+
+        /* Responsive breakpoints */
+        @media (min-width: 576px) {
+            .grid-item { width: calc(50% - 20px); }
+        }
+        
+        @media (min-width: 768px) {
+            .grid-item { width: calc(33.33% - 20px); }
+        }
+        
+        @media (min-width: 992px) {
+            .grid-item { width: calc(25% - 20px); }
+        }
+        
+        @media (min-width: 1200px) {
+            .grid-item { width: calc(20% - 20px); }
+        }
+
+        /* Carousel image styling */
+        .carousel-item img {
+            max-height: 80vh; /* Limit height to viewport */
+            width: auto;
+            margin: 0 auto; /* Center horizontally */
         }
 
         /* Responsive breakpoints matching Bootstrap */
@@ -283,6 +308,32 @@
         </div>
     </div>
 
+    <!-- Bootstrap Modal with Carousel -->
+    <div class="modal fade" id="imageCarouselModal" tabindex="-1" aria-labelledby="imageCarouselModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageCarouselModalLabel">Image Gallery</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="imageCarousel" class="carousel slide" data-bs-ride="false">
+                        <div class="carousel-indicators" id="carouselIndicators"></div>
+                        <div class="carousel-inner" id="carouselInner"></div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 		    <!-- Custom JavaScript for gallery-->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -294,18 +345,19 @@
                 'Memes': document.getElementById('memes-gallery')
             };
             const masonryInstances = {};
+            let allImages = {}; // Store images per section
 
             // Fetch images from PHP script
             fetch('/api/resources.php')
                 .then(response => response.json())
                 .then(data => {
-                    // Process each section
+                    allImages = data; // Store all images for later use
                     Object.keys(galleries).forEach(section => {
                         const gallery = galleries[section];
                         gallery.innerHTML = ''; // Remove loading text
 
                         const images = data[section] || [];
-                        images.forEach(image => {
+                        images.forEach((image, index) => {
                             const item = document.createElement('div');
                             item.className = 'grid-item';
                             
@@ -313,11 +365,13 @@
                             img.src = image.url;
                             img.alt = image.name;
                             
+                            // Add click event to open modal with carousel
+                            item.addEventListener('click', () => openCarousel(section, index));
+                            
                             item.appendChild(img);
                             gallery.appendChild(item);
                         });
 
-                        // Initialize Masonry for this gallery
                         imagesLoaded(gallery, function() {
                             masonryInstances[section] = new Masonry(gallery, {
                                 itemSelector: '.grid-item',
@@ -329,7 +383,6 @@
                         });
                     });
 
-                    // Resize handler for all galleries
                     let resizeTimer;
                     window.addEventListener('resize', () => {
                         clearTimeout(resizeTimer);
@@ -344,6 +397,47 @@
                         gallery.innerHTML = '<p class="text-danger">Error loading images</p>';
                     });
                 });
+
+            // Function to open carousel modal
+            function openCarousel(section, startIndex) {
+                const images = allImages[section] || [];
+                const carouselInner = document.getElementById('carouselInner');
+                const carouselIndicators = document.getElementById('carouselIndicators');
+                
+                // Clear existing content
+                carouselInner.innerHTML = '';
+                carouselIndicators.innerHTML = '';
+
+                // Populate carousel items
+                images.forEach((image, index) => {
+                    const item = document.createElement('div');
+                    item.className = `carousel-item ${index === startIndex ? 'active' : ''}`;
+                    
+                    const img = document.createElement('img');
+                    img.src = image.url;
+                    img.alt = image.name;
+                    img.className = 'd-block'; // Bootstrap class for carousel images
+                    
+                    item.appendChild(img);
+                    carouselInner.appendChild(item);
+
+                    // Add indicator
+                    const indicator = document.createElement('button');
+                    indicator.type = 'button';
+                    indicator.dataset.bsTarget = '#imageCarousel';
+                    indicator.dataset.bsSlideTo = index;
+                    if (index === startIndex) {
+                        indicator.className = 'active';
+                        indicator.setAttribute('aria-current', 'true');
+                    }
+                    indicator.setAttribute('aria-label', `Slide ${index + 1}`);
+                    carouselIndicators.appendChild(indicator);
+                });
+
+                // Initialize and show modal
+                const modal = new bootstrap.Modal(document.getElementById('imageCarouselModal'));
+                modal.show();
+            }
         });
     </script>
 
