@@ -68,7 +68,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&amp;display=swap" rel="stylesheet" type="text/css" media="all">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="css/main.css?v=0.62">
+    <link rel="stylesheet" href="css/main.css?v=0.63">
     
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -136,46 +136,12 @@
 	      </div>
 		  </div>
 		</nav>
+
 		<!-- Back to top button -->
 		<button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-info btn-floating" id="btn-back-to-top">
 		  <i class="bi bi-arrow-bar-up fs-3"></i>
 		</button>
-		<style>
-			#btn-back-to-top {
-		  position: fixed;
-		  bottom: 20px;
-		  right: 20px;
-		  display: none;
-		  z-index: 2;
-			}
-		</style>
-		<script>
-			//Get the button
-			let mybutton = document.getElementById("btn-back-to-top");
 
-			// When the user scrolls down 20px from the top of the document, show the button
-			window.onscroll = function () {
-			  scrollFunction();
-			};
-
-			function scrollFunction() {
-			  if (
-			    document.body.scrollTop > 20 ||
-			    document.documentElement.scrollTop > 20
-			  ) {
-			    mybutton.style.display = "block";
-			  } else {
-			    mybutton.style.display = "none";
-			  }
-			}
-			// When the user clicks on the button, scroll to the top of the document
-			mybutton.addEventListener("click", backToTop);
-
-			function backToTop() {
-			  document.body.scrollTop = 0;
-			  document.documentElement.scrollTop = 0;
-			}
-		</script>
 		<div class="fixed-nav-adjustment"></div>
 		<h1 class="display-2 fw-medium text-light-emphasis text-break text-center pt-5">Bitcoin Cash Resources</h1>
 		<div class="container-md">
@@ -183,394 +149,259 @@
 			<h6 class="text-secondary fw-normal lh-base text-break text-center m-0">Have something to add? Submit a <a class="link-info link-underline link-underline-opacity-0" href="https://github.com/minisat0shi/minisatoshi.cash/blob/main/RESOURCES-ADDITION-GUIDELINE.md">PR</a> or an Issue on our GitHub! or an <a class="link-info link-underline link-underline-opacity-0" href="https://github.com/minisat0shi/minisatoshi.cash/issues/new?template=resources-addition-request.md">addition request</a>!</h6>
 		</div>
 
-
-
-<style>
-.brand-circle {
-width: 6em;
-height: 6em;
-border-radius: 50%;
-display: block;
-border: 1px solid #ddd;
-margin-bottom: 1em;
-object-fit:contain;
-}
-</style>
-
-
-	<div class="container py-5">
-        <h2 class="pb-2 border-bottom border-3 text-center">Branding Guidelines</h2>
-        <div class="row pb-5 row-cols-1 row-cols-lg-2">
-        	<div class="col">
-                <div class="align-items-start mb-5">
-                    <h3 class="fs-2 text-secondary">Ubuntu Bold</h3>
-                    <p class="text-secondary fs-5r fw-bold">ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890?!%</p>
-                    <a href="https://fonts.google.com/specimen/Ubuntu?selection.family=Ubuntu:700" class="btn" style="background:#0AC18E">
-                        Download Font
-                    </a>
-                </div>
-            </div>
-            <div class="col">
-                <div class="align-items-start">
-                    <h3 class="fs-2 text-secondary">Ubuntu Bold Italic</h3>
-                    <p class="text-secondary fs-5r fw-bold fst-italic">ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890?!%</p>
-                    <a href="https://fonts.google.com/specimen/Ubuntu?selection.family=Ubuntu:700i" class="btn" style="background:#0AC18E">
-                        Download Font
-                    </a>
-                </div>
-        	</div>
-        </div>
-        <div class="row">
-			<div class="col-12 col-md-6 col-lg-4 mb-3">
-			    <div class="text-start">
-			      <div class="d-flex flex-row justify-content-between">
-			        <div class="d-flex flex-row">
-			          <div class="align-self-start">
-			            <span class="brand-circle me-3 mb-0" style="background:#0AC18E"></span>
-			          </div>
-			          <div class="fs-5r text-secondary">
-						Hex: #0AC18E<br>
-						RGB: 10 / 193 / 142<br>
-						CMYK: 95 / 0 / 26 / 24<br>
-						Pantone: 3395 C
-			          </div>
-			        </div>
-			      </div>
-			    </div>
+		<div class="container py-5">
+	        <h2 class="pb-2 border-bottom border-3 text-center">Branding Guidelines</h2>
+	        <div class="row pb-5 row-cols-1 row-cols-lg-2">
+	        	<div class="col">
+	                <div class="align-items-start mb-5">
+	                    <h3 class="fs-2 text-secondary">Ubuntu Bold</h3>
+	                    <p class="text-secondary fs-5r fw-bold">ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890?!%</p>
+	                    <a href="https://fonts.google.com/specimen/Ubuntu?selection.family=Ubuntu:700" class="btn" style="background:#0AC18E">
+	                        Download Font
+	                    </a>
+	                </div>
+	            </div>
+	            <div class="col">
+	                <div class="align-items-start">
+	                    <h3 class="fs-2 text-secondary">Ubuntu Bold Italic</h3>
+	                    <p class="text-secondary fs-5r fw-bold fst-italic">ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890?!%</p>
+	                    <a href="https://fonts.google.com/specimen/Ubuntu?selection.family=Ubuntu:700i" class="btn" style="background:#0AC18E">
+	                        Download Font
+	                    </a>
+	                </div>
+	        	</div>
+	        </div>
+	        <div class="row">
+				<div class="col-12 col-md-6 col-lg-4 mb-3">
+				    <div class="text-start">
+				      <div class="d-flex flex-row justify-content-between">
+				        <div class="d-flex flex-row">
+				          <div class="align-self-start">
+				            <span class="brand-circle me-3 mb-0" style="background:#0AC18E"></span>
+				          </div>
+				          <div class="fs-5r text-secondary">
+							Hex: #0AC18E<br>
+							RGB: 10 / 193 / 142<br>
+							CMYK: 95 / 0 / 26 / 24<br>
+							Pantone: 3395 C
+				          </div>
+				        </div>
+				      </div>
+				    </div>
+				</div>
+				<div class="col-12 col-md-6 col-lg-4 mb-3">
+				    <div class="text-start">
+				      <div class="d-flex flex-row justify-content-between">
+				        <div class="d-flex flex-row">
+				          <div class="align-self-start">
+				            <span class="brand-circle me-3 mb-0" style="background:#4D4D4D"></span>
+				          </div>
+				          <div class="fs-5r text-secondary">
+							Hex: #FFFFFF<br>
+							RGB: 255 / 255 / 255<br>
+							CMYK: 0 / 0 / 0 / 0<br>
+							Pantone: paper
+				          </div>
+				        </div>
+				      </div>
+				    </div>
+				</div>
+				<div class="col-12 col-md-6 col-lg-4 mb-3">
+				    <div class="text-start">
+				      <div class="d-flex flex-row justify-content-between">
+				        <div class="d-flex flex-row">
+				          <div class="align-self-start">
+				            <span class="brand-circle me-3 mb-0" style="background:#FFF"></span>
+				          </div>
+				          <div class="fs-5r text-secondary">
+							Hex: #4D4D4D<br>
+							RGB: 77 / 77 / 77<br>
+							CMYK: 65 / 58 / 57 / 37<br>
+							Pantone: 11C
+				          </div>
+				        </div>
+				      </div>
+				    </div>
+				</div>
 			</div>
-			<div class="col-12 col-md-6 col-lg-4 mb-3">
-			    <div class="text-start">
-			      <div class="d-flex flex-row justify-content-between">
-			        <div class="d-flex flex-row">
-			          <div class="align-self-start">
-			            <span class="brand-circle me-3 mb-0" style="background:#4D4D4D"></span>
-			          </div>
-			          <div class="fs-5r text-secondary">
-						Hex: #FFFFFF<br>
-						RGB: 255 / 255 / 255<br>
-						CMYK: 0 / 0 / 0 / 0<br>
-						Pantone: paper
-			          </div>
-			        </div>
-			      </div>
-			    </div>
-			</div>
-			<div class="col-12 col-md-6 col-lg-4 mb-3">
-			    <div class="text-start">
-			      <div class="d-flex flex-row justify-content-between">
-			        <div class="d-flex flex-row">
-			          <div class="align-self-start">
-			            <span class="brand-circle me-3 mb-0" style="background:#FFF"></span>
-			          </div>
-			          <div class="fs-5r text-secondary">
-						Hex: #4D4D4D<br>
-						RGB: 77 / 77 / 77<br>
-						CMYK: 65 / 58 / 57 / 37<br>
-						Pantone: 11C
-			          </div>
-			        </div>
-			      </div>
-			    </div>
-			</div>
-		</div>
-    </div>
+	    </div>
 
 
 
+	    <div class="container">
+	        <div class="section">
+	        	<h2 class="pb-2 border-bottom border-3 text-center">Branding Graphics</h2>
+	            <div class="grid" id="branding-gallery">
+	                <div class="loading">Loading images...</div>
+	            </div>
+	        </div>
+	        <div class="section">
+	            <h2 class="pb-2 border-bottom border-3 text-center">Stickers</h2>
+	            <div class="grid" id="stickers-gallery">
+	                <div class="loading">Loading images...</div>
+	            </div>
+	        </div>
+	        <div class="section">
+	            <h2 class="pb-2 border-bottom border-3 text-center">Informational Graphics</h2>
+	            <div class="grid" id="informational-gallery">
+	                <div class="loading">Loading images...</div>
+	            </div>
+	        </div>
+	        <div class="section">
+	            <h2 class="pb-2 border-bottom border-3 text-center">Fun Graphics</h2>
+	            <div class="grid" id="fun-gallery">
+	                <div class="loading">Loading images...</div>
+	            </div>
+	        </div>
+	        <div class="section">
+	            <h2 class="mb-2 border-bottom border-3 text-center">Memes</h2>
+	            <div class="grid" id="memes-gallery">
+	                <div class="loading">Loading images...</div>
+	            </div>
+	        </div>
+	    </div>
 
+	    <!-- Bootstrap Modal with Carousel -->
+	    <div class="modal fade" id="imageCarouselModal" tabindex="-1" aria-labelledby="imageCarouselModalLabel" aria-hidden="true">
+	        <div class="modal-dialog modal-xl">
+	            <div class="modal-content">
+	                <div class="modal-header">
+	                    <!-- Download icon on the left -->
+	                    <a href="#" id="downloadButton" class="carousel-download-icon link-secondary link-underline link-underline-opacity-0" download>
+	                        <i class="bi bi-download"></i> Download
+	                    </a>
+	                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	                </div>
+	                <div class="modal-body">
+	                    <div id="imageCarousel" class="carousel slide" data-bs-ride="false">
+	                        <div class="carousel-inner" id="carouselInner"></div>
+	                        <div class="carousel-indicators" id="carouselIndicators"></div>
+	                        <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+	                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+	                            <span class="visually-hidden">Previous</span>
+	                        </button>
+	                        <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+	                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+	                            <span class="visually-hidden">Next</span>
+	                        </button>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
 
+		<!-- Custom JavaScript for gallery-->
+	    <script>
+	        document.addEventListener('DOMContentLoaded', function() {
+	            const galleries = {
+	                'Branding': document.getElementById('branding-gallery'),
+	                'Stickers': document.getElementById('stickers-gallery'),
+	                'Informational Graphics': document.getElementById('informational-gallery'),
+	                'Fun Graphics': document.getElementById('fun-gallery'),
+	                'Memes': document.getElementById('memes-gallery')
+	            };
+	            const masonryInstances = {};
+	            let allImages = {};
 
+	            fetch('/api/resources.php')
+	                .then(response => response.json())
+	                .then(data => {
+	                    allImages = data;
+	                    Object.keys(galleries).forEach(section => {
+	                        const gallery = galleries[section];
+	                        gallery.innerHTML = '';
 
+	                        const images = data[section] || [];
+	                        images.forEach((image, index) => {
+	                            const item = document.createElement('div');
+	                            item.className = 'grid-item';
+	                            
+	                            const img = document.createElement('img');
+	                            img.src = image.url;
+	                            img.alt = image.name;
+	                            
+	                            item.addEventListener('click', () => openCarousel(section, index));
+	                            
+	                            item.appendChild(img);
+	                            gallery.appendChild(item);
+	                        });
 
-    <style>
-        .grid {
-            margin: 0 auto;
-            width: 100%;
-            max-width: 100%;
-        }
-        
-        .grid-item {
-            margin-bottom: 20px;
-            break-inside: avoid;
-            width: 100%;
-            cursor: pointer;
-        }
-        
-        .grid-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            padding: 4px;
-            transition: transform 0.3s ease;
-        }
-        
-        .grid-item img:hover {
-            transform: scale(1.05);
-        }
-        
-        .loading {
-            text-align: center;
-            padding: 20px;
-        }
+	                        imagesLoaded(gallery, function() {
+	                            masonryInstances[section] = new Masonry(gallery, {
+	                                itemSelector: '.grid-item',
+	                                percentPosition: true,
+	                                gutter: 20,
+	                                horizontalOrder: false
+	                            });
+	                            masonryInstances[section].layout();
+	                        });
+	                    });
 
-        .section {
-            margin-bottom: 40px;
-        }
+	                    let resizeTimer;
+	                    window.addEventListener('resize', () => {
+	                        clearTimeout(resizeTimer);
+	                        resizeTimer = setTimeout(() => {
+	                            Object.values(masonryInstances).forEach(msnry => msnry.layout());
+	                        }, 100);
+	                    });
+	                })
+	                .catch(error => {
+	                    console.error('Error loading images:', error);
+	                    Object.values(galleries).forEach(gallery => {
+	                        gallery.innerHTML = '<p class="text-danger">Error loading images</p>';
+	                    });
+	                });
 
-        @media (min-width: 576px) {
-            .grid-item { width: calc(50% - 20px); }
-        }
-        
-        @media (min-width: 768px) {
-            .grid-item { width: calc(33.33% - 20px); }
-        }
-        
-        @media (min-width: 992px) {
-            .grid-item { width: calc(25% - 20px); }
-        }
-        
-        @media (min-width: 1200px) {
-            .grid-item { width: calc(20% - 20px); }
-        }
+	            function openCarousel(section, startIndex) {
+	                const images = allImages[section] || [];
+	                const carouselInner = document.getElementById('carouselInner');
+	                const carouselIndicators = document.getElementById('carouselIndicators');
+	                const downloadButton = document.getElementById('downloadButton');
+	                
+	                carouselInner.innerHTML = '';
+	                carouselIndicators.innerHTML = '';
 
-        /* Carousel styling */
-        .carousel-inner {
-            height: 70vh;
-        }
+	                images.forEach((image, index) => {
+	                    const item = document.createElement('div');
+	                    item.className = `carousel-item ${index === startIndex ? 'active' : ''}`;
+	                    
+	                    const img = document.createElement('img');
+	                    img.src = image.url;
+	                    img.alt = image.name;
+	                    img.className = 'd-block';
+	                    
+	                    item.appendChild(img);
+	                    carouselInner.appendChild(item);
 
-        .carousel-item {
-            height: 100%;
-            text-align: center;
-        }
+	                    const indicator = document.createElement('button');
+	                    indicator.type = 'button';
+	                    indicator.dataset.bsTarget = '#imageCarousel';
+	                    indicator.dataset.bsSlideTo = index;
+	                    if (index === startIndex) {
+	                        indicator.className = 'active';
+	                        indicator.setAttribute('aria-current', 'true');
+	                    }
+	                    indicator.setAttribute('aria-label', `Slide ${index + 1}`);
+	                    carouselIndicators.appendChild(indicator);
+	                });
 
-        .carousel-item img {
-            max-height: 100%;
-            max-width: 100%;
-            width: auto;
-            height: auto;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+	                // Set initial download link
+	                downloadButton.href = images[startIndex].url;
+	                downloadButton.download = images[startIndex].name;
 
-        .carousel-indicators {
-            position: relative;
-            bottom: 0;
-            margin-top: 10px;
-        }
+	                // Update download link on slide change
+	                const carousel = document.getElementById('imageCarousel');
+	                carousel.addEventListener('slide.bs.carousel', function (event) {
+	                    const newIndex = event.to;
+	                    downloadButton.href = images[newIndex].url;
+	                    downloadButton.download = images[newIndex].name;
+	                });
 
-        [data-bs-theme="light"] .carousel .carousel-indicators [data-bs-target] {
-            background-color: #6c757d;
-            opacity: 0.5;
-        }
-
-        [data-bs-theme="light"] .carousel .carousel-indicators .active[data-bs-target] {
-            background-color: #6c757d;
-            opacity: 1;
-        }
-
-        [data-bs-theme="dark"] .carousel .carousel-indicators [data-bs-target] {
-            background-color: #adb5bd;
-            opacity: 0.5;
-        }
-
-        [data-bs-theme="dark"] .carousel .carousel-indicators .active[data-bs-target] {
-            background-color: #adb5bd;
-            opacity: 1;
-        }
-
-        [data-bs-theme="light"] .carousel .carousel-control-prev-icon,
-        [data-bs-theme="light"] .carousel .carousel-control-next-icon {
-            filter: invert(40%) sepia(10%) saturate(300%) hue-rotate(180deg);
-        }
-
-        [data-bs-theme="dark"] .carousel .carousel-control-prev-icon,
-        [data-bs-theme="dark"] .carousel .carousel-control-next-icon {
-            filter: invert(80%) sepia(10%) saturate(200%) hue-rotate(180deg);
-        }
-
-        /* Download icon styling */
-        .carousel-download-icon {
-            font-size: 1.5rem; /* Larger icon */
-        }
-    </style>
-
-        <div class="container">
-        <div class="section">
-        	<h2 class="pb-2 border-bottom border-3 text-center">Branding Graphics</h2>
-            <div class="grid" id="branding-gallery">
-                <div class="loading">Loading images...</div>
-            </div>
-        </div>
-        <div class="section">
-            <h2 class="pb-2 border-bottom border-3 text-center">Stickers</h2>
-            <div class="grid" id="stickers-gallery">
-                <div class="loading">Loading images...</div>
-            </div>
-        </div>
-        <div class="section">
-            <h2 class="pb-2 border-bottom border-3 text-center">Informational Graphics</h2>
-            <div class="grid" id="informational-gallery">
-                <div class="loading">Loading images...</div>
-            </div>
-        </div>
-        <div class="section">
-            <h2 class="pb-2 border-bottom border-3 text-center">Fun Graphics</h2>
-            <div class="grid" id="fun-gallery">
-                <div class="loading">Loading images...</div>
-            </div>
-        </div>
-        <div class="section">
-            <h2 class="mb-2 border-bottom border-3 text-center">Memes</h2>
-            <div class="grid" id="memes-gallery">
-                <div class="loading">Loading images...</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Bootstrap Modal with Carousel -->
-    <div class="modal fade" id="imageCarouselModal" tabindex="-1" aria-labelledby="imageCarouselModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <!-- Download icon on the left -->
-                    <a href="#" id="downloadButton" class="carousel-download-icon link-secondary link-underline link-underline-opacity-0" download>
-                        <i class="bi bi-download"></i> Download
-                    </a>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div id="imageCarousel" class="carousel slide" data-bs-ride="false">
-                        <div class="carousel-inner" id="carouselInner"></div>
-                        <div class="carousel-indicators" id="carouselIndicators"></div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-		    <!-- Custom JavaScript for gallery-->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const galleries = {
-                'Branding': document.getElementById('branding-gallery'),
-                'Stickers': document.getElementById('stickers-gallery'),
-                'Informational Graphics': document.getElementById('informational-gallery'),
-                'Fun Graphics': document.getElementById('fun-gallery'),
-                'Memes': document.getElementById('memes-gallery')
-            };
-            const masonryInstances = {};
-            let allImages = {};
-
-            fetch('/api/resources.php')
-                .then(response => response.json())
-                .then(data => {
-                    allImages = data;
-                    Object.keys(galleries).forEach(section => {
-                        const gallery = galleries[section];
-                        gallery.innerHTML = '';
-
-                        const images = data[section] || [];
-                        images.forEach((image, index) => {
-                            const item = document.createElement('div');
-                            item.className = 'grid-item';
-                            
-                            const img = document.createElement('img');
-                            img.src = image.url;
-                            img.alt = image.name;
-                            
-                            item.addEventListener('click', () => openCarousel(section, index));
-                            
-                            item.appendChild(img);
-                            gallery.appendChild(item);
-                        });
-
-                        imagesLoaded(gallery, function() {
-                            masonryInstances[section] = new Masonry(gallery, {
-                                itemSelector: '.grid-item',
-                                percentPosition: true,
-                                gutter: 20,
-                                horizontalOrder: false
-                            });
-                            masonryInstances[section].layout();
-                        });
-                    });
-
-                    let resizeTimer;
-                    window.addEventListener('resize', () => {
-                        clearTimeout(resizeTimer);
-                        resizeTimer = setTimeout(() => {
-                            Object.values(masonryInstances).forEach(msnry => msnry.layout());
-                        }, 100);
-                    });
-                })
-                .catch(error => {
-                    console.error('Error loading images:', error);
-                    Object.values(galleries).forEach(gallery => {
-                        gallery.innerHTML = '<p class="text-danger">Error loading images</p>';
-                    });
-                });
-
-            function openCarousel(section, startIndex) {
-                const images = allImages[section] || [];
-                const carouselInner = document.getElementById('carouselInner');
-                const carouselIndicators = document.getElementById('carouselIndicators');
-                const downloadButton = document.getElementById('downloadButton');
-                
-                carouselInner.innerHTML = '';
-                carouselIndicators.innerHTML = '';
-
-                images.forEach((image, index) => {
-                    const item = document.createElement('div');
-                    item.className = `carousel-item ${index === startIndex ? 'active' : ''}`;
-                    
-                    const img = document.createElement('img');
-                    img.src = image.url;
-                    img.alt = image.name;
-                    img.className = 'd-block';
-                    
-                    item.appendChild(img);
-                    carouselInner.appendChild(item);
-
-                    const indicator = document.createElement('button');
-                    indicator.type = 'button';
-                    indicator.dataset.bsTarget = '#imageCarousel';
-                    indicator.dataset.bsSlideTo = index;
-                    if (index === startIndex) {
-                        indicator.className = 'active';
-                        indicator.setAttribute('aria-current', 'true');
-                    }
-                    indicator.setAttribute('aria-label', `Slide ${index + 1}`);
-                    carouselIndicators.appendChild(indicator);
-                });
-
-                // Set initial download link
-                downloadButton.href = images[startIndex].url;
-                downloadButton.download = images[startIndex].name;
-
-                // Update download link on slide change
-                const carousel = document.getElementById('imageCarousel');
-                carousel.addEventListener('slide.bs.carousel', function (event) {
-                    const newIndex = event.to;
-                    downloadButton.href = images[newIndex].url;
-                    downloadButton.download = images[newIndex].name;
-                });
-
-                const modal = new bootstrap.Modal(document.getElementById('imageCarouselModal'));
-                modal.show();
-            }
-        });
-    </script>
+	                const modal = new bootstrap.Modal(document.getElementById('imageCarouselModal'));
+	                modal.show();
+	            }
+	        });
+	    </script>
 
 
 
@@ -620,43 +451,8 @@ object-fit:contain;
 	  	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-        <!--Copy to Clipboard Script for donation address-->
-		<script>
-		document.addEventListener('DOMContentLoaded', function() {
-			const button = document.getElementById('copyButton');
-			const tooltip = new bootstrap.Tooltip(button);
-			const copyToClipboard = async () => {
-				try {
-					const element = document.querySelector(".user-select-all");
-					await navigator.clipboard.writeText(element.textContent);
-					// Optional: Provide feedback or perform additional actions upon successful copy
-					// Update tooltip text
-					tooltip.setContent({ '.tooltip-inner': 'Copied!' });
-					// Show tooltip
-					tooltip.show();
-
-					// Hide tooltip after a short delay
-					setTimeout(() => {
-					tooltip.hide();
-					// Reset tooltip text for next use
-					tooltip.setContent({ '.tooltip-inner': 'Copy to Clipboard' });
-					}, 1500); // Adjust delay as needed
-				} catch (error) {
-					console.error("Failed to copy to clipboard:", error);
-					// Optional: Handle and display the error to the user
-					tooltip.setContent({ '.tooltip-inner': 'Copy Failed!' });
-					tooltip.show();
-					setTimeout(() => {
-					tooltip.hide();
-					tooltip.setContent({ '.tooltip-inner': 'Copy to Clipboard' });
-					}, 2000); // Adjust delay for error message
-				}
-			};
-			// Attach the function to the button's onclick event again or maintain existing setup
-			button.addEventListener('click', copyToClipboard);
-		});
-		</script>
-
+	  	<!-- main.js -->
+	    <script src="js/main.js?v=0.01"></script>
 
 	  	<!-- Initializing tooltips -->
 	  	<script>
@@ -666,55 +462,5 @@ object-fit:contain;
 		})
 		</script>
 
-		<script>
-		document.addEventListener('DOMContentLoaded', function() {
-		  function setTheme(theme) {
-		    document.documentElement.setAttribute('data-bs-theme', theme);
-		    localStorage.setItem('bs-theme', theme);
-		    updateThemeIcon(theme);
-		    updateActiveDropdownItem(theme);
-		    updateButtonStyles(); // Call this function to update button styles on theme change
-		  }
-
-		  function getCurrentTheme() {
-		    return localStorage.getItem('bs-theme') || 'dark';
-		  }
-
-		  function updateThemeIcon(theme) {
-		    const icon = document.getElementById('themeIcon');
-		    icon.className = `bi ${theme === 'light' ? 'bi-brightness-high-fill' : 'bi-moon-stars-fill'}`;
-		  }
-
-		  function updateActiveDropdownItem(theme) {
-		    document.querySelectorAll('.theme-switcher .dropdown-item').forEach(item => {
-		      item.classList.toggle('active', item.getAttribute('data-theme') === theme);
-		    });
-		  }
-
-		  function updateButtonStyles() {
-		    document.querySelectorAll('.btn-outline-secondary, .btn-secondary').forEach(button => {
-		      const currentTheme = document.documentElement.getAttribute('data-bs-theme');
-		      if (currentTheme === 'light') {
-		        button.classList.remove('btn-outline-secondary');
-		        button.classList.add('btn-secondary');
-		      } else {
-		        button.classList.remove('btn-secondary');
-		        button.classList.add('btn-outline-secondary');
-		      }
-		    });
-		  }
-
-		  setTheme(getCurrentTheme());
-		  updateButtonStyles(); // Initial call to ensure buttons are styled correctly on load
-
-		  document.querySelectorAll('.theme-switcher .dropdown-item').forEach(item => {
-		    item.addEventListener('click', function(e) {
-		      e.preventDefault();
-		      const theme = this.getAttribute('data-theme');
-		      setTheme(theme);
-		    });
-		  });
-		});
-		</script>
 	</body>
 </html>
