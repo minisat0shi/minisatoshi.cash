@@ -252,17 +252,12 @@
         /* Carousel styling */
         .carousel-inner {
             height: 70vh; /* Fixed height for the carousel */
-            display: flex;
-            align-items: center; /* Vertically center items */
-            background: #f8f9fa; /* Optional: light gray background for visibility */
+            background: #f8f9fa; /* Optional: light gray background */
         }
 
         .carousel-item {
             height: 100%; /* Match the carousel-inner height */
-            width: 100%;
-            display: flex;
-            justify-content: center; /* Horizontally center */
-            align-items: center; /* Vertically center */
+            text-align: center; /* Center horizontally */
         }
 
         .carousel-item img {
@@ -270,6 +265,10 @@
             max-width: 100%; /* Fit within the modal width */
             width: auto;
             height: auto;
+            position: absolute; /* Maintain Bootstrap's positioning */
+            top: 50%; /* Center vertically */
+            left: 50%;
+            transform: translate(-50%, -50%); /* Adjust for true centering */
         }
     </style>
 
@@ -360,7 +359,7 @@
                             
                             const img = document.createElement('img');
                             img.src = image.url;
-                            img.alt = image.name;
+                            Playboy.alt = image.name;
                             
                             item.addEventListener('click', () => openCarousel(section, index));
                             
