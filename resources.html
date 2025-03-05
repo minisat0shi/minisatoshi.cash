@@ -251,35 +251,33 @@
 
         /* Carousel styling */
         .carousel-inner {
-            height: 70vh; /* Fixed height for the carousel */
+            height: 70vh;
         }
 
         .carousel-item {
-            height: 100%; /* Match the carousel-inner height */
-            text-align: center; /* Center horizontally */
+            height: 100%;
+            text-align: center;
         }
 
         .carousel-item img {
-            max-height: 100%; /* Fit within the fixed height */
-            max-width: 100%; /* Fit within the modal width */
+            max-height: 100%;
+            max-width: 100%;
             width: auto;
             height: auto;
-            position: absolute; /* Maintain Bootstrap's positioning */
-            top: 50%; /* Center vertically */
+            position: absolute;
+            top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%); /* Adjust for true centering */
+            transform: translate(-50%, -50%);
         }
 
-        /* Indicators below and visible in both themes */
         .carousel-indicators {
             position: relative;
             bottom: 0;
             margin-top: 10px;
         }
 
-        /* Higher specificity for indicators */
         [data-bs-theme="light"] .carousel .carousel-indicators [data-bs-target] {
-            background-color: #6c757d; /* Gray for light mode */
+            background-color: #6c757d;
             opacity: 0.5;
         }
 
@@ -289,7 +287,7 @@
         }
 
         [data-bs-theme="dark"] .carousel .carousel-indicators [data-bs-target] {
-            background-color: #adb5bd; /* Lighter gray for dark mode */
+            background-color: #adb5bd;
             opacity: 0.5;
         }
 
@@ -298,15 +296,23 @@
             opacity: 1;
         }
 
-        /* Higher specificity for arrows */
         [data-bs-theme="light"] .carousel .carousel-control-prev-icon,
         [data-bs-theme="light"] .carousel .carousel-control-next-icon {
-            filter: invert(40%) sepia(10%) saturate(300%) hue-rotate(180deg); /* Dark gray for light mode */
+            filter: invert(40%) sepia(10%) saturate(300%) hue-rotate(180deg);
         }
 
         [data-bs-theme="dark"] .carousel .carousel-control-prev-icon,
         [data-bs-theme="dark"] .carousel .carousel-control-next-icon {
-            filter: invert(80%) sepia(10%) saturate(200%) hue-rotate(180deg); /* Light gray for dark mode */
+            filter: invert(80%) sepia(10%) saturate(200%) hue-rotate(180deg);
+        }
+
+        /* Download button styling */
+        .carousel-download-btn {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10; /* Ensure it’s above the image */
         }
     </style>
 
@@ -354,7 +360,7 @@
                 <div class="modal-body">
                     <div id="imageCarousel" class="carousel slide" data-bs-ride="false">
                         <div class="carousel-inner" id="carouselInner"></div>
-                        <div class="carousel-indicators" id="carouselIndicators"></div> <!-- Moved below carousel-inner -->
+                        <div class="carousel-indicators" id="carouselIndicators"></div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
@@ -363,6 +369,7 @@
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
+                        <a href="#" id="downloadButton" class="btn btn-primary carousel-download-btn" download>Download</a>
                     </div>
                 </div>
             </div>
@@ -435,6 +442,7 @@
                 const images = allImages[section] || [];
                 const carouselInner = document.getElementById('carouselInner');
                 const carouselIndicators = document.getElementById('carouselIndicators');
+                const downloadButton = document.getElementById('downloadButton');
                 
                 carouselInner.innerHTML = '';
                 carouselIndicators.innerHTML = '';
@@ -461,6 +469,18 @@
                     }
                     indicator.setAttribute('aria-label', `Slide ${index + 1}`);
                     carouselIndicators.appendChild(indicator);
+                });
+
+                // Set initial download link
+                downloadButton.href = images[startIndex].url;
+                downloadButton.download = images[startIndex].name;
+
+                // Update download link on slide change
+                const carousel = document.getElementById('imageCarousel');
+                carousel.addEventListener('slide.bs.carousel', function (event) {
+                    const newIndex = event.to;
+                    downloadButton.href = images[newIndex].url;
+                    downloadButton.download = images[newIndex].name;
                 });
 
                 const modal = new bootstrap.Modal(document.getElementById('imageCarouselModal'));
