@@ -252,7 +252,6 @@
         /* Carousel styling */
         .carousel-inner {
             height: 70vh; /* Fixed height for the carousel */
-            background: #f8f9fa; /* Optional: light gray background */
         }
 
         .carousel-item {
@@ -269,6 +268,13 @@
             top: 50%; /* Center vertically */
             left: 50%;
             transform: translate(-50%, -50%); /* Adjust for true centering */
+        }
+
+        /* Move indicators below */
+        .carousel-indicators {
+            position: relative; /* Remove absolute positioning */
+            bottom: 0; /* Reset Bootstrap's default bottom offset */
+            margin-top: 10px; /* Space below the carousel */
         }
     </style>
 
@@ -315,8 +321,8 @@
                 </div>
                 <div class="modal-body">
                     <div id="imageCarousel" class="carousel slide" data-bs-ride="false">
-                        <div class="carousel-indicators" id="carouselIndicators"></div>
                         <div class="carousel-inner" id="carouselInner"></div>
+                        <div class="carousel-indicators" id="carouselIndicators"></div> <!-- Moved below carousel-inner -->
                         <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
