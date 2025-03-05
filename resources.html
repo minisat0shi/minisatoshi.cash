@@ -201,12 +201,14 @@
         .grid {
             margin: 0 auto;
             width: 100%;
+            max-width: 100%; /* Ensure grid doesn't exceed container */
         }
         
         .grid-item {
             margin-bottom: 20px;
             break-inside: avoid;
             width: 100%; /* Default full width for small screens */
+            background: #fff;
         }
         
         .grid-item img {
@@ -220,6 +222,7 @@
             text-align: center;
             padding: 20px;
         }
+
         /* Responsive breakpoints matching Bootstrap */
         @media (min-width: 576px) {
             .grid-item { width: calc(50% - 20px); } /* 2 columns */
@@ -276,14 +279,20 @@
                             itemSelector: '.grid-item',
                             percentPosition: true,
                             gutter: 20,
-                            fitWidth: true,
                             horizontalOrder: true
                         });
 
-                        // Re-layout on window resize
+                        // Improved resize handling with debounce
+                        let resizeTimer;
                         window.addEventListener('resize', () => {
-                            msnry.layout();
+                            clearTimeout(resizeTimer);
+                            resizeTimer = setTimeout(() => {
+                                msnry.layout();
+                            }, 100); // 100ms debounce
                         });
+
+                        // Initial layout after setup
+                        msnry.layout();
                     });
                 })
                 .catch(error => {
