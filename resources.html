@@ -295,18 +295,37 @@
                         const gallery = galleries[section];
                         gallery.innerHTML = ''; // Remove loading text
 
-                        const images = data[section] || [];
-                        images.forEach(image => {
-                            const item = document.createElement('div');
-                            item.className = 'grid-item';
-                            
-                            const img = document.createElement('img');
-                            img.src = image.url;
-                            img.alt = image.name;
-                            
-                            item.appendChild(img);
-                            gallery.appendChild(item);
-                        });
+//                        const images = data[section] || [];
+//                        images.forEach(image => {
+//                            const item = document.createElement('div');
+//                            item.className = 'grid-item';
+//                            
+//                            const img = document.createElement('img');
+//                            img.src = image.url;
+//                            img.alt = image.name;
+//                            
+//                            item.appendChild(img);
+//                            gallery.appendChild(item);
+//                        });
+images.forEach(image => {
+    const item = document.createElement('div');
+    item.className = 'grid-item';
+    
+    const img = document.createElement('img');
+    img.src = image.url;
+    img.alt = image.name;
+    
+    img.onload = () => {
+        const colorThief = new ColorThief();
+        const dominantColor = colorThief.getColor(img);
+        const brightness = (dominantColor[0] * 299 + dominantColor[1] * 587 + dominantColor[2] * 114) / 1000;
+        img.style.backgroundColor = brightness > 128 ? '#000' : '#fff'; // Black for light images, white for dark
+        msnry.layout(); // Re-layout after background set
+    };
+    
+    item.appendChild(img);
+    gallery.appendChild(item);
+});
 
                         // Initialize Masonry for this gallery
                         imagesLoaded(gallery, function() {
@@ -379,6 +398,9 @@
 
 		<!-- imagesLoaded CDN -->
 		<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+
+		<!-- colorThief -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.min.js"></script>
 
 	  	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
