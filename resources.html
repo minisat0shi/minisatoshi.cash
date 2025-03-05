@@ -270,21 +270,42 @@
             transform: translate(-50%, -50%); /* Adjust for true centering */
         }
 
-        /* Move indicators below and style with secondary color */
+        /* Indicators below and visible in both themes */
         .carousel-indicators {
-            position: relative; /* Remove absolute positioning */
-            bottom: 0; /* Reset Bootstrap's default bottom offset */
-            margin-top: 10px; /* Space below the carousel */
+            position: relative;
+            bottom: 0;
+            margin-top: 10px;
         }
 
+        /* Default indicator styles */
         .carousel-indicators button {
-            background-color: var(--bs-secondary); /* Inactive indicators */
-            opacity: 0.5; /* Match Bootstrap's default inactive opacity */
+            background-color: gray; /* Fallback color */
+            opacity: 0.5;
         }
 
         .carousel-indicators .active {
-            background-color: var(--bs-secondary); /* Active indicator */
-            opacity: 1; /* Full opacity for active state */
+            background-color: gray;
+            opacity: 1;
+        }
+
+        /* Theme-specific adjustments */
+        [data-bs-theme="light"] .carousel-indicators button {
+            background-color: #6c757d; /* Gray for light mode */
+        }
+
+        [data-bs-theme="dark"] .carousel-indicators button {
+            background-color: #adb5bd; /* Lighter gray for dark mode */
+        }
+
+        /* Carousel arrows */
+        [data-bs-theme="light"] .carousel-control-prev-icon,
+        [data-bs-theme="light"] .carousel-control-next-icon {
+            filter: invert(40%) sepia(10%) saturate(300%) hue-rotate(180deg); /* Dark gray for light mode */
+        }
+
+        [data-bs-theme="dark"] .carousel-control-prev-icon,
+        [data-bs-theme="dark"] .carousel-control-next-icon {
+            filter: invert(80%) sepia(10%) saturate(200%) hue-rotate(180deg); /* Light gray for dark mode */
         }
     </style>
 
