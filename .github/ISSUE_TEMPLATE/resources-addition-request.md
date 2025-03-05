@@ -7,7 +7,7 @@ assignees: e14tech, minisat0shi
 
 ---
 
-**Preferred Image Link (Please try to keep under 50kb; please view [image guidelines](docs/RESOURCES-ADDITION-GUIDELINE.md) for file types)**
+**Preferred Image Link (Please try to keep under 50kb; file types: .svg/.png/.webp is preferred for branding or otherwise may not be accepted | .jpg, .jpeg, .png, .gif, .webp, .svg are acceptable for other sections)**
 <link/upload>
 
 **Section to be added to**
