@@ -17,8 +17,11 @@ $allowedTypes = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg'];
 $output = [];
 foreach ($sections as $label => $folder) {
     $images = glob($folder . "*.{" . implode(',', $allowedTypes) . "}", GLOB_BRACE);
-    $baseUrl = $baseUrlPrefix . basename($folder) . '/';
     
+    // Sort images alphabetically by filename
+    sort($images, SORT_NATURAL | SORT_FLAG_CASE); // Natural sort, case-insensitive
+    
+    $baseUrl = $baseUrlPrefix . basename($folder) . '/';
     $sectionImages = [];
     foreach ($images as $image) {
         $filename = basename($image);
