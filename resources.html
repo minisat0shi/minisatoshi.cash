@@ -277,34 +277,35 @@
             margin-top: 10px;
         }
 
-        /* Default indicator styles */
-        .carousel-indicators button {
-            background-color: gray; /* Fallback color */
+        /* Higher specificity for indicators */
+        [data-bs-theme="light"] .carousel .carousel-indicators [data-bs-target] {
+            background-color: #6c757d; /* Gray for light mode */
             opacity: 0.5;
         }
 
-        .carousel-indicators .active {
-            background-color: gray;
+        [data-bs-theme="light"] .carousel .carousel-indicators .active[data-bs-target] {
+            background-color: #6c757d;
             opacity: 1;
         }
 
-        /* Theme-specific adjustments */
-        [data-bs-theme="light"] .carousel-indicators button {
-            background-color: #6c757d; /* Gray for light mode */
-        }
-
-        [data-bs-theme="dark"] .carousel-indicators button {
+        [data-bs-theme="dark"] .carousel .carousel-indicators [data-bs-target] {
             background-color: #adb5bd; /* Lighter gray for dark mode */
+            opacity: 0.5;
         }
 
-        /* Carousel arrows */
-        [data-bs-theme="light"] .carousel-control-prev-icon,
-        [data-bs-theme="light"] .carousel-control-next-icon {
+        [data-bs-theme="dark"] .carousel .carousel-indicators .active[data-bs-target] {
+            background-color: #adb5bd;
+            opacity: 1;
+        }
+
+        /* Higher specificity for arrows */
+        [data-bs-theme="light"] .carousel .carousel-control-prev-icon,
+        [data-bs-theme="light"] .carousel .carousel-control-next-icon {
             filter: invert(40%) sepia(10%) saturate(300%) hue-rotate(180deg); /* Dark gray for light mode */
         }
 
-        [data-bs-theme="dark"] .carousel-control-prev-icon,
-        [data-bs-theme="dark"] .carousel-control-next-icon {
+        [data-bs-theme="dark"] .carousel .carousel-control-prev-icon,
+        [data-bs-theme="dark"] .carousel .carousel-control-next-icon {
             filter: invert(80%) sepia(10%) saturate(200%) hue-rotate(180deg); /* Light gray for dark mode */
         }
     </style>
