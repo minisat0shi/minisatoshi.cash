@@ -310,14 +310,6 @@
         .carousel-download-icon {
             font-size: 1.5rem; /* Larger icon */
         }
-
-        [data-bs-theme="light"] .carousel .carousel-download-icon {
-            color: #6c757d; /* Match indicators in light mode */
-        }
-
-        [data-bs-theme="dark"] .carousel .carousel-download-icon {
-            color: #adb5bd; /* Match indicators in dark mode */
-        }
     </style>
 
         <div class="container">
@@ -359,8 +351,8 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <!-- Download icon on the left -->
-                    <a href="#" id="downloadButton" class="carousel-download-icon" download>
-                        <i class="bi bi-download"></i>
+                    <a href="#" id="downloadButton" class="carousel-download-icon text-secondary" download>
+                        Download <i class="bi bi-download"></i>
                     </a>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
