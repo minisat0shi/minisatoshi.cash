@@ -201,13 +201,13 @@
         .grid {
             margin: 0 auto;
             width: 100%;
-            max-width: 100%; /* Ensure grid doesn't exceed container */
+            max-width: 100%;
         }
         
         .grid-item {
             margin-bottom: 20px;
             break-inside: avoid;
-            width: 100%; /* Default full width for small screens */
+            width: 100%;
         }
         
         .grid-item img {
@@ -215,12 +215,21 @@
             height: auto;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            padding:4px;
+            padding: 4px;
+            transition: transform 0.3s ease; /* Smooth transition */
+        }
+        
+        .grid-item img:hover {
+            transform: scale(1.05); /* Grows 5% larger */
         }
         
         .loading {
             text-align: center;
             padding: 20px;
+        }
+
+        .section {
+            margin-bottom: 40px;
         }
 
         /* Responsive breakpoints matching Bootstrap */
