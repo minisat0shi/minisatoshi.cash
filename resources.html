@@ -343,16 +343,15 @@
                 'Memes': document.getElementById('memes-gallery')
             };
             const masonryInstances = {};
-            let allImages = {}; // Store images per section
+            let allImages = {};
 
-            // Fetch images from PHP script
             fetch('/api/resources.php')
                 .then(response => response.json())
                 .then(data => {
-                    allImages = data; // Store all images for later use
+                    allImages = data;
                     Object.keys(galleries).forEach(section => {
                         const gallery = galleries[section];
-                        gallery.innerHTML = ''; // Remove loading text
+                        gallery.innerHTML = '';
 
                         const images = data[section] || [];
                         images.forEach((image, index) => {
@@ -363,7 +362,6 @@
                             img.src = image.url;
                             img.alt = image.name;
                             
-                            // Add click event to open modal with carousel
                             item.addEventListener('click', () => openCarousel(section, index));
                             
                             item.appendChild(img);
@@ -396,17 +394,14 @@
                     });
                 });
 
-            // Function to open carousel modal
             function openCarousel(section, startIndex) {
                 const images = allImages[section] || [];
                 const carouselInner = document.getElementById('carouselInner');
                 const carouselIndicators = document.getElementById('carouselIndicators');
                 
-                // Clear existing content
                 carouselInner.innerHTML = '';
                 carouselIndicators.innerHTML = '';
 
-                // Populate carousel items
                 images.forEach((image, index) => {
                     const item = document.createElement('div');
                     item.className = `carousel-item ${index === startIndex ? 'active' : ''}`;
@@ -414,12 +409,11 @@
                     const img = document.createElement('img');
                     img.src = image.url;
                     img.alt = image.name;
-                    img.className = 'd-block'; // Bootstrap class for carousel images
+                    img.className = 'd-block';
                     
                     item.appendChild(img);
                     carouselInner.appendChild(item);
 
-                    // Add indicator
                     const indicator = document.createElement('button');
                     indicator.type = 'button';
                     indicator.dataset.bsTarget = '#imageCarousel';
@@ -432,7 +426,6 @@
                     carouselIndicators.appendChild(indicator);
                 });
 
-                // Initialize and show modal
                 const modal = new bootstrap.Modal(document.getElementById('imageCarouselModal'));
                 modal.show();
             }
