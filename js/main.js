@@ -23,7 +23,7 @@ mybutton.addEventListener("click", backToTop);
 function backToTop() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
-}
+};
 
 
 //Copy to Clipboard Script for donation address
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	button.addEventListener('click', copyToClipboard);
 });
 
-//Updating button styles on theme change
+//Detecting and changing page theme
 document.addEventListener('DOMContentLoaded', function() {
   function setTheme(theme) {
     document.documentElement.setAttribute('data-bs-theme', theme);
