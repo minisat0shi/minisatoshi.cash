@@ -208,7 +208,6 @@
             margin-bottom: 20px;
             break-inside: avoid;
             width: 100%; /* Default full width for small screens */
-            background: #fff;
         }
         
         .grid-item img {
@@ -216,6 +215,7 @@
             height: auto;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background: #fff;
         }
         
         .loading {
@@ -242,62 +242,98 @@
     </style>
 
     <div class="container">
-        <h1 class="mb-4">Image Gallery</h1>
-        <div class="grid" id="gallery">
-            <div class="loading">Loading images...</div>
+        <div class="section">
+            <h1 class="mb-4">Branding</h1>
+            <div class="grid" id="branding-gallery">
+                <div class="loading">Loading images...</div>
+            </div>
+        </div>
+        <div class="section">
+            <h1 class="mb-4">Stickers</h1>
+            <div class="grid" id="stickers-gallery">
+                <div class="loading">Loading images...</div>
+            </div>
+        </div>
+        <div class="section">
+            <h1 class="mb-4">Informational Graphics</h1>
+            <div class="grid" id="informational-gallery">
+                <div class="loading">Loading images...</div>
+            </div>
+        </div>
+        <div class="section">
+            <h1 class="mb-4">Fun Graphics</h1>
+            <div class="grid" id="fun-gallery">
+                <div class="loading">Loading images...</div>
+            </div>
+        </div>
+        <div class="section">
+            <h1 class="mb-4">Memes</h1>
+            <div class="grid" id="memes-gallery">
+                <div class="loading">Loading images...</div>
+            </div>
         </div>
     </div>
 
 		    <!-- Custom JavaScript for gallery-->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const gallery = document.getElementById('gallery');
-            let msnry;
+            const galleries = {
+                'Branding': document.getElementById('branding-gallery'),
+                'Stickers': document.getElementById('stickers-gallery'),
+                'Informational Graphics': document.getElementById('informational-gallery'),
+                'Fun Graphics': document.getElementById('fun-gallery'),
+                'Memes': document.getElementById('memes-gallery')
+            };
+            const masonryInstances = {};
 
             // Fetch images from PHP script
             fetch('/api/resources.php')
                 .then(response => response.json())
-                .then(images => {
-                    gallery.innerHTML = ''; // Remove loading text
+                .then(data => {
+                    // Process each section
+                    Object.keys(galleries).forEach(section => {
+                        const gallery = galleries[section];
+                        gallery.innerHTML = ''; // Remove loading text
 
-                    // Create grid items
-                    images.forEach(image => {
-                        const item = document.createElement('div');
-                        item.className = 'grid-item';
-                        
-                        const img = document.createElement('img');
-                        img.src = image.url;
-                        img.alt = image.name;
-                        
-                        item.appendChild(img);
-                        gallery.appendChild(item);
+                        const images = data[section] || [];
+                        images.forEach(image => {
+                            const item = document.createElement('div');
+                            item.className = 'grid-item';
+                            
+                            const img = document.createElement('img');
+                            img.src = image.url;
+                            img.alt = image.name;
+                            
+                            item.appendChild(img);
+                            gallery.appendChild(item);
+                        });
+
+                        // Initialize Masonry for this gallery
+                        imagesLoaded(gallery, function() {
+                            masonryInstances[section] = new Masonry(gallery, {
+                                itemSelector: '.grid-item',
+                                percentPosition: true,
+                                gutter: 20,
+                                horizontalOrder: true
+                            });
+                            masonryInstances[section].layout();
+                        });
                     });
 
-                    // Initialize Masonry after images are loaded
-                    imagesLoaded(gallery, function() {
-                        msnry = new Masonry(gallery, {
-                            itemSelector: '.grid-item',
-                            percentPosition: true,
-                            gutter: 20,
-                            horizontalOrder: true
-                        });
-
-                        // Improved resize handling with debounce
-                        let resizeTimer;
-                        window.addEventListener('resize', () => {
-                            clearTimeout(resizeTimer);
-                            resizeTimer = setTimeout(() => {
-                                msnry.layout();
-                            }, 100); // 100ms debounce
-                        });
-
-                        // Initial layout after setup
-                        msnry.layout();
+                    // Resize handler for all galleries
+                    let resizeTimer;
+                    window.addEventListener('resize', () => {
+                        clearTimeout(resizeTimer);
+                        resizeTimer = setTimeout(() => {
+                            Object.values(masonryInstances).forEach(msnry => msnry.layout());
+                        }, 100);
                     });
                 })
                 .catch(error => {
                     console.error('Error loading images:', error);
-                    gallery.innerHTML = '<p class="text-danger">Error loading images</p>';
+                    Object.values(galleries).forEach(gallery => {
+                        gallery.innerHTML = '<p class="text-danger">Error loading images</p>';
+                    });
                 });
         });
     </script>

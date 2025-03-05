@@ -2,19 +2,32 @@
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 
-$imageFolder = '../images/Resources/Stickers/';
-$baseUrl = '/images/Resources/Stickers/';
+// Define folder paths and labels
+$sections = [
+    'Branding' => '../images/Resources/Branding/',
+    'Stickers' => '../images/Resources/Stickers/',
+    'Informational Graphics' => '../images/Resources/InformationalGraphics/',
+    'Fun Graphics' => '../images/Resources/FunGraphics/',
+    'Memes' => '../images/Resources/Memes/'
+];
 
+$baseUrlPrefix = '/images/Resources/';
 $allowedTypes = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg'];
-$images = glob($imageFolder . "*.{" . implode(',', $allowedTypes) . "}", GLOB_BRACE);
 
 $output = [];
-foreach ($images as $image) {
-    $filename = basename($image);
-    $output[] = [
-        'name' => $filename,
-        'url' => $baseUrl . $filename
-    ];
+foreach ($sections as $label => $folder) {
+    $images = glob($folder . "*.{" . implode(',', $allowedTypes) . "}", GLOB_BRACE);
+    $baseUrl = $baseUrlPrefix . basename($folder) . '/';
+    
+    $sectionImages = [];
+    foreach ($images as $image) {
+        $filename = basename($image);
+        $sectionImages[] = [
+            'name' => $filename,
+            'url' => $baseUrl . $filename
+        ];
+    }
+    $output[$label] = $sectionImages;
 }
 
 echo json_encode($output);
