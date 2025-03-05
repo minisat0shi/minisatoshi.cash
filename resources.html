@@ -306,13 +306,9 @@
             filter: invert(80%) sepia(10%) saturate(200%) hue-rotate(180deg);
         }
 
-        /* Download button styling */
-        .carousel-download-btn {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10; /* Ensure it’s above the image */
+        /* Download button in header */
+        .modal-header .carousel-download-btn {
+            margin-left: auto; /* Push to the right before close button */
         }
     </style>
 
@@ -354,7 +350,10 @@
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="imageCarouselModalLabel">Image Gallery</h5>
+                    <!-- Replaced title with download button -->
+                    <a href="#" id="downloadButton" class="btn btn-primary carousel-download-btn" download>
+                        <i class="bi bi-download"></i>
+                    </a>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -369,7 +368,6 @@
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
-                        <a href="#" id="downloadButton" class="btn btn-primary carousel-download-btn" download>Download</a>
                     </div>
                 </div>
             </div>
