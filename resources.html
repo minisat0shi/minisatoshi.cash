@@ -208,7 +208,7 @@
             margin-bottom: 20px;
             break-inside: avoid;
             width: 100%;
-            cursor: pointer; /* Indicates clickability */
+            cursor: pointer;
         }
         
         .grid-item img {
@@ -233,7 +233,6 @@
             margin-bottom: 40px;
         }
 
-        /* Responsive breakpoints */
         @media (min-width: 576px) {
             .grid-item { width: calc(50% - 20px); }
         }
@@ -250,28 +249,27 @@
             .grid-item { width: calc(20% - 20px); }
         }
 
-        /* Carousel image styling */
-        .carousel-item img {
-            max-height: 80vh; /* Limit height to viewport */
-            width: auto;
-            margin: 0 auto; /* Center horizontally */
+        /* Carousel styling */
+        .carousel-inner {
+            height: 70vh; /* Fixed height for the carousel */
+            display: flex;
+            align-items: center; /* Vertically center items */
+            background: #f8f9fa; /* Optional: light gray background for visibility */
         }
 
-        /* Responsive breakpoints matching Bootstrap */
-        @media (min-width: 576px) {
-            .grid-item { width: calc(50% - 20px); } /* 2 columns */
+        .carousel-item {
+            height: 100%; /* Match the carousel-inner height */
+            width: 100%;
+            display: flex;
+            justify-content: center; /* Horizontally center */
+            align-items: center; /* Vertically center */
         }
-        
-        @media (min-width: 768px) {
-            .grid-item { width: calc(33.33% - 20px); } /* 3 columns */
-        }
-        
-        @media (min-width: 992px) {
-            .grid-item { width: calc(25% - 20px); } /* 4 columns */
-        }
-        
-        @media (min-width: 1200px) {
-            .grid-item { width: calc(20% - 20px); } /* 5 columns */
+
+        .carousel-item img {
+            max-height: 100%; /* Fit within the fixed height */
+            max-width: 100%; /* Fit within the modal width */
+            width: auto;
+            height: auto;
         }
     </style>
 
