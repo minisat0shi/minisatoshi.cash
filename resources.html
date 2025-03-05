@@ -219,6 +219,22 @@
             text-align: center;
             padding: 20px;
         }
+        /* Responsive breakpoints matching Bootstrap */
+        @media (min-width: 576px) {
+            .grid-item { width: calc(50% - 20px); } /* 2 columns */
+        }
+        
+        @media (min-width: 768px) {
+            .grid-item { width: calc(33.33% - 20px); } /* 3 columns */
+        }
+        
+        @media (min-width: 992px) {
+            .grid-item { width: calc(25% - 20px); } /* 4 columns */
+        }
+        
+        @media (min-width: 1200px) {
+            .grid-item { width: calc(20% - 20px); } /* 5 columns */
+        }
     </style>
 
     <div class="container">
@@ -235,11 +251,10 @@
             let msnry;
 
             // Fetch images from PHP script
-            fetch('/api/resources.php')
+            fetch('/path/to/your/php/script.php')
                 .then(response => response.json())
                 .then(images => {
-                    // Remove loading text
-                    gallery.innerHTML = '';
+                    gallery.innerHTML = ''; // Remove loading text
 
                     // Create grid items
                     images.forEach(image => {
@@ -258,10 +273,15 @@
                     imagesLoaded(gallery, function() {
                         msnry = new Masonry(gallery, {
                             itemSelector: '.grid-item',
-                            columnWidth: 250,
-                            gutter: 20,
                             percentPosition: true,
-                            fitWidth: true
+                            gutter: 20,
+                            fitWidth: true,
+                            horizontalOrder: true
+                        });
+
+                        // Re-layout on window resize
+                        window.addEventListener('resize', () => {
+                            msnry.layout();
                         });
                     });
                 })
