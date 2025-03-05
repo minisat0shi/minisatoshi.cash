@@ -295,37 +295,18 @@
                         const gallery = galleries[section];
                         gallery.innerHTML = ''; // Remove loading text
 
-//                        const images = data[section] || [];
-//                        images.forEach(image => {
-//                            const item = document.createElement('div');
-//                            item.className = 'grid-item';
-//                            
-//                            const img = document.createElement('img');
-//                            img.src = image.url;
-//                            img.alt = image.name;
-//                            
-//                            item.appendChild(img);
-//                            gallery.appendChild(item);
-//                        });
-images.forEach(image => {
-    const item = document.createElement('div');
-    item.className = 'grid-item';
-    
-    const img = document.createElement('img');
-    img.src = image.url;
-    img.alt = image.name;
-    
-    img.onload = () => {
-        const colorThief = new ColorThief();
-        const dominantColor = colorThief.getColor(img);
-        const brightness = (dominantColor[0] * 299 + dominantColor[1] * 587 + dominantColor[2] * 114) / 1000;
-        img.style.backgroundColor = brightness > 128 ? '#000' : '#fff'; // Black for light images, white for dark
-        msnry.layout(); // Re-layout after background set
-    };
-    
-    item.appendChild(img);
-    gallery.appendChild(item);
-});
+                        const images = data[section] || [];
+                        images.forEach(image => {
+                            const item = document.createElement('div');
+                            item.className = 'grid-item';
+                            
+                            const img = document.createElement('img');
+                            img.src = image.url;
+                            img.alt = image.name;
+                            
+                            item.appendChild(img);
+                            gallery.appendChild(item);
+                        });
 
                         // Initialize Masonry for this gallery
                         imagesLoaded(gallery, function() {
