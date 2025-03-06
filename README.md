@@ -9,6 +9,8 @@ Learn about BCH Upgrades! https://minisatoshi.cash/upgrade-history
 
 Explore the vast BCH Ecosystem! https://minisatoshi.cash/ecosystem
 
+Need logos, graphics, memes and more? Check out the BCH Resources page! https://minisatoshi.cash/resources
+
 View the BTC/BCH Forkmap: https://minisatoshi.cash/forkmap]
 
 Learn about the critical inflation bug: https://minisatoshi.cash/CVE-2018-17144
