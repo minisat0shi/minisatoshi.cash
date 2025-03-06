@@ -931,23 +931,23 @@ ul.upgrade-bullets > li::before {
 }
 
 [data-bs-theme="light"] .carousel .carousel-indicators [data-bs-target] {
-    background-color: #6c757d;
-    opacity: 0.5;
+    background-color: #6c757d !important;
+    opacity: 0.5 !important;
 }
 
 [data-bs-theme="light"] .carousel .carousel-indicators .active[data-bs-target] {
-    background-color: #6c757d;
-    opacity: 1;
+    background-color: #6c757d !important;
+    opacity: 1 !important;
 }
 
 [data-bs-theme="dark"] .carousel .carousel-indicators [data-bs-target] {
-    background-color: #adb5bd;
-    opacity: 0.5;
+    background-color: #adb5bd !important;
+    opacity: 0.5 !important;
 }
 
 [data-bs-theme="dark"] .carousel .carousel-indicators .active[data-bs-target] {
-    background-color: #adb5bd;
-    opacity: 1;
+    background-color: #adb5bd !important;
+    opacity: 1 !important;
 }
 
 [data-bs-theme="light"] .carousel .carousel-control-prev-icon,
