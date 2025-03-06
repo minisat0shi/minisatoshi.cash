@@ -68,7 +68,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&amp;display=swap" rel="stylesheet" type="text/css" media="all">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="css/main.css?v=0.62">
+    <link rel="stylesheet" href="css/main.css?v=0.63">
     
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -98,7 +98,7 @@
 		      <span class="navbar-toggler-icon"></span>
 		    </button>
 		    <div class="collapse navbar-collapse" id="navbarText">
-          <ul class="navbar-nav fs-5 me-auto mb-1 mb-lg-0">
+          	  <ul class="navbar-nav fs-5 me-auto mb-1 mb-lg-0">
 		        <li class="nav-item">
 		          <a class="nav-link" href="index.html#">Home</a>
 		        </li>
@@ -136,203 +136,315 @@
 	      </div>
 		  </div>
 		</nav>
+
 		<!-- Back to top button -->
 		<button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-info btn-floating" id="btn-back-to-top">
 		  <i class="bi bi-arrow-bar-up fs-3"></i>
 		</button>
-		<style>
-			#btn-back-to-top {
-		  position: fixed;
-		  bottom: 20px;
-		  right: 20px;
-		  display: none;
-		  z-index: 2;
-			}
-		</style>
-		<script>
-			//Get the button
-			let mybutton = document.getElementById("btn-back-to-top");
+	    <script>
+	        //Get the button
+	        let mybutton = document.getElementById("btn-back-to-top");
 
-			// When the user scrolls down 20px from the top of the document, show the button
-			window.onscroll = function () {
-			  scrollFunction();
-			};
+	        // When the user scrolls down 20px from the top of the document, show the button
+	        window.onscroll = function () {
+	          scrollFunction();
+	        };
 
-			function scrollFunction() {
-			  if (
-			    document.body.scrollTop > 20 ||
-			    document.documentElement.scrollTop > 20
-			  ) {
-			    mybutton.style.display = "block";
-			  } else {
-			    mybutton.style.display = "none";
-			  }
-			}
-			// When the user clicks on the button, scroll to the top of the document
-			mybutton.addEventListener("click", backToTop);
+	        function scrollFunction() {
+	          if (
+	            document.body.scrollTop > 20 ||
+	            document.documentElement.scrollTop > 20
+	          ) {
+	            mybutton.style.display = "block";
+	          } else {
+	            mybutton.style.display = "none";
+	          }
+	        }
+	        // When the user clicks on the button, scroll to the top of the document
+	        mybutton.addEventListener("click", backToTop);
 
-			function backToTop() {
-			  document.body.scrollTop = 0;
-			  document.documentElement.scrollTop = 0;
-			}
-		</script>
+	        function backToTop() {
+	          document.body.scrollTop = 0;
+	          document.documentElement.scrollTop = 0;
+	        };
+	    </script>
+
 		<div class="fixed-nav-adjustment"></div>
 		<h1 class="display-2 fw-medium text-light-emphasis text-break text-center pt-5">Bitcoin Cash Resources</h1>
 		<div class="container-md">
-			<h3 class="text-secondary fw-normal lh-base text-break text-center pt-3">Below is a comprehensive collection of the vast Bitcoin Cash Resources; there is plenty to learn and to get involved in!</h3>
-			<h6 class="text-secondary fw-normal lh-base text-break text-center m-0">Have a project to add? <a class="link-info link-underline link-underline-opacity-0" href="https://github.com/minisat0shi/minisatoshi.cash/blob/main/resources-PR-GUIDELINES.md">Submit a PR</a> or an <a class="link-info link-underline link-underline-opacity-0" href="https://github.com/minisat0shi/minisatoshi.cash/issues/new?template=ecosystem-addition-request.md">addition request</a>!</h6>
+			<h3 class="text-secondary fw-normal lh-base text-break text-center pt-3">Your all-in-one place to check for branding, graphics, stickers, memes, and more!</h3>
+			<h6 class="text-secondary fw-normal lh-base text-break text-center m-0">Have something to add? Submit a <a class="link-info link-underline link-underline-opacity-0" href="https://github.com/minisat0shi/minisatoshi.cash/blob/main/RESOURCES-ADDITION-GUIDELINE.md">PR</a> or an <a class="link-info link-underline link-underline-opacity-0" href="https://github.com/minisat0shi/minisatoshi.cash/issues/new?template=resources-addition-request.md">addition request</a>!</h6>
 		</div>
 
+		<div class="container py-5 mb-5">
+	        <h2 class="fs-1 pb-2 mb-3 border-bottom border-3 text-center" id="BrandingGuidelines">Branding Guidelines</h2>
+	        <div class="row pb-5 row-cols-1 row-cols-lg-2">
+	        	<div class="col">
+	                <div class="align-items-start mb-5">
+	                    <h3 class="fs-2 text-secondary">Ubuntu Bold</h3>
+	                    <p class="text-secondary fs-5r fw-bold">ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890?!%</p>
+	                    <a href="https://fonts.google.com/specimen/Ubuntu?selection.family=Ubuntu:700" class="btn" style="background:#0AC18E">
+	                        Download Font
+	                    </a>
+	                </div>
+	            </div>
+	            <div class="col">
+	                <div class="align-items-start">
+	                    <h3 class="fs-2 text-secondary">Ubuntu Bold Italic</h3>
+	                    <p class="text-secondary fs-5r fw-bold fst-italic">ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890?!%</p>
+	                    <a href="https://fonts.google.com/specimen/Ubuntu?selection.family=Ubuntu:700i" class="btn" style="background:#0AC18E">
+	                        Download Font
+	                    </a>
+	                </div>
+	        	</div>
+	        </div>
+	        <div class="row">
+				<div class="col-12 col-md-6 col-lg-4 mb-3">
+				    <div class="text-start">
+				      <div class="d-flex flex-row justify-content-between">
+				        <div class="d-flex flex-row">
+				          <div class="align-self-start">
+				            <span class="brand-circle me-3 mb-0" style="background:#0AC18E"></span>
+				          </div>
+				          <div class="fs-5r text-secondary">
+							Hex: #0AC18E<br>
+							RGB: 10 / 193 / 142<br>
+							CMYK: 95 / 0 / 26 / 24<br>
+							Pantone: 3395 C
+				          </div>
+				        </div>
+				      </div>
+				    </div>
+				</div>
+				<div class="col-12 col-md-6 col-lg-4 mb-3">
+				    <div class="text-start">
+				      <div class="d-flex flex-row justify-content-between">
+				        <div class="d-flex flex-row">
+				          <div class="align-self-start">
+				            <span class="brand-circle me-3 mb-0" style="background:#4D4D4D"></span>
+				          </div>
+				          <div class="fs-5r text-secondary">
+							Hex: #FFFFFF<br>
+							RGB: 255 / 255 / 255<br>
+							CMYK: 0 / 0 / 0 / 0<br>
+							Pantone: paper
+				          </div>
+				        </div>
+				      </div>
+				    </div>
+				</div>
+				<div class="col-12 col-md-6 col-lg-4 mb-3">
+				    <div class="text-start">
+				      <div class="d-flex flex-row justify-content-between">
+				        <div class="d-flex flex-row">
+				          <div class="align-self-start">
+				            <span class="brand-circle me-3 mb-0" style="background:#FFF"></span>
+				          </div>
+				          <div class="fs-5r text-secondary">
+							Hex: #4D4D4D<br>
+							RGB: 77 / 77 / 77<br>
+							CMYK: 65 / 58 / 57 / 37<br>
+							Pantone: 11C
+				          </div>
+				        </div>
+				      </div>
+				    </div>
+				</div>
+			</div>
+	    </div>
 
+	    <div class="container">
+	        <div class="section mb-5">
+	        	<h2 class="fs-1 pb-2 mb-3 border-bottom border-3 text-center" id="BrandingGraphics">Branding Graphics</h2>
+	            <div class="grid" id="branding-gallery">
+	                <div class="loading">Loading images...</div>
+	            </div>
+	        </div>
+	        <div class="section mb-5">
+	            <h2 class="fs-1 pb-2 mb-3 border-bottom border-3 text-center" id="Stickers">Stickers</h2>
+	            <div class="grid" id="stickers-gallery">
+	                <div class="loading">Loading images...</div>
+	            </div>
+	        </div>
+	        <div class="section mb-5">
+	            <h2 class="fs-1 pb-2 mb-3 border-bottom border-3 text-center" id="InformationalGraphics">Informational Graphics</h2>
+	            <div class="grid" id="informational-gallery">
+	                <div class="loading">Loading images...</div>
+	            </div>
+	        </div>
+	        <div class="section mb-5">
+	            <h2 class="fs-1 pb-2 mb-3 border-bottom border-3 text-center" id="FunGraphics">Fun Graphics</h2>
+	            <div class="grid" id="fun-gallery">
+	                <div class="loading">Loading images...</div>
+	            </div>
+	        </div>
+	        <div class="section mb-5">
+	            <h2 class="fs-1 pb-2 mb-3 border-bottom border-3 text-center" id="Memes">Memes</h2>
+	            <div class="grid" id="memes-gallery">
+	                <div class="loading">Loading images...</div>
+	            </div>
+	        </div>
+	    </div>
 
+	    <!-- Bootstrap Modal with Carousel -->
+	    <div class="modal fade" id="imageCarouselModal" tabindex="-1" aria-labelledby="imageCarouselModalLabel" aria-hidden="true">
+	        <div class="modal-dialog modal-xl">
+	            <div class="modal-content">
+	                <div class="modal-header">
+	                    <!-- Download icon on the left -->
+	                    <a href="#" id="downloadButton" class="carousel-download-icon link-secondary link-underline link-underline-opacity-0" download>
+	                        <i class="bi bi-download"></i> Download
+	                    </a>
+	                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	                </div>
+	                <div class="modal-body">
+	                    <div id="imageCarousel" class="carousel slide" data-bs-ride="false">
+	                        <div class="carousel-inner" id="carouselInner"></div>
+	                        <div class="carousel-indicators" id="carouselIndicators"></div>
+	                        <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+	                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+	                            <span class="visually-hidden">Previous</span>
+	                        </button>
+	                        <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+	                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+	                            <span class="visually-hidden">Next</span>
+	                        </button>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
 
+		<!-- Custom JavaScript for gallery-->
+	    <script>
+	        document.addEventListener('DOMContentLoaded', function() {
+	            const galleries = {
+	                'Branding': document.getElementById('branding-gallery'),
+	                'Stickers': document.getElementById('stickers-gallery'),
+	                'Informational Graphics': document.getElementById('informational-gallery'),
+	                'Fun Graphics': document.getElementById('fun-gallery'),
+	                'Memes': document.getElementById('memes-gallery')
+	            };
+	            const masonryInstances = {};
+	            let allImages = {};
 
+	            fetch('/api/resources.php')
+	                .then(response => response.json())
+	                .then(data => {
+	                    allImages = data;
+	                    Object.keys(galleries).forEach(section => {
+	                        const gallery = galleries[section];
+	                        gallery.innerHTML = '';
 
+	                        const images = data[section] || [];
+	                        images.forEach((image, index) => {
+	                            const item = document.createElement('div');
+	                            item.className = 'grid-item';
+	                            
+	                            const img = document.createElement('img');
+	                            img.src = image.url;
+	                            img.alt = image.name;
+	                            
+	                            item.addEventListener('click', () => openCarousel(section, index));
+	                            
+	                            item.appendChild(img);
+	                            gallery.appendChild(item);
+	                        });
 
+	                        imagesLoaded(gallery, function() {
+	                            masonryInstances[section] = new Masonry(gallery, {
+	                                itemSelector: '.grid-item',
+	                                percentPosition: true,
+	                                gutter: 20,
+	                                horizontalOrder: false
+	                            });
+	                            masonryInstances[section].layout();
+	                        });
+	                    });
 
+	                    let resizeTimer;
+	                    window.addEventListener('resize', () => {
+	                        clearTimeout(resizeTimer);
+	                        resizeTimer = setTimeout(() => {
+	                            Object.values(masonryInstances).forEach(msnry => msnry.layout());
+	                        }, 100);
+	                    });
+	                })
+	                .catch(error => {
+	                    console.error('Error loading images:', error);
+	                    Object.values(galleries).forEach(gallery => {
+	                        gallery.innerHTML = '<p class="text-danger">Error loading images</p>';
+	                    });
+	                });
 
+	            function openCarousel(section, startIndex) {
+	                const images = allImages[section] || [];
+	                const carouselInner = document.getElementById('carouselInner');
+	                const carouselIndicators = document.getElementById('carouselIndicators');
+	                const downloadButton = document.getElementById('downloadButton');
+	                
+	                carouselInner.innerHTML = '';
+	                carouselIndicators.innerHTML = '';
 
+	                images.forEach((image, index) => {
+	                    const item = document.createElement('div');
+	                    item.className = `carousel-item ${index === startIndex ? 'active' : ''}`;
+	                    
+	                    const img = document.createElement('img');
+	                    img.src = image.url;
+	                    img.alt = image.name;
+	                    img.className = 'd-block';
+	                    
+	                    item.appendChild(img);
+	                    carouselInner.appendChild(item);
 
+	                    const indicator = document.createElement('button');
+	                    indicator.type = 'button';
+	                    indicator.dataset.bsTarget = '#imageCarousel';
+	                    indicator.dataset.bsSlideTo = index;
+	                    if (index === startIndex) {
+	                        indicator.className = 'active';
+	                        indicator.setAttribute('aria-current', 'true');
+	                    }
+	                    indicator.setAttribute('aria-label', `Slide ${index + 1}`);
+	                    carouselIndicators.appendChild(indicator);
+	                });
 
+	                // Set initial download link
+	                downloadButton.href = images[startIndex].url;
+	                downloadButton.download = images[startIndex].name;
 
+	                // Update download link on slide change
+	                const carousel = document.getElementById('imageCarousel');
+	                carousel.addEventListener('slide.bs.carousel', function (event) {
+	                    const newIndex = event.to;
+	                    downloadButton.href = images[newIndex].url;
+	                    downloadButton.download = images[newIndex].name;
+	                });
 
+	                const modal = new bootstrap.Modal(document.getElementById('imageCarouselModal'));
+	                modal.show();
+	            }
+	        });
+	    </script>
 
-    <style>
-        .gallery {
-            width: 100%;
-            position: relative;
-            overflow: visible;
-        }
-        .gallery-item {
-            margin-bottom: 1rem;
-            overflow: visible;
-            display: none; /* Hide until Masonry initializes */
-        }
-        .gallery-image, .gallery-video {
-            height: auto;
-            max-height: 12em;
-            display: block;
-            border-radius: 0.25rem;
-            transition: transform 0.3s ease;
-            background: #fff; /* Added white background */
-        }
-        .gallery-image:hover, .gallery-video:hover {
-            transform: scale(1.05);
-        }
-        .masonry-loaded .gallery-item {
-            display: block; /* Show items after Masonry runs */
-        }
-    </style>
-
-    <div class="container py-5">
-        <h1 class="text-center mb-4">Masonry Media Gallery</h1>
-        <div class="gallery" id="gallery">
-            <!-- Media will be loaded here -->
-        </div>
-    </div>
-
-		    <!-- Custom JavaScript for gallery-->
-    <script>
-        async function loadGallery() {
-            const gallery = document.getElementById('gallery');
-            try {
-                const response = await fetch('/api/resources.php');
-                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-                const media = await response.json();
-                console.log('API Response:', media);
-
-                if (!Array.isArray(media) || media.length === 0) {
-                    gallery.innerHTML = '<p class="text-center">No media found.</p>';
-                    return;
-                }
-
-                // Append all items first, hidden
-                media.forEach(item => {
-                    const divItem = document.createElement('div');
-                    divItem.className = 'gallery-item';
-
-                    if (item.type === 'image') {
-                        const img = document.createElement('img');
-                        img.src = item.url;
-                        img.className = 'gallery-image';
-                        img.alt = item.name;
-                        img.loading = 'lazy';
-                        img.onerror = function() {
-                            this.style.display = 'none';
-                            console.log(`Image failed: ${item.url}`);
-                        };
-                        divItem.appendChild(img);
-                    } else if (item.type === 'video') {
-                        const video = document.createElement('video');
-                        video.src = item.url;
-                        video.className = 'gallery-video';
-                        video.controls = true;
-                        video.muted = true;
-                        video.loop = true;
-                        video.preload = 'metadata';
-                        video.onerror = function() {
-                            this.style.display = 'none';
-                            console.log(`Video failed: ${item.url}`);
-                        };
-                        divItem.appendChild(video);
-                    }
-                    gallery.appendChild(divItem);
-                    console.log(`Added: ${item.url}`);
-                });
-
-                // Initialize Masonry only after all items are loaded
-                imagesLoaded(gallery, { background: false }, function() {
-                    console.log('All items loaded or failed');
-                    const msnry = new Masonry('#gallery', {
-                        itemSelector: '.gallery-item',
-                        columnWidth: 200,
-                        percentPosition: true,
-                        gutter: 16,
-                        fitWidth: true
-                    });
-                    gallery.classList.add('masonry-loaded');
-                    msnry.layout();
-                });
-
-            } catch (error) {
-                console.error('Error loading gallery:', error);
-                gallery.innerHTML = '<p class="text-center">Error loading media: ' + error.message + '</p>';
-            }
-        }
-
-        window.onload = loadGallery;
-    </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <footer class="py-3 mt-auto">
-        <div class="row pb-3">
-            <h3 class="fs-3">Buy me a coffee!</h3>
-            <div class="custom-tooltip">
-                <h5 class="user-select-all fs-5r text-break" style="display:inline;">bitcoincash:qrvns4u27ngn6vf774rlep6873kzadqnavw0szkqx3</h5>
-                <button id="copyButton" class="remove-button-stylings" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to Clipboard">
-                    <i class="bi bi-copy copyButton"></i>
-                  </button>
-            </div>
-        </div>
-        <div class="row">
-            <h5 class="fs-5r fw-normal"><a class="link-offset-1" href="https://discover.cash">Learn more about Bitcoin Cash</a> | <a class="link-offset-1" href="https://reddit.com/r/btc">Uncensored Bitcoin Forum</a></h5>
-        </div>
-        <!-- <div class="row">
-            <h5 class="fs-5r fw-normal">Connect to my SPV Node! node.minisatoshi.cash</h5>
-        </div> -->
-    </footer>
+	    <footer class="py-3 mt-auto">
+	        <div class="row pb-3">
+	            <h3 class="fs-3">Buy me a coffee!</h3>
+	            <div class="custom-tooltip">
+	                <h5 class="user-select-all fs-5r text-break" style="display:inline;">bitcoincash:qrvns4u27ngn6vf774rlep6873kzadqnavw0szkqx3</h5>
+	                <button id="copyButton" class="remove-button-stylings" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to Clipboard">
+	                    <i class="bi bi-copy copyButton"></i>
+	                  </button>
+	            </div>
+	        </div>
+	        <div class="row">
+	            <h5 class="fs-5r fw-normal"><a class="link-offset-1" href="https://discover.cash">Learn more about Bitcoin Cash</a> | <a class="link-offset-1" href="https://reddit.com/r/btc">Uncensored Bitcoin Forum</a></h5>
+	        </div>
+	        <!-- <div class="row">
+	            <h5 class="fs-5r fw-normal">Connect to my SPV Node! node.minisatoshi.cash</h5>
+	        </div> -->
+	    </footer>
 
 
 
@@ -345,46 +457,14 @@
 		<!-- imagesLoaded CDN -->
 		<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
 
+		<!-- colorThief -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.min.js"></script>
+
 	  	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-        <!--Copy to Clipboard Script for donation address-->
-		<script>
-		document.addEventListener('DOMContentLoaded', function() {
-			const button = document.getElementById('copyButton');
-			const tooltip = new bootstrap.Tooltip(button);
-			const copyToClipboard = async () => {
-				try {
-					const element = document.querySelector(".user-select-all");
-					await navigator.clipboard.writeText(element.textContent);
-					// Optional: Provide feedback or perform additional actions upon successful copy
-					// Update tooltip text
-					tooltip.setContent({ '.tooltip-inner': 'Copied!' });
-					// Show tooltip
-					tooltip.show();
-
-					// Hide tooltip after a short delay
-					setTimeout(() => {
-					tooltip.hide();
-					// Reset tooltip text for next use
-					tooltip.setContent({ '.tooltip-inner': 'Copy to Clipboard' });
-					}, 1500); // Adjust delay as needed
-				} catch (error) {
-					console.error("Failed to copy to clipboard:", error);
-					// Optional: Handle and display the error to the user
-					tooltip.setContent({ '.tooltip-inner': 'Copy Failed!' });
-					tooltip.show();
-					setTimeout(() => {
-					tooltip.hide();
-					tooltip.setContent({ '.tooltip-inner': 'Copy to Clipboard' });
-					}, 2000); // Adjust delay for error message
-				}
-			};
-			// Attach the function to the button's onclick event again or maintain existing setup
-			button.addEventListener('click', copyToClipboard);
-		});
-		</script>
-
+	  	<!-- main.js -->
+	    <script src="js/main.js?v=0.01"></script>
 
 	  	<!-- Initializing tooltips -->
 	  	<script>
@@ -394,55 +474,5 @@
 		})
 		</script>
 
-		<script>
-		document.addEventListener('DOMContentLoaded', function() {
-		  function setTheme(theme) {
-		    document.documentElement.setAttribute('data-bs-theme', theme);
-		    localStorage.setItem('bs-theme', theme);
-		    updateThemeIcon(theme);
-		    updateActiveDropdownItem(theme);
-		    updateButtonStyles(); // Call this function to update button styles on theme change
-		  }
-
-		  function getCurrentTheme() {
-		    return localStorage.getItem('bs-theme') || 'dark';
-		  }
-
-		  function updateThemeIcon(theme) {
-		    const icon = document.getElementById('themeIcon');
-		    icon.className = `bi ${theme === 'light' ? 'bi-brightness-high-fill' : 'bi-moon-stars-fill'}`;
-		  }
-
-		  function updateActiveDropdownItem(theme) {
-		    document.querySelectorAll('.theme-switcher .dropdown-item').forEach(item => {
-		      item.classList.toggle('active', item.getAttribute('data-theme') === theme);
-		    });
-		  }
-
-		  function updateButtonStyles() {
-		    document.querySelectorAll('.btn-outline-secondary, .btn-secondary').forEach(button => {
-		      const currentTheme = document.documentElement.getAttribute('data-bs-theme');
-		      if (currentTheme === 'light') {
-		        button.classList.remove('btn-outline-secondary');
-		        button.classList.add('btn-secondary');
-		      } else {
-		        button.classList.remove('btn-secondary');
-		        button.classList.add('btn-outline-secondary');
-		      }
-		    });
-		  }
-
-		  setTheme(getCurrentTheme());
-		  updateButtonStyles(); // Initial call to ensure buttons are styled correctly on load
-
-		  document.querySelectorAll('.theme-switcher .dropdown-item').forEach(item => {
-		    item.addEventListener('click', function(e) {
-		      e.preventDefault();
-		      const theme = this.getAttribute('data-theme');
-		      setTheme(theme);
-		    });
-		  });
-		});
-		</script>
 	</body>
 </html>

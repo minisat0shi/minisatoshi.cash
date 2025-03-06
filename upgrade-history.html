@@ -113,13 +113,13 @@
               <a class="nav-link" href="index.html#_more">Learn More</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="forkmap">Fork Map</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Upgrade History</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="ecosystem">Ecosystem</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="resources">Resources</a>
             </li>
           </ul>
       </div>
@@ -139,46 +139,37 @@
 	<button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-info btn-floating" id="btn-back-to-top">
 	  <i class="bi bi-arrow-bar-up fs-3"></i>
 	</button>
-	<style>
-		#btn-back-to-top {
-	  position: fixed;
-	  bottom: 20px;
-	  right: 20px;
-	  display: none;
-	  z-index: 2;
-		}
-	</style>
-	<script>
-		//Get the button
-		let mybutton = document.getElementById("btn-back-to-top");
+    <script>
+        //Get the button
+        let mybutton = document.getElementById("btn-back-to-top");
 
-		// When the user scrolls down 20px from the top of the document, show the button
-		window.onscroll = function () {
-		  scrollFunction();
-		};
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+          scrollFunction();
+        };
 
-		function scrollFunction() {
-		  if (
-		    document.body.scrollTop > 20 ||
-		    document.documentElement.scrollTop > 20
-		  ) {
-		    mybutton.style.display = "block";
-		  } else {
-		    mybutton.style.display = "none";
-		  }
-		}
-		// When the user clicks on the button, scroll to the top of the document
-		mybutton.addEventListener("click", backToTop);
+        function scrollFunction() {
+          if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+          ) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+        // When the user clicks on the button, scroll to the top of the document
+        mybutton.addEventListener("click", backToTop);
 
-		function backToTop() {
-		  document.body.scrollTop = 0;
-		  document.documentElement.scrollTop = 0;
-		}
-	</script>
+        function backToTop() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        };
+    </script>
     
     <div class="fixed-nav-adjustment"></div>
     <!-- Section: Timeline -->
-    <h1 class="fw-bold text-break text-center pt-5 px-3">Bitcoin Cash Upgrade History</h1>
+    <h1 class="display-2 fw-medium text-light-emphasis text-break text-center pt-5">Bitcoin Cash Upgrade History</h1>
     <section class="py-5">
         <div class="container timeline-main">
             <ul id="sharedHistory" class="timeline">
@@ -701,42 +692,8 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-    <!--Copy to Clipboard Script for donation address-->
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const button = document.getElementById('copyButton');
-        const tooltip = new bootstrap.Tooltip(button);
-        const copyToClipboard = async () => {
-            try {
-                const element = document.querySelector(".user-select-all");
-                await navigator.clipboard.writeText(element.textContent);
-                // Optional: Provide feedback or perform additional actions upon successful copy
-                // Update tooltip text
-                tooltip.setContent({ '.tooltip-inner': 'Copied!' });
-                // Show tooltip
-                tooltip.show();
-
-                // Hide tooltip after a short delay
-                setTimeout(() => {
-                tooltip.hide();
-                // Reset tooltip text for next use
-                tooltip.setContent({ '.tooltip-inner': 'Copy to Clipboard' });
-                }, 1500); // Adjust delay as needed
-            } catch (error) {
-                console.error("Failed to copy to clipboard:", error);
-                // Optional: Handle and display the error to the user
-                tooltip.setContent({ '.tooltip-inner': 'Copy Failed!' });
-                tooltip.show();
-                setTimeout(() => {
-                tooltip.hide();
-                tooltip.setContent({ '.tooltip-inner': 'Copy to Clipboard' });
-                }, 2000); // Adjust delay for error message
-            }
-        };
-        // Attach the function to the button's onclick event again or maintain your existing setup
-        button.addEventListener('click', copyToClipboard);
-    });
-    </script>
+    <!-- main.js -->
+    <script src="js/main.js?v=0.01"></script>
 
     <!-- Initializing tooltips -->
     <script>
@@ -787,55 +744,6 @@
 		        });
 		    });
 		});
-    </script>
-    
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        function setTheme(theme) {
-            document.documentElement.setAttribute('data-bs-theme', theme);
-            localStorage.setItem('bs-theme', theme);
-            updateThemeIcon(theme);
-            updateActiveDropdownItem(theme);
-            updateButtonStyles(); // Call this function to update button styles on theme change
-        }
-
-        function getCurrentTheme() {
-            return localStorage.getItem('bs-theme') || 'dark';
-        }
-
-        function updateThemeIcon(theme) {
-            const icon = document.getElementById('themeIcon');
-            icon.className = `bi ${theme === 'light' ? 'bi-brightness-high-fill' : 'bi-moon-stars-fill'}`;
-        }
-
-        function updateActiveDropdownItem(theme) {
-            document.querySelectorAll('.theme-switcher .dropdown-item').forEach(item => {
-                item.classList.toggle('active', item.getAttribute('data-theme') === theme);
-            });
-        }
-
-        function updateButtonStyles() {
-            document.querySelectorAll('.btn-outline-secondary, .btn-secondary').forEach(button => {
-                const currentTheme = document.documentElement.getAttribute('data-bs-theme');
-                if (currentTheme === 'light') {
-                    button.classList.remove('btn-outline-secondary');
-                    button.classList.add('btn-secondary');
-                } else {
-                    button.classList.remove('btn-secondary');
-                    button.classList.add('btn-outline-secondary');
-                }
-            });
-        }
-        setTheme(getCurrentTheme());
-        updateButtonStyles(); // Initial call to ensure buttons are styled correctly on load
-        document.querySelectorAll('.theme-switcher .dropdown-item').forEach(item => {
-            item.addEventListener('click', function(e) {
-                e.preventDefault();
-                const theme = this.getAttribute('data-theme');
-                setTheme(theme);
-            });
-        });
-    });
     </script>
     
     <script>
