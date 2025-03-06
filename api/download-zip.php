@@ -1,5 +1,5 @@
 <?php
-// Start with a clean output buffer
+// Ensure no output buffer interference
 if (ob_get_length()) {
     ob_end_clean();
 }
@@ -43,7 +43,7 @@ function addFolderToZip($dir, $zip, $relativePath = '') {
 
 // Get the directory from the query parameter
 $dirName = isset($_GET['dir']) ? basename($_GET['dir']) : '';
-$baseDir = __DIR__ . '/../images/Resources'; // Adjust if needed
+$baseDir = __DIR__ . '/../images/Resources'; // Confirm this path
 $dirPath = $baseDir . '/' . $dirName;
 
 if (!$dirName || !is_dir($dirPath) || !is_readable($dirPath)) {
@@ -55,9 +55,10 @@ if (!$dirName || !is_dir($dirPath) || !is_readable($dirPath)) {
 header('Content-Type: application/zip');
 header('Content-Disposition: attachment; filename="' . $dirName . '.zip"');
 
-// Create ZIP archive directly to output buffer
+// Create ZIP archive using a temporary file as a fallback
+$tempFile = tempnam(sys_get_temp_dir(), 'zip_');
 $zip = new ZipArchive();
-if ($zip->open('php://output', ZipArchive::CREATE) !== true) {
+if ($zip->open($tempFile, ZipArchive::CREATE | ZipArchive::OVERWRITE) !== true) {
     header('Content-Type: text/plain', true, 500);
     exit("Failed to create ZIP file.");
 }
@@ -65,11 +66,20 @@ if ($zip->open('php://output', ZipArchive::CREATE) !== true) {
 // Add files to ZIP
 if (!addFolderToZip($dirPath, $zip)) {
     $zip->close();
+    unlink($tempFile);
     header('Content-Type: text/plain', true, 500);
     exit("Failed to add files to ZIP. Check server logs for details.");
 }
 
-// Finalize and send ZIP
+// Close ZIP and stream it
 $zip->close();
+
+// Send the file content
+header('Content-Length: ' . filesize($tempFile));
+readfile($tempFile);
+
+// Clean up temporary file
+unlink($tempFile);
+
 exit;
 ?>
