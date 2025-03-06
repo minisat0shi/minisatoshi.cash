@@ -952,12 +952,12 @@ ul.upgrade-bullets > li::before {
 
 [data-bs-theme="light"] .carousel .carousel-control-prev-icon,
 [data-bs-theme="light"] .carousel .carousel-control-next-icon {
-    filter: invert(40%) sepia(10%) saturate(300%) hue-rotate(180deg);
+    filter: invert(80%) sepia(10%) saturate(300%) hue-rotate(180deg);
 }
 
 [data-bs-theme="dark"] .carousel .carousel-control-prev-icon,
 [data-bs-theme="dark"] .carousel .carousel-control-next-icon {
-    filter: invert(80%) sepia(10%) saturate(200%) hue-rotate(180deg);
+    filter: invert(50%) sepia(10%) saturate(200%) hue-rotate(180deg);
 }
 
 /* Download icon styling */
