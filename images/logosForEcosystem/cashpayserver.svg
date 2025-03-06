@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 227.2 178.6">
+  <!-- Generator: Adobe Illustrator 29.3.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 151)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #eee;
+      }
+
+      .st0, .st1 {
+        font-family: Arial-BoldItalicMT, Arial;
+        font-size: 72px;
+        font-style: italic;
+        font-weight: 700;
+        isolation: isolate;
+      }
+
+      .st1 {
+        fill: #00c58a;
+      }
+    </style>
+  </defs>
+  <text class="st1" transform="translate(-4.1 52.9)"><tspan x="0" y="0">Cash</tspan></text>
+  <text class="st0" transform="translate(-4.1 115)"><tspan x="0" y="0">Pay</tspan></text>
+  <text class="st1" transform="translate(-4.1 176.7)"><tspan x="0" y="0">Server</tspan></text>
+</svg>
