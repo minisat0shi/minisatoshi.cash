@@ -893,7 +893,6 @@ ul.upgrade-bullets > li::before {
 
 @media (min-width: 768px) { /* Bootstrap medium */
     .grid-item { width: calc(33.33%); padding: 10px;}
-    .grid-item img {padding: 4px;}
 }
 
 @media (min-width: 992px) { /* Bootstrap large */
