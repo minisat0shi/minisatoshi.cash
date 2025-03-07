@@ -866,6 +866,7 @@ ul.upgrade-bullets > li::before {
     break-inside: avoid;
     width: calc(50% - 20px);
     cursor: pointer;
+    padding: 5px;
 }
 
 .grid-item img {
@@ -891,16 +892,16 @@ ul.upgrade-bullets > li::before {
 }
 
 @media (min-width: 768px) { /* Bootstrap medium */
-    .grid-item { width: calc(33.33% - 20px); }
+    .grid-item { width: calc(33.33%); padding: 10px;}
     .grid-item img {padding: 4px;}
 }
 
 @media (min-width: 992px) { /* Bootstrap large */
-    .grid-item { width: calc(25% - 20px); }
+    .grid-item { width: calc(25%); }
 }
 
 @media (min-width: 1200px) { /* Bootstrap extra large */
-    .grid-item { width: calc(20% - 20px); }
+    .grid-item { width: calc(20%); }
 }
 
 /* Carousel styling */
