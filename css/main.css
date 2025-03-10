@@ -171,6 +171,9 @@ html, head, body {
     position: fixed;
     top: 80px;
     right:0;
+    padding-top: 20px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
 }
 
 .social ul {
@@ -202,11 +205,18 @@ html, head, body {
 /* Theme Float Button */
 
 .theme {
-  z-index: 2;
-  position: fixed;
-  top: 80px;
-  left:0;
-  margin: 0.25em;
+    z-index: 2;
+    position: fixed;
+    top: 80px;
+    left:0;
+    margin: 0.25em;
+    padding-top: 20px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.affix-social-theme {
+    padding: 0;
 }
 
 
