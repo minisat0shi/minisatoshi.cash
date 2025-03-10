@@ -1,12 +1,98 @@
 <!DOCTYPE html>
 <html>
 	<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <!--Prevents browsers from trying to make a number a clickable phone number (can still use "tel:" if we want this functionality)-->
+    
+    <!--<meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate"> telling browswer to NOT cache-->
+    
+    <!-- Favicon + Web App -->
+	<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+	<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+	<link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <meta name="mobile-web-app-capable" content="yes">
+	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+	<meta name="apple-mobile-web-app-title" content="minisatoshi" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<link rel="manifest" href="/favicon/site.webmanifest" />
+    <meta name="msapplication-TileImage" content="/favicon/favicon-96x96.png">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&amp;display=swap" rel="stylesheet" type="text/css" media="all">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css?v=0.73">
 
+    <style>
+	.error-page {
+	    min-height: 100vh;
+	    background: linear-gradient(135deg, #0AC18E 0%, #23a6d5 100%);
+	}
+
+	.error-container {
+	    max-width: 600px;
+	}
+
+	.error-code {
+	    font-size: 12rem;
+	    font-weight: 900;
+	    background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0.5));
+	    -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+	    animation: pulse 2s infinite;
+	}
+
+	.error-message {
+	    color: rgba(255, 255, 255, 0.9);
+	}
+
+	@keyframes pulse {
+	    0% {
+	        transform: scale(1);
+	    }
+
+	    50% {
+	        transform: scale(1.05);
+	    }
+
+	    100% {
+	        transform: scale(1);
+	    }
+	}
+
+	.btn-glass {
+	    background: rgba(255, 255, 255, 0.2) !important;
+	    backdrop-filter: blur(10px) !important;
+	    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+	    color: white !important;
+	    transition: all 0.3s ease !important;
+	}
+
+	.btn-glass:hover {
+	    background: rgba(255, 255, 255, 0.3) !important;
+	    color: white !important;
+	}
+	</style>
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 	</head>
 
 	<body>
 
-		<center><a href="https://minisatoshi.cash"><img alt="Error 404: Page not Found" src="images/404kitten.jpg"></a></center>
+	<div class="error-page d-flex align-items-center justify-content-center">
+	    <div class="error-container text-center p-4">
+	        <h1 class="error-code mb-0">404</h1>
+	        <h2 class="display-6 error-message mb-3">Page Not Found</h2>
+	        <p class="lead error-message mb-5">We can't seem to find the page you're looking for.</p>
+	        <div class="d-flex justify-content-center gap-3">
+	            <a href="https://minisatoshi.cash" class="btn btn-glass px-4 py-2">Return Home</a>
+	            <a href="https://github.com/minisat0shi/minisatoshi.cash/issues" class="btn btn-glass px-4 py-2">Report Problem</a>
+	        </div>
+	    </div>
+	</div>
 
 	</body>
 </html>
