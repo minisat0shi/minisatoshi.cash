@@ -36,3 +36,10 @@ ExpiresDefault "access plus 1 week"
 # Alternative method using RewriteRule (if FilesMatch fails)
 RewriteCond %{REQUEST_URI} ^/(css/main\.css|js/main\.js)$ [NC]
 RewriteRule ^ - [E=cache-control:no-store,no-cache,must-revalidate,E=pragma:no-cache,E=expires:Thu,\ 01\ Jan\ 1970\ 00:00:00\ GMT]
+
+# Restrict access to submit-to-bing.php
+<Files "submit-to-bing.php">
+    Order Deny,Allow
+    Deny from all
+    Allow from 127.0.0.1
+</Files>

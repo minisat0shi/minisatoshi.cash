@@ -1,4 +1,10 @@
 <?php
+// Block direct browser access
+if (php_sapi_name() !== 'cli') {
+    http_response_code(403);
+    die('Access denied: This script can only be run from the command line.');
+}
+
 // Configuration
 $apiKey = '52d008ba384b47749e98094b3b636405'; // Replace with your Bing API key
 $siteUrl = 'https://minisatoshi.cash'; // Verified domain with HTTPS
