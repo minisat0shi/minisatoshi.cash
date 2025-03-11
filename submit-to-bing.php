@@ -5,12 +5,14 @@ $siteUrl = 'https://minisatoshi.cash'; // Verified domain with HTTPS
 $dir = __DIR__; // public_html directory
 $timestampFile = "$dir/last-update.txt"; // Tracks last Git update
 
-// Function to get all HTML files, excluding index.html
+// Function to get all HTML files, excluding index.html and 404.html
 function getHtmlFiles($dir) {
     $files = [];
     $iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($dir));
     foreach ($iterator as $file) {
-        if ($file->isFile() && preg_match('/\.html$/', $file->getFilename()) && $file->getFilename() !== 'index.html') {
+        if ($file->isFile() && preg_match('/\.html$/', $file->getFilename()) 
+            && $file->getFilename() !== 'index.html' 
+            && $file->getFilename() !== '404.html') {
             $files[] = $file->getPathname();
         }
     }
@@ -23,7 +25,7 @@ $lastModTime = file_exists($timestampFile) ? (int) file_get_contents($timestampF
 
 // Check if there’s a change since last run
 if ($currentModTime > $lastModTime) {
-    // Get all HTML files (excluding index.html)
+    // Get all HTML files (excluding index.html and 404.html)
     $htmlFiles = getHtmlFiles($dir);
     $urls = array_map(function($file) use ($siteUrl, $dir) {
         $relativePath = str_replace($dir, '', $file);
@@ -36,9 +38,9 @@ if ($currentModTime > $lastModTime) {
         $urls[] = "$siteUrl/"; // Ensure home page is included
     }
 
-    // Filter out /index explicitly (in case it sneaks in)
+    // Filter out /index and /404 explicitly
     $urls = array_filter($urls, function($url) use ($siteUrl) {
-        return $url !== "$siteUrl/index";
+        return $url !== "$siteUrl/index" && $url !== "$siteUrl/404";
     });
 
     // API endpoint
