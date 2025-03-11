@@ -48,7 +48,7 @@ html, head, body {
 
 /* Define a custom darker background color for dark mode */
 :root {
-    --bs-body-bg: #777; /* Very dark background for dark mode */
+    --bs-body-bg: #000; /* Very dark background for dark mode */
     --bs-body-bg-rgb: 7, 8 ,10;
 }
 
@@ -62,7 +62,7 @@ html, head, body {
 /* For users who might have set OS dark mode but not the data-bs-theme */
 @media (prefers-color-scheme: dark) {
     html:not([data-bs-theme="light"]) {
-        --bs-body-bg: #777;
+        --bs-body-bg: #000;
         --bs-body-bg-rgb: 7, 8 ,10;
     }
 }
