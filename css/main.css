@@ -773,6 +773,10 @@ ul.upgrade-bullets > li::before {
   width: 24px;
   content: "";
 }
+.bug-item:after {
+  border: 4px solid var(--bs-warning) !important;
+  background-color:darkslategray !important;
+}
 #softFork.timeline-item:after {
     border-radius: 50%;
 }
