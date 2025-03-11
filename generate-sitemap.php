@@ -36,8 +36,8 @@ foreach ($urls as $url) {
     $xml .= "  <url>\n";
     $xml .= "    <loc>$url</loc>\n";
     $xml .= "    <lastmod>" . date('Y-m-d') . "</lastmod>\n";
-    $xml .= "    <changefreq>monthly</changefreq>\n";
-    $xml .= "    <priority>" . ($url === "$siteUrl/" ? "1.0" : "0.8") . "</priority>\n";
+    $xml .= "    <changefreq>weekly</changefreq>\n";
+    $xml .= "    <priority>" . ($url === "$siteUrl/" ? "1.0" : "0.9") . "</priority>\n";
     $xml .= "  </url>\n";
 }
 $xml .= '</urlset>';
