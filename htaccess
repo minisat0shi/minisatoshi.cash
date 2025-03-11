@@ -26,9 +26,13 @@ ExpiresByType image/bmp "access plus 1 week"
 # Optional: Default for other unmatched files
 ExpiresDefault "access plus 1 week"
 
-# Force re-download of main.css and main.js by disabling caching
-<FilesMatch "^(main\.css|main\.js)$">
+# Force re-download of css/main.css and js/main.js
+<FilesMatch "^(css/main\.css|js/main\.js)$">
     Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
     Header set Pragma "no-cache"
     Header set Expires "Thu, 01 Jan 1970 00:00:00 GMT"
 </FilesMatch>
+
+# Alternative method using RewriteRule (if FilesMatch fails)
+RewriteCond %{REQUEST_URI} ^/(css/main\.css|js/main\.js)$ [NC]
+RewriteRule ^ - [E=cache-control:no-store,no-cache,must-revalidate,E=pragma:no-cache,E=expires:Thu,\ 01\ Jan\ 1970\ 00:00:00\ GMT]
