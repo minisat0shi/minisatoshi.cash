@@ -67,6 +67,11 @@ html, head, body {
     }
 }
 
+/* Thinner link formatting */
+.thin-link-1 {
+    text-decoration-thickness: 1px;
+}
+
 /* Navbar section */
 
 .theme-switcher .dropdown-toggle::after {
