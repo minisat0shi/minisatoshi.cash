@@ -1,1 +1,9 @@
-User-agent: *Allow: /Sitemap: https://minisatoshi.cash/sitemap.xml
+User-agent: *
+Disallow: /submit-to-bing.php
+Disallow: /submit-to-google.php
+Disallow: /generate-sitemap.php
+Disallow: /resources.php
+Disallow: /index
+Disallow: /404
+Allow: /
+Sitemap: https://minisatoshi.cash/sitemap.xml
