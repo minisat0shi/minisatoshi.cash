@@ -5,12 +5,12 @@ $siteUrl = 'https://minisatoshi.cash'; // Verified domain with HTTPS
 $dir = __DIR__; // public_html directory
 $timestampFile = "$dir/last-update.txt"; // Tracks last Git update
 
-// Function to get all HTML files
+// Function to get all HTML files, excluding index.html
 function getHtmlFiles($dir) {
     $files = [];
     $iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($dir));
     foreach ($iterator as $file) {
-        if ($file->isFile() && preg_match('/\.html$/', $file->getFilename())) {
+        if ($file->isFile() && preg_match('/\.html$/', $file->getFilename()) && $file->getFilename() !== 'index.html') {
             $files[] = $file->getPathname();
         }
     }
@@ -23,7 +23,7 @@ $lastModTime = file_exists($timestampFile) ? (int) file_get_contents($timestampF
 
 // Check if there’s a change since last run
 if ($currentModTime > $lastModTime) {
-    // Get all HTML files
+    // Get all HTML files (excluding index.html)
     $htmlFiles = getHtmlFiles($dir);
     $urls = array_map(function($file) use ($siteUrl, $dir) {
         $relativePath = str_replace($dir, '', $file);
@@ -36,11 +36,16 @@ if ($currentModTime > $lastModTime) {
         $urls[] = "$siteUrl/"; // Ensure home page is included
     }
 
+    // Filter out /index explicitly (in case it sneaks in)
+    $urls = array_filter($urls, function($url) use ($siteUrl) {
+        return $url !== "$siteUrl/index";
+    });
+
     // API endpoint
     $endpoint = "https://ssl.bing.com/webmaster/api.svc/json/SubmitUrlBatch?apikey=$apiKey";
     $data = [
         'siteUrl' => $siteUrl,
-        'urlList' => $urls
+        'urlList' => array_values($urls) // Re-index array after filtering
     ];
     $jsonData = json_encode($data);
 
