@@ -11,28 +11,24 @@ RewriteRule ^ %{REQUEST_URI}.html [NC,L]
 # Custom 404 error page
 ErrorDocument 404 /404.html
 
-# Enable Expires headers if mod_expires is available
-<IfModule mod_expires.c>
-    ExpiresActive On
-    
-    # Set expires header for image files to 1 week
-    ExpiresByType image/jpeg "access plus 1 week"
-    ExpiresByType image/jpg "access plus 1 week"
-    ExpiresByType image/png "access plus 1 week"
-    ExpiresByType image/svg "access plus 1 week"
-    ExpiresByType image/gif "access plus 1 week"
-    ExpiresByType image/webp "access plus 1 week"
-    ExpiresByType image/bmp "access plus 1 week"
-    
-    # Optional: Default for other unmatched files
-    ExpiresDefault "access plus 1 week"
-</IfModule>
+# Enable Expires headers (LiteSpeed supports this natively)
+ExpiresActive On
+
+# Set expires header for image files to 1 week
+ExpiresByType image/jpeg "access plus 1 week"
+ExpiresByType image/jpg "access plus 1 week"
+ExpiresByType image/png "access plus 1 week"
+ExpiresByType image/gif "access plus 1 week"
+ExpiresByType image/webp "access plus 1 week"
+ExpiresByType image/svg "access plus 1 week"
+ExpiresByType image/bmp "access plus 1 week"
+
+# Optional: Default for other unmatched files
+ExpiresDefault "access plus 1 week"
 
 # Force re-download of main.css and main.js by disabling caching
 <FilesMatch "^(main\.css|main\.js)$">
-    <IfModule mod_headers.c>
-        Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
-        Header set Pragma "no-cache"
-        Header set Expires "Thu, 01 Jan 1970 00:00:00 GMT"
-    </IfModule>
+    Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+    Header set Pragma "no-cache"
+    Header set Expires "Thu, 01 Jan 1970 00:00:00 GMT"
 </FilesMatch>
