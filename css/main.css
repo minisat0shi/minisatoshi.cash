@@ -52,6 +52,8 @@ html, head, body {
     html:not([data-bs-theme="light"]) {
         --bs-body-bg: #000;
         --bs-body-bg-rgb: 0, 0, 0;
+        --bs-dark-bg-subtle: #000;
+        --bs-dark-bg-subtle-rgb: 0, 0, 0;
     }
 }
 
