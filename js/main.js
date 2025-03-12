@@ -33,43 +33,9 @@ document.addEventListener('DOMContentLoaded', function() {
 	button.addEventListener('click', copyToClipboard);
 });
 
-//Detecting and changing page theme
+
 document.addEventListener('DOMContentLoaded', function() {
-  // Sets the theme and source attributes, updates UI, and saves to localStorage
-  function setTheme(theme, source = 'user') {
-    document.documentElement.setAttribute('data-bs-theme', theme);
-    document.documentElement.setAttribute('data-theme-source', source);
-    localStorage.setItem('bs-theme', theme);
-    localStorage.setItem('bs-theme-source', source);
-    updateThemeIcon(theme);
-    updateActiveDropdownItem(theme);
-    updateButtonStyles();
-  }
-
-  // Determines the current theme: user-saved if toggled, otherwise system preference
-  function getCurrentTheme() {
-    const savedTheme = localStorage.getItem('bs-theme');
-    const savedSource = localStorage.getItem('bs-theme-source');
-    if (savedTheme && savedSource === 'user') {
-      return savedTheme;
-    }
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
-
-  // Updates the theme toggle icon based on the current theme
-  function updateThemeIcon(theme) {
-    const icon = document.getElementById('themeIcon');
-    icon.className = `bi ${theme === 'light' ? 'bi-brightness-high-fill' : 'bi-moon-stars-fill'}`;
-  }
-
-  // Highlights the active theme in the dropdown menu
-  function updateActiveDropdownItem(theme) {
-    document.querySelectorAll('.theme-switcher .dropdown-item').forEach(item => {
-      item.classList.toggle('active', item.getAttribute('data-theme') === theme);
-    });
-  }
-
-  // Adjusts button classes based on the current theme
+  // Update button styles based on current theme
   function updateButtonStyles() {
     document.querySelectorAll('.btn-outline-secondary, .btn-secondary').forEach(button => {
       const currentTheme = document.documentElement.getAttribute('data-bs-theme');
@@ -83,26 +49,27 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Initialize theme on page load
-  const initialTheme = getCurrentTheme();
-  const initialSource = localStorage.getItem('bs-theme-source') === 'user' ? 'user' : 'system';
-  setTheme(initialTheme, initialSource);
+  // Initialize UI based on current theme
+  const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+  const icon = document.getElementById('themeIcon');
+  icon.className = `bi ${currentTheme === 'light' ? 'bi-brightness-high-fill' : 'bi-moon-stars-fill'}`;
+  document.querySelectorAll('.theme-switcher .dropdown-item').forEach(item => {
+    item.classList.toggle('active', item.getAttribute('data-theme') === currentTheme);
+  });
+  updateButtonStyles(); // Apply initial button styles
 
-  // Add click listeners to theme toggle dropdown items
+  // Handle theme toggle clicks
   document.querySelectorAll('.theme-switcher .dropdown-item').forEach(item => {
     item.addEventListener('click', function(e) {
       e.preventDefault();
       const theme = this.getAttribute('data-theme');
-      setTheme(theme, 'user');
+      document.documentElement.setAttribute('data-bs-theme', theme);
+      localStorage.setItem('bs-theme', theme);
+      icon.className = `bi ${theme === 'light' ? 'bi-brightness-high-fill' : 'bi-moon-stars-fill'}`;
+      document.querySelectorAll('.theme-switcher .dropdown-item').forEach(i => {
+        i.classList.toggle('active', i.getAttribute('data-theme') === theme);
+      });
+      updateButtonStyles(); // Update buttons on toggle
     });
-  });
-
-  // Listen for system theme changes and update if no user override
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-    const savedSource = localStorage.getItem('bs-theme-source');
-    if (savedSource !== 'user') {
-      const newTheme = e.matches ? 'dark' : 'light';
-      setTheme(newTheme, 'system');
-    }
   });
 });
