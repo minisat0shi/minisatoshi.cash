@@ -18,7 +18,11 @@ function getHtmlFiles($dir) {
     foreach ($iterator as $file) {
         if ($file->isFile() && preg_match('/\.html$/', $file->getFilename()) 
             && $file->getFilename() !== 'index.html' 
-            && $file->getFilename() !== '404.html') {
+            && $file->getFilename() !== '400.html'
+            && $file->getFilename() !== '401.html'
+            && $file->getFilename() !== '403.html'
+            && $file->getFilename() !== '404.html'
+            && $file->getFilename() !== '500.html') {
             $files[] = $file->getPathname();
         }
     }

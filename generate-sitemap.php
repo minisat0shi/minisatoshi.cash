@@ -5,7 +5,7 @@ $dir = __DIR__;
 // Function to get HTML files, excluding specific ones
 function getHtmlFiles($dir) {
     $files = [];
-    $exclude = ['index.html', '404.html', 'submit-to-bing.php', 'submit-to-google.php', 'generate-sitemap.php', 'resources.php'];
+    $exclude = ['index.html', '400.html', '401.html', '403.html', '404.html', '500.html', 'submit-to-bing.php', 'submit-to-google.php', 'generate-sitemap.php', 'resources.php'];
     $iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($dir));
     foreach ($iterator as $file) {
         if ($file->isFile() && preg_match('/\.html$/', $file->getFilename()) 
