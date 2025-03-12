@@ -35,9 +35,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //Detecting and changing page theme
 document.addEventListener('DOMContentLoaded', function() {
-  function setTheme(theme) {
+  function setTheme(theme, source = 'user') {
     document.documentElement.setAttribute('data-bs-theme', theme);
+    document.documentElement.setAttribute('data-theme-source', source);
     localStorage.setItem('bs-theme', theme);
+    localStorage.setItem('bs-theme-source', source);
     updateThemeIcon(theme);
     updateActiveDropdownItem(theme);
     updateButtonStyles();
@@ -45,11 +47,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function getCurrentTheme() {
     const savedTheme = localStorage.getItem('bs-theme');
-    if (savedTheme) {
-      return savedTheme; // Use user-saved preference if it exists
+    const savedSource = localStorage.getItem('bs-theme-source');
+    if (savedTheme && savedSource) {
+      document.documentElement.setAttribute('data-theme-source', savedSource);
+      return savedTheme; // Use saved preference
     }
-    // On first load, detect system preference
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    // Default to system preference
+    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return isDark ? 'dark' : 'light';
   }
 
   function updateThemeIcon(theme) {
@@ -76,16 +81,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Apply the theme on load
+  // Apply initial theme based on system preference
   const initialTheme = getCurrentTheme();
-  setTheme(initialTheme);
+  const initialSource = localStorage.getItem('bs-theme') ? 'user' : 'system';
+  setTheme(initialTheme, initialSource);
 
   // Handle manual theme switching
   document.querySelectorAll('.theme-switcher .dropdown-item').forEach(item => {
     item.addEventListener('click', function(e) {
       e.preventDefault();
       const theme = this.getAttribute('data-theme');
-      setTheme(theme);
+      setTheme(theme, 'user');
     });
   });
 });

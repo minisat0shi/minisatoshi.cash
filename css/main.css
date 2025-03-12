@@ -46,9 +46,9 @@ html, head, body {
     overflow-x: hidden;
 }
 
-/* Apply custom #000 background only when system prefers dark mode and no theme is explicitly set */
+/* Custom #000 background for system dark mode default */
 @media (prefers-color-scheme: dark) {
-    html:not([data-bs-theme="light"]):not([data-bs-theme="dark"]) {
+    html[data-bs-theme="dark"][data-theme-source="system"] {
         --bs-body-bg: #000;
         --bs-body-bg-rgb: 0, 0, 0;
     }
