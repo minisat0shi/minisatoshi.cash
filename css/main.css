@@ -770,6 +770,10 @@ ul.upgrade-bullets > li::before {
   border: 4px solid var(--bs-warning) !important;
   background-color:darkslategray !important;
 }
+.bug-item-red:after {
+  border: 4px solid var(--bs-danger) !important;
+  background-color:darkslategray !important;
+}
 #softFork.timeline-item:after {
     border-radius: 50%;
 }
