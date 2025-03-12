@@ -40,11 +40,16 @@ document.addEventListener('DOMContentLoaded', function() {
     localStorage.setItem('bs-theme', theme);
     updateThemeIcon(theme);
     updateActiveDropdownItem(theme);
-    updateButtonStyles(); // Call this function to update button styles on theme change
+    updateButtonStyles();
   }
 
   function getCurrentTheme() {
-    return localStorage.getItem('bs-theme') || 'dark';
+    const savedTheme = localStorage.getItem('bs-theme');
+    if (savedTheme) {
+      return savedTheme;
+    }
+    // Default to system preference if no saved theme
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
 
   function updateThemeIcon(theme) {
@@ -72,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   setTheme(getCurrentTheme());
-  updateButtonStyles(); // Initial call to ensure buttons are styled correctly on load
+  updateButtonStyles(); // Initial call
 
   document.querySelectorAll('.theme-switcher .dropdown-item').forEach(item => {
     item.addEventListener('click', function(e) {

@@ -52,20 +52,13 @@ html, head, body {
     --bs-body-bg-rgb: 0, 0, 0;
 }
 
-/* Ensure these styles only apply when the dark theme is active on a system set to its own dark mode*/
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: var(--bs-body-bg);
-    }
-}
-
 /* For users who might have set OS dark mode but not the data-bs-theme */
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
     html:not([data-bs-theme="light"]) {
         --bs-body-bg: #000;
         --bs-body-bg-rgb: 0, 0, 0;
     }
-} */
+}
 
 /* Thinner link formatting */
 .thin-link-1 {
