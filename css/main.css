@@ -46,15 +46,9 @@ html, head, body {
     overflow-x: hidden;
 }
 
-/* Define a custom darker background color for dark mode */
-:root {
-    --bs-body-bg: #000; /* Very dark background for dark mode */
-    --bs-body-bg-rgb: 0, 0, 0;
-}
-
-/* For users who might have set OS dark mode but not the data-bs-theme */
+/* Apply custom #000 background only when system prefers dark mode and no theme is explicitly set */
 @media (prefers-color-scheme: dark) {
-    html:not([data-bs-theme="light"]) {
+    html:not([data-bs-theme="light"]):not([data-bs-theme="dark"]) {
         --bs-body-bg: #000;
         --bs-body-bg-rgb: 0, 0, 0;
     }

@@ -46,9 +46,9 @@ document.addEventListener('DOMContentLoaded', function() {
   function getCurrentTheme() {
     const savedTheme = localStorage.getItem('bs-theme');
     if (savedTheme) {
-      return savedTheme;
+      return savedTheme; // Use user-saved preference if it exists
     }
-    // Default to system preference if no saved theme
+    // On first load, detect system preference
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
 
@@ -76,9 +76,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  setTheme(getCurrentTheme());
-  updateButtonStyles(); // Initial call
+  // Apply the theme on load
+  const initialTheme = getCurrentTheme();
+  setTheme(initialTheme);
 
+  // Handle manual theme switching
   document.querySelectorAll('.theme-switcher .dropdown-item').forEach(item => {
     item.addEventListener('click', function(e) {
       e.preventDefault();
