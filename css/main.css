@@ -46,9 +46,13 @@ html, head, body {
     overflow-x: hidden;
 }
 
-html[data-bs-theme="dark"][data-theme-source="system"] {
-    --bs-body-bg: #000 !important;
-    --bs-body-bg-rgb: 0, 0, 0 !important;
+/* For users who might have set OS dark mode but not the data-bs-theme */
+@media
+ (prefers-color-scheme: dark) {
+    html:not([data-bs-theme="light"]) {
+        --bs-body-bg: #000;
+        --bs-body-bg-rgb: 0, 0, 0;
+    }
 }
 
 /* Thinner link formatting */
