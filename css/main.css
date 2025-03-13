@@ -220,7 +220,7 @@ html, head, body {
 .home {
     width: 100vw;
     height: 100vh;
-    background-image: url('../images/FallingStarBackground_upscaled.jpg');
+    background-image: url('../images/FallingStarBackground_upscaled.webp');
     background-position: center bottom;
     background-size:cover;
     display: flex;
