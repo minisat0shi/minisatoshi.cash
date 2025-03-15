@@ -11,33 +11,31 @@ RewriteRule ^ %{REQUEST_URI}.html [NC,L]
 # Custom 404 error page
 ErrorDocument 404 /404.html
 
-# Enable Expires headers (LiteSpeed supports this natively)
+# Enable Expires headers for caching control (supported by Apache and LiteSpeed)
 ExpiresActive On
 
-# Set expires header for image files to 1 week
-ExpiresByType image/jpeg "access plus 1 week"
-ExpiresByType image/jpg "access plus 1 week"
+# Cache image files for 1 week to reduce server load for static assets
+ExpiresByType image/jpeg "access plus 1 week"  # Covers both .jpg and .jpeg
 ExpiresByType image/png "access plus 1 week"
 ExpiresByType image/gif "access plus 1 week"
 ExpiresByType image/webp "access plus 1 week"
-ExpiresByType image/svg "access plus 1 week"
+ExpiresByType image/svg+xml "access plus 1 week"
 ExpiresByType image/bmp "access plus 1 week"
 
-# Optional: Default for other unmatched files
+# Default caching for other file types not explicitly defined
 ExpiresDefault "access plus 1 week"
 
-# Force re-download of css/main.css and js/main.js
+# Prevent caching for main.css and main.js (forces fresh download every time)
 <FilesMatch "^(css/main\.css|js/main\.js)$">
+    # Disable caching with Cache-Control
     Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+    # Legacy no-cache directive for older browsers
     Header set Pragma "no-cache"
+    # Set expiration in the past to invalidate cache
     Header set Expires "Thu, 01 Jan 1970 00:00:00 GMT"
 </FilesMatch>
 
-# Alternative method using RewriteRule (if FilesMatch fails)
-RewriteCond %{REQUEST_URI} ^/(css/main\.css|js/main\.js)$ [NC]
-RewriteRule ^ - [E=cache-control:no-store,no-cache,must-revalidate,E=pragma:no-cache,E=expires:Thu,\ 01\ Jan\ 1970\ 00:00:00\ GMT]
-
-# Restrict access to submit-to-bing.php
+# Restrict access to submit-to-bing.php to localhost only
 <Files "submit-to-bing.php">
     Order Deny,Allow
     Deny from all
