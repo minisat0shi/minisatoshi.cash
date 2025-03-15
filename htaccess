@@ -23,22 +23,30 @@ ErrorDocument 404 /404.html
     ExpiresByType image/svg+xml "access plus 1 week"
     ExpiresByType image/bmp "access plus 1 week"
 
-    # Default caching for other file types (avoid applying to CSS/JS)
+    # Default caching for other file types
     ExpiresDefault "access plus 1 week"
 </IfModule>
 
-# Prevent caching for css/main.css and js/main.js
+# Prevent caching for css/main.css and js/main.js (with or without query strings)
 <IfModule mod_headers.c>
+    # Match files in css/ and js/ directories explicitly
     <FilesMatch "^(css/main\.css|js/main\.js)$">
-        # Disable browser caching
         Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
-        # Legacy no-cache for older browsers
         Header set Pragma "no-cache"
-        # Expire immediately
         Header set Expires "Thu, 01 Jan 1970 00:00:00 GMT"
-        # Explicitly disable LiteSpeed server-side caching
         Header set X-LiteSpeed-Cache-Control "no-cache"
     </FilesMatch>
+
+    # Use RewriteRule to handle requests with query strings
+    RewriteEngine On
+    RewriteCond %{REQUEST_URI} ^/(css/main\.css|js/main\.js) [NC]
+    RewriteRule ^ - [E=nocache:1]
+    <IfModule mod_headers.c>
+        Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0" env=nocache
+        Header set Pragma "no-cache" env=nocache
+        Header set Expires "Thu, 01 Jan 1970 00:00:00 GMT" env=nocache
+        Header set X-LiteSpeed-Cache-Control "no-cache" env=nocache
+    </IfModule>
 </IfModule>
 
 # Restrict access to submit-to-bing.php
