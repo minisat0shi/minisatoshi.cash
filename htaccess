@@ -11,47 +11,8 @@ RewriteRule ^ %{REQUEST_URI}.html [NC,L]
 # Custom 404 error page
 ErrorDocument 404 /404.html
 
-# Enable Expires headers for caching control
-<IfModule mod_expires.c>
-    ExpiresActive On
-
-    # Cache image files for 1 week
-    ExpiresByType image/jpeg "access plus 1 week"
-    ExpiresByType image/png "access plus 1 week"
-    ExpiresByType image/gif "access plus 1 week"
-    ExpiresByType image/webp "access plus 1 week"
-    ExpiresByType image/svg+xml "access plus 1 week"
-    ExpiresByType image/bmp "access plus 1 week"
-
-    # Default caching for other file types
-    ExpiresDefault "access plus 1 week"
-</IfModule>
-
-# Prevent caching for css/main.css and js/main.js (with or without query strings)
 <IfModule mod_headers.c>
-    # Match files in css/ and js/ directories explicitly
-    <FilesMatch "^(css/main\.css|js/main\.js)$">
-        Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
-        Header set Pragma "no-cache"
-        Header set Expires "Thu, 01 Jan 1970 00:00:00 GMT"
-        Header set X-LiteSpeed-Cache-Control "no-cache"
+    <FilesMatch "\.(css|js)$">
+        Header set X-Test-Header "HelloWorld"
     </FilesMatch>
-
-    # Use RewriteRule to handle requests with query strings
-    RewriteEngine On
-    RewriteCond %{REQUEST_URI} ^/(css/main\.css|js/main\.js) [NC]
-    RewriteRule ^ - [E=nocache:1]
-    <IfModule mod_headers.c>
-        Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0" env=nocache
-        Header set Pragma "no-cache" env=nocache
-        Header set Expires "Thu, 01 Jan 1970 00:00:00 GMT" env=nocache
-        Header set X-LiteSpeed-Cache-Control "no-cache" env=nocache
-    </IfModule>
 </IfModule>
-
-# Restrict access to submit-to-bing.php
-<Files "submit-to-bing.php">
-    Order Deny,Allow
-    Deny from all
-    Allow from 127.0.0.1
-</Files>
