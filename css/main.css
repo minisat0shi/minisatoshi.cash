@@ -41,6 +41,14 @@
     }
 }
 
+[data-bs-theme="light"] .link-info {
+    color: var(--bs-primary) !important; /* light mode override to give better contrast */
+}
+
+[data-bs-theme="light"] .text-info {
+    color: var(--bs-primary) !important; /* light mode override to give better contrast */
+}
+
 html, head, body {
     max-width: 100%;
     overflow-x: hidden;
