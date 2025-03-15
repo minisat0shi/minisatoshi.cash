@@ -8,9 +8,6 @@ RewriteRule ^ /%1 [NC,L,R]
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^ %{REQUEST_URI}.html [NC,L]
 
-# Custom 404 error page
-ErrorDocument 404 /404.html
-
 # Enable Expires headers for caching control
 <IfModule mod_expires.c>
     ExpiresActive On
