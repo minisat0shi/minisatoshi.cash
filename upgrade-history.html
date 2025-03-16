@@ -100,48 +100,56 @@
 <body class="upgrade-history" data-bs-smooth-scroll="true">
     <nav class="navbar bg-dark-subtle border-bottom navbar-bch-glow navbar-expand-xl fixed-top">
         <div class="container-fluid">
-            <a href="index.html#" class="text-decoration-none" aria-label="Go to homepage"><img src="favicon/favicon.svg" alt="Logo" width="30" height="30" class="me-2"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <a href="index.html#" class="text-decoration-none" aria-label="Go to homepage">
+                <img src="favicon/favicon.svg" alt="Logo" width="30" height="30" class="me-2">
+            </a>
             <div class="collapse navbar-collapse" id="navbarText">
-              <ul class="navbar-nav fs-5 me-auto mb-1 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link" href="index.html#" aria-label="Go to homepage">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="index.html#_bch" aria-label="Go to BCH section of homepage">What is BCH?</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="index.html#_about" aria-label="Go to Mission section of homepage">The Mission</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="index.html#_socials" aria-label="Go to Social section of homepage">Social System</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link active dropdown-toggle" aria-current="page" href="#upgrade-timeline" role="button" data-bs-toggle="dropdown" aria-expanded="false"><span style="display:none;">BCH</span>Network Upgrades</a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="upgrade-history#upgrade-timeline" aria-label="Go to Upgrade History">Upgrade History</a></li>
-                        <li><a class="dropdown-item" href="upgrade-history#upgrade-earlyDevelopment" aria-label="Go to Proposed Upgrades (CHIPs)">Proposed Upgrades (CHIPs)</a></li>
-                        <li><a class="dropdown-item" href="upgrade-history#upgrade-discussion" aria-label="Go to Upgrades in Discussion">Upgrades in Discussion</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="ecosystem" aria-label="Go to Ecosystem page">Ecosystem</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="resources" aria-label="Go to Resources page">Resources</a>
-                </li>
-              </ul>
+                <ul class="navbar-nav fs-5 me-auto mb-1 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#" aria-label="Go to homepage">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#_bch" aria-label="Go to BCH section of homepage">What is BCH?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#_about" aria-label="Go to Mission section of homepage">The Mission</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#_socials" aria-label="Go to Social section of homepage">Social System</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" aria-current="page" href="#upgrade-timeline" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span style="display:none;">BCH</span>Network Upgrades
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="upgrade-history#upgrade-timeline" aria-label="Go to Upgrade History">Upgrade History</a></li>
+                            <li><a class="dropdown-item" href="upgrade-history#upgrade-earlyDevelopment" aria-label="Go to Proposed Upgrades (CHIPs)">Proposed Upgrades (CHIPs)</a></li>
+                            <li><a class="dropdown-item" href="upgrade-history#upgrade-discussion" aria-label="Go to Upgrades in Discussion">Upgrades in Discussion</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ecosystem" aria-label="Go to Ecosystem page">Ecosystem</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="resources" aria-label="Go to Resources page">Resources</a>
+                    </li>
+                </ul>
             </div>
-            <div class="dropdown theme-switcher">
-              <button class="btn btn-secondary dropdown-toggle fs-6" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Theme Switcher">
-                  <i id="themeIcon" class="bi bi-moon-stars-fill"></i>
-              </button>
-              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="themeDropdown">
-                  <li><a class="dropdown-item fs-6" href="#" data-theme="light"><i class="bi bi-brightness-high-fill"></i> Light</a></li>
-                  <li><a class="dropdown-item fs-6" href="#" data-theme="dark"><i class="bi bi-moon-fill"></i> Dark</a></li>
-              </ul>
+
+            <!-- Grouping theme switcher and toggler together -->
+            <div class="d-flex ms-auto align-items-center">
+                <div class="dropdown theme-switcher me-xl-0 me-2">
+                    <button class="btn btn-secondary dropdown-toggle fs-6" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Theme Switcher">
+                        <i id="themeIcon" class="bi bi-moon-stars-fill"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="themeDropdown">
+                        <li><a class="dropdown-item fs-6" href="#" data-theme="light"><i class="bi bi-brightness-high-fill"></i> Light</a></li>
+                        <li><a class="dropdown-item fs-6" href="#" data-theme="dark"><i class="bi bi-moon-fill"></i> Dark</a></li>
+                    </ul>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
             </div>
         </div>
     </nav>
