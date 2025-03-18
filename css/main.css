@@ -198,11 +198,8 @@ html, head, body {
 
 /* Back to Top Button */
 #btn-back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
     display: none;
-    z-index: 2;
+    z-index: 100;
 }
 
 /* Theme Float Button */
@@ -222,6 +219,18 @@ html, head, body {
     padding: 0;
 }
 
+/* BCH Price Widget */
+.livecoinwatch-widget-wrapper {
+    z-index: 100;
+    transform-origin: bottom left; /* Keeps it anchored to bottom-left */
+}
+
+/* Optional: Adjust wrapper size for responsiveness */
+@media (max-width: 576px) {
+    .livecoinwatch-widget-wrapper {
+        transform: scale(0.6);
+    }
+}
 
 /* Home section */
 
