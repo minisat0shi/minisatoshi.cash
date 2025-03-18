@@ -222,6 +222,7 @@ html, head, body {
 /* BCH Price Widget */
 .livecoinwatch-widget-wrapper {
     z-index: 100;
+    transform: scale(0.8);
     transform-origin: bottom left; /* Keeps it anchored to bottom-left */
 }
 
