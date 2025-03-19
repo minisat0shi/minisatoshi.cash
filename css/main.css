@@ -766,7 +766,7 @@ ul.upgrade-bullets > li::before {
 #future.timeline {
   margin-top:-1.5em;
   left:-8px;
-  border-left: 8px dashed darkslategray;
+  border-left: 8px dashed var(--bs-gray-700);
   position: relative;
   list-style: none;
   margin-left: 7em;
@@ -787,7 +787,7 @@ ul.upgrade-bullets > li::before {
 /*Timeline Box*/
 .timeline .timeline-item:after {
   background-color: #fff;
-  border: 4px solid darkslategray;
+  border: 4px solid var(--bs-gray-700);
   left: -48px;
   height: 24px;
   width: 24px;
@@ -806,13 +806,8 @@ ul.upgrade-bullets > li::before {
     border-radius: 20%;
 }
 #final.timeline-item:after {
-    /*border-radius: 10%;
-    margin-top:0.5em;
-    height:16px;
-    width:40px;
-    left: -56px;*/
     background-color: var(--bs-body-bg);
-    border: solid darkslategray;
+    border: solid var(--bs-gray-700);
     border-width: 0 8px 8px 0;
     padding: 3px;
     transform: rotate(45deg);
