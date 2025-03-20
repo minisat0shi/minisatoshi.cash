@@ -853,7 +853,7 @@ ul.upgrade-bullets > li::before {
 }
 @media (max-width: 768px) { /* Bootstrap medium */
     .legend-container {
-        top:480px;
+        top:420px;
     }
 }
 .legend-tab {
