@@ -188,7 +188,7 @@
 
     <div class="position-fixed end-0 translate-middle-y z-3 legend-container d-flex flex-row">
         <!-- Tab with Legend text -->
-        <div class="legend-tab border border-2 border-end-0 rounded-start p-2 d-flex align-items-center justify-content-center" 
+        <div class="legend-tab border border-2 border-end-0 border-md-2 rounded-start p-2 d-flex align-items-center justify-content-center" 
              data-bs-toggle="collapse" 
              data-bs-target="#legendCollapse" 
              aria-expanded="true" 
@@ -197,7 +197,7 @@
         </div>
         <!-- Collapsible content -->
         <div class="collapse collapse-horizontal show" id="legendCollapse">
-            <div class="legend-content border border-2 border-start-0 py-3">
+            <div class="legend-content border border-2 border-start-0 border-md-2 py-3">
                 <ul class="list-unstyled mb-0 timeline-legend">
                     <li id="hardFork" class="timeline-legend-item">
                         <p class="fw-bold text-break share-item fs-6 my-2">Hard Fork Upgrade</p>
@@ -209,6 +209,20 @@
             </div>
         </div>
     </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const legendCollapse = document.getElementById('legendCollapse');
+        const legendToggle = document.querySelector('[data-bs-target="#legendCollapse"]');
+        
+        if (window.innerWidth < 768) {
+            legendCollapse.classList.remove('show');
+            legendToggle.setAttribute('aria-expanded', 'false');
+        } else {
+            legendCollapse.classList.add('show');
+            legendToggle.setAttribute('aria-expanded', 'true');
+        }
+    });
+    </script>
     
     <div class="fixed-nav-adjustment"></div>
     <!-- Section: Timeline -->
