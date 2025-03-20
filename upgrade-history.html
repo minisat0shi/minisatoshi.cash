@@ -185,6 +185,30 @@
           document.documentElement.scrollTop = 0;
         };
     </script>
+
+    <div class="position-fixed end-0 translate-middle-y z-3 legend-container d-flex flex-row">
+        <!-- Tab with Legend text -->
+        <div class="legend-tab border border-end-0 rounded-start p-2 d-flex align-items-center justify-content-center" 
+             data-bs-toggle="collapse" 
+             data-bs-target="#legendCollapse" 
+             aria-expanded="true" 
+             aria-controls="legendCollapse">
+            <span class="legend-text fw-bold fs-5 text-primary py-2">Legend</span>
+        </div>
+        <!-- Collapsible content -->
+        <div class="collapse collapse-horizontal show" id="legendCollapse">
+            <div class="legend-content border border-start-0 py-3">
+                <ul class="list-unstyled mb-0 timeline-legend">
+                    <li id="hardFork" class="timeline-legend-item">
+                        <p class="fw-bold text-break share-item fs-6 my-2">Hard Fork Upgrade</p>
+                    </li>
+                    <li id="softFork" class="timeline-legend-item">
+                        <p class="fw-bold text-break share-item fs-6 mb-2">Soft Fork Upgrade</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
     
     <div class="fixed-nav-adjustment"></div>
     <!-- Section: Timeline -->
