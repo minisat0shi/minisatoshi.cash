@@ -3195,6 +3195,36 @@
 	                </div>
 	              </div>
 	            </div>
+	            <div class="card-footer">
+	            	<a href="https://x.com/xo_bitcoincash" class="fs-5r text-secondary me-2" aria-label="link to Github"><i class="bi bi-twitter-x"></i></a>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="col mb-4">
+	          <div class="card" data-header="Technical, DevTool, Wallet">
+	            <div class="card-header d-flex justify-content-between align-items-center">
+	            	<div class="fs-6">Development</div>
+	            	<button class="btn btn-sm btn-outline-primary fs-7" disabled>General Protocols</button>
+	            </div>
+	            <div class="card-body text-center text-sm-start">
+	              <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
+	                <div class="d-flex flex-sm-row flex-column">
+	                  <div class="align-self-center">
+	                    <img src="images/logosForEcosystem/XO-stack-lightmode.svg" alt="XO logo" class="card-img-standard me-0 me-sm-3 mb-3 mb-sm-0" id="XOCash">
+	                  </div>
+	                  <div>
+	                    <h4 class="text-break">XO Stack</h4>
+	                    <p class="mb-0 fs-6">XO Stack provides cutting-edge tools to help developers create Bitcoin Cash apps with ease and efficiency. With a focus on scalability, security, and speed, you can bring your app to life in no time.</p>
+	                  </div>
+	                </div>
+	                <div class="align-self-center ms-0 ms-sm-3 mt-3 mt-sm-0">
+	                  <a href="https://stack.xo.cash" class="btn btn-lg btn-primary" aria-label="Primary link">Visit</a>
+	                </div>
+	              </div>
+	            </div>
+	            <div class="card-footer">
+	            	<a href="https://x.com/xo_bitcoincash" class="fs-5r text-secondary me-2" aria-label="link to Github"><i class="bi bi-twitter-x"></i></a>
+	            </div>
 	          </div>
 	        </div>
 	        <div class="col mb-4">
@@ -7626,19 +7656,22 @@
             const img1 = document.getElementById('bchbull')
             const img2 = document.getElementById('tapswap')
             const img3 = document.getElementById('XOCash')
-            const img4 = document.getElementById('oraclesCash')
+            const img4 = document.getElementById('XOStack')
+            const img5 = document.getElementById('oraclesCash')
             const theme = document.documentElement.getAttribute('data-bs-theme');
             
             if (theme === 'dark') {
                 img1.src = 'images/logosForEcosystem/bchbull-dark.png?v=0.01';
                 img2.src = 'images/logosForEcosystem/tapswap-dark.png?v=0.01';
                 img3.src = 'images/logosForEcosystem/XO-cash-darkmode.svg?v=0.01';
-                img4.src = 'images/logosForEcosystem/oracles-dark.svg?v=2';
+                img4.src = 'images/logosForEcosystem/XO-stack-darkmode.svg?v=0.01';
+                img5.src = 'images/logosForEcosystem/oracles-dark.svg?v=2';
             } else {
                 img1.src = 'images/logosForEcosystem/bchbull-light.png?v=0.01';
                 img2.src = 'images/logosForEcosystem/tapswap-light.png?v=0.01';
                 img3.src = 'images/logosForEcosystem/XO-cash-lightmode.svg?v=0.01';
-                img4.src = 'images/logosForEcosystem/oracles-light.svg?v=2';
+                img4.src = 'images/logosForEcosystem/XO-stack-lightmode.svg?v=0.01';
+                img5.src = 'images/logosForEcosystem/oracles-light.svg?v=2';
             }
         }
         // Initial check
