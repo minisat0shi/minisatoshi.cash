@@ -864,6 +864,7 @@ ul.upgrade-bullets > li::before {
 .legend-text {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
+    cursor: pointer;
 }
 
 .legend-content {
