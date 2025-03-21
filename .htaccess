@@ -20,8 +20,8 @@ RewriteRule ^ %{REQUEST_URI}.html [NC,L]
     ExpiresByType image/svg+xml "access plus 1 week"
     ExpiresByType image/bmp "access plus 1 week"
 
-    # Default caching for other file types
-    ExpiresDefault "access plus 1 week"
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
 </IfModule>
 
 # Prevent caching for css/main.css and js/main.js (with or without query strings)
@@ -35,7 +35,6 @@ RewriteRule ^ %{REQUEST_URI}.html [NC,L]
     </FilesMatch>
 
     # Use RewriteRule to handle requests with query strings
-    RewriteEngine On
     RewriteCond %{REQUEST_URI} ^/(css/main\.css|js/main\.js) [NC]
     RewriteRule ^ - [E=nocache:1]
     <IfModule mod_headers.c>
