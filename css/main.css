@@ -1,27 +1,43 @@
 @charset "UTF-8";
 
+
+/* Adjusting Bootstrap ------------------------------------------- */
+
+
+/* CSS Variables */
+:root {
+  --container-max-width: 1450px;
+  --nav-height: 65px;
+  --info-green: #0AC18E;
+  --info-blue: #23A6D5;
+  --transition-ease: all 0.3s ease-in-out;
+}
+
+
+/* Scroll Adjustments */
+[id^='_'] { scroll-margin-top: var(--nav-height); }
+[id^='upgrade'] { scroll-margin-top: 100px; }
+
+
+/* Typography */
+:root,
+[data-bs-theme="light"] {
+  --bs-font-sans-serif: "Ubuntu", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+
+.fs-5r { font-size: calc(1rem + 0.2vw) !important; }
+.fs-7 { font-size: 0.7rem !important; }
+
+
+/* Custom Tooltips */
 .informational-tooltip .tooltip-inner {
   background-color: var(--bs-info-bg-subtle) !important;
   color: var(--bs-info-text-emphasis) !important;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
+
 .informational-tooltip .tooltip-arrow::before {
   border-color: var(--bs-info-bg-subtle);
-}
-
-/* Adjusting Bootstrap */
-:root,
-[data-bs-theme=light] {
-    --bs-font-sans-serif: "Ubuntu", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
-}
-
-/* Adding responsive fs-5 */
-.fs-5r {
-  font-size: calc(1rem + 0.2vw) !important;
-}
-/* Adding fs-7 */
-.fs-7 {
-  font-size: 0.7rem !important;
 }
 
 /* Adding extension of container class to go wider */
@@ -37,35 +53,33 @@
 }
 @media (min-width:2000px) {
     .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-        max-width: 1450px !important;
+        max-width: var(--container-max-width) !important;
     }
 }
 
-[data-bs-theme="light"] .link-info {
-    color: var(--bs-primary) !important; /* light mode override to give better contrast */
-}
 
+/* Hyperlinks */
+/* Light mode override to give better contrast */
+[data-bs-theme="light"] .link-info,
 [data-bs-theme="light"] .text-info {
-    color: var(--bs-primary) !important; /* light mode override to give better contrast */
+  color: var(--bs-primary) !important;
+}
+/* Thinner link underlines */
+.thin-link-1 { text-decoration-thickness: 1px; }
+
+
+/* Going extra dark for users who have OS theme set to dark mode */
+@media (prefers-color-scheme: dark) {
+  html:not([data-bs-theme="light"]) {
+    --bs-body-bg: #000;
+    --bs-body-bg-rgb: 0, 0, 0;
+    --bs-dark-bg-subtle: #000;
+    --bs-dark-bg-subtle-rgb: 0, 0, 0;
+  }
 }
 
-html, head, body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
 
-/* For users who might have set OS dark mode but not the data-bs-theme */
-@media
- (prefers-color-scheme: dark) {
-    html:not([data-bs-theme="light"]) {
-        --bs-body-bg: #000;
-        --bs-body-bg-rgb: 0, 0, 0;
-        --bs-dark-bg-subtle: #000;
-        --bs-dark-bg-subtle-rgb: 0, 0, 0;
-    }
-}
-
-/* Adding custom info background colors */
+/* Adding custom info background gradients */
 :root {
     /* Light mode - washed out colors with more pronounced gradient */
     --bs-info-gradient: linear-gradient(
@@ -87,9 +101,9 @@ html, head, body {
         /* Dark mode - more pronounced colors closer to originals */
         --bs-info-gradient: linear-gradient(
             135deg,
-            #0AC18E 0%,    /* Original green */
+            var(--info-green) 0%,    /* Original green */
             #1A93B8 50%,   /* Middle transition point */
-            #23A6D5 100%   /* Original blue */
+            var(--info-blue) 100%   /* Original blue */
         );
         --bs-info-subtle-gradient: linear-gradient(
             135deg,
@@ -100,20 +114,43 @@ html, head, body {
     }
 }
 
-.bg-info {
-    background: var(--bs-info-gradient);
+.bg-info { background: var(--bs-info-gradient); }
+.bg-info-subtle { background: var(--bs-info-subtle-gradient); }
+
+
+/* General HTML settings/fixes ------------------------------------------- */
+/* Prevent Horizontal Overflow */
+html, head, body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
-.bg-info-subtle {
-    background: var(--bs-info-subtle-gradient);
+/* Icon Gradients */
+.icon-gradient {
+    background: -webkit-gradient(linear, left top, right bottom, from(#0AC18E), to(#23a6d5));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-/* Thinner link formatting */
-.thin-link-1 {
-    text-decoration-thickness: 1px;
+
+/* Buttons ------------------------------------------- */
+
+/* Back to Top */
+#btn-back-to-top {
+  display: none;
+  z-index: 100;
 }
 
-/* Navbar section */
+/* Theme Button */
+.theme { /* Homepage only */
+  position: fixed;
+  top: 80px;
+  left: 0;
+  margin: 0.25em;
+  padding-top: 20px;
+  z-index: 2;
+  transition: all 0.4s ease;
+}
 
 .theme-switcher .dropdown-toggle::after {
   vertical-align: 0.25em;
@@ -134,135 +171,234 @@ html, head, body {
   color: var(--bs-secondary-color); /* Assuming secondary text color for active state */
 }
 
+/* Social Buttons */
+.social {
+  position: fixed;
+  top: 80px;
+  right: 0;
+  padding-top: 20px;
+  z-index: 2;
+  transition: all 0.4s ease;
+}
+
+.social ul { padding: 0; }
+.social ul li {
+  margin: 0.25em;
+  display: block;
+  border-radius: 50%;
+}
+
+@media (max-width: 480px) { .social { display: none; } }
+
+
+/* General (non-Homepage) Navbar ------------------------------------------- */
+.navbar-bch-glow {
+    box-shadow: 0px 1px 2px rgba(10,193,142,0.5), 
+      0px 2px 4px rgba(10,193,142,0.5), 
+      0px 4px 8px rgba(10,193,142,0.5), 
+      0px 6px 16px rgba(10,193,142,0.5);
+}
+.fixed-nav-adjustment {
+    padding-top:56px;
+}
+
+
+/* Custom Homepage Navbar ------------------------------------------- */
 .custom_nav {
+    position: fixed;
     width: 100%;
     height: 65px;
-    position: fixed;
     line-height: 65px;
     text-align: center;
     z-index: 1;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    -webkit-transition: all 0.4s ease;
+    padding: 20px 0;
     transition: all 0.4s ease;
 }
 
-.custom_nav div.logo {
+.custom_nav .logo {
     float: left;
-    width: auto;
-    height: auto;
     padding-left: 1.5rem;
 }
 
-.custom_nav div.logo a {
-    text-decoration: none;
+.custom_nav .logo a {
     color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
 }
 
-.custom_nav div.logo a:hover {
+.custom_nav .logo a:hover {
     color: #00E676;
-    transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out; /** Chrome & Safari **/
-    -moz-transition: all 0.3s ease-in-out; /** Firefox **/
-    -o-transition: all 0.3s ease-in-out; /** Opera **/
 }
 
-.custom_nav div.main_list {
-    height: 65px;
+.custom_nav .main_list {
     float: right;
+    height: 65px;
 }
 
-.custom_nav div.main_list ul {
-    width: 100%;
-    height: 65px;
+.custom_nav .main_list ul {
     display: flex;
-    list-style: none;
+    height: 100%;
     margin: 0;
     padding: 0;
+    list-style: none;
 }
 
-.custom_nav div.main_list ul li {
-    width: auto;
-    height: 65px;
-    padding: 0;
+.custom_nav .main_list ul li {
+    height: 100%;
     padding-right: 1.5rem;
 }
 
-.custom_nav div.main_list ul li a {
-    text-decoration: none;
+.custom_nav .main_list ul li a {
     color: #fff;
-    line-height: 65px;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
 }
 
-.custom_nav div.main_list ul li a:hover {
+.custom_nav .main_list ul li a:hover {
     color: #0AC18E;
-    transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out; /** Chrome & Safari **/
-    -moz-transition: all 0.3s ease-in-out; /** Firefox **/
-    -o-transition: all 0.3s ease-in-out; /** Opera **/
 }
 
-/* Nav Items Fixing Scroll Distance */
-[id^='_'] {
-  scroll-margin-top: 65px;
-}
-[id^='upgrade'] {
-  scroll-margin-top: 100px;
+.affix {
+    padding: 0;
+    background-color: rgba(30,30,30,0.5);
+    backdrop-filter: saturate(180%) blur(20px);
 }
 
-/* Social Float Buttons */
-
-.social {
-    z-index: 2;
-    position: fixed;
-    top: 80px;
-    right:0;
-    padding-top: 20px;
-    -webkit-transition: all 0.4s ease;
-    transition: all 0.4s ease;
-}
-
-.social ul {
-  padding: 0px;
-}
-
-.social ul li {
-    margin: 0.25em;
-    display: block;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-}
-@media (max-width:480px) {
-    .social {
-        display:none;
-    }
-}
-
-/* Back to Top Button */
-#btn-back-to-top {
-    display: none;
-    z-index: 100;
-}
-
-/* Theme Float Button */
-
-.theme {
-    z-index: 2;
-    position: fixed;
-    top: 80px;
-    left:0;
-    margin: 0.25em;
-    padding-top: 20px;
-    -webkit-transition: all 0.4s ease;
-    transition: all 0.4s ease;
+html[data-bs-theme="dark"] .affix {
+    background-color: rgba(0,0,0,0.5);
 }
 
 .affix-social-theme {
     padding: 0;
 }
 
-/* BCH Price Widget */
+/* Hamburger Menu */
+.navTrigger {
+    display: none;
+    cursor: pointer;
+    width: 30px;
+    position: absolute;
+    right: 30px;
+    top: 1.3rem;
+}
+
+.navTrigger i {
+    background-color: #fff;
+    border-radius: 2px;
+    display: block;
+    width: 100%;
+    height: 4px;
+}
+
+.navTrigger i:nth-child(2) {
+    margin: 5px 0;
+}
+
+/* Animations */
+.navTrigger i {
+    animation: outT 0.8s backwards reverse;
+}
+
+.navTrigger i:nth-child(2) {
+    animation-name: outM;
+}
+
+.navTrigger i:nth-child(3) {
+    animation-name: outBtm;
+}
+
+.navTrigger.active i {
+    animation: inT 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(2) {
+    animation-name: inM;
+}
+
+.navTrigger.active i:nth-child(3) {
+    animation-name: inBtm;
+}
+
+@keyframes inM {
+    50% { transform: rotate(0deg); }
+    100% { transform: rotate(45deg); }
+}
+
+@keyframes inT {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(9px) rotate(0deg); }
+    100% { transform: translateY(9px) rotate(135deg); }
+}
+
+@keyframes inBtm {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-9px) rotate(0deg); }
+    100% { transform: translateY(-9px) rotate(135deg); }
+}
+
+@keyframes outM {
+    50% { transform: rotate(0deg); }
+    100% { transform: rotate(45deg); }
+}
+
+@keyframes outT {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(9px) rotate(0deg); }
+    100% { transform: translateY(9px) rotate(135deg); }
+}
+
+@keyframes outBtm {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-9px) rotate(0deg); }
+    100% { transform: translateY(-9px) rotate(135deg); }
+}
+
+/* Media Query */
+@media screen and (max-width: 1400px) {
+    .navTrigger {
+        display: inline-block;
+    }
+
+    .custom_nav {
+        z-index: 3;
+    }
+
+    .custom_nav .main_list {
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+    }
+
+    .custom_nav .show_list {
+        height: auto;
+        display: none;
+    }
+
+    .custom_nav .main_list ul {
+        flex-direction: column;
+        height: 100vh;
+        background-color: rgba(30,30,30,0.5);
+    }
+
+    .custom_nav .main_list ul li {
+        width: 100%;
+        height: 50px;
+        text-align: right;
+    }
+
+    .custom_nav .main_list ul li a {
+        width: 100%;
+        padding-left: 3rem;
+        text-align: center;
+    }
+
+    .custom_nav .media_button {
+        display: block;
+    }
+}
+
+
+/* UNUSED -- BCH Price Widget ------------------------------------------- */
 .livecoinwatch-widget-wrapper {
     z-index: 100;
     transform: scale(0.8);
@@ -276,173 +412,8 @@ html, head, body {
     }
 }
 
-/* Home section */
 
-.home {
-    width: 100vw;
-    height: 100vh;
-    background-image: url('../images/FallingStarBackground_upscaled.webp');
-    background-position: center bottom;
-    background-size:cover;
-    display: flex;
-    justify-content: center; /* Align horizontal */
-    align-items: flex-end; /* Align bottom */
-}
-/* This corrects viewheight when certain system UI elements overlap shrinking the section */
-  @supports (height: 100dvh) {
-    .home {
-      height: 100dvh;
-    }
-  }
-
-.home-text {
-  color:#fff;
-  max-width: 800px;
-}
-.home-text-small-mobile {
-  color:#fff;
-  max-width: 800px;
-  display:none;
-}
-
-.home-img {
-  /*max-width: min(calc(10% + 600px),1200px);*/
-  max-width: 800px;
-  width:100%;
-  height:auto;
-}
-
-@media screen and (max-width:850px) {
-    .home-img {
-        max-width: 90%;
-    }
-}
-
-@media screen and (max-width:400px) {
-    .home-img {
-        max-width: 80%;
-    }
-    .home-text {
-        display:none;
-    }
-    .home-text-small-mobile {
-      display:block;
-    }
-}
-
-.custom-alert-title {
-    padding-right:1.25rem;
-    padding-left:1.25rem;
-    display:block;
-}
-
-.twitter_profile_image {
-    padding: 1rem;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    -o-transition:all .3s ease-in-out allow-discrete;
-    -ms-transition:all .3s ease-in-out allow-discrete;
-    -moz-transition:all .3s ease-in-out allow-discrete;
-    -webkit-transition:all .3s ease-in-out allow-discrete;
-    transition: all .3s ease-in-out allow-discrete;
-}
-
-.twitter_profile_image:hover {
-    padding: 1.25rem;
-    filter: brightness(80%);
-    -o-transition:all .3s ease-in-out allow-discrete;
-    -ms-transition:all .3s ease-in-out allow-discrete;
-    -moz-transition:all .3s ease-in-out allow-discrete;
-    -webkit-transition:all .3s ease-in-out allow-discrete;
-    transition: all .3s ease-in-out allow-discrete;
-}
-
-.navTrigger {
-    display: none;
-}
-
-.fork-map-header {
-    padding-right:4rem;
-    padding-left:4rem;
-    padding-bottom:2rem;
-}
-
-.card-image-standard {
-    height:10rem;
-    object-fit: contain;
-    clip-path: circle();
-}
-.card-image-standard-no-circle-desktop {
-    height:10rem;
-}
-.card-image-standard-no-circle-mobile {
-    height:10rem;
-    display:none;
-    object-fit: contain;
-    clip-path: circle();
-}
-@media (max-width:992px) {
-    .card-image-standard-no-circle-desktop {
-        display:none;
-    }
-    .card-image-standard-no-circle-mobile {
-        display:inline;
-    }
-}
-@media (max-width:768px) {
-    .card-image-standard {
-        height:6rem;
-    }
-    .card-image-standard-no-circle-mobile {
-        height:6rem;
-    }
-}
-@media (max-width:480px) {
-    .card-image-standard {
-        height:4rem;
-    }
-    .card-image-standard-no-circle-mobile {
-        height:4rem;
-    }
-}
-.card-image-standard-md {
-    height:8rem;
-    object-fit: contain;
-    clip-path: circle();
-}
-@media (max-width:768px) {
-    .card-image-standard-md {
-        height:6rem;
-    }
-}
-@media (max-width:480px) {
-    .card-image-standard-md {
-        height:4rem;
-    }
-}
-@media (max-width:480px) {
-    .card-body-socials {
-        padding: var(--bs-card-spacer-y) 0 !important;
-    }
-}
-
-
-/* Gradients */
-.icon-gradient {
-    background: -webkit-gradient(linear, left top, right bottom, from(#0AC18E), to(#23a6d5));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-
-/* FOOTER */
-footer {
-  background-color: #0AC18E;
-  color: white;
-  text-align: center;
-}
-
+/* Footer ------------------------------------------- */
 footer a {
   color: white;
 }
@@ -465,7 +436,7 @@ footer i {
   text-align: inherit;
   font: inherit;
   border-radius: 0;
-  appearance: none; /*Just in case we missed anything*/
+  appearance: none;
 }
 
 .custom-tooltip {
@@ -473,273 +444,138 @@ footer i {
   position: relative;
 }
 
+/* Home Section ------------------------------------------- */
 
-/* Media qurey section */
+.home {
+    width: 100vw;
+    height: 100vh;
+    background: url('../images/FallingStarBackground_upscaled.webp') center bottom / cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
 
-@media screen and (min-width: 1080px) and (max-width: 1800px) {
-    .nav_container {
-        margin: 0;
+@supports (height: 100dvh) {
+    .home {
+        height: 100dvh;
     }
 }
 
-@media screen and (max-width:1400px) {
-    .navTrigger {
-        display: inline-block;
+.home-text,
+.home-text-small-mobile {
+    color: #fff;
+    max-width: 800px;
+}
+
+.home-text-small-mobile {
+    display: none;
+}
+
+.home-img {
+    max-width: 800px;
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 850px) {
+    .home-img {
+        max-width: 90%;
     }
-    .custom_nav {
-        z-index: 3;
+}
+
+@media (max-width: 400px) {
+    .home-img {
+        max-width: 80%;
     }
-    .custom_nav div.main_list {
-        width: 100%;
-        height: 0;
-        overflow: hidden;
-    }
-    .custom_nav div.show_list {
-        height: auto;
+    .home-text {
         display: none;
     }
-    .custom_nav div.main_list ul {
-        flex-direction: column;
-        width: 100%;
-        height: 100vh;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        background-color: rgba(30,30,30,0.5);
-        /*same background color of navbar*/
-        background-position: center top;
-    }
-    .custom_nav div.main_list ul li {
-        width: 100%;
-        text-align: right;
-        height: 50px;
-    }
-    .custom_nav div.main_list ul li a {
-        text-align: center;
-        width: 100%;
-        padding-left:3rem;
-    }
-    .custom_nav div.media_button {
+    .home-text-small-mobile {
         display: block;
     }
-
 }
 
-
-/* Animation */
-/* Inspiration taken from Dicson https://codemyui.com/simple-hamburger-menu-x-mark-animation/ */
-
-.navTrigger {
-    cursor: pointer;
-    width: 30px;
-    margin: auto;
-    position: absolute;
-    right: 30px;
-    margin-top:1.3rem;
-}
-
-.navTrigger i {
-    background-color: #fff;
-    border-radius: 2px;
-    content: '';
+.custom-alert-title {
+    padding: 0 1.25rem;
     display: block;
-    width: 100%;
-    height: 4px;
 }
 
-.navTrigger i:nth-child(1) {
-    -webkit-animation: outT 0.8s backwards;
-    animation: outT 0.8s backwards;
-    -webkit-animation-direction: reverse;
-    animation-direction: reverse;
+.twitter_profile_image {
+    padding: 1rem;
+    border-radius: 50%;
+    transition: all .3s ease-in-out;
 }
 
-.navTrigger i:nth-child(2) {
-    margin: 5px 0;
-    -webkit-animation: outM 0.8s backwards;
-    animation: outM 0.8s backwards;
-    -webkit-animation-direction: reverse;
-    animation-direction: reverse;
+.twitter_profile_image:hover {
+    padding: 1.25rem;
+    filter: brightness(80%);
 }
 
-.navTrigger i:nth-child(3) {
-    -webkit-animation: outBtm 0.8s backwards;
-    animation: outBtm 0.8s backwards;
-    -webkit-animation-direction: reverse;
-    animation-direction: reverse;
+.fork-map-header {
+    padding: 0 4rem 2rem;
 }
 
-.navTrigger.active i:nth-child(1) {
-    -webkit-animation: inT 0.8s forwards;
-    animation: inT 0.8s forwards;
+.card-image-standard,
+.card-image-standard-no-circle-mobile {
+    height: 10rem;
+    object-fit: contain;
+    clip-path: circle();
 }
 
-.navTrigger.active i:nth-child(2) {
-    -webkit-animation: inM 0.8s forwards;
-    animation: inM 0.8s forwards;
+.card-image-standard-no-circle-desktop {
+    height: 10rem;
 }
 
-.navTrigger.active i:nth-child(3) {
-    -webkit-animation: inBtm 0.8s forwards;
-    animation: inBtm 0.8s forwards;
+.card-image-standard-no-circle-mobile {
+    display: none;
 }
 
-@-webkit-keyframes inM {
-    50% {
-        -webkit-transform: rotate(0deg);
+@media (max-width: 992px) {
+    .card-image-standard-no-circle-desktop {
+        display: none;
     }
-    100% {
-        -webkit-transform: rotate(45deg);
+    .card-image-standard-no-circle-mobile {
+        display: inline;
     }
 }
 
-@keyframes inM {
-    50% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(45deg);
+@media (max-width: 768px) {
+    .card-image-standard,
+    .card-image-standard-no-circle-mobile {
+        height: 6rem;
     }
 }
 
-@-webkit-keyframes outM {
-    50% {
-        -webkit-transform: rotate(0deg);
+@media (max-width: 480px) {
+    .card-image-standard,
+    .card-image-standard-no-circle-mobile {
+        height: 4rem;
     }
-    100% {
-        -webkit-transform: rotate(45deg);
-    }
-}
-
-@keyframes outM {
-    50% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(45deg);
+    .card-body-socials {
+        padding: var(--bs-card-spacer-y) 0 !important;
     }
 }
 
-@-webkit-keyframes inT {
-    0% {
-        -webkit-transform: translateY(0px) rotate(0deg);
-    }
-    50% {
-        -webkit-transform: translateY(9px) rotate(0deg);
-    }
-    100% {
-        -webkit-transform: translateY(9px) rotate(135deg);
+.card-image-standard-md {
+    height: 8rem;
+    object-fit: contain;
+    clip-path: circle();
+}
+
+@media (max-width: 768px) {
+    .card-image-standard-md {
+        height: 6rem;
     }
 }
 
-@keyframes inT {
-    0% {
-        transform: translateY(0px) rotate(0deg);
-    }
-    50% {
-        transform: translateY(9px) rotate(0deg);
-    }
-    100% {
-        transform: translateY(9px) rotate(135deg);
+@media (max-width: 480px) {
+    .card-image-standard-md {
+        height: 4rem;
     }
 }
 
-@-webkit-keyframes outT {
-    0% {
-        -webkit-transform: translateY(0px) rotate(0deg);
-    }
-    50% {
-        -webkit-transform: translateY(9px) rotate(0deg);
-    }
-    100% {
-        -webkit-transform: translateY(9px) rotate(135deg);
-    }
-}
 
-@keyframes outT {
-    0% {
-        transform: translateY(0px) rotate(0deg);
-    }
-    50% {
-        transform: translateY(9px) rotate(0deg);
-    }
-    100% {
-        transform: translateY(9px) rotate(135deg);
-    }
-}
-
-@-webkit-keyframes inBtm {
-    0% {
-        -webkit-transform: translateY(0px) rotate(0deg);
-    }
-    50% {
-        -webkit-transform: translateY(-9px) rotate(0deg);
-    }
-    100% {
-        -webkit-transform: translateY(-9px) rotate(135deg);
-    }
-}
-
-@keyframes inBtm {
-    0% {
-        transform: translateY(0px) rotate(0deg);
-    }
-    50% {
-        transform: translateY(-9px) rotate(0deg);
-    }
-    100% {
-        transform: translateY(-9px) rotate(135deg);
-    }
-}
-
-@-webkit-keyframes outBtm {
-    0% {
-        -webkit-transform: translateY(0px) rotate(0deg);
-    }
-    50% {
-        -webkit-transform: translateY(-9px) rotate(0deg);
-    }
-    100% {
-        -webkit-transform: translateY(-9px) rotate(135deg);
-    }
-}
-
-@keyframes outBtm {
-    0% {
-        transform: translateY(0px) rotate(0deg);
-    }
-    50% {
-        transform: translateY(-9px) rotate(0deg);
-    }
-    100% {
-        transform: translateY(-9px) rotate(135deg);
-    }
-}
-
-.affix {
-    padding: 0;
-    background-color: rgba(30,30,30,0.5);
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
-    backdrop-filter: saturate(180%) blur(20px);
-}
-
-html[data-bs-theme="dark"] .affix { /* Darker navbar when dark theme */
-    background-color: rgba(0,0,0,0.5);
-}
-
-/* Non-homepage (general) navbar */
-.navbar-bch-glow {
-    box-shadow: 0px 1px 2px rgba(10,193,142,0.5), 
-      0px 2px 4px rgba(10,193,142,0.5), 
-      0px 4px 8px rgba(10,193,142,0.5), 
-      0px 6px 16px rgba(10,193,142,0.5);
-}
-.fixed-nav-adjustment {
-    padding-top:56px;
-}
-
-
-/* UPGRADE HISTORY */
+/* Network Upgrades Page ------------------------------------------- */
 .upgrade-icon-large {
     margin-left: -11em;
     position: absolute;
@@ -864,13 +700,6 @@ ul.upgrade-bullets > li::before {
     color: var(--bs-secondary-color);
 }
 
-/* Method to change button style based on theme -- can be applied to any css */
-/*[data-bs-theme="dark"] .btn-outline-secondary {
-    background-color: transparent;
-    border-color: var(--bs-secondary-border);
-    color: var(--bs-secondary-color);
-}*/
-
 /*SMALLER SCREENS TIMELINE CHANGES*/
 @media screen and (max-width:576px) {
     .timeline-main {
@@ -941,7 +770,7 @@ ul.upgrade-bullets > li::before {
 }
 
 
-/* Ecosystem */
+/* Ecosystem Page ------------------------------------------- */
 .card-img-standard {
     height:6rem;
     object-fit: contain;
@@ -1090,7 +919,7 @@ ul.upgrade-bullets > li::before {
     font-size: 1.5rem; /* Larger icon */
 }
 
-/* MINECRAFT */
+/* Minecraft Page ------------------------------------------- */
 
 .mcHome {
     min-height: 40vh;
