@@ -8,6 +8,11 @@ RewriteRule ^ /%1 [NC,L,R]
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^ %{REQUEST_URI}.html [NC,L]
 
+# Canonical root redirect (if not handled by Namecheap)
+RewriteCond %{HTTP_HOST} !^minisatoshi\.cash$ [NC,OR]
+RewriteCond %{HTTPS} off
+RewriteRule ^/?$ "https:\/\/minisatoshi\.cash\/" [R=301,L]
+
 # Enable Expires headers for caching control
 <IfModule mod_expires.c>
     ExpiresActive On
@@ -19,29 +24,35 @@ RewriteRule ^ %{REQUEST_URI}.html [NC,L]
     ExpiresByType image/webp "access plus 1 week"
     ExpiresByType image/svg+xml "access plus 1 week"
     ExpiresByType image/bmp "access plus 1 week"
-
+    # Other CSS/JS files (excluding main.css/js)
     ExpiresByType text/css "access plus 1 week"
     ExpiresByType application/javascript "access plus 1 week"
+    # Explicitly disable Expires for main.css and main.js
+    <FilesMatch "^(css/main\.css|js/main\.js)$">
+        ExpiresActive Off
+    </FilesMatch>
 </IfModule>
 
 # Prevent caching for css/main.css and js/main.js (with or without query strings)
 <IfModule mod_headers.c>
     # Match files in css/ and js/ directories explicitly
     <FilesMatch "^(css/main\.css|js/main\.js)$">
-        Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+        Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0, private"
         Header set Pragma "no-cache"
         Header set Expires "Thu, 01 Jan 1970 00:00:00 GMT"
         Header set X-LiteSpeed-Cache-Control "no-cache"
+        Header unset ETag  # Prevent ETag-based caching
     </FilesMatch>
 
     # Use RewriteRule to handle requests with query strings
     RewriteCond %{REQUEST_URI} ^/(css/main\.css|js/main\.js) [NC]
     RewriteRule ^ - [E=nocache:1]
     <IfModule mod_headers.c>
-        Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0" env=nocache
+        Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0, private" env=nocache
         Header set Pragma "no-cache" env=nocache
         Header set Expires "Thu, 01 Jan 1970 00:00:00 GMT" env=nocache
         Header set X-LiteSpeed-Cache-Control "no-cache" env=nocache
+        Header unset ETag env=nocache
     </IfModule>
 </IfModule>
 
