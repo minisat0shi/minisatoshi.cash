@@ -158,33 +158,6 @@
 	<button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-info btn-floating position-fixed bottom-0 end-0 m-3" id="btn-back-to-top">
 	  <i class="bi bi-arrow-bar-up fs-3"></i>
 	</button>
-    <script>
-        //Get the button
-        let mybutton = document.getElementById("btn-back-to-top");
-
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function () {
-          scrollFunction();
-        };
-
-        function scrollFunction() {
-          if (
-            document.body.scrollTop > 20 ||
-            document.documentElement.scrollTop > 20
-          ) {
-            mybutton.style.display = "block";
-          } else {
-            mybutton.style.display = "none";
-          }
-        }
-        // When the user clicks on the button, scroll to the top of the document
-        mybutton.addEventListener("click", backToTop);
-
-        function backToTop() {
-          document.body.scrollTop = 0;
-          document.documentElement.scrollTop = 0;
-        };
-    </script>
 
     <div class="position-fixed end-0 translate-middle-y z-3 legend-container d-flex flex-row">
         <!-- Tab with Legend text -->
@@ -769,8 +742,9 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-    <!-- main.js -->
+    <!-- Custom JS -->
     <script src="js/main.js"></script>
+    <script src="js/back-to-top.js"></script>
 
     <!-- Initializing tooltips -->
     <script>
