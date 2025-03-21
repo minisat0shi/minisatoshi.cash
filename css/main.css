@@ -413,16 +413,7 @@ html[data-bs-theme="dark"] .affix {
 }
 
 
-/* Footer ------------------------------------------- */
-footer a {
-  color: white;
-}
-
-footer i {
-  color: white;
-}
-
-/*Copy Button*/
+/* Copy Button for Footer */
 
 .copyButton:hover {
     opacity:0.8;
