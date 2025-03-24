@@ -127,14 +127,13 @@ html, head, body {
 
 /* Icon Gradients */
 .icon-gradient {
-    background: -webkit-gradient(linear, left top, right bottom, from(#0AC18E), to(#23a6d5));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background: linear-gradient(to bottom right, #0AC18E, #23a6d5);
+    background-clip: text;
+    color: transparent;
 }
 
 
 /* Buttons ------------------------------------------- */
-
 /* Back to Top */
 #btn-back-to-top {
   display: none;
@@ -405,7 +404,7 @@ html[data-bs-theme="dark"] .affix {
     transform-origin: bottom left; /* Keeps it anchored to bottom-left */
 }
 
-/* Optional: Adjust wrapper size for responsiveness */
+/* Optional: Adjusting wrapper size for responsiveness */
 @media (max-width: 576px) {
     .livecoinwatch-widget-wrapper {
         transform: scale(0.6);
@@ -413,29 +412,15 @@ html[data-bs-theme="dark"] .affix {
 }
 
 
-/* Copy Button for Footer */
-.copyButton:hover {
-    opacity:0.8;
-}
-
+/* Copy Button for Footer ------------------------------------------- */
 .remove-button-stylings {
   background-color: transparent;
   border: none;
-  margin: 0;
   padding: 0;
-  text-align: inherit;
-  font: inherit;
-  border-radius: 0;
-  appearance: none;
 }
 
-.custom-tooltip {
-  display: inline-block;
-  position: relative;
-}
 
 /* Home Section ------------------------------------------- */
-
 .home {
     width: 100vw;
     height: 100vh;
@@ -599,12 +584,6 @@ ul.upgrade-bullets > li::before {
   box-shadow:
   -4px 0 0 0 #0AC18E,
   -8px 0 0 0 #F7931A;
-  -webkit-shadow:
-  -4px 0 0 0 #0AC18E,
-  -8px 0 0 0 #F7931A;
-  -moz-box-shadow:
-  -4px 0 0 0 #0AC18E,
-  -8px 0 0 0 #F7931A;
   /*border-left: 4px solid #0AC18E;*/
   position: relative;
   list-style: none;
@@ -680,8 +659,6 @@ ul.upgrade-bullets > li::before {
     border-width: 0 8px 8px 0;
     padding: 3px;
     transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
 }
 
 [data-bs-theme="light"] .btn-outline-secondary {
@@ -778,13 +755,9 @@ ul.upgrade-bullets > li::before {
     max-width: min(50vw,600px);
 }
 #ecosystemCircle {
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
     border-radius: 50%;
 }
 #ecosystemRound {
-    -webkit-border-radius: 10%;
-    -moz-border-radius: 10%;
     border-radius: 10%;
 }
 
@@ -910,7 +883,6 @@ ul.upgrade-bullets > li::before {
 }
 
 /* Minecraft Page ------------------------------------------- */
-
 .mcHome {
     min-height: 40vh;
     background-image: url('../images/mcbackgroundimage.png');
@@ -940,27 +912,15 @@ ul.upgrade-bullets > li::before {
 .mcAffix {
     padding: 0;
     background-color: rgba(30,30,30,0.5);
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
     backdrop-filter: saturate(180%) blur(20px);
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
     border-radius: 10px;
 }
 
 .mcArticleTitle {
     fontolor: $indigo;
     font-size:2.5rem;
-
 }
 
 .mcArticle {
     background-color: rgba(100,100,100,0.5);
 }
-
-/*
-#particles-js{
-  width: 100%;
-  height: 100%;
-  background: #000;
-}
-*/
