@@ -94,7 +94,6 @@
         rgba(138, 200, 224, 0.5) 100%
     );
 }
-
 [data-bs-theme="dark"] { /* Dark theme - applies when data-bs-theme="dark" */
     --bs-info-gradient: linear-gradient(
         135deg,
@@ -109,7 +108,6 @@
         rgba(35, 166, 213, 0.5) 100%
     );
 }
-
 /* Apply the gradients to classes */
 .bg-info { background: var(--bs-info-gradient); }
 .bg-info-subtle { background: var(--bs-info-subtle-gradient); }
