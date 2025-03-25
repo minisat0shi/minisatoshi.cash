@@ -62,3 +62,10 @@ RewriteRule ^/?$ "https:\/\/minisatoshi\.cash\/" [R=301,L]
     Deny from all
     Allow from 127.0.0.1
 </Files>
+
+# Restrict access to submit-to-google.php
+<Files "submit-to-google.php">
+    Order Deny,Allow
+    Deny from all
+    Allow from 127.0.0.1
+</Files>
