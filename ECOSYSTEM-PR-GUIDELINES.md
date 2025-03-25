@@ -17,32 +17,32 @@
 <div class="col mb-4">
   <div class="card" data-header="Media, Informational, Social"> <!--Tags for search. Please have these match the options listed in the data filters | data-filter="<tag>"-->
     <div class="card-header d-flex justify-content-between align-items-center">
-      <div class="fs-6">Media</div> <!--Header Description-->
-      <button class="btn btn-sm btn-outline-primary fs-7" disabled>Jeremy</button> <!--Attribution | Put the creator name. Please keep in line with other projects with this name-->
+	<div class="fs-6">Media</div>
+	<button class="btn btn-sm btn-outline-primary fs-7" disabled>Jeremy</button> <!--Attribution | Put the creator name. Please keep in line with other projects with this name-->
     </div>
     <div class="card-body text-center text-sm-start">
       <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
-        <div class="d-flex flex-sm-row flex-column">
-          <div class="align-self-center">
-            <img src="images/logosForEcosystem/BCHPodcast.svg" alt="Bitcoin Cash Podcast logo" class="card-img-standard me-0 me-sm-3 mb-3 mb-sm-0"> <!--Make sure to have an image and to properly update the alt tag--> <!--Additionally, if needing to round corners add: id="ecosystemRound" or if needing to crop image to circle add: id="ecosystemCircle"-->
-          </div>
-          <div>
-            <h4 class="text-break">Bitcoin Cash Podcast</h4> <!--Title-->
-            <p class="mb-0 fs-6">Weekly podcast with a variety of guests discussing a wide range of topics tangential to BCH's rise to global reserve currency.</p> <!--Description-->
-          </div>
-        </div>
-        <div class="align-self-center ms-0 ms-sm-3 mt-3 mt-sm-0">
-          <a href="https://bitcoincashpodcast.com" class="btn btn-lg btn-primary">Visit</a> <!--Primary Website-->
-        </div>
+	<div class="d-flex flex-sm-row flex-column">
+	  <div class="align-self-center">
+	    <img src="images/logosForEcosystem/BCHPodcast.webp" alt="Bitcoin Cash Podcast logo" class="card-img-standard me-0 me-sm-3 mb-3 mb-sm-0"> <!--Make sure to have an image and to properly update the alt tag--> <!--Additionally, if needing to round corners add: id="ecosystemRound" or if needing to crop image to circle add: id="ecosystemCircle"-->
+	  </div>
+	  <div>
+	    <h4 class="text-break">Bitcoin Cash Podcast</h4> <!--Title-->
+	    <p class="mb-0 fs-6">Weekly podcast with a variety of guests discussing a wide range of topics tangential to BCH's rise to global reserve currency.</p> <!--Description-->
+	  </div>
+	</div>
+	<div class="align-self-center ms-0 ms-sm-3 mt-3 mt-sm-0">
+	  <a href="https://bitcoincashpodcast.com" class="btn btn-lg btn-primary" aria-label="Primary link">Visit</a> <!--Primary Website-->
+	</div>
       </div>
     </div>
-    <div class="card-footer"> <!--Social Channels-->
-      <a href="https://t.me/thebitcoincashpodcast_discussion" class="fs-5r text-secondary me-2"><i class="bi bi-telegram"></i></a>
-      <a href="https://youtube.com/@BitcoinCashPodcast" class="fs-5r text-secondary me-2"><i class="bi bi-youtube"></i></a>
-      <a href="https://x.com/TheBCHPodcast" class="fs-5r text-secondary me-2"><i class="bi bi-twitter-x"></i></a>
-      <a href="https://reddit.com/r/BitcoinCashPodcast/" class="fs-5r text-secondary me-2"><i class="bi bi-reddit"></i></a>
-      <a href="https://open.spotify.com/artist/4wyXjYROLQdNvL6qwgCerH?si=iovnYMJhToy9SoaK9FSniQ" class="fs-5r text-secondary me-2"><i class="bi bi-spotify"></i></a>
-      <a href="https://podcasts.apple.com/us/podcast/the-bitcoin-cash-podcast/id1555355070" class="fs-5r text-secondary me-2"><i class="bi bi-mic"></i></a>
+    <div class="card-footer"> <!--Social Channels | Please include the proper aria-label for assessibility purposes -->
+	<a href="https://t.me/thebitcoincashpodcast_discussion" class="fs-5r text-secondary me-2" aria-label="link to Telegram"><i class="bi bi-telegram"></i></a>
+	<a href="https://youtube.com/@BitcoinCashPodcast" class="fs-5r text-secondary me-2" aria-label="link to youtube"><i class="bi bi-youtube"></i></a>
+	<a href="https://x.com/TheBCHPodcast" class="fs-5r text-secondary me-2" aria-label="link to X (Twitter)"><i class="bi bi-twitter-x"></i></a>
+	<a href="https://reddit.com/r/BitcoinCashPodcast/" class="fs-5r text-secondary me-2" aria-label="link to Reddit"><i class="bi bi-reddit"></i></a>
+	<a href="https://open.spotify.com/artist/4wyXjYROLQdNvL6qwgCerH?si=iovnYMJhToy9SoaK9FSniQ" class="fs-5r text-secondary me-2" aria-label="link to Spotify"><i class="bi bi-spotify"></i></a>
+	<a href="https://podcasts.apple.com/us/podcast/the-bitcoin-cash-podcast/id1555355070" class="fs-5r text-secondary me-2" aria-label="link to Apple Podcasts"><i class="bi bi-mic"></i></a>
     </div>
   </div>
 </div>
@@ -65,7 +65,7 @@
           </div>
         </div>
         <div class="align-self-center ms-0 ms-sm-3 mt-3 mt-sm-0">
-          <a href="https://bitcoincashpodcast.com" class="btn btn-lg btn-primary">Visit</a> <!--Primary Website-->
+	  <a href="https://bitcoincashpodcast.com" class="btn btn-lg btn-primary" aria-label="Primary link">Visit</a> <!--Primary Website-->
         </div>
       </div>
     </div>
@@ -89,7 +89,7 @@
 	  </div>
 	</div>
 	<div class="align-self-center ms-0 ms-sm-3 mt-3 mt-sm-0">
-	  <a href="https://coinbase.com" class="btn btn-lg btn-primary">Visit</a>
+	  <a href="https://coinbase.com" class="btn btn-lg btn-primary" aria-label="Primary link">Visit</a>
 	</div>
       </div>
     </div>
