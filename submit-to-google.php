@@ -1,4 +1,9 @@
 <?php
+// Enable error reporting for debugging
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 // Require Google API Client Library (install via composer: composer require google/apiclient:^2.0)
 require_once __DIR__ . '/vendor/autoload.php';
 
@@ -67,7 +72,6 @@ if ($currentModTime > $lastModTime) {
             $response = $service->urlNotifications->publish($body);
             $successCount++;
             echo "Submitted: $url\n";
-            // Debugging: Show response details
             echo "Response: " . json_encode($response->toSimpleObject()) . "\n";
         } catch (Exception $e) {
             echo "Failed to submit $url: " . $e->getMessage() . "\n";
