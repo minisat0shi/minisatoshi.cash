@@ -4,14 +4,11 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// Require Google API Client Library (install via composer: composer require google/apiclient:^2.0)
-require_once __DIR__ . '/vendor/autoload.php';
-
 // Configuration
-$siteUrl = 'https://minisatoshi.cash'; // Verified domain with HTTPS
-$keyFile = '../google-api-secure-analyzer-453414-s9-e3a7ee4f10d3.json'; // Your JSON key file path
-$dir = __DIR__; // Directory where submit-to-google.php resides
-$timestampFile = "$dir/last-update.txt"; // Tracks last update
+$siteUrl = 'https://minisatoshi.cash';
+$keyFile = '../google-api-secure-analyzer-453414-s9-e3a7ee4f10d3.json'; // Path to your service account JSON
+$dir = __DIR__;
+$timestampFile = "$dir/last-update.txt";
 
 // Function to get all HTML files, excluding index.html and error pages
 function getHtmlFiles($dir) {
@@ -31,54 +28,107 @@ function getHtmlFiles($dir) {
     return $files;
 }
 
-// Initialize Google Client
-$client = new Google_Client();
-$client->setAuthConfig($keyFile);
-$client->addScope('https://www.googleapis.com/auth/indexing');
-$service = new Google_Service_Indexing($client);
+// Function to get OAuth 2.0 access token
+function getAccessToken($keyFile) {
+    $json = json_decode(file_get_contents($keyFile), true);
+    $clientEmail = $json['client_email'];
+    $privateKey = $json['private_key'];
+    
+    $header = [
+        'alg' => 'RS256',
+        'typ' => 'JWT'
+    ];
+    $payload = [
+        'iss' => $clientEmail,
+        'scope' => 'https://www.googleapis.com/auth/indexing',
+        'aud' => 'https://oauth2.googleapis.com/token',
+        'exp' => time() + 3600,
+        'iat' => time()
+    ];
+    
+    $base64UrlHeader = base64UrlEncode(json_encode($header));
+    $base64UrlPayload = base64UrlEncode(json_encode($payload));
+    $signatureInput = "$base64UrlHeader.$base64UrlPayload";
+    openssl_sign($signatureInput, $signature, $privateKey, 'sha256WithRSAEncryption');
+    $base64UrlSignature = base64UrlEncode($signature);
+    
+    $jwt = "$base64UrlHeader.$base64UrlPayload.$base64UrlSignature";
+    
+    $ch = curl_init('https://oauth2.googleapis.com/token');
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query([
+        'grant_type' => 'urn:ietf:params:oauth:grant-type:jwt-bearer',
+        'assertion' => $jwt
+    ]));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $response = curl_exec($ch);
+    curl_close($ch);
+    
+    $data = json_decode($response, true);
+    return $data['access_token'] ?? null;
+}
+
+// Helper function for base64 URL encoding
+function base64UrlEncode($data) {
+    return rtrim(strtr(base64_encode($data), '+/', '-_'), '=');
+}
 
 // Set content type for browser output
 header('Content-Type: text/plain');
+
+// Get access token
+$accessToken = getAccessToken($keyFile);
+if (!$accessToken) {
+    die("Failed to obtain access token.\n");
+}
 
 // Get last modification time of directory
 $currentModTime = filemtime($dir);
 $lastModTime = file_exists($timestampFile) ? (int) file_get_contents($timestampFile) : 0;
 
-// Check if there’s a change since last run
 if ($currentModTime > $lastModTime) {
-    // Get all HTML files (excluding index.html and error pages)
     $htmlFiles = getHtmlFiles($dir);
     $urls = array_map(function($file) use ($siteUrl, $dir) {
         $relativePath = str_replace($dir, '', $file);
-        $cleanPath = preg_replace('/\.html$/', '', $relativePath); // Remove .html
-        return $siteUrl . str_replace('\\', '/', $cleanPath); // Convert to URL
+        $cleanPath = preg_replace('/\.html$/', '', $relativePath);
+        return $siteUrl . str_replace('\\', '/', $cleanPath);
     }, $htmlFiles);
 
-    // Explicitly add the home page
     if (!in_array("$siteUrl/", $urls)) {
-        $urls[] = "$siteUrl/"; // Ensure home page is included
+        $urls[] = "$siteUrl/";
     }
 
-    $urls = array_values($urls); // Re-index array
+    $urls = array_values($urls);
     $successCount = 0;
 
-    // Submit URLs to Google Indexing API
+    $endpoint = 'https://indexing.googleapis.com/v3/urlNotifications:publish';
     foreach ($urls as $url) {
-        try {
-            $body = new Google_Service_Indexing_UrlNotification();
-            $body->setUrl($url);
-            $body->setType('URL_UPDATED'); // Use 'URL_UPDATED' for new or updated content
-            
-            $response = $service->urlNotifications->publish($body);
+        $content = json_encode([
+            'url' => $url,
+            'type' => 'URL_UPDATED'
+        ]);
+
+        $ch = curl_init($endpoint);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $content);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+            'Content-Type: application/json',
+            "Authorization: Bearer $accessToken"
+        ]);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+
+        if ($httpCode == 200) {
             $successCount++;
             echo "Submitted: $url\n";
-            echo "Response: " . json_encode($response->toSimpleObject()) . "\n";
-        } catch (Exception $e) {
-            echo "Failed to submit $url: " . $e->getMessage() . "\n";
+            echo "Response: $response\n";
+        } else {
+            echo "Failed to submit $url: HTTP $httpCode - $response\n";
         }
     }
 
-    // Log result and update timestamp
     if ($successCount > 0) {
         file_put_contents($timestampFile, $currentModTime);
         echo "\nSubmitted $successCount URLs successfully!\n";
