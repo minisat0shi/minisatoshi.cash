@@ -5,7 +5,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 // Configuration
 $siteUrl = 'https://minisatoshi.cash'; // Verified domain with HTTPS
 $keyFile = '../google-api-secure-analyzer-453414-s9-e3a7ee4f10d3.json'; // Your JSON key file path
-$dir = __DIR__; // public_html directory
+$dir = __DIR__; // Directory where submit-to-google.php resides
 $timestampFile = "$dir/last-update.txt"; // Tracks last update
 
 // Function to get all HTML files, excluding index.html and error pages
@@ -35,7 +35,7 @@ $service = new Google_Service_Indexing($client);
 // Set content type for browser output
 header('Content-Type: text/plain');
 
-// Get last modification time of public_html
+// Get last modification time of directory
 $currentModTime = filemtime($dir);
 $lastModTime = file_exists($timestampFile) ? (int) file_get_contents($timestampFile) : 0;
 
@@ -67,6 +67,8 @@ if ($currentModTime > $lastModTime) {
             $response = $service->urlNotifications->publish($body);
             $successCount++;
             echo "Submitted: $url\n";
+            // Debugging: Show response details
+            echo "Response: " . json_encode($response->toSimpleObject()) . "\n";
         } catch (Exception $e) {
             echo "Failed to submit $url: " . $e->getMessage() . "\n";
         }
