@@ -1,8 +1,5 @@
 RewriteEngine on
 
-# Ensure root URL doesn’t append /index
-RewriteRule ^index(\.html)?$ / [R=301,L]
-
 # Redirect /file.html to /file (remove .html from URL)
 RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
 RewriteRule ^ /%1 [NC,L,R]
