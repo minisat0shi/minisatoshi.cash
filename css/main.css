@@ -250,7 +250,7 @@ html, head, body {
 
 .affix {
     padding: 0;
-    background-color: rgba(30,30,30,0.5);
+    background-color: rgba(120,120,120,0.6);
     backdrop-filter: saturate(180%) blur(20px);
 }
 
