@@ -239,7 +239,7 @@ html, head, body {
 }
 
 .custom_nav .main_list ul li a {
-    color: #fff;
+    color: #FFF;
     text-decoration: none;
     transition: color 0.3s ease-in-out;
 }
