@@ -29,6 +29,12 @@ if (!in_array("$siteUrl/", $urls)) {
     $urls[] = "$siteUrl/";
 }
 
+// Add favicon
+$faviconUrl = "$siteUrl/favicon/favicon.ico";
+if (!in_array($faviconUrl, $urls)) {
+    $urls[] = $faviconUrl;
+}
+
 // Build sitemap XML
 $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
 $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
@@ -37,7 +43,9 @@ foreach ($urls as $url) {
     $xml .= "    <loc>$url</loc>\n";
     $xml .= "    <lastmod>" . date('Y-m-d') . "</lastmod>\n";
     $xml .= "    <changefreq>weekly</changefreq>\n";
-    $xml .= "    <priority>" . ($url === "$siteUrl/" ? "1.0" : "0.9") . "</priority>\n";
+    // Set lower priority for favicon compared to pages
+    $priority = ($url === "$siteUrl/") ? "1.0" : ($url === $faviconUrl ? "0.5" : "0.9");
+    $xml .= "    <priority>$priority</priority>\n";
     $xml .= "  </url>\n";
 }
 $xml .= '</urlset>';
