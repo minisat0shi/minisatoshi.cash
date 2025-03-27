@@ -84,33 +84,29 @@
     --bs-info-gradient: linear-gradient(
         135deg,
         #80D8BF 0%,    /* Lighter, more washed out version of #0AC18E */
-        #66C7E0 50%,   /* Middle transition point - lighter blue */
         #8AC8E0 100%   /* Lighter version of #23A6D5 */
     );
     --bs-info-subtle-gradient: linear-gradient(
         135deg,
-        rgba(128, 216, 191, 0.5) 0%,
-        rgba(102, 199, 224, 0.4) 50%,
-        rgba(138, 200, 224, 0.5) 100%
+        rgba(128, 216, 191, 0.2) 0%,
+        rgba(138, 200, 224, 0.2) 100%
     );
 }
 [data-bs-theme="dark"] { /* Dark theme - applies when data-bs-theme="dark" */
     --bs-info-gradient: linear-gradient(
         135deg,
         var(--info-green) 0%,    /* Original green */
-        #1A93B8 50%,            /* Middle transition point */
         var(--info-blue) 100%    /* Original blue */
     );
     --bs-info-subtle-gradient: linear-gradient(
         135deg,
-        rgba(10, 193, 142, 0.5) 0%,
-        rgba(26, 147, 184, 0.4) 50%,
-        rgba(35, 166, 213, 0.5) 100%
+        rgba(10, 193, 142, 0.45) 0%,
+        rgba(35, 166, 213, 0.45) 100%
     );
 }
 /* Apply the gradients to classes */
-.bg-info { background: var(--bs-info-gradient); }
-.bg-info-subtle { background: var(--bs-info-subtle-gradient); }
+.bg-info { background: var(--bs-info-gradient) !important; }
+.bg-info-subtle { background: var(--bs-info-subtle-gradient) !important; }
 
 
 /* General HTML settings/fixes ------------------------------------------- */
