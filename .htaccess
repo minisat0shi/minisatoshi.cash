@@ -1,5 +1,8 @@
 RewriteEngine on
 
+# Ensure root URL doesn’t append /index
+RewriteRule ^index(\.html)?$ / [R=301,L]
+
 # Redirect /file.html to /file (remove .html from URL)
 RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
 RewriteRule ^ /%1 [NC,L,R]
@@ -8,35 +11,27 @@ RewriteRule ^ /%1 [NC,L,R]
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^ %{REQUEST_URI}.html [NC,L]
 
-# Canonical root redirect (if not handled by Namecheap)
-RewriteCond %{HTTP_HOST} !^minisatoshi\.cash$ [NC,OR]
-RewriteCond %{HTTPS} off
-RewriteRule ^/?$ "https:\/\/minisatoshi\.cash\/" [R=301,L]
-
 # Caching control
 <IfModule mod_expires.c>
     ExpiresActive On
-    # Cache images and other assets for 1 week
     ExpiresByType image/jpeg "access plus 1 week"
     ExpiresByType image/png "access plus 1 week"
     ExpiresByType image/gif "access plus 1 week"
     ExpiresByType image/webp "access plus 1 week"
     ExpiresByType image/svg+xml "access plus 1 week"
     ExpiresByType image/bmp "access plus 1 week"
-    # Other CSS/JS (excluding main.css/js)
     ExpiresByType text/css "access plus 1 week"
     ExpiresByType application/javascript "access plus 1 week"
 </IfModule>
 
 # No-cache for main.css and main.js
 <IfModule mod_headers.c>
-    # Match specific files
     <FilesMatch "^(css/main\.css|js/main\.js)$">
         Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0, private"
         Header set Pragma "no-cache"
         Header set Expires "Thu, 01 Jan 1970 00:00:00 GMT"
         Header set X-LiteSpeed-Cache-Control "no-cache"
-        Header unset ETag # Prevent ETag-based caching
+        Header unset ETag
     </FilesMatch>
 
     # Handle query strings
