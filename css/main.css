@@ -258,6 +258,32 @@ html[data-bs-theme="dark"] .affix {
     background-color: rgba(0,0,0,0.5);
 }
 
+/* Testing new navbar stylings
+.custom_nav .main_list ul li a {
+    color: #FFF;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.custom_nav .main_list ul li a:hover {
+    color: #0AC18E;
+}
+
+.affix {
+    padding: 0;
+    background-color: rgba(33,37,41,0.5);
+    backdrop-filter: saturate(180%) blur(20px);
+}
+html[data-bs-theme="dark"] .affix {
+    background-color: rgba(33,37,41,0.5);
+}
+@media (prefers-color-scheme: dark) {
+  html:not([data-bs-theme="light"]) .affix {
+    background-color: rgba(0,0,0,0.5);
+  }
+}
+*/
+
 .affix-social-theme {
     padding: 0;
 }
