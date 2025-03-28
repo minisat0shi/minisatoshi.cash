@@ -85,6 +85,11 @@
     --bs-dark-bg-subtle-rgb: 0, 0, 0;
 }
 
+/* Smooth transition for theme changes */
+body {
+    transition: background-color 0.3s ease-in-out;
+}
+
 /* Adding custom info background gradients */
 :root,
 [data-bs-theme="light"] { /* Default (light theme) - applies when data-bs-theme="light" or no theme is set */
