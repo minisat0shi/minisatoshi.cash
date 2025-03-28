@@ -91,10 +91,21 @@
     </script>
 
 	<script>
-	  // Set page theme
-	  const savedTheme = localStorage.getItem('bs-theme');
-	  const theme = savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-	  document.documentElement.setAttribute('data-bs-theme', theme);
+	    // Set initial theme and blackout state
+	    const savedTheme = localStorage.getItem('bs-theme');
+	    const savedBlackout = localStorage.getItem('bs-blackout');
+	    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+	    
+	    // Default to saved values, or system preference if no saved theme
+	    const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+	    const blackout = savedBlackout === 'true' && theme === 'dark'; // Only apply blackout if theme is dark
+	    
+	    document.documentElement.setAttribute('data-bs-theme', theme);
+	    if (blackout) {
+	        document.documentElement.setAttribute('data-blackout', 'true');
+	    } else {
+	        document.documentElement.removeAttribute('data-blackout');
+	    }
 	</script>
 
 	</head>
