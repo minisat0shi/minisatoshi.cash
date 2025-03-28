@@ -25,8 +25,6 @@
     <title>What is Bitcoin Cash? | The Freedom Money Revolution</title>
     <meta name="title" content="What is Bitcoin Cash (BCH)? | The Freedom Money Revolution">
     <meta name="description" content="Discover Bitcoin Cash (BCH): a fast, low-cost, decentralized cryptocurrency designed for everyone. Join the freedom revolution! | minisatoshi.cash">
-
-
     
     <!-- Use Google Search Console and Bing Webmaster Tools for SEO data -->
     
@@ -97,10 +95,10 @@
     </script>
 
 	<script>
-	  // Set page theme
-	  const savedTheme = localStorage.getItem('bs-theme');
-	  const theme = savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-	  document.documentElement.setAttribute('data-bs-theme', theme);
+		//Set page theme
+	    const savedTheme = localStorage.getItem('bs-theme');
+	    const theme = savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+	    document.documentElement.setAttribute('data-bs-theme', theme);
 	</script>
 
 	</head>
@@ -147,17 +145,18 @@
 	    </div>
 	    
 	    <!-- Floating Theme Button -->
-	    <div class="theme">
-	        <div class="dropdown theme-switcher">
-	            <button class="btn btn-secondary dropdown-toggle fs-6" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Theme Switcher">
-	                <i id="themeIcon" class="bi bi-moon-stars-fill"></i>
-	            </button>
-	            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="themeDropdown">
-	                <li><a class="dropdown-item fs-6" href="#" data-theme="light"><i class="bi bi-brightness-high-fill"></i> Light</a></li>
-	                <li><a class="dropdown-item fs-6" href="#" data-theme="dark"><i class="bi bi-moon-fill"></i> Dark</a></li>
-	            </ul>
-	        </div>
-	    </div>
+		<div class="theme">
+		    <div class="dropdown theme-switcher">
+		        <button class="btn btn-secondary dropdown-toggle fs-6" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Theme Switcher">
+		            <i id="themeIcon" class="bi bi-moon-stars-fill"></i>
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="themeDropdown">
+		            <li><a class="dropdown-item fs-6" href="#" data-theme="light"><i class="bi bi-brightness-high-fill"></i> Light</a></li>
+		            <li><a class="dropdown-item fs-6" href="#" data-theme="dark" data-blackout="false"><i class="bi bi-moon-fill"></i> Dark</a></li>
+		            <li><a class="dropdown-item fs-6" href="#" data-theme="dark" data-blackout="true"><i class="bi bi-moon-stars-fill"></i> Blackout</a></li>
+		        </ul>
+		    </div>
+		</div>
 
 	    <!-- Floating Price Display -->
 	    <!-- UNUSED

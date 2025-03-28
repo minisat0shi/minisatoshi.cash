@@ -35,41 +35,73 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Update button styles based on current theme
-  function updateButtonStyles() {
-    document.querySelectorAll('.btn-outline-secondary, .btn-secondary').forEach(button => {
-      const currentTheme = document.documentElement.getAttribute('data-bs-theme');
-      if (currentTheme === 'light') {
-        button.classList.remove('btn-outline-secondary');
-        button.classList.add('btn-secondary');
-      } else {
-        button.classList.remove('btn-secondary');
-        button.classList.add('btn-outline-secondary');
-      }
-    });
-  }
+    // Update button styles based on current theme
+    function updateButtonStyles() {
+        document.querySelectorAll('.btn-outline-secondary, .btn-secondary').forEach(button => {
+            const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+            if (currentTheme === 'light') {
+                button.classList.remove('btn-outline-secondary');
+                button.classList.add('btn-secondary');
+            } else {
+                // For both dark and blackout, use outline-secondary
+                button.classList.remove('btn-secondary');
+                button.classList.add('btn-outline-secondary');
+            }
+        });
+    }
 
-  // Initialize UI based on current theme
-  const currentTheme = document.documentElement.getAttribute('data-bs-theme');
-  const icon = document.getElementById('themeIcon');
-  icon.className = `bi ${currentTheme === 'light' ? 'bi-brightness-high-fill' : 'bi-moon-stars-fill'}`;
-  document.querySelectorAll('.theme-switcher .dropdown-item').forEach(item => {
-    item.classList.toggle('active', item.getAttribute('data-theme') === currentTheme);
-  });
-  updateButtonStyles(); // Apply initial button styles
+    // Initialize UI based on current theme and blackout state
+    const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+    const isBlackout = localStorage.getItem('bs-blackout') === 'true' && currentTheme === 'dark';
+    if (isBlackout) {
+        document.documentElement.setAttribute('data-blackout', 'true');
+    } else {
+        document.documentElement.removeAttribute('data-blackout');
+    }
 
-  // Handle theme toggle clicks
-  document.querySelectorAll('.theme-switcher .dropdown-item').forEach(item => {
-    item.addEventListener('click', function(e) {
-      e.preventDefault();
-      const theme = this.getAttribute('data-theme');
-      document.documentElement.setAttribute('data-bs-theme', theme);
-      localStorage.setItem('bs-theme', theme);
-      icon.className = `bi ${theme === 'light' ? 'bi-brightness-high-fill' : 'bi-moon-stars-fill'}`;
-      document.querySelectorAll('.theme-switcher .dropdown-item').forEach(i => {
-        i.classList.toggle('active', i.getAttribute('data-theme') === theme);
-      });
-      updateButtonStyles(); // Update buttons on toggle
+    const icon = document.getElementById('themeIcon');
+    icon.className = `bi ${
+        currentTheme === 'light' ? 'bi-brightness-high-fill' :
+        currentTheme === 'dark' && isBlackout ? 'bi-moon-stars-fill' :
+        'bi-moon-fill' // Default for dark without blackout
+    }`;
+
+    document.querySelectorAll('.theme-switcher .dropdown-item').forEach(item => {
+        const itemTheme = item.getAttribute('data-theme');
+        const itemBlackout = item.getAttribute('data-blackout') === 'true';
+        item.classList.toggle('active', itemTheme === currentTheme && itemBlackout === isBlackout);
     });
-  });
+    updateButtonStyles(); // Apply initial button styles
+
+    // Handle theme toggle clicks
+    document.querySelectorAll('.theme-switcher .dropdown-item').forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            const theme = this.getAttribute('data-theme');
+            const blackout = this.getAttribute('data-blackout') === 'true';
+
+            document.documentElement.setAttribute('data-bs-theme', theme);
+            localStorage.setItem('bs-theme', theme);
+            if (theme === 'dark' && blackout) {
+                document.documentElement.setAttribute('data-blackout', 'true');
+                localStorage.setItem('bs-blackout', 'true');
+            } else {
+                document.documentElement.removeAttribute('data-blackout');
+                localStorage.setItem('bs-blackout', 'false');
+            }
+
+            icon.className = `bi ${
+                theme === 'light' ? 'bi-brightness-high-fill' :
+                theme === 'dark' && blackout ? 'bi-moon-stars-fill' :
+                'bi-moon-fill'
+            }`;
+
+            document.querySelectorAll('.theme-switcher .dropdown-item').forEach(i => {
+                const iTheme = i.getAttribute('data-theme');
+                const iBlackout = i.getAttribute('data-blackout') === 'true';
+                i.classList.toggle('active', iTheme === theme && iBlackout === blackout);
+            });
+            updateButtonStyles(); // Update buttons on toggle
+        });
+    });
 });

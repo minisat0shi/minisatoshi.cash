@@ -67,16 +67,28 @@
 .thin-link-1 { text-decoration-thickness: 1px; }
 
 
-/* Going extra dark for users who have OS theme set to dark mode */
-@media (prefers-color-scheme: dark) {
+/* NO LONGER NECESSARY | Going extra dark for users who have OS theme set to dark mode */
+/*@media (prefers-color-scheme: dark) {
   html:not([data-bs-theme="light"]) {
     --bs-body-bg: #000;
     --bs-body-bg-rgb: 0, 0, 0;
     --bs-dark-bg-subtle: #000;
     --bs-dark-bg-subtle-rgb: 0, 0, 0;
   }
+}*/
+
+/* Apply blackout overrides when data-blackout="true" and data-bs-theme="dark" */
+[data-bs-theme="dark"][data-blackout="true"] {
+    --bs-body-bg: #000;
+    --bs-body-bg-rgb: 0, 0, 0;
+    --bs-dark-bg-subtle: #000;
+    --bs-dark-bg-subtle-rgb: 0, 0, 0;
 }
 
+/* Smooth transition for theme changes */
+html {
+    transition: background-color 0.3s ease-in-out;
+}
 
 /* Adding custom info background gradients */
 :root,
