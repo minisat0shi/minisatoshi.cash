@@ -6,7 +6,7 @@ if (php_sapi_name() !== 'cli') {
 }
 
 // Configuration
-$indexNowKey = '2db92b3a400d4081b56cbc4ae5c26617'; // Replace with your IndexNow key
+$indexNowKey = 'a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6'; // Replace with your IndexNow key
 $siteUrl = 'https://minisatoshi.cash'; // Your domain with HTTPS
 $dir = __DIR__; // public_html directory
 $timestampFile = "$dir/last-update.txt"; // Tracks last update
@@ -51,10 +51,10 @@ if ($currentModTime > $lastModTime) {
     // IndexNow endpoint
     $endpoint = 'https://api.indexnow.org/indexnow';
     $data = [
-        'host' => parse_url($siteUrl, PHP_URL_HOST), // e.g., minisatoshi.cash
+        'host' => parse_url($siteUrl, PHP_URL_HOST),
         'key' => $indexNowKey,
-        'keyLocation' => "$siteUrl/$indexNowKey.txt", // Full URL to your key file
-        'urlList' => array_values($urls) // Re-index array
+        'keyLocation' => "$siteUrl/$indexNowKey.txt",
+        'urlList' => array_values($urls)
     ];
     $jsonData = json_encode($data);
 
@@ -64,16 +64,28 @@ if ($currentModTime > $lastModTime) {
     curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
     curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json; charset=utf-8']);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HEADER, true); // Include headers in output
     $response = curl_exec($ch);
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    $headerSize = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
+    $headers = substr($response, 0, $headerSize);
+    $body = substr($response, $headerSize);
     curl_close($ch);
 
     // Log result and update timestamp
-    if ($httpCode == 200) {
+    if ($httpCode == 200 || $httpCode == 202) {
         file_put_contents($timestampFile, $currentModTime);
-        echo "Submitted " . count($urls) . " URLs to IndexNow successfully!\n";
+        echo "Success: Submitted " . count($urls) . " URLs to IndexNow.\n";
+        echo "HTTP Code: $httpCode\n";
+        echo "Headers: $headers\n";
+        echo "Response Body: " . ($body ?: "None") . "\n";
+        echo "Payload sent: $jsonData\n";
     } else {
-        echo "Failed. HTTP Code: $httpCode, Response: $response\n";
+        echo "Failed.\n";
+        echo "HTTP Code: $httpCode\n";
+        echo "Headers: $headers\n";
+        echo "Response Body: " . ($body ?: "None") . "\n";
+        echo "Payload sent: $jsonData\n";
     }
 } else {
     echo "No changes detected since last submission.\n";
