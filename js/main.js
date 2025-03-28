@@ -33,70 +33,62 @@ document.addEventListener('DOMContentLoaded', function() {
 	button.addEventListener('click', copyToClipboard);
 });
 
-
-// Wait for the DOM to fully load before running the script
+//Theme Switching
 document.addEventListener('DOMContentLoaded', function() {
-    // Function to update button styles based on the current theme
-    // This toggles between solid (btn-secondary) and outline (btn-outline-secondary) buttons
+    // Update button styles based on current theme
     function updateButtonStyles() {
-        // Select all buttons with either class
         document.querySelectorAll('.btn-outline-secondary, .btn-secondary').forEach(button => {
-            // Get the current theme from the html element
             const currentTheme = document.documentElement.getAttribute('data-bs-theme');
             if (currentTheme === 'light') {
-                // Light mode: use solid buttons
                 button.classList.remove('btn-outline-secondary');
                 button.classList.add('btn-secondary');
             } else {
-                // Dark or blackout mode: use outline buttons
                 button.classList.remove('btn-secondary');
                 button.classList.add('btn-outline-secondary');
             }
         });
     }
 
-    // Initialize UI based on current theme and blackout state (set by inline script)
-    // Get the current theme from the html element
+    // Update browser chrome color to match --bs-body-bg
+    function updateThemeColor() {
+        const metaTag = document.getElementById('themeColorMeta');
+        if (metaTag) {
+            // Get the computed background color from CSS variable
+            const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--bs-body-bg').trim();
+            metaTag.setAttribute('content', bgColor);
+        }
+    }
+
+    // Initialize UI based on current theme and blackout state
     const currentTheme = document.documentElement.getAttribute('data-bs-theme');
-    // Check if blackout mode is active (data-blackout attribute is set to "true")
     const isBlackout = document.documentElement.getAttribute('data-blackout') === 'true';
-    // Get the theme icon element to update its class
     const icon = document.getElementById('themeIcon');
     
-    // Set the icon based on the current theme and blackout state
     icon.className = `bi ${
-        currentTheme === 'light' ? 'bi-brightness-high-fill' :    // Light mode: sun icon
-        currentTheme === 'dark' && isBlackout ? 'bi-moon-stars-fill' : // Blackout mode: moon with stars
-        'bi-moon-fill'                                            // Dark mode: plain moon
+        currentTheme === 'light' ? 'bi-brightness-high-fill' :
+        currentTheme === 'dark' && isBlackout ? 'bi-moon-stars-fill' :
+        'bi-moon-fill'
     }`;
 
-    // Set the active state in the dropdown menu
     document.querySelectorAll('.theme-switcher .dropdown-item').forEach(item => {
-        // Get the theme and blackout values from the dropdown item’s data attributes
         const itemTheme = item.getAttribute('data-theme');
         const itemBlackout = item.getAttribute('data-blackout') === 'true';
-        // Toggle the 'active' class if the item matches the current state
         item.classList.toggle('active', itemTheme === currentTheme && itemBlackout === isBlackout);
     });
-
-    // Apply initial button styles based on the theme
+    
+    // Apply initial styles and theme color
     updateButtonStyles();
+    updateThemeColor();
 
-    // Handle clicks on the theme switcher dropdown items
+    // Handle theme toggle clicks
     document.querySelectorAll('.theme-switcher .dropdown-item').forEach(item => {
         item.addEventListener('click', function(e) {
-            // Prevent the default link behavior
             e.preventDefault();
-            // Get the selected theme and blackout state from the clicked item
             const theme = this.getAttribute('data-theme');
             const blackout = this.getAttribute('data-blackout') === 'true';
 
-            // Set the theme on the html element
             document.documentElement.setAttribute('data-bs-theme', theme);
-            // Save the theme choice to localStorage
             localStorage.setItem('bs-theme', theme);
-            
-            // Handle blackout mode: set or remove data-blackout attribute and save to localStorage
             if (theme === 'dark' && blackout) {
                 document.documentElement.setAttribute('data-blackout', 'true');
                 localStorage.setItem('bs-blackout', 'true');
@@ -105,22 +97,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 localStorage.setItem('bs-blackout', 'false');
             }
 
-            // Update the icon based on the new theme and blackout state
             icon.className = `bi ${
-                theme === 'light' ? 'bi-brightness-high-fill' :      // Light mode: sun icon
-                theme === 'dark' && blackout ? 'bi-moon-stars-fill' : // Blackout mode: moon with stars
-                'bi-moon-fill'                                       // Dark mode: plain moon
+                theme === 'light' ? 'bi-brightness-high-fill' :
+                theme === 'dark' && blackout ? 'bi-moon-stars-fill' :
+                'bi-moon-fill'
             }`;
 
-            // Update the active state in the dropdown menu
             document.querySelectorAll('.theme-switcher .dropdown-item').forEach(i => {
                 const iTheme = i.getAttribute('data-theme');
                 const iBlackout = i.getAttribute('data-blackout') === 'true';
                 i.classList.toggle('active', iTheme === theme && iBlackout === blackout);
             });
-
-            // Update button styles after the theme change
+            
+            // Update styles and theme color after toggle
             updateButtonStyles();
+            updateThemeColor();
         });
     });
 });
