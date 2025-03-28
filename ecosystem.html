@@ -137,9 +137,10 @@
 	    const savedBlackout = localStorage.getItem('bs-blackout');
 	    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 	    
-	    // Default to saved values, or system preference if no saved theme
+	    // If there's a saved theme, use it; otherwise, use system preference
 	    const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
-	    const blackout = savedBlackout === 'true' && theme === 'dark'; // Only apply blackout if theme is dark
+	    // Default to blackout if system is dark and no saved blackout preference exists
+	    const blackout = savedTheme ? (savedBlackout === 'true' && theme === 'dark') : (systemPrefersDark && theme === 'dark');
 	    
 	    document.documentElement.setAttribute('data-bs-theme', theme);
 	    if (blackout) {
