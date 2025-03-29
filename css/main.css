@@ -682,6 +682,11 @@ ul.upgrade-bullets > li::before {
 #hardFork.timeline-item:after {
     border-radius: 20%;
 }
+#otherChange.timeline-item:after {
+    height: 0 !important;
+    position: absolute;
+    top:15px;
+}
 #final.timeline-item:after {
     background-color: var(--bs-body-bg);
     border: solid var(--bs-gray-700);
@@ -717,11 +722,11 @@ ul.upgrade-bullets > li::before {
 
 /* Timeline Legend */
 .legend-container {
-    top: 310px;
+    top: 330px;
 }
 @media (max-width: 768px) { /* Bootstrap medium */
     .legend-container {
-        top:380px;
+        top:400px;
     }
 }
 .legend-tab {
@@ -736,7 +741,7 @@ ul.upgrade-bullets > li::before {
 }
 
 .legend-content {
-    width: 205px; /* Fixed width for content */
+    width: 235px; /* Fixed width for content */
     background-color: var(--bs-body-bg);
     padding-left: 40px;
 }
@@ -757,12 +762,19 @@ ul.upgrade-bullets > li::before {
   height: 24px;
   width: 24px;
   content: "";
+  margin-top: 1px;
 }
 #softFork.timeline-legend-item:after {
     border-radius: 50%;
 }
 #hardFork.timeline-legend-item:after {
     border-radius: 20%;
+}
+#otherChange.timeline-legend-item:after {
+  height: 0 !important;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 
