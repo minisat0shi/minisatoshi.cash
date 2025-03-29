@@ -35,20 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //Theme Switching
 document.addEventListener('DOMContentLoaded', function() {
-    // Update button styles based on current theme
-    function updateButtonStyles() {
-        document.querySelectorAll('.btn-outline-secondary, .btn-secondary').forEach(button => {
-            const currentTheme = document.documentElement.getAttribute('data-bs-theme');
-            if (currentTheme === 'light') {
-                button.classList.remove('btn-outline-secondary');
-                button.classList.add('btn-secondary');
-            } else {
-                button.classList.remove('btn-secondary');
-                button.classList.add('btn-outline-secondary');
-            }
-        });
-    }
-
     // Update browser chrome color to match --bs-body-bg
     function updateThemeColor() {
         const metaTag = document.getElementById('themeColorMeta');
@@ -77,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Apply initial styles and theme color
-    updateButtonStyles();
     updateThemeColor();
 
     // Handle theme toggle clicks
@@ -110,7 +95,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             
             // Update styles and theme color after toggle
-            updateButtonStyles();
             updateThemeColor();
         });
     });

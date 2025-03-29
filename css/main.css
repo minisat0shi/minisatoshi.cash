@@ -11,6 +11,11 @@
   --info-green: #0AC18E;
   --info-blue: #23A6D5;
   --transition-ease: all 0.3s ease-in-out;
+  --orange-gradient-light: linear-gradient(135deg, rgba(210, 175, 70, 0.4) 0%, rgba(200, 130, 52, 0.4) 100%);
+  --orange-gradient-dark: linear-gradient(135deg, rgba(240, 197, 79, 0) 0%, rgba(232, 150, 62, 0) 100%);
+  --orange-gradient-light-hover: linear-gradient(135deg, rgba(210, 175, 70, 0.5) 0%, rgba(200, 130, 52, 0.5) 100%);
+  --orange-gradient-dark-hover: linear-gradient(135deg, rgba(240, 197, 79, 0.4) 0%, rgba(232, 150, 62, 0.4) 100%);
+  --green-blue-gradient: linear-gradient(to bottom right, #0AC18E, #23A6D5);
 }
 
 
@@ -130,7 +135,7 @@ html, head, body {
 
 /* Icon Gradients */
 .icon-gradient {
-    background: linear-gradient(to bottom right, #0AC18E, #23a6d5);
+    background: var(--green-blue-gradient);
     background-clip: text;
     color: transparent;
 }
@@ -695,10 +700,39 @@ ul.upgrade-bullets > li::before {
     transform: rotate(45deg);
 }
 
-[data-bs-theme="light"] .btn-outline-secondary {
-    background-color: var(--bs-btn-color);
-    border-color: var(--bs-secondary-border);
-    color: var(--bs-secondary-color);
+.bcr-button {
+    position: relative; /* For pseudo-element */
+    background: var(--orange-gradient-dark) !important;
+    overflow: hidden; /* Contain pseudo-element */
+}
+[data-bs-theme="light"] .bcr-button {
+    background: var(--orange-gradient-light) !important;
+}
+.bcr-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--orange-gradient-dark-hover); /* Default hover state */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out !important; /* Animate opacity */
+    z-index: 1; /* Above background, below content */
+}
+.bcr-button:hover {
+    background: var(--orange-gradient-dark-hover) !important;
+}
+[data-bs-theme="light"] .bcr-button:hover {
+    background: var(--orange-gradient-light-hover) !important;
+}
+.bcr-button:hover::before {
+    opacity: 1; /* Fade in on hover */
+}
+/* Ensure content stays above */
+.bcr-button img {
+    position: relative;
+    z-index: 2;
 }
 
 /*SMALLER SCREENS TIMELINE CHANGES*/
