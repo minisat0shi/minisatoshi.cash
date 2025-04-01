@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-/* Adjusting Bootstrap ------------------------------------------- */
+/* Adjusting Bootstrap + New Root Stylings------------------------------------------- */
 /* CSS Variables */
 :root {
   --container-max-width: 1450px;
@@ -139,6 +139,8 @@ html, head, body {
     background-clip: text;
     color: transparent;
 }
+
+/* Animations */
 @keyframes gradient {
     0% {
         background-position: 0% 33%;
