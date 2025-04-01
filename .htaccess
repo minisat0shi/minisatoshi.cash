@@ -1,4 +1,5 @@
 RewriteEngine On
+RewriteOptions Inherit  #Testing readding this
 
 # Redirect /file.html to /file (remove .html from URL)
 RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
@@ -30,7 +31,7 @@ RewriteRule ^(css/main\.css|js/main\.js)$ - [E=cache-control:no-cache]
     </Files>
 </IfModule>
 
-# No-cache for main.css and main.js (merge Namecheap’s style with LiteSpeed support)
+# No-cache for main.css and main.js
 <IfModule mod_headers.c>
     <FilesMatch "^(css/main\.css|js/main\.js)$">
         FileETag None
