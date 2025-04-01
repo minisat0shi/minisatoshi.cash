@@ -1,5 +1,4 @@
 RewriteEngine On
-RewriteOptions Inherit  #Testing readding this
 
 # Redirect /file.html to /file (remove .html from URL)
 RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
