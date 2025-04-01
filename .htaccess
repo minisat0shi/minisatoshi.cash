@@ -17,7 +17,7 @@ RewriteRule ^ %{REQUEST_URI}.html [NC,L]
     ExpiresByType image/webp "access plus 1 week"
     ExpiresByType image/svg+xml "access plus 1 week"
     ExpiresByType image/bmp "access plus 1 week"
-    ExpiresByType text/css "access plus 1 week"
+#    ExpiresByType text/css "access plus 1 week"
     ExpiresByType application/javascript "access plus 1 week"
 </IfModule>
 
