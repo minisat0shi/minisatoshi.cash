@@ -95,33 +95,51 @@ body {
 
 /* Adding custom info background gradients */
 :root,
-[data-bs-theme="light"] { /* Default (light theme) - applies when data-bs-theme="light" or no theme is set */
+[data-bs-theme="light"] {
     --bs-info-gradient: linear-gradient(
-        135deg,
-        #80D8BF 0%,    /* Lighter, more washed out version of #0AC18E */
-        #8AC8E0 100%   /* Lighter version of #23A6D5 */
+        -45deg,
+        var(--info-green),  /* #0AC18E */
+        var(--info-blue),   /* #23A6D5 */
+        var(--info-green)
     );
     --bs-info-subtle-gradient: linear-gradient(
-        135deg,
-        rgba(128, 216, 191, 0.2) 0%,
-        rgba(138, 200, 224, 0.2) 100%
+        -45deg,
+        #0AC18E26,  /* 15% opacity (~26 in hex) */
+        #23A6D526,  /* 15% opacity */
+        #0AC18E26
     );
 }
-[data-bs-theme="dark"] { /* Dark theme - applies when data-bs-theme="dark" */
+
+/* Dark mode gradients (unchanged, now using defined vars) */
+[data-bs-theme="dark"] {
     --bs-info-gradient: linear-gradient(
-        135deg,
-        var(--info-green) 0%,    /* Original green */
-        var(--info-blue) 100%    /* Original blue */
+        -45deg,
+        var(--info-green),
+        var(--info-blue),
+        var(--info-green)
     );
     --bs-info-subtle-gradient: linear-gradient(
-        135deg,
-        rgba(10, 193, 142, 0.45) 0%,
-        rgba(35, 166, 213, 0.45) 100%
+        -45deg,
+        #0AC18E73,  /* 45% opacity */
+        #23A6D573,  /* 45% opacity */
+        #0AC18E73
     );
 }
-/* Apply the gradients to classes */
-.bg-info { background: var(--bs-info-gradient) !important; }
-.bg-info-subtle { background: var(--bs-info-subtle-gradient) !important; }
+
+/* Apply the animation to the gradient classes */
+.bg-info {
+    background: var(--bs-info-gradient);
+    background-color: transparent !important;
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+.bg-info-subtle {
+    background: var(--bs-info-subtle-gradient);
+    background-color: transparent !important;
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
 
 
 /* General HTML settings/fixes ------------------------------------------- */
