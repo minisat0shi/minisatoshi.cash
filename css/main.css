@@ -1,9 +1,6 @@
 @charset "UTF-8";
 
-
 /* Adjusting Bootstrap ------------------------------------------- */
-
-
 /* CSS Variables */
 :root {
   --container-max-width: 1450px;
@@ -134,12 +131,27 @@ html, head, body {
 }
 
 /* Icon Gradients */
-.icon-gradient {
-    background: var(--green-blue-gradient);
+/*[data-bs-theme="light"]*/.icon-gradient {
+    background: linear-gradient(-45deg, #0AC18E, #23A6D5, #0AC18E);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
     background-clip: text;
     color: transparent;
 }
-
+@keyframes gradient {
+    0% {
+        background-position: 0% 33%;
+    }
+    35% {
+        background-position: 100% 66%;
+    }
+    65% {
+        background-position: 100% 66%;
+    }
+    100% {
+        background-position: 0% 33%;
+    }
+}
 
 /* Buttons ------------------------------------------- */
 /* Back to Top */
