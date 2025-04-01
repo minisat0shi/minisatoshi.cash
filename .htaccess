@@ -8,6 +8,9 @@ RewriteRule ^ /%1 [NC,L,R]
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^ %{REQUEST_URI}.html [NC,L]
 
+# LiteSpeed no-cache for main.css and main.js
+RewriteRule ^(css/main\.css|js/main\.js)$ - [E=cache-control:no-cache]
+
 # Caching control
 <IfModule mod_expires.c>
     ExpiresActive On
@@ -17,8 +20,13 @@ RewriteRule ^ %{REQUEST_URI}.html [NC,L]
     ExpiresByType image/webp "access plus 1 week"
     ExpiresByType image/svg+xml "access plus 1 week"
     ExpiresByType image/bmp "access plus 1 week"
-#    ExpiresByType text/css "access plus 1 week"
     ExpiresByType application/javascript "access plus 1 week"
+    <Files "css/main.css">
+        ExpiresActive Off
+    </Files>
+    <Files "js/main.js">
+        ExpiresActive Off
+    </Files>
 </IfModule>
 
 # No-cache for main.css and main.js
@@ -30,26 +38,4 @@ RewriteRule ^ %{REQUEST_URI}.html [NC,L]
         Header set X-LiteSpeed-Cache-Control "no-cache"
         Header unset ETag
     </FilesMatch>
-
-    # Handle query strings
-    RewriteCond %{REQUEST_URI} ^/(css/main\.css|js/main\.js) [NC]
-    RewriteRule ^ - [E=nocache:1]
-    Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0, private" env=nocache
-    Header set Pragma "no-cache" env=nocache
-    Header set Expires "Thu, 01 Jan 1970 00:00:00 GMT" env=nocache
-    Header set X-LiteSpeed-Cache-Control "no-cache" env=nocache
-    Header unset ETag env=nocache
 </IfModule>
-
-# Restrict access to submit-to-bing.php
-<Files "submit-to-bing.php">
-    Order Deny,Allow
-    Deny from all
-    Allow from 127.0.0.1
-</Files>
-# Restrict access to submit-to-google.php
-<Files "submit-to-google.php">
-    Order Deny,Allow
-    Deny from all
-    Allow from 127.0.0.1
-</Files>
