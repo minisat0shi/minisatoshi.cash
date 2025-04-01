@@ -1,4 +1,4 @@
-RewriteEngine on
+RewriteEngine On
 
 # Redirect /file.html to /file (remove .html from URL)
 RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
@@ -11,16 +11,21 @@ RewriteRule ^ %{REQUEST_URI}.html [NC,L]
 # LiteSpeed no-cache for main.css and main.js
 RewriteRule ^(css/main\.css|js/main\.js)$ - [E=cache-control:no-cache]
 
-# Caching control
+# Caching control for other files
 <IfModule mod_expires.c>
     ExpiresActive On
+    # General caching for all CSS files
+    ExpiresByType text/css "access plus 1 week"
+    # Other static assets
     ExpiresByType image/jpeg "access plus 1 week"
     ExpiresByType image/png "access plus 1 week"
     ExpiresByType image/gif "access plus 1 week"
     ExpiresByType image/webp "access plus 1 week"
     ExpiresByType image/svg+xml "access plus 1 week"
     ExpiresByType image/bmp "access plus 1 week"
+    # General JS caching, excluding main.js below
     ExpiresByType application/javascript "access plus 1 week"
+    # Explicitly disable caching for main.css and main.js
     <Files "css/main.css">
         ExpiresActive Off
     </Files>
@@ -29,7 +34,7 @@ RewriteRule ^(css/main\.css|js/main\.js)$ - [E=cache-control:no-cache]
     </Files>
 </IfModule>
 
-# No-cache for main.css and main.js
+# No-cache headers for main.css and main.js (Apache and LiteSpeed compatibility)
 <IfModule mod_headers.c>
     <FilesMatch "^(css/main\.css|js/main\.js)$">
         Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0, private"
