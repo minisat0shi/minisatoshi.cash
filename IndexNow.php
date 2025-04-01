@@ -6,12 +6,13 @@ if (php_sapi_name() !== 'cli') {
 }
 
 // Configuration
-$indexNowKey = 'a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6'; // Replace with your IndexNow key
-$siteUrl = 'https://minisatoshi.cash'; // Your domain with HTTPS
-$dir = __DIR__; // public_html directory
-$timestampFile = "$dir/last-update.txt"; // Tracks last update
+$indexNowKey = 'a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6';
+$siteUrl = 'https://minisatoshi.cash';
+$dir = __DIR__;
+$timestampFile = "$dir/last-update.txt";
+$logFile = "$dir/indexnow-log.txt"; // Persistent log
 
-// Function to get all HTML files, excluding specific ones
+// Function to get all HTML files
 function getHtmlFiles($dir) {
     $files = [];
     $iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($dir));
@@ -24,37 +25,46 @@ function getHtmlFiles($dir) {
     return $files;
 }
 
-// Get last modification time of public_html
-$currentModTime = filemtime($dir);
+// Load last modification time
 $lastModTime = file_exists($timestampFile) ? (int) file_get_contents($timestampFile) : 0;
 
-// Check if there’s a change since last run
-if ($currentModTime > $lastModTime) {
-    // Get all HTML files
-    $htmlFiles = getHtmlFiles($dir);
-    $urls = array_map(function($file) use ($siteUrl, $dir) {
+// Get HTML files and check for changes
+$htmlFiles = getHtmlFiles($dir);
+$urlsToSubmit = [];
+$latestModTime = $lastModTime;
+
+foreach ($htmlFiles as $file) {
+    $modTime = filemtime($file);
+    if ($modTime > $lastModTime) {
         $relativePath = str_replace($dir, '', $file);
-        $cleanPath = preg_replace('/\.html$/', '', $relativePath); // Remove .html
-        return $siteUrl . str_replace('\\', '/', $cleanPath); // Convert to URL
-    }, $htmlFiles);
-
-    // Add home page
-    if (!in_array("$siteUrl/", $urls)) {
-        $urls[] = "$siteUrl/";
+        $cleanPath = preg_replace('/\.html$/', '', $relativePath);
+        $url = $siteUrl . str_replace('\\', '/', $cleanPath);
+        $urlsToSubmit[] = $url;
+        $latestModTime = max($latestModTime, $modTime);
     }
+}
 
-    // Filter out unwanted URLs
-    $urls = array_filter($urls, function($url) use ($siteUrl) {
-        return $url !== "$siteUrl/index" && $url !== "$siteUrl/404";
-    });
+// Add homepage if modified
+$homePage = "$siteUrl/";
+$homeFile = "$dir/index.html";
+if (file_exists($homeFile) && filemtime($homeFile) > $lastModTime && !in_array($homePage, $urlsToSubmit)) {
+    $urlsToSubmit[] = $homePage;
+    $latestModTime = max($latestModTime, filemtime($homeFile));
+}
 
+// Filter out unwanted URLs
+$urlsToSubmit = array_filter($urlsToSubmit, function($url) use ($siteUrl) {
+    return $url !== "$siteUrl/index" && $url !== "$siteUrl/404";
+});
+
+if (!empty($urlsToSubmit)) {
     // IndexNow endpoint
     $endpoint = 'https://api.indexnow.org/indexnow';
     $data = [
         'host' => parse_url($siteUrl, PHP_URL_HOST),
         'key' => $indexNowKey,
         'keyLocation' => "$siteUrl/$indexNowKey.txt",
-        'urlList' => array_values($urls)
+        'urlList' => array_values($urlsToSubmit)
     ];
     $jsonData = json_encode($data);
 
@@ -64,7 +74,7 @@ if ($currentModTime > $lastModTime) {
     curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
     curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json; charset=utf-8']);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_HEADER, true); // Include headers in output
+    curl_setopt($ch, CURLOPT_HEADER, true);
     $response = curl_exec($ch);
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     $headerSize = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
@@ -72,22 +82,23 @@ if ($currentModTime > $lastModTime) {
     $body = substr($response, $headerSize);
     curl_close($ch);
 
-    // Log result and update timestamp
+    // Log result
+    $logMessage = date('Y-m-d H:i:s') . " - HTTP Code: $httpCode - URLs Submitted: " . count($urlsToSubmit) . "\n";
+    $logMessage .= "Headers: $headers\n";
+    $logMessage .= "Response Body: " . ($body ?: "None") . "\n";
+    $logMessage .= "Payload: $jsonData\n";
+
     if ($httpCode == 200 || $httpCode == 202) {
-        file_put_contents($timestampFile, $currentModTime);
-        echo "Success: Submitted " . count($urls) . " URLs to IndexNow.\n";
-        echo "HTTP Code: $httpCode\n";
-        echo "Headers: $headers\n";
-        echo "Response Body: " . ($body ?: "None") . "\n";
-        echo "Payload sent: $jsonData\n";
+        file_put_contents($timestampFile, $latestModTime);
+        $logMessage .= "Success: Updated timestamp to $latestModTime\n";
     } else {
-        echo "Failed.\n";
-        echo "HTTP Code: $httpCode\n";
-        echo "Headers: $headers\n";
-        echo "Response Body: " . ($body ?: "None") . "\n";
-        echo "Payload sent: $jsonData\n";
+        $logMessage .= "Failed.\n";
     }
+    file_put_contents($logFile, $logMessage, FILE_APPEND);
+    echo $logMessage;
 } else {
-    echo "No changes detected since last submission.\n";
+    $logMessage = date('Y-m-d H:i:s') . " - No changes detected since last submission ($lastModTime).\n";
+    file_put_contents($logFile, $logMessage, FILE_APPEND);
+    echo $logMessage;
 }
 ?>
