@@ -14,18 +14,14 @@ RewriteRule ^(css/main\.css|js/main\.js)$ - [E=cache-control:no-cache]
 # Caching control for other files
 <IfModule mod_expires.c>
     ExpiresActive On
-    # General caching for all CSS files
     ExpiresByType text/css "access plus 1 week"
-    # Other static assets
     ExpiresByType image/jpeg "access plus 1 week"
     ExpiresByType image/png "access plus 1 week"
     ExpiresByType image/gif "access plus 1 week"
     ExpiresByType image/webp "access plus 1 week"
     ExpiresByType image/svg+xml "access plus 1 week"
     ExpiresByType image/bmp "access plus 1 week"
-    # General JS caching, excluding main.js below
     ExpiresByType application/javascript "access plus 1 week"
-    # Explicitly disable caching for main.css and main.js
     <Files "css/main.css">
         ExpiresActive Off
     </Files>
@@ -34,13 +30,14 @@ RewriteRule ^(css/main\.css|js/main\.js)$ - [E=cache-control:no-cache]
     </Files>
 </IfModule>
 
-# No-cache headers for main.css and main.js (Apache and LiteSpeed compatibility)
+# No-cache for main.css and main.js (merge Namecheap’s style with LiteSpeed support)
 <IfModule mod_headers.c>
     <FilesMatch "^(css/main\.css|js/main\.js)$">
-        Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0, private"
-        Header set Pragma "no-cache"
-        Header set Expires "Thu, 01 Jan 1970 00:00:00 GMT"
-        Header set X-LiteSpeed-Cache-Control "no-cache"
+        FileETag None
         Header unset ETag
+        Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
+        Header set X-LiteSpeed-Cache-Control "no-cache"
     </FilesMatch>
 </IfModule>
