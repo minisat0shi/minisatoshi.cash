@@ -13,6 +13,7 @@
   --orange-gradient-light-hover: linear-gradient(135deg, rgba(210, 175, 70, 0.5) 0%, rgba(200, 130, 52, 0.5) 100%);
   --orange-gradient-dark-hover: linear-gradient(135deg, rgba(240, 197, 79, 0.4) 0%, rgba(232, 150, 62, 0.4) 100%);
   --green-blue-gradient: linear-gradient(to bottom right, #0AC18E, #23A6D5);
+  --green-blue-gradient-animation: linear-gradient(-45deg, #0AC18E, #23A6D5, #0AC18E);
 }
 
 
@@ -132,7 +133,7 @@ html, head, body {
 
 /* Icon Gradients */
 /*[data-bs-theme="light"]*/.icon-gradient {
-    background: linear-gradient(-45deg, #0AC18E, #23A6D5, #0AC18E);
+    background: var(--green-blue-gradient-animation);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
     background-clip: text;
