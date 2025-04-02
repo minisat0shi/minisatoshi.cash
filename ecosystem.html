@@ -71,6 +71,13 @@
     <script>console.log("jQuery loaded:", typeof $ !== 'undefined');</script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
     
+  	<!-- Custom JS -->
+    <script src="js/back-to-top.js" defer></script>
+    <script src="js/ecosystem.js" defer></script>
+
+    <!-- Masonry for grids -->
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+
     <!-- Dynamically loading main.css -->
     <script>
         console.log("Dynamic script block running");
@@ -7641,231 +7648,6 @@
 	      </div>
 	  </div>
 
-		<!-- Script for card filtering -->
-		<script>
-		document.addEventListener('DOMContentLoaded', function() {
-		    const searchInput = document.getElementById('searchInput');
-		    const filterButtons = document.querySelectorAll('[data-filter]');
-		    const cards = document.querySelectorAll('.card');
-		    const cardContainer = document.getElementById('cardContainer');
-		    let msnry;
-
-		    function isInHeaders(headers, filter) {
-		        return headers.split(',').map(h => h.trim().toLowerCase()).includes(filter.toLowerCase());
-		    }
-
-		    function updateLayout() {
-		        if (!msnry) {
-		            msnry = new Masonry(cardContainer, {
-		                itemSelector: '.col',
-		                percentPosition: true
-		            });
-		        }
-		        cardContainer.offsetHeight; // Force repaint
-		        msnry.layout();
-		    }
-
-		    function filterCards(filter) {
-		        cards.forEach(card => {
-		            const cardHeaders = card.getAttribute('data-header');
-		            card.parentElement.style.display = (filter === 'all' || (cardHeaders && isInHeaders(cardHeaders, filter))) ? 'block' : 'none';
-		        });
-		        updateLayout();
-		    }
-
-		    searchInput.addEventListener('keyup', function() {
-		        const searchValue = this.value.toLowerCase();
-		        cards.forEach(card => {
-		            const cardText = card.textContent.toLowerCase();
-		            const cardHeaders = card.getAttribute('data-header') ? card.getAttribute('data-header').toLowerCase() : '';
-		            card.parentElement.style.display = cardText.includes(searchValue) || cardHeaders.includes(searchValue) ? 'block' : 'none';
-		        });
-		        updateLayout();
-		    });
-
-		    filterButtons.forEach(button => {
-		        button.addEventListener('click', function() {
-		            const filter = this.getAttribute('data-filter');
-		            filterCards(filter);
-		            searchInput.value = '';
-		        });
-		    });
-
-		    if (window.Masonry) {
-		        msnry = new Masonry(cardContainer, {
-		            itemSelector: '.col',
-		            percentPosition: true
-		        });
-		    }
-		});
-		</script>
-
-		<!-- Script to search by URL -->
-		<script>
-		document.addEventListener('DOMContentLoaded', function() {
-		    const searchInput = document.getElementById('searchInput');
-		    const cardContainer = document.getElementById('cardContainer');
-		    const filterButtons = document.querySelectorAll('.filter-btn');
-
-		    // Function to perform search
-		    function performSearch(query) {
-		        const cards = cardContainer.querySelectorAll('.card');
-		        query = query.toLowerCase();
-		        cards.forEach(card => {
-		            const cardText = card.textContent.toLowerCase();
-		            if (cardText.includes(query)) {
-		                card.parentElement.style.display = 'block';
-		            } else {
-		                card.parentElement.style.display = 'none';
-		            }
-		        });
-		        if (window.Masonry) {
-		            new Masonry(cardContainer, {
-		                itemSelector: '.col',
-		                percentPosition: true
-		            }).layout(); // Re-layout Masonry after filtering
-		        }
-		    }
-
-		    // Function to filter cards based on filter value
-		    function filterCards(filter) {
-		        const cards = cardContainer.querySelectorAll('.card');
-		        cards.forEach(card => {
-		            const cardHeaders = card.getAttribute('data-header');
-		            if (filter === 'all' || !cardHeaders || cardHeaders.toLowerCase().includes(filter.toLowerCase())) {
-		                card.parentElement.style.display = 'block';
-		            } else {
-		                card.parentElement.style.display = 'none';
-		            }
-		        });
-		        
-		        // Update active button
-		        filterButtons.forEach(button => {
-		            button.classList.remove('active');
-		            if (button.getAttribute('data-filter') === filter) {
-		                button.classList.add('active');
-		            }
-		        });
-
-		        if (window.Masonry) {
-		            new Masonry(cardContainer, {
-		                itemSelector: '.col',
-		                percentPosition: true
-		            }).layout(); // Re-layout Masonry after filtering
-		        }
-		    }
-
-		    // Event listener for search input - triggers on every input change
-		    searchInput.addEventListener('input', function() {
-		        // Deactivate all filter buttons when search input is used
-		        filterButtons.forEach(button => button.classList.remove('active'));
-		        
-		        // If search input is empty, you might want to revert to the last filter or show all
-		        if (this.value.trim() === '') {
-		            filterCards('all'); // or restore last filter state if that's what you want
-		        } else {
-		            performSearch(this.value);
-		        }
-		    });
-
-		    // Check for both query and filter in the URL when the page loads
-		    const urlParams = new URLSearchParams(window.location.search);
-		    const query = urlParams.get('query');
-		    const filter = urlParams.get('filter');
-
-		    if (query) {
-		        searchInput.value = query;
-		        performSearch(query);
-		    } else if (filter) {
-		        // If there's a filter but no query, activate the corresponding filter button
-		        searchInput.value = ''; // Clear the search input if a filter is active
-		        filterCards(filter);
-		    } else {
-		        // Default behavior, maybe show all if neither query nor filter is specified
-		        filterCards('all');
-		    }
-		});
-		</script>
-
-		<!-- Script to copy search URL -->
-		<script>
-		document.addEventListener('DOMContentLoaded', function() {
-		  const copyButton = document.querySelector('.input-group .btn-outline-secondary');
-		  
-		  // Initialize tooltip once
-		  const tooltip = new bootstrap.Tooltip(copyButton, {
-		    title: 'Share query',
-		    trigger: 'manual' // Manual control over showing/hiding
-		  });
-
-		  copyButton.addEventListener('click', function() {
-		    const searchInput = document.getElementById('searchInput');
-		    const query = searchInput.value.trim();
-		    const currentUrl = new URL(window.location.href);
-		    currentUrl.search = '';
-		    currentUrl.searchParams.set('query', encodeURIComponent(query));
-		    
-		    const url = currentUrl.href;
-		    
-		    // Copy to clipboard
-		    const tempInput = document.createElement('input');
-		    tempInput.value = url;
-		    document.body.appendChild(tempInput);
-		    tempInput.select();
-		    document.execCommand('copy');
-		    document.body.removeChild(tempInput);
-		    
-		    // Update tooltip content and show it
-		    tooltip.setContent({ '.tooltip-inner': 'URL Copied!' });
-		    tooltip.show();
-
-		    // Reset tooltip after a delay
-		    setTimeout(() => {
-		      tooltip.setContent({ '.tooltip-inner': 'Share query' });
-		      tooltip.hide();
-		    }, 1500);
-		  });
-		});
-		</script>
-
-		<!--Script to swap images based on theme-->
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Function to swap images
-
-        function swapImage() {
-            const img1 = document.getElementById('bchbull')
-            const img2 = document.getElementById('tapswap')
-            const img3 = document.getElementById('XOCash')
-            const img4 = document.getElementById('XOStack')
-            const img5 = document.getElementById('oraclesCash')
-            const theme = document.documentElement.getAttribute('data-bs-theme');
-            
-            if (theme === 'dark') {
-                img1.src = 'images/Ecosystem/bchbull-dark.png?v=0.01';
-                img2.src = 'images/Ecosystem/tapswap-dark.png?v=0.01';
-                img3.src = 'images/Ecosystem/XO-cash-darkmode.svg?v=0.01';
-                img4.src = 'images/Ecosystem/XO-stack-darkmode.svg?v=0.01';
-                img5.src = 'images/Ecosystem/oracles-dark.svg?v=2';
-            } else {
-                img1.src = 'images/Ecosystem/bchbull-light.png?v=0.01';
-                img2.src = 'images/Ecosystem/tapswap-light.png?v=0.01';
-                img3.src = 'images/Ecosystem/XO-cash-lightmode.svg?v=0.01';
-                img4.src = 'images/Ecosystem/XO-stack-lightmode.svg?v=0.01';
-                img5.src = 'images/Ecosystem/oracles-light.svg?v=2';
-            }
-        }
-        // Initial check
-        swapImage();
-        // Listen for theme changes
-        const observer = new MutationObserver(swapImage);
-        observer.observe(document.documentElement, {
-            attributes: true,
-            attributeFilter: ['data-bs-theme']
-        });
-    });
-    </script>
-
     <footer class="py-3 px-2 mt-auto text-center bg-info-subtle border-top border-5">
         <div class="row pb-2">
             <p class="fs-4 fw-medium mb-0">Buy me a coffee!</p>
@@ -7893,12 +7675,6 @@
         jsScript.onerror = (e) => console.error("main.js failed to load:", e);
         document.body.appendChild(jsScript);
     </script>
-
-    <!-- Masonry for grids -->
-    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
-
-  	<!-- Custom JS -->
-    <script src="js/back-to-top.js"></script>
 
 	</body>
 </html>
