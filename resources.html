@@ -86,7 +86,7 @@
 	<!-- colorThief -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.min.js" defer></script>
 
-    <!-- Dynamically loading main.css -->
+    <!-- Dynamically loading main.css and themeInit.js -->
     <script>
         console.log("Dynamic script block running");
         const version = Date.now();
@@ -98,6 +98,12 @@
         cssLink.onload = () => console.log("main.css loaded");
         cssLink.onerror = (e) => console.error("main.css failed to load:", e);
         document.head.appendChild(cssLink);
+
+        const themeScript = document.createElement('script');
+        themeScript.src = `/js/themeInit.js?v=${version}`;
+        themeScript.onload = () => console.log("themeInit.js loaded");
+        themeScript.onerror = (e) => console.error("themeInit.js failed to load:", e);
+        document.head.appendChild(themeScript);
     </script>
 
     <!-- Schema -->
@@ -118,25 +124,6 @@
 
     <!-- COMMENTED OUT UNTIL REPLACING HOMEPAGE IMAGE TO BE THEME BASED | Add theme-color meta tag -->
     <!-- <meta name="theme-color" id="themeColorMeta"> -->
-
-	<script>
-	    // Set initial theme and blackout state
-	    const savedTheme = localStorage.getItem('bs-theme');
-	    const savedBlackout = localStorage.getItem('bs-blackout');
-	    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-	    
-	    // If there's a saved theme, use it; otherwise, use system preference
-	    const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
-	    // Default to blackout if system is dark and no saved blackout preference exists
-	    const blackout = savedTheme ? (savedBlackout === 'true' && theme === 'dark') : (systemPrefersDark && theme === 'dark');
-	    
-	    document.documentElement.setAttribute('data-bs-theme', theme);
-	    if (blackout) {
-	        document.documentElement.setAttribute('data-blackout', 'true');
-	    } else {
-	        document.documentElement.removeAttribute('data-blackout');
-	    }
-	</script>
 
 	</head>
 
