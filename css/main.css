@@ -7,7 +7,7 @@
   --nav-height: 65px;
   --info-green: #0AC18E;
   --info-blue: #23A6D5;
-  --transition-ease: all 0.3s ease-in-out;
+  --transition-ease: all 0.4s ease-in-out;
   --orange-gradient-light: linear-gradient(135deg, rgba(100, 100, 100, 0.4) 0%, rgba(100, 100, 100, 0.4) 100%);
   --orange-gradient-dark: linear-gradient(135deg, rgba(240, 197, 79, 0) 0%, rgba(232, 150, 62, 0) 100%);
   --orange-gradient-light-hover: linear-gradient(135deg, rgba(210, 175, 70, 0.5) 0%, rgba(200, 130, 52, 0.5) 100%);
@@ -90,7 +90,16 @@
 
 /* Smooth transition for theme changes */
 body {
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.4s ease-in-out;
+}
+
+/* Correcting SVG rendering */
+.crisp-svg {
+  width: 100%; /* Or any dynamic size */
+  height: auto;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: pixelated;
+  transform: translateZ(0); /* Optional: Forces GPU rendering in Safari */
 }
 
 /* Adding custom info background gradients */
@@ -263,11 +272,15 @@ html, head, body {
 .custom_nav .logo a {
     color: #fff;
     text-decoration: none;
-    transition: color 0.3s ease-in-out;
+    transition: color 0.4s ease-in-out;
 }
 
 .custom_nav .logo a:hover {
-    color: #00E676;
+    color: #0AC18E;
+}
+
+.main_list_affix {
+    transition: all 0.4s ease;
 }
 
 .custom_nav .main_list {
@@ -289,9 +302,9 @@ html, head, body {
 }
 
 .custom_nav .main_list ul li a {
-    color: #FFF;
+    color: var(--bs-body-color);
     text-decoration: none;
-    transition: color 0.3s ease-in-out;
+    transition: color 0.4s ease-in-out;
 }
 
 .custom_nav .main_list ul li a:hover {
@@ -300,28 +313,7 @@ html, head, body {
 
 .affix {
     padding: 0;
-    background-color: rgba(120,120,120,0.6);
-    backdrop-filter: saturate(180%) blur(20px);
-}
-
-html[data-bs-theme="dark"] .affix {
-    background-color: rgba(0,0,0,0.5);
-}
-
-/* Testing new navbar stylings
-.custom_nav .main_list ul li a {
-    color: #FFF;
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
-}
-
-.custom_nav .main_list ul li a:hover {
-    color: #0AC18E;
-}
-
-.affix {
-    padding: 0;
-    background-color: rgba(33,37,41,0.5);
+    background-color: rgba(255,255,255,0.5);
     backdrop-filter: saturate(180%) blur(20px);
 }
 html[data-bs-theme="dark"] .affix {
@@ -332,7 +324,6 @@ html[data-bs-theme="dark"] .affix {
     background-color: rgba(0,0,0,0.5);
   }
 }
-*/
 
 .affix-social-theme {
     padding: 0;
@@ -343,9 +334,7 @@ html[data-bs-theme="dark"] .affix {
     display: none;
     cursor: pointer;
     width: 30px;
-    position: absolute;
     right: 30px;
-    top: 1.3rem;
 }
 
 .navTrigger i {
@@ -441,9 +430,10 @@ html[data-bs-theme="dark"] .affix {
     }
 
     .custom_nav .main_list ul {
+        color: #fff;
+        text-decoration: none;
         flex-direction: column;
         height: 100vh;
-        background-color: rgba(30,30,30,0.5);
     }
 
     .custom_nav .main_list ul li {
@@ -460,6 +450,44 @@ html[data-bs-theme="dark"] .affix {
 
     .custom_nav .media_button {
         display: block;
+    }
+
+    .affix-mobile {
+        padding: 0;
+        background-color: rgba(255,255,255,0.5);
+        backdrop-filter: saturate(180%) blur(20px);
+    }
+    html[data-bs-theme="dark"] .affix-mobile {
+        background-color: rgba(33,37,41,0.5);
+    }
+    @media (prefers-color-scheme: dark) {
+      html:not([data-bs-theme="light"]) .affix-mobile {
+        background-color: rgba(0,0,0,0.5);
+      }
+    }
+
+    .affix-text-color {
+        color: var(--bs-body-color) !important;
+    }
+    html[data-bs-theme="dark"] .affix-text-color {
+        background-color: rgba(33,37,41,0.5);
+    }
+    @media (prefers-color-scheme: dark) {
+      html:not([data-bs-theme="light"]) .affix-text-color {
+        background-color: rgba(0,0,0,0.5);
+      }
+    }
+
+    .affix-bars-color {
+        background-color: var(--bs-body-color) !important;
+    }
+    html[data-bs-theme="dark"] .affix-bars-color {
+        background-color: rgba(33,37,41,0.5);
+    }
+    @media (prefers-color-scheme: dark) {
+      html:not([data-bs-theme="light"]) .affix-bars-color {
+        background-color: rgba(0,0,0,0.5);
+      }
     }
 }
 
@@ -750,7 +778,7 @@ ul.upgrade-bullets > li::before {
     height: 100%;
     background: var(--orange-gradient-dark-hover); /* Default hover state */
     opacity: 0;
-    transition: opacity 0.3s ease-in-out !important; /* Animate opacity */
+    transition: opacity 0.4s ease-in-out !important; /* Animate opacity */
     z-index: 1; /* Above background, below content */
 }
 .bcr-button:hover {
@@ -900,7 +928,7 @@ ul.upgrade-bullets > li::before {
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     padding: 0;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease;
 }
 
 .grid-item img:hover {

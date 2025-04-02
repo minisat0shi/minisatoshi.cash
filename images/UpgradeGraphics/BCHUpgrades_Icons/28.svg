@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 662.6 720.6">
+  <!-- Generator: Adobe Illustrator 29.4.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 152)  -->
+  <defs>
+    <style>
+      .st0 {
+        mask: url(#mask);
+      }
+
+      .st1 {
+        fill: url(#linear-gradient2);
+      }
+
+      .st2 {
+        fill: url(#linear-gradient1);
+      }
+
+      .st3 {
+        fill: url(#linear-gradient3);
+      }
+
+      .st4 {
+        fill: url(#linear-gradient6);
+      }
+
+      .st5 {
+        fill: url(#linear-gradient7);
+      }
+
+      .st6 {
+        fill: url(#linear-gradient5);
+      }
+
+      .st7 {
+        fill: url(#linear-gradient4);
+      }
+
+      .st8 {
+        fill: #29f3f7;
+      }
+
+      .st9 {
+        fill: url(#linear-gradient);
+      }
+
+      .st10 {
+        isolation: isolate;
+      }
+
+      .st11 {
+        fill: none;
+        stroke: #fff;
+        stroke-width: 12px;
+      }
+
+      .st12, .st13 {
+        fill: #fff;
+      }
+
+      .st14 {
+        mix-blend-mode: screen;
+      }
+
+      .st13 {
+        fill-opacity: .6;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="178.9" y1="609.6" x2="212.9" y2="797.6" gradientTransform="translate(9.4 1177.2) rotate(30) scale(1 -.9) skewX(-26.6)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#13b3d3"/>
+      <stop offset="1" stop-color="#13edb1"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient1" x1="191.5" y1="258.6" x2="476.5" y2="732.4" gradientTransform="translate(480.2 837.4) rotate(-30) scale(1 -.9) skewX(-26.6)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#13b3d3"/>
+      <stop offset="1" stop-color="#000"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient2" x1="181.8" y1="354.3" x2="402.1" y2="721" gradientTransform="translate(552.8 836.4) rotate(-30) scale(1 -.9) skewX(-26.6)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#13eeb0"/>
+      <stop offset="1" stop-color="#13b3d3"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient3" x1="509" y1="277.6" x2="464.7" y2="596.4" gradientTransform="translate(0 669.2) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#13eeb0" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#13b3d3" stop-opacity=".3"/>
+      <stop offset=".8" stop-color="#13b3d3" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient4" x1="200.7" y1="554.1" x2="191.2" y2="697.2" gradientTransform="translate(331.4 1295.2) rotate(-30) scale(1 -.9) skewX(26.6)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#13b3d3"/>
+      <stop offset="1" stop-color="#12ebb2"/>
+    </linearGradient>
+    <mask id="mask" x="41.7" y="241.8" width="595" height="355.6" maskUnits="userSpaceOnUse">
+      <g id="path-8-inside-1_154_43">
+        <path class="st12" d="M49.1,416.8l285.3-168.2c1.9-1.1,5-1.1,6.9,0l287.9,169.7c1.9,1.1,1.9,2.9,0,4.1l-285.3,168.2c-1.9,1.1-5,1.1-6.9,0L49.1,420.9c-1.9-1.1-1.9-2.9,0-4.1Z"/>
+      </g>
+    </mask>
+    <linearGradient id="linear-gradient5" x1="134.8" y1="466.9" x2="538.4" y2="563" gradientTransform="translate(484.5 582) rotate(-29.3) scale(1 -.9) skewX(-27.6)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0993c7"/>
+      <stop offset="1" stop-color="#000"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient6" x1="134.1" y1="463.9" x2="534.2" y2="554.9" gradientTransform="translate(475.5 536.5) rotate(-29.3) scale(1 -.9) skewX(-27.6)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0eb9da"/>
+      <stop offset="1" stop-color="#33ffa3"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient7" x1="269.5" y1="164.8" x2="87.2" y2="782.6" gradientTransform="translate(0 669.2) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#13eeb0" stop-opacity=".3"/>
+      <stop offset=".5" stop-color="#13b3d3" stop-opacity=".3"/>
+      <stop offset=".8" stop-color="#13b3d3" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g class="st10">
+    <g id="Layer_1">
+      <g id="Group_123">
+        <polygon id="Rectangle_53" class="st9" points="18 422.6 340.2 608.6 340.2 720.6 18 534.6 18 422.6"/>
+        <g id="Rectangle_59">
+          <path class="st12" d="M124.5,544.6l63,36.4v17l-63-36.4v-17Z"/>
+          <path class="st12" d="M124.5,544.6l63,36.4v17l-63-36.4v-17Z"/>
+        </g>
+        <g id="Rectangle_83">
+          <path class="st12" d="M124.5,521.6l63,36.4v17l-63-36.4v-17Z"/>
+          <path class="st12" d="M124.5,521.6l63,36.4v17l-63-36.4v-17Z"/>
+        </g>
+        <polygon id="Rectangle_55" class="st2" points="18 422.6 340.2 236.6 662.6 422.8 340.4 608.8 18 422.6"/>
+        <g id="Rectangle_56" class="st14">
+          <polygon class="st1" points="90.6 421.6 340 277.6 589.4 421.6 340 565.6 90.6 421.6"/>
+        </g>
+        <g id="Rectangle_58" class="st14">
+          <path class="st3" d="M340,210.1l318.5-134-69.1,346.5-249.4,144V210.1Z"/>
+        </g>
+        <polygon id="Rectangle_54" class="st7" points="340 608.6 662.2 422.6 662.2 534.6 340 720.6 340 608.6"/>
+        <g id="Rectangle_82" class="st14">
+          <g class="st0">
+            <path class="st11" d="M49.1,416.8l285.3-168.2c1.9-1.1,5-1.1,6.9,0l287.9,169.7c1.9,1.1,1.9,2.9,0,4.1l-285.3,168.2c-1.9,1.1-5,1.1-6.9,0L49.1,420.9c-1.9-1.1-1.9-2.9,0-4.1Z"/>
+          </g>
+        </g>
+        <g id="Group_5">
+          <path id="Ellipse_2" class="st6" d="M179.8,82c89.1-49.9,228.1-53,310.4-6.8,82.4,46.2,76.9,124.1-12.1,174-89.1,49.9-228.1,53-310.4,6.8-82.4-46.2-76.9-124.1,12.1-174Z"/>
+          <path id="Ellipse_1" class="st4" d="M168.6,37.8c87.9-49.3,228.1-50.5,313.1-2.9,85,47.7,82.8,126.2-5.1,175.5s-228.1,50.5-313.1,2.9c-85-47.7-82.8-126.2,5.1-175.5Z"/>
+          <path id="Ellipse_3" class="st8" d="M459.3,42.8c76.1,42.6,76.4,111.6.7,154-75.7,42.4-198.7,42.2-274.8-.4-76.1-42.6-76.4-111.6-.7-154C260.2,0,383.2.2,459.3,42.8Z"/>
+        </g>
+        <g id="Rectangle_57" class="st14">
+          <path class="st5" d="M0,37.6l340.4,184.5v343.9l-249.4-144L0,37.6Z"/>
+        </g>
+        <g id="Rectangle_84">
+          <path class="st12" d="M467.5,566l63-36.4v17l-63,36.4v-17Z"/>
+          <path class="st12" d="M467.5,566l63-36.4v17l-63,36.4v-17Z"/>
+        </g>
+        <g id="Rectangle_85">
+          <path class="st12" d="M467.5,591l63-36.4v17l-63,36.4v-17Z"/>
+          <path class="st12" d="M467.5,591l63-36.4v17l-63,36.4v-17Z"/>
+        </g>
+        <g id="_â_x82__xBF_" data-name="â_x82__xBF_" class="st14">
+          <path class="st12" d="M361.1,97.4l22.5-13,8.7,5-22.5,13-8.7-5ZM343.8,87.4l22.5-13,8.7,5-22.5,13-8.7-5ZM265,152.9l22.5-13,8.7,5-22.5,13-8.7-5ZM247.7,142.9l22.5-13,8.7,5-22.5,13-8.7-5ZM247.1,127.9l92.8-53.6,22.3,12.9c7.4,4.3,12.9,8.3,16.2,12.1,3.6,3.8,4.8,7.3,3.9,10.8-.8,3.4-4.1,6.8-9.9,10.2-3.5,2-7.1,3.6-10.8,4.7-3.7,1.2-7.3,1.8-10.8,1.9-3.5.1-6.6-.4-9.5-1.4l-.7.4c1.9,1.8,3.1,3.7,3.5,5.8.4,2.1-.2,4.3-1.9,6.7-1.7,2.4-5,5-9.9,7.8-5.6,3.2-11.7,5.3-18.2,6.3-6.4.9-13,.7-19.7-.8-6.6-1.4-13-3.9-19.2-7.5l-28.2-16.3ZM327.6,109.7c4.3,2.5,8.2,3.7,11.7,3.6,3.5,0,6.9-1.1,10.4-3.1,3.6-2.1,5.1-4.1,4.7-6.2-.4-2-2.8-4.3-7.1-6.8l-3.9-2.2-20.7,11.9,4.9,2.9ZM307.1,115.9l-24.2,13.9,6.4,3.7c4.5,2.6,8.7,3.8,12.7,3.4,4.2-.3,8.1-1.6,12-3.8,2.3-1.3,4-2.8,4.9-4.2,1-1.4,1-3,0-4.6-.9-1.6-2.9-3.3-6.1-5.2l-5.7-3.3Z"/>
+        </g>
+        <g id="Group_81">
+          <path id="Ellipse_49" class="st13" d="M296.9,10.8c-44.3,3.8-85.2,16.1-115.6,34.9l55.4,28.5c18.5-11.4,43.4-19,70.4-21.3l-10.2-42.2Z"/>
+          <path id="Ellipse_50" class="st13" d="M365.9,12c-12.5-1.5-25.2-2.3-38-2.4l-1.9,42.7c7.8,0,15.5.5,23.1,1.5l16.8-41.7Z"/>
+          <path id="Ellipse_51" class="st13" d="M453.3,37.2c-16-8.1-34.3-14.7-54.3-19.3l-29.8,39.5c12.1,2.8,23.3,6.8,33,11.8l51-31.9Z"/>
+          <path id="Ellipse_52" class="st13" d="M515.9,113.2c-1.3-20.7-13-40.7-33.8-57.6l-62.3,24.7c12.6,10.3,19.8,22.5,20.6,35.1l75.5-2.1Z"/>
+          <path id="Ellipse_53" class="st13" d="M503.6,155.8c6.4-9.7,10.4-19.8,11.8-30l-75.3-2.8c-.9,6.2-3.3,12.4-7.2,18.3l70.7,14.5Z"/>
+          <path id="Ellipse_54" class="st13" d="M488,174c3.4-3.2,6.6-6.6,9.4-10l-68.3-17.7c-1.7,2.1-3.7,4.1-5.7,6.1l64.6,21.6Z"/>
+          <path id="Ellipse_55" class="st13" d="M428.3,209.2c19.5-7.3,36.5-16.6,50.3-27.3l-60.9-24.7c-8.4,6.5-18.8,12.2-30.6,16.6l41.2,35.4Z"/>
+          <path id="Ellipse_56" class="st13" d="M169.2,53.9c-14.1,10.6-24.7,22.5-31.4,35.1l72.4,11.6c4-7.7,10.5-15,19.1-21.4l-60.1-25.3Z"/>
+          <path id="Ellipse_57" class="st13" d="M134.5,96.4c-3.4,8.6-5,17.3-4.6,26.1l75.5-1.5c-.2-5.3.8-10.7,2.8-15.9l-73.7-8.7Z"/>
+          <path id="Ellipse_58" class="st13" d="M132.1,136.9c4.5,16.3,15.4,31.7,32.1,45.2l62.1-24.8c-10.1-8.2-16.8-17.6-19.5-27.5l-74.6,7.1Z"/>
+          <path id="Ellipse_59" class="st13" d="M168.9,185.7c6.1,4.5,12.8,8.7,20.1,12.6l52.4-31.2c-4.4-2.4-8.5-5-12.2-7.7l-60.3,26.2Z"/>
+          <path id="Ellipse_60" class="st13" d="M203,205.2c15.6,6.8,32.9,12.3,51.5,16.1l26.8-40.1c-11.3-2.3-21.9-5.6-31.3-9.8l-46.9,33.8Z"/>
+          <path id="Ellipse_61" class="st13" d="M336.9,227.4c27.2-1.3,53.6-5.9,77.6-13.4l-35.8-37.3c-14.6,4.6-30.7,7.3-47.3,8.2l5.4,42.5Z"/>
+          <path id="Ellipse_62" class="st13" d="M275.4,224.8c15.6,2.1,31.7,3.1,47.8,3v-42.7c-9.9,0-19.7-.5-29.2-1.8l-18.6,41.5Z"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
