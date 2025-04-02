@@ -1,19 +1,25 @@
 console.log("main.js loaded successfully");
+console.log("jQuery:", typeof $);
+console.log("Bootstrap:", typeof bootstrap);
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all tooltips
+// Function to initialize everything
+function initializePage() {
+    console.log("Initializing page functionality");
+
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
     tooltipTriggerList.forEach(tooltipTriggerEl => {
         new bootstrap.Tooltip(tooltipTriggerEl);
     });
     console.log("Tooltips initialized:", tooltipTriggerList.length);
 
-    // Clipboard Copy Functionality
     const button = document.getElementById('copyButton');
+    console.log("copyButton:", button);
     const copyToClipboard = async () => {
-        const tooltip = bootstrap.Tooltip.getInstance(button); // Get existing tooltip instance
+        console.log("Clipboard clicked");
+        const tooltip = bootstrap.Tooltip.getInstance(button);
         try {
             const element = document.querySelector(".user-select-all");
+            console.log("Copying text:", element.textContent);
             await navigator.clipboard.writeText(element.textContent);
             tooltip.setContent({ '.tooltip-inner': 'Copied!' });
             tooltip.show();
@@ -33,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     button.addEventListener('click', copyToClipboard);
 
-    // Theme Switching
     function updateThemeColor() {
         const metaTag = document.getElementById('themeColorMeta');
         if (metaTag) {
@@ -62,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelectorAll('.theme-switcher .dropdown-item').forEach(item => {
         item.addEventListener('click', function(e) {
+            console.log("Theme clicked");
             e.preventDefault();
             const theme = this.getAttribute('data-theme');
             const blackout = this.getAttribute('data-blackout') === 'true';
@@ -91,4 +97,13 @@ document.addEventListener('DOMContentLoaded', function() {
             updateThemeColor();
         });
     });
-});
+}
+
+// Check if DOM is already loaded
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    console.log("DOM already loaded, initializing immediately");
+    initializePage();
+} else {
+    console.log("Waiting for DOMContentLoaded");
+    document.addEventListener('DOMContentLoaded', initializePage);
+}
