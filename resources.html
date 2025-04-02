@@ -67,24 +67,40 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&amp;display=swap" rel="stylesheet" type="text/css" media="all">
     
-    <!-- Bootstrap -->
+    <!-- Bootstrap and Dependencies -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>console.log("jQuery loaded:", typeof $ !== 'undefined');</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
     
-    <!-- Dynamically loading main.css and main.js -->
+  	<!-- Custom JS -->
+    <script src="js/back-to-top.js" defer></script>
+    <script src="js/resources.js" defer></script>
+
+    <!-- Masonry for grids -->
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+
+	<!-- imagesLoaded CDN -->
+	<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js" defer></script>
+
+	<!-- colorThief -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.min.js" defer></script>
+
+    <!-- Dynamically loading main.css -->
     <script>
+        console.log("Dynamic script block running");
         const version = Date.now();
+        console.log("Version:", version);
+
         const cssLink = document.createElement('link');
         cssLink.rel = 'stylesheet';
         cssLink.href = `/css/main.css?v=${version}`;
+        cssLink.onload = () => console.log("main.css loaded");
+        cssLink.onerror = (e) => console.error("main.css failed to load:", e);
         document.head.appendChild(cssLink);
-
-        const jsScript = document.createElement('script');
-        jsScript.src = `/js/main.js?v=${version}`;
-        jsScript.defer = true;
-        document.head.appendChild(jsScript);
     </script>
-    
+
     <!-- Schema -->
     <script type="application/ld+json">
     {
@@ -364,119 +380,6 @@
 	        </div>
 	    </div>
 
-		<!-- Custom JavaScript for gallery-->
-	    <script>
-	        document.addEventListener('DOMContentLoaded', function() {
-	            const galleries = {
-	                'Branding': document.getElementById('branding-gallery'),
-	                'Stickers': document.getElementById('stickers-gallery'),
-	                'Informational Graphics': document.getElementById('informational-gallery'),
-	                'Fun Graphics': document.getElementById('fun-gallery'),
-	                'Memes': document.getElementById('memes-gallery')
-	            };
-	            const masonryInstances = {};
-	            let allImages = {};
-
-	            fetch('/api/resources.php')
-	                .then(response => response.json())
-	                .then(data => {
-	                    allImages = data;
-	                    Object.keys(galleries).forEach(section => {
-	                        const gallery = galleries[section];
-	                        gallery.innerHTML = '';
-
-	                        const images = data[section] || [];
-	                        images.forEach((image, index) => {
-	                            const item = document.createElement('div');
-	                            item.className = 'grid-item';
-	                            
-	                            const img = document.createElement('img');
-	                            img.src = image.url;
-	                            img.alt = image.name;
-	                            
-	                            item.addEventListener('click', () => openCarousel(section, index));
-	                            
-	                            item.appendChild(img);
-	                            gallery.appendChild(item);
-	                        });
-
-	                        imagesLoaded(gallery, function() {
-	                            masonryInstances[section] = new Masonry(gallery, {
-	                                itemSelector: '.grid-item',
-	                                percentPosition: true,
-	                                gutter: 0,
-	                                horizontalOrder: false
-	                            });
-	                            masonryInstances[section].layout();
-	                        });
-	                    });
-
-	                    let resizeTimer;
-	                    window.addEventListener('resize', () => {
-	                        clearTimeout(resizeTimer);
-	                        resizeTimer = setTimeout(() => {
-	                            Object.values(masonryInstances).forEach(msnry => msnry.layout());
-	                        }, 100);
-	                    });
-	                })
-	                .catch(error => {
-	                    console.error('Error loading images:', error);
-	                    Object.values(galleries).forEach(gallery => {
-	                        gallery.innerHTML = '<p class="text-danger">Error loading images</p>';
-	                    });
-	                });
-
-	            function openCarousel(section, startIndex) {
-	                const images = allImages[section] || [];
-	                const carouselInner = document.getElementById('carouselInner');
-	                const carouselIndicators = document.getElementById('carouselIndicators');
-	                const downloadButton = document.getElementById('downloadButton');
-	                
-	                carouselInner.innerHTML = '';
-	                carouselIndicators.innerHTML = '';
-
-	                images.forEach((image, index) => {
-	                    const item = document.createElement('div');
-	                    item.className = `carousel-item ${index === startIndex ? 'active' : ''}`;
-	                    
-	                    const img = document.createElement('img');
-	                    img.src = image.url;
-	                    img.alt = image.name;
-	                    img.className = 'd-block';
-	                    
-	                    item.appendChild(img);
-	                    carouselInner.appendChild(item);
-
-	                    const indicator = document.createElement('button');
-	                    indicator.type = 'button';
-	                    indicator.dataset.bsTarget = '#imageCarousel';
-	                    indicator.dataset.bsSlideTo = index;
-	                    if (index === startIndex) {
-	                        indicator.className = 'active';
-	                        indicator.setAttribute('aria-current', 'true');
-	                    }
-	                    indicator.setAttribute('aria-label', `Slide ${index + 1}`);
-	                    carouselIndicators.appendChild(indicator);
-	                });
-
-	                // Set initial download link
-	                downloadButton.href = images[startIndex].url;
-	                downloadButton.download = images[startIndex].name;
-
-	                // Update download link on slide change
-	                const carousel = document.getElementById('imageCarousel');
-	                carousel.addEventListener('slide.bs.carousel', function (event) {
-	                    const newIndex = event.to;
-	                    downloadButton.href = images[newIndex].url;
-	                    downloadButton.download = images[newIndex].name;
-	                });
-
-	                const modal = new bootstrap.Modal(document.getElementById('imageCarouselModal'));
-	                modal.show();
-	            }
-	        });
-	    </script>
-
 	    <footer class="py-3 px-2 mt-auto text-center bg-info-subtle border-top border-5">
 	        <div class="row pb-2">
 	            <p class="fs-4 fw-medium mb-0">Buy me a coffee!</p>
@@ -495,32 +398,15 @@
 	        </div> -->
 	    </footer>
 
-
-		<!-- Jquery needed -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-	    <!-- Masonry for grids -->
-	    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
-
-		<!-- imagesLoaded CDN -->
-		<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
-
-		<!-- colorThief -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.min.js"></script>
-
-	  	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-	  	<!-- Custom JS -->
-	    <script src="js/back-to-top.js"></script>
-
-	  	<!-- Initializing tooltips -->
-	  	<script>
-		var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-		var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-		  return new bootstrap.Tooltip(tooltipTriggerEl)
-		})
-		</script>
+        <!-- Dynamic main.js at bottom -->
+        <script>
+            console.log("Loading main.js dynamically");
+            const jsScript = document.createElement('script');
+            jsScript.src = `/js/main.js?v=${version}`;
+            jsScript.onload = () => console.log("main.js loaded");
+            jsScript.onerror = (e) => console.error("main.js failed to load:", e);
+            document.body.appendChild(jsScript);
+        </script>
 
 	</body>
 </html>
