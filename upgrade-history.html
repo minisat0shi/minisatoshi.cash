@@ -174,13 +174,13 @@
     </nav>
 
     <!-- Back to top button -->
-	<button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-info btn-floating position-fixed bottom-0 end-0 m-3" id="btn-back-to-top">
-	  <i class="bi bi-arrow-bar-up fs-3"></i>
-	</button>
+    <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-info btn-floating position-fixed bottom-0 end-0 m-3" id="btn-back-to-top">
+      <i class="bi bi-arrow-bar-up fs-3"></i>
+    </button>
 
     <div class="position-fixed end-0 translate-middle-y z-3 legend-container d-flex flex-row">
         <!-- Tab with Legend text -->
-        <div class="legend-tab border border-end-0 rounded-start p-2 d-flex align-items-center justify-content-center" 
+        <div class="legend-tab border border-end-0 rounded-start px-2 py-4 d-flex align-items-center justify-content-center" 
              data-bs-toggle="collapse" 
              data-bs-target="#legendCollapse" 
              aria-expanded="true" 
@@ -196,6 +196,9 @@
                     </li>
                     <li id="softFork" class="timeline-legend-item">
                         <p class="fw-bold text-break share-item fs-6 mb-2">Soft Fork Upgrade</p>
+                    </li>
+                    <li id="otherChange" class="timeline-legend-item">
+                        <p class="fw-bold text-break share-item fs-6 mb-2">Standardness Change</p>
                     </li>
                 </ul>
             </div>
@@ -224,40 +227,91 @@
         <div class="container timeline-main">
             <ul id="sharedHistory" class="timeline">
                 <li id="hardFork" class="timeline-item mb-5 pb-5">
-                    <img class="upgrade-icon-large" alt="Original Bitcoin Logo" src="images/UpgradeGraphics/bitcoinOgLogo.png" />
-                    <h3 id="upgrade0-Creation" class="fw-bold text-break share-item">Bitcoin Released<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <img class="upgrade-icon-large crisp-svg" alt="Original Bitcoin Logo" src="images/UpgradeGraphics/bitcoinOgLogo.png" />
+                    <h3 id="upgrade-Creation" class="fw-bold text-break share-item">Bitcoin Released<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
                     <p class="fs-4 mb-1">2009-01-03</p>
-
                 </li>
                 <li id="softFork" class="timeline-item mb-5">
-                    <img class="upgrade-icon-small" alt="nLockTime Enforcement graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/1.svg?v=0.04" />
-                    <h3 id="upgrade1-nLockTime" class="fw-bold text-break share-item">Addition of nLockTime Enforcement<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <img class="upgrade-icon-small crisp-svg" alt="nLockTime Enforcement graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/1.svg?v=2" />
+                    <h3 id="upgrade-nLockTime" class="fw-bold text-break share-item">Addition of nLockTime Enforcement<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
                     <p class="fs-4 mb-1">2009-10-28</p>
-
+                </li>
+<!--                <li id="otherChange" class="timeline-item mb-5">   |||Removing as these are software updates not affecting consensus|||
+                    <img class="upgrade-icon-small crisp-svg" alt="Adding Multicore Support & Tor Proxy Support" src="images/UpgradeGraphics/BCHUpgrades_Icons/Multicore_Tor.svg?v=2" />
+                    <h3 id="upgrade-Multicore_Tor" class="fw-bold text-break share-item">Addition of Multicore Support & Tor Proxy Support<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2009-12-16</p>
+                    <p class="fs-5r text-secondary text-break">Support for Linux also added.</p>
+                </li>
+                <li id="otherChange" class="timeline-item mb-5">
+                    <img class="upgrade-icon-small crisp-svg" alt="Addition of JSON-RPC Interface and New Daemon Mode" src="images/UpgradeGraphics/BCHUpgrades_Icons/Interface.svg?v=2" />
+                    <h3 id="upgrade-Interface" class="fw-bold text-break share-item">Addition of JSON-RPC Interface and New Daemon Mode<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2010-07-06</p>
+                    <p class="fs-5r text-secondary text-break">Support for macOS also added.</p>
+                </li>-->
+                <li id="softFork" class="timeline-item bug-item mb-5">
+                    <img class="upgrade-icon-small crisp-svg" alt="Miscellaneous Bug Fixes" src="images/UpgradeGraphics/BCHUpgrades_Icons/bug-orange-2.svg?v=2" />
+                    <h3 id="upgrade-2010_bug_fixes" class="fw-bold text-break share-item text-warning">Miscellaneous Bug Fixes<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2010-07-15</p>
+                </li>
+                <li id="softFork" class="timeline-item mb-5">
+                    <img class="upgrade-icon-small crisp-svg" alt="Addition of Checkpoints" src="images/UpgradeGraphics/BCHUpgrades_Icons/2.svg?v=2" />
+                    <h3 id="upgrade-2010_checkpoints" class="fw-bold text-break share-item">Addition of Checkpoints<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2010-07-17</p>
+                    <p class="small">
+                        <figure>
+                            <blockquote class="blockquote">
+                                <p>I'll probably put a checkpoint in each version from now on.  Once the software has settled what the widely accepted block chain is, there's no point in leaving open the unwanted non-zero possibility of revision months later.</p>
+                            </blockquote>
+                            <figcaption class="blockquote-footer">
+                                Satoshi Nakamoto
+                            </figcaption>
+                        </figure>
+                    </p>
                 </li>
                 <li id="hardFork" class="timeline-item mb-5">
-                    <img class="upgrade-icon-small" alt="OP_NOP Functions graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/2.svg?v=0.04" />
-                    <h3 id="upgrade2-OP_NOP" class="fw-bold text-break share-item">Addition of OP_NOP Functions<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <img class="upgrade-icon-small crisp-svg" alt="Software follows most PoW" src="images/UpgradeGraphics/BCHUpgrades_Icons/3.svg?v=2" />
+                    <h3 id="upgrade-Accumulated_Work" class="fw-bold text-break share-item">Software Follows Most PoW<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2010-07-25</p>
+                    <p class="fs-5r text-secondary text-break">Previously Bitcoin software followed the longest chain.</p>
+                </li>
+                <li id="hardFork" class="timeline-item mb-5">
+                    <img class="upgrade-icon-small crisp-svg" alt="OP_NOP Functions graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/4.svg?v=2" />
+                    <h3 id="upgrade-OP_NOP" class="fw-bold text-break share-item">Addition of OP_NOP Functions<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
                     <p class="fs-4 mb-1">2010-07-31</p>
-
                 </li>
                 <li id="hardFork" class="timeline-item mb-5">
-                    <img class="upgrade-icon-small" alt="Separation of Evaluation of scriptSig and scriptPubKey graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/3.svg?v=0.04" />
-                    <h3 id="upgrade3-scriptSig_scriptPubKey" class="fw-bold text-break share-item">Separation of Evaluation of scriptSig and scriptPubKey<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <img class="upgrade-icon-small crisp-svg" alt="Separation of Evaluation of scriptSig and scriptPubKey graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/5.svg?v=2" />
+                    <h3 id="upgrade-scriptSig_scriptPubKey" class="fw-bold text-break share-item">Separation of Evaluation of scriptSig and scriptPubKey<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
                     <p class="fs-4 mb-1">2010-08-01</p>
-
                 </li>
-                <li id="softFork" class="timeline-item mb-5">
-                    <img class="upgrade-icon-small" alt="Value Overflow Incident graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/4.svg?v=0.04" />
-                    <h3 id="upgrade4-ValOverflowIncident" class="fw-bold text-break share-item">Value Overflow Incident<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                <li id="softFork" class="timeline-item bug-item-red mb-5">
+                    <img class="upgrade-icon-small crisp-svg" alt="Value Overflow Incident graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/bug-red.svg?v=2" />
+                    <h3 id="upgrade-ValOverflowIncident" class="fw-bold text-break share-item text-danger">Value Overflow Incident<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
                     <p class="fs-4 mb-1">2010-08-15</p>
-
+                    <p class="fs-5r text-secondary text-break">Satoshi pushes fix and tells users and miners to re-org the block with the overflowed transaction out of history.</p>
                 </li>
                 <li id="softFork" class="timeline-item mb-5">
-                    <img class="upgrade-icon-large" alt="1MB Block Size Limit graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/5.svg?v=0.04" />
-                    <h3 id="upgrade5-1MB_limit" class="fw-bold text-break share-item">1MB Block Size Limit<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <img class="upgrade-icon-small crisp-svg" alt="Addition of alert system" src="images/UpgradeGraphics/BCHUpgrades_Icons/6.svg?v=2" />
+                    <h3 id="upgrade-alert_system" class="fw-bold text-break share-item">Addition of Alert System<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2010-07-17</p>
+                    <p class="small">
+                        <figure>
+                            <blockquote class="blockquote">
+                                <p>
+                                    I've been working on writing the alert system. Alerts are broadcast through the network and apply to a range of version numbers. Alert messages are signed with a private key that only I have.<br>
+                                    Getting surprised by some temporary down time when your node would otherwise be at risk is better than getting surprised by a thief draining all your inventory.
+                                </p>
+                            </blockquote>
+                            <figcaption class="blockquote-footer">
+                                Satoshi Nakamoto
+                            </figcaption>
+                        </figure>
+                    </p>
+                </li>
+                <li id="softFork" class="timeline-item mb-5">
+                    <img class="upgrade-icon-large crisp-svg" alt="1MB Block Size Limit graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/7.svg?v=2" />
+                    <h3 id="upgrade-1MB_limit" class="fw-bold text-break share-item">1MB Block Size Limit<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
                     <p class="fs-4 mb-1">2010-10-12</p>
-
                     <p class="small">
                         <figure>
                             <blockquote class="blockquote">
@@ -290,73 +344,106 @@
                     </p>
                 </li>
                 <li id="softFork" class="timeline-item mb-5">
-                    <img class="upgrade-icon-small" alt="Disallow Transactions with Same TXID graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/6.svg?v=0.04" />
-                    <h3 id="upgrade6-DisallowSameTxID" class="fw-bold text-break share-item">Disallow Transactions with Same TXID<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <img class="upgrade-icon-small crisp-svg" alt="Addition of DoS limits and removal of alert system" src="images/UpgradeGraphics/BCHUpgrades_Icons/8.svg?v=2" />
+                    <h3 id="upgrade-DoS_Limits" class="fw-bold text-break share-item">Addition of DoS limits & Removal of Alert System<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2010-12-12</p>
+                </li>
+                <li id="softFork" class="timeline-item mb-5">
+                    <img class="upgrade-icon-small crisp-svg" alt="Disallow Transactions with Same TXID graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/9.webp" />
+                    <h3 id="upgrade-DisallowSameTxID" class="fw-bold text-break share-item">Disallow Transactions with Same TXID<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
                     <p class="fs-4 mb-1">2012-03-15</p>
-
+                </li>
+                <li id="softFork" class="timeline-item bug-item mb-5">
+                    <img class="upgrade-icon-small crisp-svg" alt="Security and DoS fixes" src="images/UpgradeGraphics/BCHUpgrades_Icons/bug-orange-2.svg?v=2" />
+                    <h3 id="upgrade-Security_DoS_Fixes" class="fw-bold text-break share-item">Security and DoS Fixes<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2012-03-30</p>
+                    <p class="fs-5r text-secondary text-break">Implementation of BIP 30 (a security fix for an attack involving duplicate coinbase transactions) and fixes for memory related denial-of-serivice attacks.</p>
                 </li>
                 <li id="softFork" class="timeline-item mb-5">
-                    <img class="upgrade-icon-small" alt="Pay-to-Script-Hash graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/7.svg?v=0.04" />
-                    <h3 id="upgrade7-PaytoScriptHash" class="fw-bold text-break share-item">Pay-to-Script-Hash<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <img class="upgrade-icon-small crisp-svg" alt="Pay-to-Script-Hash graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/10.svg?v=2" />
+                    <h3 id="upgrade-PaytoScriptHash" class="fw-bold text-break share-item">Pay-to-Script-Hash<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
                     <p class="fs-4 mb-1">2012-04-01</p>
-
                 </li>
                 <li id="softFork" class="timeline-item mb-5">
-                    <img class="upgrade-icon-small" alt="Block Height in Coinbase" src="images/UpgradeGraphics/BCHUpgrades_Icons/8.svg?v=0.04" />
-                    <h3 id="upgrade8-BlockHeightinCoinbase" class="fw-bold text-break share-item">Block Height in Coinbase<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <img class="upgrade-icon-small crisp-svg" alt="BIP 22, 34, 35" src="images/UpgradeGraphics/BCHUpgrades_Icons/11.svg?v=2" />
+                    <h3 id="upgrade-BIP22_34_35" class="fw-bold text-break share-item">BIP 22, 34 & 35<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2012-09-17</p>
+                    <p class="fs-5r text-secondary text-break">BIP 22: Defines "getblocktemplate" to replace "getwork" enabling miners to have more control over transactions included in a block.</p>
+                    <p class="fs-5r text-secondary text-break">BIP 34: New rule requiring block height to be included in the coinbase transaction of each block allowing each block to be uniquely identified, also addressing potential issues with duplicate coinbase transactions.</p>
+                    <p class="fs-5r text-secondary text-break">BIP 35: New "mempool" RPC command allowing users to query the mempool of unconfirmed transactions enhancing communication between nodes and clients, particularly useful for wallets or block explorers requiring real-time data.</p>
+                </li>
+                <li id="otherChange" class="timeline-item mb-5">
+                    <img class="upgrade-icon-small crisp-svg" alt="Migration from BerkeleyDB to LevelDB graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/12.svg?v=2" />
+                    <h3 id="upgrade-DatabaseMigration" class="fw-bold text-break share-item">Migration from BerkeleyDB to LevelDB<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2013-02-19</p>
+                    <p class="fs-5r text-secondary text-break">Ultraprune is implemented, separating the UTXO set from the blockchain database.</p>
+                </li>
+                <li id="otherChange" class="timeline-item bug-item-red mb-5">
+                    <img class="upgrade-icon-small crisp-svg" alt="Unintended Hard Fork/Chain Split" src="images/UpgradeGraphics/BCHUpgrades_Icons/bug-red.svg?v=2" />
+                    <h3 id="upgrade-Unexpected_Hard_Fork" class="fw-bold text-break share-item text-danger">Unexpected Hard Fork/Chain Split<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2013-03-11</p>
+                    <p class="fs-5r text-secondary text-break">A block that had a larger number of total transaction inputs than previously seen was mined and broadcasted. Bitcoin 0.8 nodes were able to handle this, but some pre-0.8 Bitcoin nodes rejected it, causing an unexpected fork of the blockchain. The issue stemmed from differences between BerkeleyDB and LevelDB. Miners switched back to the older version to resolve the fork and 0.8.1 was released with new limits to prevent this from reoccuring.</p>
+                </li>
+                <!--<li id="softFork" class="timeline-item mb-5">    |||This timeline is when the Bitcoin client stopped recognizing blocks without the block height in the coinbase|||
+                    <img class="upgrade-icon-small crisp-svg" alt="Block Height in Coinbase" src="images/UpgradeGraphics/BCHUpgrades_Icons/8.svg?v=2" />
+                    <h3 id="upgrade-BlockHeightinCoinbase" class="fw-bold text-break share-item">Block Height in Coinbase<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
                     <p class="fs-4 mb-1">2013-03-24</p>
-
-                </li>
-                <li id="hardFork" class="timeline-item mb-5">
-                    <img class="upgrade-icon-small" alt="Migration from Berkeley DB to LevelDB graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/9.svg?v=0.04" />
-                    <h3 id="upgrade9-DatabaseMigration" class="fw-bold text-break share-item">Migration from Berkeley DB to LevelDB<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
-                    <p class="fs-4 mb-1">2013-05-15</p>
-
-                </li>
+                </li>-->
                 <li id="softFork" class="timeline-item mb-5">
-                    <img class="upgrade-icon-small" alt="Strict DER Encoding for Signatures graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/10.svg?v=0.04" />
-                    <h3 id="upgrade10-DER_Encoding" class="fw-bold text-break share-item">Strict DER Encoding for Signatures<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <img class="upgrade-icon-small crisp-svg" alt="Addition of OP_RETURN" src="images/UpgradeGraphics/BCHUpgrades_Icons/13.svg?v=2" />
+                    <h3 id="upgrade-OP_RETURN" class="fw-bold text-break share-item">Addition of OP_RETURN<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2014-03-19</p>
+                </li>
+<!--                <li id="otherChange" class="timeline-item mb-5">   |||Removing as these are software updates not affecting consensus|||
+                    <img class="upgrade-icon-small crisp-svg" alt="Headers-First Synchronization, REST Interface & bitocin-tx utility" src="images/UpgradeGraphics/BCHUpgrades_Icons/Headers-First.svg?v=2" />
+                    <h3 id="upgrade-DER_Encoding" class="fw-bold text-break share-item">Headers-First Synchronization, REST Interface & bitocin-tx utility<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2015-02-16</p>
+                </li>
+                <li id="otherChange" class="timeline-item mb-5">
+                    <img class="upgrade-icon-small crisp-svg" alt="Block File Pruning" src="images/UpgradeGraphics/BCHUpgrades_Icons/Block_File_Pruning.svg?v=2" />
+                    <h3 id="upgrade-Block_File_Pruning" class="fw-bold text-break share-item">Introduction of Block File Pruning<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
                     <p class="fs-4 mb-1">2015-07-04</p>
-
+                </li>-->
+                <li id="softFork" class="timeline-item mb-5">
+                    <img class="upgrade-icon-small crisp-svg" alt="Strict DER Encoding for Signatures graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/14.svg?v=2" />
+                    <h3 id="upgrade-DER_Encoding" class="fw-bold text-break share-item">Strict DER Encoding for Signatures<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <p class="fs-4 mb-1">2015-07-04</p>
                 </li>
                 <li id="softFork" class="timeline-item mb-5">
-                    <img class="upgrade-icon-small" alt="OP_CHECKLOCKTIMEVERIFY graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/11.svg?v=0.04" />
-                    <h3 id="upgrade11-OP_CHECKLOCKTIMEVERIFY" class="fw-bold text-break share-item">OP_CHECKLOCKTIMEVERIFY<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <img class="upgrade-icon-small crisp-svg" alt="OP_CHECKLOCKTIMEVERIFY graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/15.svg?v=2" />
+                    <h3 id="upgrade-OP_CHECKLOCKTIMEVERIFY" class="fw-bold text-break share-item">OP_CHECKLOCKTIMEVERIFY<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
                     <p class="fs-4 mb-1">2015-12-14</p>
-
                 </li>
                 <li id="softFork" class="timeline-item mb-5">
-                    <img class="upgrade-icon-small" alt="Addition of Opt-In Replace-By-Fee (”RBF”) graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/12.svg?v=0.04" />
-                    <h3 id="upgrade12-RBF" class="fw-bold text-break share-item">Addition of Opt-In Replace-By-Fee (”RBF”)<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <img class="upgrade-icon-small crisp-svg" alt="Addition of Opt-In Replace-By-Fee (”RBF”) graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/16.svg?v=2" />
+                    <h3 id="upgrade-RBF" class="fw-bold text-break share-item">Addition of Opt-In Replace-By-Fee (”RBF”)<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
                     <p class="fs-4 mb-1">2016-02-23</p>
-
                 </li>
                 <li id="softFork" class="timeline-item mb-5">
-                    <img class="upgrade-icon-small" alt="OP_CHECKSEQUENCEVERIFY graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/13.svg?v=0.04" />
-                    <h3 id="upgrade13-OP_CHECKSEQUENCEVERIFY" class="fw-bold text-break share-item">OP_CHECKSEQUENCEVERIFY<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <img class="upgrade-icon-small crisp-svg" alt="OP_CHECKSEQUENCEVERIFY graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/17.svg?v=2" />
+                    <h3 id="upgrade-OP_CHECKSEQUENCEVERIFY" class="fw-bold text-break share-item">OP_CHECKSEQUENCEVERIFY<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
                     <p class="fs-4 mb-1">2016-07-04</p>
-
                 </li>
             </ul>
             <ul id="splitHistory" class="timeline">
                 <li id="hardFork" class="timeline-item mb-5">
-                    <img class="upgrade-icon-large" alt="Bitcoin Cash fork graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/14.svg?v=0.04" />
-                    <img id="bchSplitLogo" class="bch-split-logo" alt="Bitcoin Cash logo" src="images/UpgradeGraphics/bchLogoFullWhite.svg?v=0.04" />
-                    <p class="fs-4 mb-1 share-item" id="upgrade14-BCH" style="scroll-margin-top:140px;">2017-08-01<span class="ms-2 fs-3 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></p>
+                    <img class="upgrade-icon-large crisp-svg" alt="Bitcoin Cash fork graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/18.svg?v=2" />
+                    <img id="bchSplitLogo" class="bch-split-logo" alt="Bitcoin Cash logo" src="images/UpgradeGraphics/bchLogoFullWhite.svg?v=2" />
+                    <p class="fs-4 mb-1 share-item" id="upgrade-BCH" style="scroll-margin-top:140px;">2017-08-01<span class="ms-2 fs-3 share-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></p>
                     <p class="fw-bold text-break">User Activated Hard Fork</p>
                     <p class="fs-5r text-secondary text-break">Block Size Limit to 8MB | Removal of RBF</p>
                 </li>
                 <li id="hardFork" class="timeline-item mb-5">
-                    <img class="upgrade-icon-large" alt="Diﬃculty Adjustment Algorithm Change graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/15.svg?v=0.04" />
-                    <h3 id="upgrade15-DAA" class="fw-bold text-break share-item">Diﬃculty Adjustment Algorithm Change<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <img class="upgrade-icon-large crisp-svg" alt="Diﬃculty Adjustment Algorithm Change graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/19.svg?v=2" />
+                    <h3 id="upgrade-DAA" class="fw-bold text-break share-item">Diﬃculty Adjustment Algorithm Change<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
                     <p class="fs-4 mb-1">2017-11-13</p>
 
                     <p class="fs-4 mb-1 text-break">cw-144 algorithm</p>
                     <p class="fs-5r text-secondary text-break">With rapid price, and thereby hash, fluctuations, particularly in relation to BTC, an algorithm change was necessary to ensure more reliable blocktimes.</p>
                 </li>
                 <li id="hardFork" class="timeline-item mb-5">
-                    <img class="upgrade-icon-large" alt="Monolith graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/16.svg?v=0.04" />
-                    <h3 id="upgrade16-Monolith" class="fw-bold text-break share-item">Monolith<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <img class="upgrade-icon-large crisp-svg" alt="Monolith graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/20.svg?v=2" />
+                    <h3 id="upgrade-Monolith" class="fw-bold text-break share-item">Monolith<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
                     <p class="fs-4 mb-1">2018-05-15</p>
 
                     <p class="fs-4 mb-1 text-break">Block Size Limit to 32MB | Extra Opcodes (including OP_CAT)</p>
@@ -369,9 +456,9 @@
                         </div>
                     </div>
                 </li>
-                <li id="hardFork" class="timeline-item bug-item mb-5">
-                    <img class="upgrade-icon-large" alt="CVE-2018-17144 Inflation Bug graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/bug-orange-2.svg?v=0.04" />
-                    <h3 id="upgrade-CVE-2018-17144" class="fw-bold text-break share-item text-warning">CVE-2018-17144 Inflation Bug<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                <li id="hardFork" class="timeline-item bug-item-red mb-5">
+                    <img class="upgrade-icon-large crisp-svg" alt="CVE-2018-17144 Inflation Bug graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/bug-red.svg?v=2" />
+                    <h3 id="upgrade-CVE-2018-17144" class="fw-bold text-break share-item text-danger">CVE-2018-17144 Inflation Bug<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
                     <p class="fs-4 mb-1">2018-09-17</p>
 
                     <p class="fs-6 text-secondary text-break">CVE-2018-17144 was a bug that could have allowed an attacker to spend the same Bitcoin more than once.<br><br>
@@ -381,8 +468,8 @@
                     The bug was never exploited on the Bitcoin Core nor Bitcoin Cash mainnet and an overwhelming majority of full nodes subsequently updated to unaﬀected versions of Bitcoin Core / Bitcoin Cash.
                 </li>
                 <li id="hardFork" class="timeline-item mb-5">
-                    <img class="upgrade-icon-large" alt="Magnetic Anomaly graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/17.svg?v=0.04" />
-                    <h3 id="upgrade17-MagneticAnomaly" class="fw-bold text-break share-item">Magnetic Anomaly<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <img class="upgrade-icon-large crisp-svg" alt="Magnetic Anomaly graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/21.svg?v=2" />
+                    <h3 id="upgrade-MagneticAnomaly" class="fw-bold text-break share-item">Magnetic Anomaly<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
                     <p class="fs-4 mb-1">2018-11-15</p>
 
                     <p class="fs-4 mb-1 text-break">OP_CHECKDATASIG & OP_CHECKDATASIGVERIFY | Canonical Transaction Ordering (“CTOR”)</p>
@@ -402,8 +489,8 @@
                     </div>
                 </li>
                 <li id="hardFork" class="timeline-item mb-5">
-                    <img class="upgrade-icon-large" alt="Great Wall graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/18.svg?v=0.04" />
-                    <h3 id="upgrade18-GreatWall" class="fw-bold text-break share-item">Great Wall<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <img class="upgrade-icon-large crisp-svg" alt="Great Wall graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/22.svg?v=2" />
+                    <h3 id="upgrade-GreatWall" class="fw-bold text-break share-item">Great Wall<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
                     <p class="fs-4 mb-1">2019-05-15</p>
 
                     <p class="fs-4 mb-1 text-break">Schnorr Signatures</p>
@@ -418,8 +505,8 @@
                     </ul>
                 </li>
                 <li id="hardFork" class="timeline-item mb-5">
-                    <img class="upgrade-icon-large" alt="Graviton graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/19.svg?v=0.04" />
-                    <h3 id="upgrade19-Graviton" class="fw-bold text-break share-item">Graviton<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <img class="upgrade-icon-large crisp-svg" alt="Graviton graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/23.svg?v=2" />
+                    <h3 id="upgrade-Graviton" class="fw-bold text-break share-item">Graviton<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
                     <p class="fs-4 mb-1">2019-11-15</p>
 
                     <p class="fs-4 mb-1 text-break">Schnorr for Multisig | MINIMALDATAINSCRIPT</p>
@@ -433,8 +520,8 @@
                     </div>
                 </li>
                 <li id="hardFork" class="timeline-item mb-5">
-                    <img class="upgrade-icon-large" alt="Phonon graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/20.svg?v=0.04" />
-                    <h3 id="upgrade20-Phonon" class="fw-bold text-break share-item">Phonon<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <img class="upgrade-icon-large crisp-svg" alt="Phonon graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/24.svg?v=2" />
+                    <h3 id="upgrade-Phonon" class="fw-bold text-break share-item">Phonon<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
                     <p class="fs-4 mb-1">2020-05-15</p>
 
                     <p class="fs-4 mb-1 text-break">OP_REVERSEBYTES | SigChecks</p>
@@ -449,8 +536,8 @@
                     </div>
                 </li>
                 <li id="hardFork" class="timeline-item mb-5">
-                    <img class="upgrade-icon-large" alt="Axion graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/21.svg?v=0.04" />
-                    <h3 id="upgrade21-Axion" class="fw-bold text-break share-item">Axion<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <img class="upgrade-icon-large crisp-svg" alt="Axion graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/25.svg?v=2" />
+                    <h3 id="upgrade-Axion" class="fw-bold text-break share-item">Axion<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
                     <p class="fs-4 mb-1">2020-11-15</p>
 
                     <p class="fs-4 mb-1 text-break">Diﬃculty Adjustment Algorithm Change: ASERT (aserti3-2d DAA)</p>
@@ -460,9 +547,9 @@
                         ASERT does not exhibit the above-mentioned oscillations and has a range of other attractive qualities such as robustness against singularities without a need for additional rules, and absence of accumulation of rounding/approximation error.
                     </p>
                 </li>
-                <li id="hardFork" class="timeline-item mb-5">
-                    <img class="upgrade-icon-large" alt="BigBlockIfTrue graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/22.svg?v=0.04" />
-                    <h3 id="upgrade22-BigBlockIfTrue" class="fw-bold text-break share-item">BigBlockIfTrue<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                <li id="otherChange" class="timeline-item mb-5">
+                    <img class="upgrade-icon-large crisp-svg" alt="BigBlockIfTrue graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/26.svg?v=2" />
+                    <h3 id="upgrade-BigBlockIfTrue" class="fw-bold text-break share-item">BigBlockIfTrue<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
                     <p class="fs-4 mb-1">2021-05-15</p>
 
                     <p class="fs-4 mb-1 text-break">Enabling Transactions with Multiple OP_RETURNs | Removal of Unconfirmed Transaction Chain Limit</p>
@@ -479,8 +566,8 @@
                     </div>
                 </li>
                 <li id="hardFork" class="timeline-item mb-5">
-                    <img class="upgrade-icon-large" alt="U8 graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/23.svg?v=0.04" />
-                    <h3 id="upgrade23-U8" class="fw-bold text-break share-item">U8<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <img class="upgrade-icon-large crisp-svg" alt="U8 graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/27.svg?v=2" />
+                    <h3 id="upgrade-U8" class="fw-bold text-break share-item">U8<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
                     <p class="fs-4 mb-1">2022-05-15</p>
 
                     <p class="fs-4 mb-1 text-break">Addition of Introspection Op-codes | Bigger Integers & OP_MUL Re-enabling</p>
@@ -500,8 +587,8 @@
                     </div>
                 </li>
                 <li id="hardFork" class="timeline-item mb-5">
-                    <img class="upgrade-icon-large" alt="CashTokens graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/24.svg?v=0.04" />
-                    <h3 id="upgrade24-CashTokens" class="fw-bold text-break share-item">CashTokens<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <img class="upgrade-icon-large crisp-svg" alt="CashTokens graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/28.svg?v=2" />
+                    <h3 id="upgrade-CashTokens" class="fw-bold text-break share-item">CashTokens<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
                     <p class="fs-4 mb-1">2023-05-15</p>
 
                     <p class="fs-4 mb-1 text-break">P2SH32 | Restrict Transaction Version | Minimum Transaction Size | Native Layer 1, UTXO, Miner-validated Tokens</p>
@@ -545,8 +632,8 @@
             </ul> <!--Make sure second to last upgrade implemented goes above the <ul>-->
             <ul id="lockedIn" class="timeline"> <!--Most recently implemented upgrade goes here-->
                 <li id="hardFork" class="timeline-item mb-5">
-                    <img class="upgrade-icon-large" alt="ABLA graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/25.svg?v=0.04" />
-                    <h3 id="upgrade25-ABLA" class="fw-bold text-break share-item">ABLA<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <img class="upgrade-icon-large crisp-svg" alt="ABLA graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/29.svg?v=2" />
+                    <h3 id="upgrade-ABLA" class="fw-bold text-break share-item">ABLA<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
                     <p class="fs-4 mb-1">2024-05-15</p>
 
                     <p class="fs-4 mb-1 text-break">Adaptive Blocksize Limit Algorithm</p>
@@ -559,8 +646,8 @@
             </ul>
             <ul id="future" class="timeline"> <!--The next expected/locked-in upgrade goes here-->
                 <li id="hardFork" class="timeline-item mb-5">
-                    <img class="upgrade-icon-large" alt="VM Limits + BigInts graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/VMLimits+BigInt.svg?v=0.04" />
-                    <h3 id="upgrade26-VMLA" class="fw-bold text-break share-item">VMLA<span class="fs-5r"><small> (Velma)</small></span><span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                    <img class="upgrade-icon-large crisp-svg" alt="VM Limits + BigInts graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/30.svg?v=2" />
+                    <h3 id="upgrade-VMLA" class="fw-bold text-break share-item">VMLA<span class="fs-5r"><small> (Velma)</small></span><span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
                     <p class="timelineTitle mb-1">[Locked-In]</p> <!--Only add this line if the upgrade was locked in on November 15th-->
                     <p class="fs-4 mb-1">2025-05-15</p>
 
@@ -764,7 +851,5 @@
         jsScript.onerror = (e) => console.error("main.js failed to load:", e);
         document.body.appendChild(jsScript);
     </script>
-
 </body>
-
 </html>
