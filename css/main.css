@@ -4,7 +4,8 @@
 /* CSS Variables */
 :root {
   --container-max-width: 1450px;
-  --nav-height: 65px;
+  --main-nav-height: 60px;
+  --other-nav-height: 56px;
   --info-green: #0AC18E;
   --info-blue: #23A6D5;
   --transition-ease: all 0.4s ease-in-out;
@@ -18,7 +19,7 @@
 
 
 /* Scroll Adjustments */
-[id^='_'] { scroll-margin-top: var(--nav-height); }
+[id^='_'] { scroll-margin-top: var(--main-nav-height); }
 [id^='upgrade'] { scroll-margin-top: 100px; }
 
 
@@ -248,7 +249,7 @@ html, head, body {
       0px 6px 16px rgba(10,193,142,0.5);
 }
 .fixed-nav-adjustment {
-    padding-top:56px;
+    padding-top: var(--other-nav-height);
 }
 
 
@@ -287,6 +288,7 @@ html, head, body {
 }
 
 .affix {
+    height: 60px;
     padding: 0;
     background-color: rgba(255,255,255,0.5);
     backdrop-filter: saturate(180%) blur(20px);
