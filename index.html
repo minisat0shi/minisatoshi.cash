@@ -116,29 +116,30 @@
 	</head>
 
 	<body data-bs-smooth-scroll="true" class="min-vh-100 d-flex flex-column">
-	    <nav class="custom_nav fs-5">
-            <div class="logo">
-                <a href="/" class="text-decoration-none custom_nav_text" aria-label="Return to top of homepage"><img src="favicon/favicon.svg" alt="Logo" width="30" height="30" style="margin-bottom:5px;" class="d-inline-block align-text-middle me-2">minisatoshi</a>
-            </div>
-            <div id="mainListDiv" class="main_list fw-medium">
-                <ul class="navlinks">
-                    <li><a href="/" class="custom_nav_text" aria-label="Go to top of homepage">Home</a></li>
-                    <li><a href="#_bch" class="custom_nav_text" aria-label="Go to BCH section of homepage">What is BCH?</a></li>
-                    <li><a href="#_about" class="custom_nav_text" aria-label="Go to Mission sectioin of homepage">The Mission</a></li>
-                    <li><a href="#_socials" class="custom_nav_text" aria-label="Go to Social section of homepage">Social System</a></li>
-                    <li><a href="#_more" class="custom_nav_text" aria-label="Go to More section of homepage">More About BCH</a></li>
-                    <li><a href="upgrade-history"class="custom_nav_text" aria-label="Go to Network Upgrades page">Network Upgrades</a></li>
-                    <li><a href="ecosystem"class="custom_nav_text" aria-label="Go to Ecosystem page">Ecosystem</a></li>
-                    <li><a href="resources"class="custom_nav_text" aria-label="Go to Resources page">Resources</a></li>
-                    <!--<li><a href="minecraft"><img src="images/minecraft.png" alt="minecraft pickaxe logo to minecraft website" height="36"></a></li>--> <!--temporarily removed until able to long-term host and update-->
-                </ul>
-            </div>
-            <span class="navTrigger">
-                <i></i>
-                <i></i>
-                <i></i>
-            </span>
-	    </nav>
+		<nav class="navbar navbar-expand-xl fixed-top custom_nav fs-5">
+		    <div class="container-fluid">
+		        <a href="/" class="navbar-brand custom_nav_text" aria-label="Return to top of homepage">
+		            <img src="favicon/favicon.svg" alt="Logo" width="30" height="30" class="d-inline-block align-text-middle me-2">
+		        </a>
+		        <button class="navbar-toggler navTrigger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		            <i></i>
+		            <i></i>
+		            <i></i>
+		        </button>
+		        <div class="collapse navbar-collapse justify-content-end py-1" id="navbarNav">
+		            <ul class="navbar-nav fw-medium navlinks">
+		                <li class="nav-item"><a href="/" class="nav-link custom_nav_text" aria-label="Go to top of homepage">Home</a></li>
+		                <li class="nav-item"><a href="#_bch" class="nav-link custom_nav_text" aria-label="Go to BCH section of homepage">What is BCH?</a></li>
+		                <li class="nav-item"><a href="#_about" class="nav-link custom_nav_text" aria-label="Go to Mission section of homepage">The Mission</a></li>
+		                <li class="nav-item"><a href="#_socials" class="nav-link custom_nav_text" aria-label="Go to Social section of homepage">Social System</a></li>
+		                <li class="nav-item"><a href="#_more" class="nav-link custom_nav_text" aria-label="Go to More section of homepage">More About BCH</a></li>
+		                <li class="nav-item"><a href="upgrade-history" class="nav-link custom_nav_text" aria-label="Go to Network Upgrades page">Network Upgrades</a></li>
+		                <li class="nav-item"><a href="ecosystem" class="nav-link custom_nav_text" aria-label="Go to Ecosystem page">Ecosystem</a></li>
+		                <li class="nav-item"><a href="resources" class="nav-link custom_nav_text" aria-label="Go to Resources page">Resources</a></li>
+		            </ul>
+		        </div>
+		    </div>
+		</nav>
 	    
 	    <!-- Floating Social Buttons -->
 	    <div class="social">
@@ -489,30 +490,28 @@
 
 	    <!-- Function used to shrink nav bar removing paddings and adding black background -->
 	    <script>
-	    $(window).scroll(function() {
-	        if ($(document).scrollTop() > 50) {
-	            $('.custom_nav').addClass('affix');
-	            $('.main_list').addClass('affix-mobile');
-	            $('.custom_nav_text').addClass('affix-text-color');
-	            $('.navTrigger').find('i').addClass('affix-bars-color');
-	            $('.social').addClass('affix-social-theme');
-	            $('.theme').addClass('affix-social-theme');
-	            console.log("OK");
-	        } else {
-	            $('.custom_nav').removeClass('affix');
-	            $('.main_list').removeClass('affix-mobile');
-	            $('.custom_nav_text').removeClass('affix-text-color');
-	            $('.navTrigger').find('i').removeClass('affix-bars-color');
-	            $('.social').removeClass('affix-social-theme');
-	            $('.theme').removeClass('affix-social-theme');
-	        }
-	    });
-	    $('.navTrigger').click(function() {
-	        $(this).toggleClass('active');
-	        console.log("Clicked menu");
-	        $("#mainListDiv").toggleClass("show_list");
-	        $("#mainListDiv").fadeIn();
-	    });
+$(window).scroll(function() {
+    if ($(document).scrollTop() > 50) {
+        $('.custom_nav').addClass('affix');
+        $('.custom_nav_text').addClass('affix-text-color');
+        $('.navTrigger').addClass('affix-bars-color');
+        $('.social').addClass('affix-social-theme');
+        $('.theme').addClass('affix-social-theme');
+        console.log("OK");
+    } else {
+        $('.custom_nav').removeClass('affix');
+        $('.custom_nav_text').removeClass('affix-text-color');
+        $('.navTrigger').removeClass('affix-bars-color');
+        $('.social').removeClass('affix-social-theme');
+        $('.theme').removeClass('affix-social-theme');
+    }
+});
+
+// Toggle the active class for animation
+$('.navTrigger').click(function() {
+    $(this).toggleClass('active');
+    console.log("Clicked menu");
+});
 	    </script>
 	    
 	</body>
