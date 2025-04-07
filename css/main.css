@@ -39,10 +39,6 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.informational-tooltip .tooltip-arrow::before {
-  border-color: var(--bs-info-bg-subtle);
-}
-
 /* Adding extension of container class to go wider */
 @media (min-width:1600px) {
     .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
