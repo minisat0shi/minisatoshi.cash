@@ -2,16 +2,18 @@ console.log("main.js loaded successfully");
 console.log("jQuery:", typeof $);
 console.log("Bootstrap:", typeof bootstrap);
 
-// Function to initialize everything
+// Main initialization function
 function initializePage() {
     console.log("Initializing page functionality");
 
+    // Initialize Bootstrap tooltips
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
     tooltipTriggerList.forEach(tooltipTriggerEl => {
         new bootstrap.Tooltip(tooltipTriggerEl);
     });
     console.log("Tooltips initialized:", tooltipTriggerList.length);
 
+    // Copy to clipboard functionality
     const button = document.getElementById('copyButton');
     console.log("copyButton:", button);
     const copyToClipboard = async () => {
@@ -39,6 +41,7 @@ function initializePage() {
     };
     button.addEventListener('click', copyToClipboard);
 
+    // Update theme color meta tag
     function updateThemeColor() {
         const metaTag = document.getElementById('themeColorMeta');
         if (metaTag) {
@@ -47,16 +50,17 @@ function initializePage() {
         }
     }
 
+    // Set up initial theme state and icon
     const currentTheme = document.documentElement.getAttribute('data-bs-theme');
     const isBlackout = document.documentElement.getAttribute('data-blackout') === 'true';
     const icon = document.getElementById('themeIcon');
-    
     icon.className = `bi ${
         currentTheme === 'light' ? 'bi-brightness-high-fill' :
         currentTheme === 'dark' && isBlackout ? 'bi-moon-stars-fill' :
         'bi-moon-fill'
     }`;
 
+    // Highlight active theme in dropdown
     document.querySelectorAll('.theme-switcher .dropdown-item').forEach(item => {
         const itemTheme = item.getAttribute('data-theme');
         const itemBlackout = item.getAttribute('data-blackout') === 'true';
@@ -65,6 +69,7 @@ function initializePage() {
     
     updateThemeColor();
 
+    // Handle theme switching
     document.querySelectorAll('.theme-switcher .dropdown-item').forEach(item => {
         item.addEventListener('click', function(e) {
             console.log("Theme clicked");
@@ -99,7 +104,7 @@ function initializePage() {
     });
 }
 
-// Check if DOM is already loaded
+// Ensure DOM is ready before initializing
 if (document.readyState === 'complete' || document.readyState === 'interactive') {
     console.log("DOM already loaded, initializing immediately");
     initializePage();
