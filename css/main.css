@@ -79,15 +79,6 @@ body {
     transition: background-color 0.4s ease-in-out;
 }
 
-/* Correcting SVG rendering */
-.crisp-svg {
-  width: 100%; /* Or any dynamic size */
-  height: auto;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: pixelated;
-  transform: translateZ(0); /* Optional: Forces GPU rendering in Safari */
-}
-
 /* Adding custom info background gradients */
 :root,
 [data-bs-theme="light"] {
