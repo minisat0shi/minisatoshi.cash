@@ -75,9 +75,9 @@
 }
 
 /* Smooth transition for theme changes */
-body {
+/*body { |||REMOVED -- in dark mode site starts in white and transitions to black on reload -- looks weird|||
     transition: background-color 0.4s ease-in-out;
-}
+}*/
 
 /* Adding custom info background gradients */
 :root,
