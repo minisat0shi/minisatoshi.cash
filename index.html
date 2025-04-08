@@ -490,28 +490,28 @@
 
 	    <!-- Function used to shrink nav bar removing paddings and adding black background -->
 	    <script>
-$(window).scroll(function() {
-    if ($(document).scrollTop() > 50) {
-        $('.custom_nav').addClass('affix');
-        $('.custom_nav_text').addClass('affix-text-color');
-        $('.navTrigger').addClass('affix-bars-color');
-        $('.social').addClass('affix-social-theme');
-        $('.theme').addClass('affix-social-theme');
-        console.log("OK");
-    } else {
-        $('.custom_nav').removeClass('affix');
-        $('.custom_nav_text').removeClass('affix-text-color');
-        $('.navTrigger').removeClass('affix-bars-color');
-        $('.social').removeClass('affix-social-theme');
-        $('.theme').removeClass('affix-social-theme');
-    }
-});
+			$(window).scroll(function() {
+			    if ($(document).scrollTop() > 50) {
+			        $('.custom_nav').addClass('affix');
+			        $('.custom_nav_text').addClass('affix-text-color');
+			        $('.navTrigger').addClass('affix-bars-color');
+			        $('.social').addClass('affix-social-theme');
+			        $('.theme').addClass('affix-social-theme');
+			        console.log("OK");
+			    } else {
+			        $('.custom_nav').removeClass('affix');
+			        $('.custom_nav_text').removeClass('affix-text-color');
+			        $('.navTrigger').removeClass('affix-bars-color');
+			        $('.social').removeClass('affix-social-theme');
+			        $('.theme').removeClass('affix-social-theme');
+			    }
+			});
 
-// Toggle the active class for animation
-$('.navTrigger').click(function() {
-    $(this).toggleClass('active');
-    console.log("Clicked menu");
-});
+			// Toggle the active class for animation
+			$('.navTrigger').click(function() {
+			    $(this).toggleClass('active');
+			    console.log("Clicked menu");
+			});
 	    </script>
 	    
 	</body>

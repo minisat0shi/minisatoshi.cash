@@ -235,6 +235,11 @@ html, head, body {
     width: 100%;
     z-index: 1;
     padding: 20px 0;
+    /* Define initial states for all properties that change in .affix */
+    height: auto;
+    background-color: transparent;
+    backdrop-filter: none;
+    box-shadow: none;
     transition: all 0.4s ease;
 }
 
