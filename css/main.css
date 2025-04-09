@@ -131,7 +131,7 @@
     background-color: transparent !important;
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
-    backdrop-filter: saturate(180%) blur(7px); /* Glass effect */
+    backdrop-filter: saturate(180%) blur(10px); /* Glass effect */
     z-index: 0; /* Enforcing position to ensure it stays above animation */
 }
 
@@ -140,7 +140,7 @@
     background-color: transparent !important;
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
-    backdrop-filter: saturate(180%) blur(7px); /* Glass effect */
+    backdrop-filter: saturate(180%) blur(10px); /* Glass effect */
     z-index: 0; /* Enforcing position to ensure it stays above animation */
 }
 
@@ -227,7 +227,7 @@ html, head, body {
 /* Glass White */
 .glass-white {
     border-radius: 16px;
-    backdrop-filter: saturate(180%) blur(7px);
+    backdrop-filter: saturate(180%) blur(10px);
 }
 html[data-bs-theme="dark"] .glass-white {
     background: rgba(0, 0, 0, 0.2);
@@ -244,14 +244,14 @@ html[data-bs-theme="dark"][data-blackout="true"] .glass-white {
     background: rgba(255, 218, 106, 0.45);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(255, 218, 106, 0.3);
-    backdrop-filter: saturate(180%) blur(7px);
+    backdrop-filter: saturate(180%) blur(10px);
     border: 1px solid rgba(255, 218, 106, 0.12);
 }
 html[data-bs-theme="dark"] .glass-warning {
-    background: rgba(255, 218, 106, 0.2);
+    background: rgba(255, 218, 106, 0.15);
 }
 html[data-bs-theme="dark"][data-blackout="true"] .glass-warning {
-    background: rgba(255, 218, 106, 0.15);
+    background: rgba(255, 218, 106, 0.1);
 }
 
 /* Active theme indicator */
