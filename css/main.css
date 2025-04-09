@@ -131,7 +131,7 @@
     background-color: transparent !important;
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
-    backdrop-filter: blur(5px); /* Glass effect */
+    backdrop-filter: saturate(180%) blur(7px); /* Glass effect */
     z-index: 0; /* Enforcing position to ensure it stays above animation */
 }
 
@@ -140,7 +140,7 @@
     background-color: transparent !important;
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
-    backdrop-filter: blur(5px); /* Glass effect */
+    backdrop-filter: saturate(180%) blur(7px); /* Glass effect */
     z-index: 0; /* Enforcing position to ensure it stays above animation */
 }
 
@@ -214,7 +214,7 @@ html, head, body {
     background: rgba(255, 255, 255, 0.07);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(5px);
+    backdrop-filter: saturate(180%) blur(7px);
     border: 1px solid rgba(255, 255, 255, 0.12);
 }
 /* Glass Warning */
@@ -222,7 +222,7 @@ html, head, body {
     background: rgba(255, 218, 106, 0.45);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(5px);
+    backdrop-filter: saturate(180%) blur(7px);
     border: 1px solid rgba(255, 218, 106, 0.12);
 }
 html[data-bs-theme="dark"] .glass-warning {
