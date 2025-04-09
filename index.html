@@ -69,7 +69,6 @@
 
     <!-- ParticlesJS -->
 	<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="js/particles-config.js" defer></script>
     
     <!-- Dynamically loading main.css and themeInit.js -->
     <script>
@@ -89,6 +88,12 @@
         themeScript.onload = () => console.log("themeInit.js loaded");
         themeScript.onerror = (e) => console.error("themeInit.js failed to load:", e);
         document.head.appendChild(themeScript);
+
+        const particleConfig = document.createElement('script');
+        particleConfig.src = `/js/particles-config.js?v=${version}`;
+        particleConfig.onload = () => console.log("particles-config.js loaded");
+        particleConfig.onerror = (e) => console.error("particles-config failed to load:", e);
+        document.head.appendChild(particleConfig);
     </script>
 
     <!-- Schema -->
