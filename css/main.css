@@ -194,12 +194,20 @@ html, head, body {
 /* Glass Elements ------------------------------------------- */
 /* Glass Warning */
 .glass-warning {
-    background: rgba(255, 218, 106, 0.33);
+    background: rgba(255, 218, 106, 0.45);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 218, 106, 0.3);
+}
+html[data-bs-theme="dark"] .glass-warning {
+    background: rgba(255, 218, 106, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+html[data-bs-theme="dark"][data-blackout="true"] .glass-warning {
+    background: rgba(255, 218, 106, 0.15);
+    box-shadow: 0 4px 30px rgba(255, 218, 106, 0.2);
 }
 
 /* Active theme indicator */
