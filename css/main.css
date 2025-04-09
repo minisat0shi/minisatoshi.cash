@@ -3,7 +3,7 @@
 /* Adjusting Bootstrap + New Root Stylings------------------------------------------- */
 /* CSS Variables */
 :root {
-  --container-max-width: 1450px;
+  --container-max-width: 1600px;
   --main-nav-height: 60px;
   --other-nav-height: 56px;
   --info-green: #0AC18E;
@@ -40,19 +40,32 @@
 }
 
 /* Adding extension of container class to go wider */
+@media (min-width:1400px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 1350px !important;
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+}
 @media (min-width:1600px) {
     .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-        max-width: 1400px !important;
+        max-width: 1450px !important;
+        padding-left: 2em;
+        padding-right: 2em;
     }
 }
 @media (min-width:1800px) {
     .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-        max-width: 1425px !important;
+        max-width: 1500px !important;
+        padding-left: 2em;
+        padding-right: 2em;
     }
 }
 @media (min-width:2000px) {
     .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
         max-width: var(--container-max-width) !important;
+        padding-left: 2em;
+        padding-right: 2em;
     }
 }
 
@@ -118,6 +131,8 @@
     background-color: transparent !important;
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
+    backdrop-filter: blur(5px); /* Glass effect */
+    z-index: 0; /* Enforcing position to ensure it stays above animation */
 }
 
 .bg-info-subtle {
@@ -125,6 +140,8 @@
     background-color: transparent !important;
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
+    backdrop-filter: blur(5px); /* Glass effect */
+    z-index: 0; /* Enforcing position to ensure it stays above animation */
 }
 
 
@@ -192,21 +209,37 @@ html, head, body {
 }
 
 /* Glass Elements ------------------------------------------- */
+/* Glass White */
+.glass-white {
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+html[data-bs-theme="dark"] .glass-warning {
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+}
+html[data-bs-theme="dark"][data-blackout="true"] .glass-warning {
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.15);
+}
 /* Glass Warning */
 .glass-warning {
     background: rgba(255, 218, 106, 0.45);
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 218, 106, 0.3);
+    border: 1px solid rgba(255, 218, 106, 0.12);
 }
 html[data-bs-theme="dark"] .glass-warning {
     background: rgba(255, 218, 106, 0.2);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
 }
 html[data-bs-theme="dark"][data-blackout="true"] .glass-warning {
     background: rgba(255, 218, 106, 0.15);
-    box-shadow: 0 4px 30px rgba(255, 218, 106, 0.2);
+    box-shadow: 0 4px 30px rgba(255, 218, 106, 0.15);
 }
 
 /* Active theme indicator */
