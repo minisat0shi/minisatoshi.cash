@@ -226,27 +226,32 @@ html, head, body {
 /* Glass Elements ------------------------------------------- */
 /* Glass White */
 .glass-white {
-    background: rgba(255, 255, 255, 0.07);
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.15);
     backdrop-filter: saturate(180%) blur(7px);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+html[data-bs-theme="dark"] .glass-white {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+html[data-bs-theme="dark"][data-blackout="true"] .glass-white {
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 /* Glass Warning */
 .glass-warning {
     background: rgba(255, 218, 106, 0.45);
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 30px rgba(255, 218, 106, 0.3);
     backdrop-filter: saturate(180%) blur(7px);
     border: 1px solid rgba(255, 218, 106, 0.12);
 }
 html[data-bs-theme="dark"] .glass-warning {
     background: rgba(255, 218, 106, 0.2);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
 }
 html[data-bs-theme="dark"][data-blackout="true"] .glass-warning {
     background: rgba(255, 218, 106, 0.15);
-    box-shadow: 0 4px 30px rgba(255, 218, 106, 0.15);
 }
 
 /* Active theme indicator */
