@@ -290,10 +290,8 @@ html, head, body {
 html[data-bs-theme="dark"] .affix {
     background-color: rgba(33,37,41,0.5);
 }
-@media (prefers-color-scheme: dark) {
-    html:not([data-bs-theme="light"]) .affix {
-        background-color: rgba(0,0,0,0.5);
-    }
+html[data-bs-theme="dark"][data-blackout="true"] .affix {
+    background-color: rgba(0,0,0,0.5);
 }
 
 .affix-text-color {
@@ -421,15 +419,13 @@ html[data-bs-theme="dark"] .affix {
     html[data-bs-theme="dark"] .custom_nav.affix .navbar-collapse.collapsing {
         background-color: rgba(33,37,41,0.5);
     }
-    @media (prefers-color-scheme: dark) {
-        html:not([data-bs-theme="light"]) .custom_nav .navbar-collapse.show,
-        html:not([data-bs-theme="light"]) .custom_nav .navbar-collapse.collapsing {
-            background-color: rgba(0,0,0,0.5);
-        }
-        html:not([data-bs-theme="light"]) .custom_nav.affix .navbar-collapse.show,
-        html:not([data-bs-theme="light"]) .custom_nav.affix .navbar-collapse.collapsing {
-            background-color: rgba(0,0,0,0.5);
-        }
+    html[data-bs-theme="dark"][data-blackout="true"] .custom_nav .navbar-collapse.show,
+    html[data-bs-theme="dark"][data-blackout="true"] .custom_nav .navbar-collapse.collapsing {
+        background-color: rgba(0,0,0,0.5);
+    }
+    html[data-bs-theme="dark"][data-blackout="true"] .custom_nav.affix .navbar-collapse.show,
+    html[data-bs-theme="dark"][data-blackout="true"] .custom_nav.affix .navbar-collapse.collapsing {
+        background-color: rgba(0,0,0,0.5);
     }
     .custom_nav .nav-link {
         text-align: right;
