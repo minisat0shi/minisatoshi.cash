@@ -153,7 +153,7 @@ html, head, body {
 }
 
 /* Icon Gradients */
-/*[data-bs-theme="light"]*/.icon-gradient {
+.icon-gradient {
     background: var(--green-blue-gradient-animation);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
@@ -213,7 +213,7 @@ html, head, body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vh;
+    width: 100%;
     height: 100vw;
     z-index: -1;
 }
@@ -230,20 +230,37 @@ html, head, body {
     backdrop-filter: saturate(180%) blur(10px);
 }
 html[data-bs-theme="dark"] .glass-white {
-    background: rgba(0, 0, 0, 0.2);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
 }
+/* White Glass
 html[data-bs-theme="dark"][data-blackout="true"] .glass-white {
     background: rgba(255, 255, 255, 0.07);
     box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.05);
+} */
+/* Green Glass
+html[data-bs-theme="dark"][data-blackout="true"] .glass-white {
+    background: rgba(10, 193, 142, 0.07);
+    box-shadow: 0 4px 30px rgba(10, 193, 142, 0.1);
+    border: 1px solid rgba(10, 193, 142, 0.05);
+} */
+/* Black Glass */
+html[data-bs-theme="dark"][data-blackout="true"] .glass-white {
+    background: rgba(0,0,0,0.05);
 }
+/* Radient/Gradient Green Blue Glass
+html[data-bs-theme="dark"][data-blackout="true"] .glass-white {
+    background: var(--glass-gradient);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    box-shadow: 0 4px 30px rgba(10, 193, 142, 0.1);
+    border: 1px solid rgba(10, 193, 142, 0.05);
+} */
 /* Glass Warning */
 .glass-warning {
     background: rgba(255, 218, 106, 0.45);
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(255, 218, 106, 0.3);
+    box-shadow: 0 4px 30px rgba(255, 218, 106, 0.2);
     backdrop-filter: saturate(180%) blur(10px);
     border: 1px solid rgba(255, 218, 106, 0.12);
 }
