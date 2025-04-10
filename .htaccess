@@ -22,12 +22,12 @@ RewriteRule ^(css/main\.css|js/main\.js)$ - [E=cache-control:no-cache]
     ExpiresByType image/svg+xml "access plus 1 week"
     ExpiresByType image/bmp "access plus 1 week"
     ExpiresByType application/javascript "access plus 1 week"
-    <Files "css/main.css">
+    <FilesMatch "css/main.css">
         ExpiresActive Off
-    </Files>
-    <Files "js/main.js">
+    </FilesMatch>
+    <FilesMatch "js/main.js">
         ExpiresActive Off
-    </Files>
+    </FilesMatch>
 </IfModule>
 
 # No-cache for main.css and main.js

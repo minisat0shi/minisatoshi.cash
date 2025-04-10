@@ -3,7 +3,7 @@
 /* Adjusting Bootstrap + New Root Stylings------------------------------------------- */
 /* CSS Variables */
 :root {
-  --container-max-width: 1450px;
+  --container-max-width: 1600px;
   --main-nav-height: 60px;
   --other-nav-height: 56px;
   --info-green: #0AC18E;
@@ -40,19 +40,32 @@
 }
 
 /* Adding extension of container class to go wider */
+@media (min-width:1400px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 1350px !important;
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+}
 @media (min-width:1600px) {
     .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-        max-width: 1400px !important;
+        max-width: 1450px !important;
+        padding-left: 2em;
+        padding-right: 2em;
     }
 }
 @media (min-width:1800px) {
     .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-        max-width: 1425px !important;
+        max-width: 1500px !important;
+        padding-left: 2em;
+        padding-right: 2em;
     }
 }
 @media (min-width:2000px) {
     .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
         max-width: var(--container-max-width) !important;
+        padding-left: 2em;
+        padding-right: 2em;
     }
 }
 
@@ -118,6 +131,8 @@
     background-color: transparent !important;
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
+    backdrop-filter: saturate(180%) blur(10px); /* Glass effect */
+    z-index: 0; /* Enforcing position to ensure it stays above animation */
 }
 
 .bg-info-subtle {
@@ -125,6 +140,8 @@
     background-color: transparent !important;
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
+    backdrop-filter: saturate(180%) blur(10px); /* Glass effect */
+    z-index: 0; /* Enforcing position to ensure it stays above animation */
 }
 
 
@@ -136,7 +153,7 @@ html, head, body {
 }
 
 /* Icon Gradients */
-/*[data-bs-theme="light"]*/.icon-gradient {
+.icon-gradient {
     background: var(--green-blue-gradient-animation);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
@@ -189,6 +206,69 @@ html, head, body {
 
 .theme-switcher .dropdown-item i {
   margin-right: 0.5rem;
+}
+
+/* ParticlesJS Homepage div ------------------------------------------- */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vw;
+    z-index: -1;
+}
+@supports (height: 100dvh) {
+    #particles-js {
+        height: 100dvh;
+    }
+}
+
+/* Glass Elements ------------------------------------------- */
+/* Glass White */
+.glass-white {
+    border-radius: 16px;
+    backdrop-filter: saturate(180%) blur(10px);
+}
+html[data-bs-theme="dark"] .glass-white {
+    backdrop-filter: blur(10px);
+}
+/* White Glass
+html[data-bs-theme="dark"][data-blackout="true"] .glass-white {
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+} */
+/* Green Glass
+html[data-bs-theme="dark"][data-blackout="true"] .glass-white {
+    background: rgba(10, 193, 142, 0.07);
+    box-shadow: 0 4px 30px rgba(10, 193, 142, 0.1);
+    border: 1px solid rgba(10, 193, 142, 0.05);
+} */
+/* Black Glass */
+html[data-bs-theme="dark"][data-blackout="true"] .glass-white {
+    background: rgba(0,0,0,0.05);
+}
+/* Radient/Gradient Green Blue Glass
+html[data-bs-theme="dark"][data-blackout="true"] .glass-white {
+    background: var(--glass-gradient);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    box-shadow: 0 4px 30px rgba(10, 193, 142, 0.1);
+    border: 1px solid rgba(10, 193, 142, 0.05);
+} */
+/* Glass Warning */
+.glass-warning {
+    background: rgba(255, 218, 106, 0.45);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(255, 218, 106, 0.2);
+    backdrop-filter: saturate(180%) blur(10px);
+    border: 1px solid rgba(255, 218, 106, 0.12);
+}
+html[data-bs-theme="dark"] .glass-warning {
+    background: rgba(255, 218, 106, 0.15);
+}
+html[data-bs-theme="dark"][data-blackout="true"] .glass-warning {
+    background: rgba(255, 218, 106, 0.1);
 }
 
 /* Active theme indicator */
@@ -279,10 +359,8 @@ html, head, body {
 html[data-bs-theme="dark"] .affix {
     background-color: rgba(33,37,41,0.5);
 }
-@media (prefers-color-scheme: dark) {
-    html:not([data-bs-theme="light"]) .affix {
-        background-color: rgba(0,0,0,0.5);
-    }
+html[data-bs-theme="dark"][data-blackout="true"] .affix {
+    background-color: rgba(0,0,0,0.5);
 }
 
 .affix-text-color {
@@ -410,15 +488,13 @@ html[data-bs-theme="dark"] .affix {
     html[data-bs-theme="dark"] .custom_nav.affix .navbar-collapse.collapsing {
         background-color: rgba(33,37,41,0.5);
     }
-    @media (prefers-color-scheme: dark) {
-        html:not([data-bs-theme="light"]) .custom_nav .navbar-collapse.show,
-        html:not([data-bs-theme="light"]) .custom_nav .navbar-collapse.collapsing {
-            background-color: rgba(0,0,0,0.5);
-        }
-        html:not([data-bs-theme="light"]) .custom_nav.affix .navbar-collapse.show,
-        html:not([data-bs-theme="light"]) .custom_nav.affix .navbar-collapse.collapsing {
-            background-color: rgba(0,0,0,0.5);
-        }
+    html[data-bs-theme="dark"][data-blackout="true"] .custom_nav .navbar-collapse.show,
+    html[data-bs-theme="dark"][data-blackout="true"] .custom_nav .navbar-collapse.collapsing {
+        background-color: rgba(0,0,0,0.5);
+    }
+    html[data-bs-theme="dark"][data-blackout="true"] .custom_nav.affix .navbar-collapse.show,
+    html[data-bs-theme="dark"][data-blackout="true"] .custom_nav.affix .navbar-collapse.collapsing {
+        background-color: rgba(0,0,0,0.5);
     }
     .custom_nav .nav-link {
         text-align: right;
