@@ -216,8 +216,8 @@ html, head, body {
 
 /* Theme Button */
 .theme-switcher .dropdown-item.active {
-    background-color: var(--bs-primary-bg-subtle);
-    color: var(--bs-primary-text-emphasis);
+    background-color: var(--bs-success-bg-subtle);
+    color: var(--bs-success-text-emphasis);
 }
 .theme-switcher .dropdown-toggle::after {
     vertical-align: 0.25em;
@@ -232,19 +232,19 @@ html, head, body {
 /* Theme-Sensitive Button Styling */
 [data-bs-theme="light"] .theme-sensitive {
     color: var(--bs-white);
-    background-color: var(--bs-primary);
+    background-color: var(--bs-success);
 }
 [data-bs-theme="light"] .theme-sensitive:hover {
-    background-color: var(--bs-primary);
+    background-color: var(--bs-success);
     filter: brightness(90%);
 }
 [data-bs-theme="dark"] .theme-sensitive {
-    color: var(--bs-primary-text-emphasis);
-    background-color: var(--bs-primary-bg-subtle);
-    border: 1px solid var(--bs-primary-border-subtle);
+    color: var(--bs-success-text-emphasis);
+    background-color: var(--bs-success-bg-subtle);
+    border: 1px solid var(--bs-success-border-subtle);
 }
 [data-bs-theme="dark"] .theme-sensitive:hover {
-    background-color: var(--bs-primary-bg-subtle);
+    background-color: var(--bs-success-bg-subtle);
     filter: brightness(90%);
 }
 
@@ -272,6 +272,10 @@ html, head, body {
 html[data-bs-theme="dark"] .glass-white {
     backdrop-filter: blur(10px);
 }
+/* Black Glass */
+html[data-bs-theme="dark"][data-blackout="true"] .glass-white {
+    background: rgba(0,0,0,0.05);
+}
 /* White Glass
 html[data-bs-theme="dark"][data-blackout="true"] .glass-white {
     background: rgba(255, 255, 255, 0.07);
@@ -284,10 +288,6 @@ html[data-bs-theme="dark"][data-blackout="true"] .glass-white {
     box-shadow: 0 4px 30px rgba(10, 193, 142, 0.1);
     border: 1px solid rgba(10, 193, 142, 0.05);
 } */
-/* Black Glass */
-html[data-bs-theme="dark"][data-blackout="true"] .glass-white {
-    background: rgba(0,0,0,0.05);
-}
 /* Radient/Gradient Green Blue Glass
 html[data-bs-theme="dark"][data-blackout="true"] .glass-white {
     background: var(--glass-gradient);
@@ -296,6 +296,16 @@ html[data-bs-theme="dark"][data-blackout="true"] .glass-white {
     box-shadow: 0 4px 30px rgba(10, 193, 142, 0.1);
     border: 1px solid rgba(10, 193, 142, 0.05);
 } */
+/* Glass White Soft */
+.glass-white-soft {
+    backdrop-filter: blur(5px);
+}
+html[data-bs-theme="dark"] .glass-white-soft {
+}
+/* Black Glass */
+html[data-bs-theme="dark"][data-blackout="true"] .glass-white-soft {
+    background: rgba(0,0,0,0.05);
+}
 /* Glass Warning */
 .glass-warning {
     background: rgba(255, 218, 106, 0.45);
@@ -544,7 +554,7 @@ html[data-bs-theme="dark"][data-blackout="true"] .affix {
 .home {
     width: 100vw;
     height: 100vh;
-    background: url('../images/FallingStarBackground_upscaled.webp') center bottom / cover;
+    background: url('../images/backgroundNew2.svg') center bottom / cover;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -559,7 +569,6 @@ html[data-bs-theme="dark"][data-blackout="true"] .affix {
 .home-text,
 .home-text-small-mobile {
     color: #fff;
-    max-width: 800px;
 }
 
 .home-text-small-mobile {
@@ -567,20 +576,20 @@ html[data-bs-theme="dark"][data-blackout="true"] .affix {
 }
 
 .home-img {
-    max-width: 800px;
+    max-width: 900px;
     width: 100%;
     height: auto;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 1150px) {
     .home-img {
-        max-width: 90%;
+        max-width: 85%;
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 650px) {
     .home-img {
-        max-width: 80%;
+        max-width: 90%;
     }
     .home-text {
         display: none;
