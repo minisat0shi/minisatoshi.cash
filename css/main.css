@@ -184,12 +184,6 @@ html, head, body {
     z-index: 100;
 }
 
-/* Active theme indicator */
-.theme-switcher .dropdown-item.active {
-  background-color: var(--bs-secondary-bg); /* Assuming secondary background color for active state */
-  color: var(--bs-secondary-color); /* Assuming secondary text color for active state */
-}
-
 /* Social Buttons */
 .social {
   position: fixed;
@@ -199,49 +193,32 @@ html, head, body {
   z-index: 2;
   transition: all 0.4s ease;
 }
-
-.social ul { padding: 0; }
-.social ul li {
-  margin: 0.25em;
-  display: block;
-  border-radius: 50%;
-}
-
 @media (max-width: 1380px) { .social { display: none; } }
 
-/* Theme Button */
-.theme { /* Homepage only */
-    position: fixed;
-    top: 120px;
-    left: 0;
-    margin: 0.25em;
-    padding-top: 20px;
-    z-index: 2;
-    transition: all 0.4s ease;
+/* Controls (Particles and Theme) */
+.controls {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  padding-top: 20px;
+  z-index: 2;
+  transition: all 0.4s ease;
 }
 
+/* Theme Button */
+/* Active theme indicator */
+.theme-switcher .dropdown-item.active {
+  background-color: var(--bs-secondary-bg); /* Assuming secondary background color for active state */
+  color: var(--bs-secondary-color); /* Assuming secondary text color for active state */
+}
 .theme-switcher .dropdown-toggle::after {
     vertical-align: 0.25em;
 }
-
 .theme-switcher .dropdown-menu {
     right: 0;
-    left: auto;
 }
-
 .theme-switcher .dropdown-item i {
     margin-right: 0.5rem;
-}
-
-/* Particle Toggle Button */
-.particle-toggle { /* Homepage only */
-    position: fixed;
-    top: 80px;
-    left: 0;
-    margin: 0.25em;
-    padding-top: 20px;
-    z-index: 2;
-    transition: all 0.4s ease;
 }
 
 /* ParticlesJS Homepage div ------------------------------------------- */
