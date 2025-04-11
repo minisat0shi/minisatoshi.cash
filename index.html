@@ -140,7 +140,7 @@
 		            <i></i>
 		        </button>
 		        <div class="collapse navbar-collapse justify-content-end py-1" id="navbarNav">
-		            <ul class="navbar-nav fw-medium navlinks">
+		            <ul class="navbar-nav fw-medium">
 		                <li class="nav-item"><a href="/" class="nav-link custom_nav_text" aria-label="Go to top of homepage">Home</a></li>
 		                <li class="nav-item"><a href="#_bch" class="nav-link custom_nav_text" aria-label="Go to BCH section of homepage">What is BCH?</a></li>
 		                <li class="nav-item"><a href="#_about" class="nav-link custom_nav_text" aria-label="Go to Mission section of homepage">The Mission</a></li>
@@ -154,38 +154,38 @@
 		    </div>
 		</nav>
 	    
-	    <!-- Floating Social Buttons -->
-	    <div class="social">
-	        <ul class="p-0">
-	            <li class="m-1">
-	                <a data-bs-ripple-init class="btn btn-primary fs-4 btn-floating" href="https://x.com/_minisatoshi" role="button" aria-label="minisatoshi's X profile">
-	                    <i class="bi bi-twitter-x"></i>
-	                </a>
-	            </li>
-	            <li class="m-1">
-	                <a data-bs-ripple-init class="btn btn-primary fs-4 btn-floating" href="https://github.com/minisat0shi" role="button" aria-label="minisatoshi's github">
-	                    <i class="bi bi-github"></i>
-	                </a>
-	            </li>
-	        </ul>
-	    </div>
+		<!-- Floating Social Buttons -->
+		<div class="social">
+		    <ul class="p-0 list-unstyled">
+		        <li class="m-1">
+		            <a data-bs-ripple-init class="btn fs-4 btn-floating theme-sensitive social-btn" href="https://x.com/_minisatoshi" role="button" aria-label="minisatoshi's X profile">
+		                <i class="bi bi-twitter-x"></i>
+		            </a>
+		        </li>
+		        <li class="m-1">
+		            <a data-bs-ripple-init class="btn fs-4 btn-floating theme-sensitive social-btn" href="https://github.com/minisat0shi" role="button" aria-label="minisatoshi's github">
+		                <i class="bi bi-github"></i>
+		            </a>
+		        </li>
+		    </ul>
+		</div>
 
 		<!-- Floating Controls -->
 		<div class="controls">
-		    <ul class=p-0>
+		    <ul class="p-0 list-unstyled">
 		        <!-- Particles Toggle Button -->
 		        <li class="m-1">
-		            <span data-bs-toggle="tooltip" data-bs-placement="right" data-bs-custom-class="informational-tooltip" data-bs-html="true" data-bs-title="Toggle particle background">
-		                <button data-bs-ripple-init class="btn btn-primary fs-5r btn-floating" id="particlesToggle" aria-label="Toggle Particles">
+		            <span data-bs-toggle="tooltip" data-bs-placement="right" data-bs-custom-class="primary-tooltip" data-bs-html="true" data-bs-title="Toggle particle background">
+		                <button data-bs-ripple-init class="btn fs-5r btn-floating theme-sensitive control-btn" id="particlesToggle" aria-label="Toggle Particles">
 		                    <i id="particlesIcon" class="bi bi-stars"></i>
 		                </button>
 		            </span>
 		        </li>
 		        <!-- Theme Button -->
 		        <li class="m-1">
-		            <span data-bs-toggle="tooltip" data-bs-placement="right" data-bs-custom-class="informational-tooltip" data-bs-html="true" data-bs-title="Change theme">
+		            <span data-bs-toggle="tooltip" data-bs-placement="right" data-bs-custom-class="primary-tooltip" data-bs-html="true" data-bs-title="Change theme">
 		                <div class="dropdown theme-switcher">
-		                    <button data-bs-ripple-init class="btn btn-primary fs-5r btn-floating dropdown-toggle" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Theme Switcher">
+		                    <button data-bs-ripple-init class="btn fs-5r btn-floating theme-sensitive control-btn dropdown-toggle" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Theme Switcher">
 		                        <i id="themeIcon" class="bi bi-moon-stars-fill"></i>
 		                    </button>
 		                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="themeDropdown">
