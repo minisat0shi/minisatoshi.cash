@@ -184,6 +184,31 @@ html, head, body {
     z-index: 100;
 }
 
+/* Active theme indicator */
+.theme-switcher .dropdown-item.active {
+  background-color: var(--bs-secondary-bg); /* Assuming secondary background color for active state */
+  color: var(--bs-secondary-color); /* Assuming secondary text color for active state */
+}
+
+/* Social Buttons */
+.social {
+  position: fixed;
+  top: 80px;
+  right: 0;
+  padding-top: 20px;
+  z-index: 2;
+  transition: all 0.4s ease;
+}
+
+.social ul { padding: 0; }
+.social ul li {
+  margin: 0.25em;
+  display: block;
+  border-radius: 50%;
+}
+
+@media (max-width: 1380px) { .social { display: none; } }
+
 /* Theme Button */
 .theme { /* Homepage only */
     position: fixed;
@@ -281,31 +306,6 @@ html[data-bs-theme="dark"] .glass-warning {
 html[data-bs-theme="dark"][data-blackout="true"] .glass-warning {
     background: rgba(255, 218, 106, 0.1);
 }
-
-/* Active theme indicator */
-.theme-switcher .dropdown-item.active {
-  background-color: var(--bs-secondary-bg); /* Assuming secondary background color for active state */
-  color: var(--bs-secondary-color); /* Assuming secondary text color for active state */
-}
-
-/* Social Buttons */
-.social {
-  position: fixed;
-  top: 80px;
-  right: 0;
-  padding-top: 20px;
-  z-index: 2;
-  transition: all 0.4s ease;
-}
-
-.social ul { padding: 0; }
-.social ul li {
-  margin: 0.25em;
-  display: block;
-  border-radius: 50%;
-}
-
-@media (max-width: 1380px) { .social { display: none; } }
 
 
 /* General (non-Homepage) Navbar ------------------------------------------- */
