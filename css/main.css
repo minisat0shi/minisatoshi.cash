@@ -554,7 +554,7 @@ html[data-bs-theme="dark"][data-blackout="true"] .affix {
 .home {
     width: 100vw;
     height: 100vh;
-    background: url('../images/backgroundNew3.svg') center bottom / cover;
+    background: url('../images/homepageBackground.svg') center bottom / cover;
     display: flex;
     justify-content: center;
     align-items: flex-end;
