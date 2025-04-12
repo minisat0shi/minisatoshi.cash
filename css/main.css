@@ -43,6 +43,11 @@
   color: var(--bs-primary-text-emphasis) !important;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
+.success-tooltip .tooltip-inner {
+  background-color: var(--bs-success-bg-subtle) !important;
+  color: var(--bs-success-text-emphasis) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
 
 /* Adding extension of container class to go wider */
 @media (min-width:1400px) {
@@ -487,6 +492,7 @@ html[data-bs-theme="dark"][data-blackout="true"] .affix {
 
 .custom_nav .navbar-collapse {
     justify-content: flex-end; /* Right-justify links */
+    position: relative;
 }
 
 /* Minimal Custom Styling for Below 1400px */
@@ -497,11 +503,6 @@ html[data-bs-theme="dark"][data-blackout="true"] .affix {
         top: 100%;
         left: 0;
         right: 0;
-        background-color: rgba(255,255,255,0.5);
-        backdrop-filter: saturate(180%) blur(20px);
-    }
-    .custom_nav.affix .navbar-collapse.show,
-    .custom_nav.affix .navbar-collapse.collapsing {
         background-color: rgba(255,255,255,0.5);
         backdrop-filter: saturate(180%) blur(20px);
     }

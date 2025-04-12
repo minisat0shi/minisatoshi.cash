@@ -32,12 +32,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // Apply initial visibility state to HTML
         if (particlesEnabled) {
             particlesContainer.style.display = 'block';
-            particlesToggle.classList.add('active');
             particlesIcon.classList.remove('bi-star');
             particlesIcon.classList.add('bi-stars');
         } else {
             particlesContainer.style.display = 'none';
-            particlesToggle.classList.remove('active');
             particlesIcon.classList.remove('bi-stars');
             particlesIcon.classList.add('bi-star');
         }
@@ -49,13 +47,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (particlesEnabled) {
                 particlesContainer.style.display = 'block';
-                particlesToggle.classList.add('active');
                 particlesIcon.classList.remove('bi-star');
                 particlesIcon.classList.add('bi-stars');
                 console.log('Particles shown');
             } else {
                 particlesContainer.style.display = 'none';
-                particlesToggle.classList.remove('active');
                 particlesIcon.classList.remove('bi-stars');
                 particlesIcon.classList.add('bi-star');
                 console.log('Particles hidden');

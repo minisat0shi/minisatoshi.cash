@@ -71,7 +71,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
   	<!-- Custom JS -->
-    <script src="js/particles-toggle.js" defer></script>
+    <script src="js/particles-toggle.js?v=2" defer></script>
     
     <!-- Dynamically loading main.css and themeInit.js -->
     <script>
@@ -130,28 +130,26 @@
 	<body data-bs-smooth-scroll="true" class="min-vh-100 d-flex flex-column">
 		<div id="particles-js"></div>
 		<nav class="navbar navbar-expand-xl fixed-top custom_nav fs-5">
-		    <div class="container-fluid">
-		        <a href="/" class="navbar-brand custom_nav_text" aria-label="Return to top of homepage">
-		            <img src="favicon/favicon.svg" alt="Logo" width="30" height="30" class="d-inline-block align-text-middle me-2">
-		        </a>
-		        <button class="navbar-toggler navTrigger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-		            <i></i>
-		            <i></i>
-		            <i></i>
-		        </button>
-		        <div class="collapse navbar-collapse justify-content-end py-1" id="navbarNav">
-		            <ul class="navbar-nav fw-medium">
-		                <li class="nav-item"><a href="/" class="nav-link custom_nav_text" aria-label="Go to top of homepage">Home</a></li>
-		                <li class="nav-item"><a href="#_bch" class="nav-link custom_nav_text" aria-label="Go to BCH section of homepage">What is BCH?</a></li>
-		                <li class="nav-item"><a href="#_about" class="nav-link custom_nav_text" aria-label="Go to Mission section of homepage">The Mission</a></li>
-		                <li class="nav-item"><a href="#_socials" class="nav-link custom_nav_text" aria-label="Go to Social section of homepage">Social System</a></li>
-		                <li class="nav-item"><a href="#_more" class="nav-link custom_nav_text" aria-label="Go to More section of homepage">More About BCH</a></li>
-		                <li class="nav-item"><a href="upgrade-history" class="nav-link custom_nav_text" aria-label="Go to Network Upgrades page">Network Upgrades</a></li>
-		                <li class="nav-item"><a href="ecosystem" class="nav-link custom_nav_text" aria-label="Go to Ecosystem page">Ecosystem</a></li>
-		                <li class="nav-item"><a href="resources" class="nav-link custom_nav_text" aria-label="Go to Resources page">Resources</a></li>
-		            </ul>
-		        </div>
-		    </div>
+	        <a href="/" class="navbar-brand custom_nav_text" aria-label="Return to top of homepage">
+	            <img src="favicon/favicon.svg" alt="Logo" width="30" height="30" class="d-inline-block align-text-middle me-2">
+	        </a>
+	        <button class="navbar-toggler navTrigger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	            <i></i>
+	            <i></i>
+	            <i></i>
+	        </button>
+	        <div class="collapse navbar-collapse justify-content-end p-1" id="navbarNav">
+	            <ul class="navbar-nav fw-medium">
+	                <li class="nav-item"><a href="/" class="nav-link custom_nav_text" aria-label="Go to top of homepage">Home</a></li>
+	                <li class="nav-item"><a href="#_bch" class="nav-link custom_nav_text" aria-label="Go to BCH section of homepage">What is BCH?</a></li>
+	                <li class="nav-item"><a href="#_about" class="nav-link custom_nav_text" aria-label="Go to Mission section of homepage">The Mission</a></li>
+	                <li class="nav-item"><a href="#_socials" class="nav-link custom_nav_text" aria-label="Go to Social section of homepage">Social System</a></li>
+	                <li class="nav-item"><a href="#_more" class="nav-link custom_nav_text" aria-label="Go to More section of homepage">More About BCH</a></li>
+	                <li class="nav-item"><a href="upgrade-history" class="nav-link custom_nav_text" aria-label="Go to Network Upgrades page">Network Upgrades</a></li>
+	                <li class="nav-item"><a href="ecosystem" class="nav-link custom_nav_text" aria-label="Go to Ecosystem page">Ecosystem</a></li>
+	                <li class="nav-item"><a href="resources" class="nav-link custom_nav_text" aria-label="Go to Resources page">Resources</a></li>
+	            </ul>
+	        </div>
 		</nav>
 	    
 		<!-- Floating Social Buttons -->
@@ -175,7 +173,7 @@
 		    <ul class="p-0 list-unstyled">
 		        <!-- Particles Toggle Button -->
 		        <li class="m-1">
-		            <span data-bs-toggle="tooltip" data-bs-placement="right" data-bs-custom-class="primary-tooltip" data-bs-html="true" data-bs-title="Toggle particle background">
+		            <span data-bs-toggle="tooltip" data-bs-placement="right" data-bs-custom-class="success-tooltip" data-bs-html="true" data-bs-title="Toggle particle background">
 		                <button data-bs-ripple-init class="btn fs-5r btn-floating theme-sensitive control-btn" id="particlesToggle" aria-label="Toggle Particles">
 		                    <i id="particlesIcon" class="bi bi-stars"></i>
 		                </button>
@@ -183,7 +181,7 @@
 		        </li>
 		        <!-- Theme Button -->
 		        <li class="m-1">
-		            <span data-bs-toggle="tooltip" data-bs-placement="right" data-bs-custom-class="primary-tooltip" data-bs-html="true" data-bs-title="Change theme">
+		            <span data-bs-toggle="tooltip" data-bs-placement="right" data-bs-custom-class="success-tooltip" data-bs-html="true" data-bs-title="Change theme">
 		                <div class="dropdown theme-switcher">
 		                    <button data-bs-ripple-init class="btn fs-5r btn-floating theme-sensitive control-btn dropdown-toggle" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Theme Switcher">
 		                        <i id="themeIcon" class="bi bi-moon-stars-fill"></i>
