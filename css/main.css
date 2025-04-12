@@ -345,12 +345,51 @@ html[data-bs-theme="dark"][data-blackout="true"] .glass-warning {
     width: 100%;
     z-index: 1;
     padding: 20px 0;
-    /* Define initial states for all properties that change in .affix */
     height: auto;
     background-color: transparent;
-    backdrop-filter: none;
-    box-shadow: none;
     transition: all 0.4s ease;
+}
+
+.custom_nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: all 0.4s ease;
+}
+
+/* Apply backdrop filter when hamburger menu is triggered (non-affix state) */
+.custom_nav:not(.affix).has-collapse-show::before {
+    background-color: rgba(255,255,255,0.5);
+    backdrop-filter: saturate(180%) blur(20px);
+}
+html[data-bs-theme="dark"] .custom_nav:not(.affix).has-collapse-show::before {
+    background-color: rgba(33,37,41,0.5);
+}
+html[data-bs-theme="dark"][data-blackout="true"] .custom_nav:not(.affix).has-collapse-show::before {
+    background-color: rgba(0,0,0,0.5);
+}
+
+/* Affix state */
+.custom_nav.affix::before {
+    background-color: rgba(255,255,255,0.5);
+    backdrop-filter: saturate(180%) blur(20px);
+}
+html[data-bs-theme="dark"] .custom_nav.affix::before {
+    background-color: rgba(33,37,41,0.5);
+}
+html[data-bs-theme="dark"][data-blackout="true"] .custom_nav.affix::before {
+    background-color: rgba(0,0,0,0.5);
+}
+
+.custom_nav.affix {
+    height: 60px;
+    padding: 0;
+    box-shadow: 0 1px 2px rgba(10,193,142,0.3),
+                0 2px 4px rgba(10,193,142,0.2);
 }
 
 .custom_nav .navbar-brand {
@@ -378,21 +417,6 @@ html[data-bs-theme="dark"][data-blackout="true"] .glass-warning {
     color: #0AC18E;
 }
 
-.affix {
-    height: 60px;
-    padding: 0;
-    background-color: rgba(255,255,255,0.5);
-    backdrop-filter: saturate(180%) blur(20px);
-    box-shadow: 0 1px 2px rgba(10,193,142,0.3), /* Thin bottom glow */
-                0 2px 4px rgba(10,193,142,0.2); /* Slightly wider subtle layer */
-}
-html[data-bs-theme="dark"] .affix {
-    background-color: rgba(33,37,41,0.5);
-}
-html[data-bs-theme="dark"][data-blackout="true"] .affix {
-    background-color: rgba(0,0,0,0.5);
-}
-
 .affix-text-color {
     color: var(--bs-body-color) !important;
 }
@@ -418,35 +442,18 @@ html[data-bs-theme="dark"][data-blackout="true"] .affix {
     height: 4px;
     position: absolute;
 }
-.navTrigger i:nth-child(1) {
-    top: 0;
-}
-.navTrigger i:nth-child(2) {
-    top: 10px;
-}
-.navTrigger i:nth-child(3) {
-    top: 20px;
-}
+.navTrigger i:nth-child(1) { top: 0; }
+.navTrigger i:nth-child(2) { top: 10px; }
+.navTrigger i:nth-child(3) { top: 20px; }
 
-/* Animations */
 .navTrigger i {
     animation: outT 0.8s backwards reverse;
 }
-.navTrigger i:nth-child(2) {
-    animation-name: outM;
-}
-.navTrigger i:nth-child(3) {
-    animation-name: outBtm;
-}
-.navTrigger.active i {
-    animation: inT 0.8s forwards;
-}
-.navTrigger.active i:nth-child(2) {
-    animation-name: inM;
-}
-.navTrigger.active i:nth-child(3) {
-    animation-name: inBtm;
-}
+.navTrigger i:nth-child(2) { animation-name: outM; }
+.navTrigger i:nth-child(3) { animation-name: outBtm; }
+.navTrigger.active i { animation: inT 0.8s forwards; }
+.navTrigger.active i:nth-child(2) { animation-name: inM; }
+.navTrigger.active i:nth-child(3) { animation-name: inBtm; }
 
 @keyframes inM {
     50% { transform: rotate(0deg); }
@@ -477,7 +484,6 @@ html[data-bs-theme="dark"][data-blackout="true"] .affix {
     100% { transform: translateY(-10px) rotate(135deg); }
 }
 
-/* Affix Bar Color */
 .affix-bars-color i {
     background-color: var(--bs-body-color) !important;
 }
@@ -491,11 +497,11 @@ html[data-bs-theme="dark"][data-blackout="true"] .affix {
 }
 
 .custom_nav .navbar-collapse {
-    justify-content: flex-end; /* Right-justify links */
+    justify-content: flex-end;
     position: relative;
 }
 
-/* Minimal Custom Styling for Below 1400px */
+/* Mobile Navbar Collapse */
 @media screen and (max-width: 1400px) {
     .custom_nav .navbar-collapse.show,
     .custom_nav .navbar-collapse.collapsing {
@@ -503,24 +509,17 @@ html[data-bs-theme="dark"][data-blackout="true"] .affix {
         top: 100%;
         left: 0;
         right: 0;
-        background-color: rgba(255,255,255,0.5);
-        backdrop-filter: saturate(180%) blur(20px);
+        box-shadow: none;
+        background-color: transparent; /* Remove separate filter */
     }
-    html[data-bs-theme="dark"] .custom_nav .navbar-collapse.show,
-    html[data-bs-theme="dark"] .custom_nav .navbar-collapse.collapsing {
-        background-color: rgba(33,37,41,0.5);
+    /* Extend navbar's ::before to cover full page height when hamburger is triggered */
+    .custom_nav.has-collapse-show::before {
+        height: 100vh;
     }
-    html[data-bs-theme="dark"] .custom_nav.affix .navbar-collapse.show,
-    html[data-bs-theme="dark"] .custom_nav.affix .navbar-collapse.collapsing {
-        background-color: rgba(33,37,41,0.5);
-    }
-    html[data-bs-theme="dark"][data-blackout="true"] .custom_nav .navbar-collapse.show,
-    html[data-bs-theme="dark"][data-blackout="true"] .custom_nav .navbar-collapse.collapsing {
-        background-color: rgba(0,0,0,0.5);
-    }
-    html[data-bs-theme="dark"][data-blackout="true"] .custom_nav.affix .navbar-collapse.show,
-    html[data-bs-theme="dark"][data-blackout="true"] .custom_nav.affix .navbar-collapse.collapsing {
-        background-color: rgba(0,0,0,0.5);
+    @supports (height: 100dvh) {
+        .custom_nav.has-collapse-show::before {
+            height: 100dvh;
+        }
     }
     .custom_nav .nav-link {
         text-align: right;

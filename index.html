@@ -541,6 +541,21 @@
 			    console.log("Clicked menu");
 			});
 	    </script>
+
+	    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navbar = document.querySelector('.custom_nav');
+    const collapse = document.querySelector('#navbarNav');
+
+    collapse.addEventListener('show.bs.collapse', function() {
+        navbar.classList.add('has-collapse-show');
+    });
+
+    collapse.addEventListener('hide.bs.collapse', function() {
+        navbar.classList.remove('has-collapse-show');
+    });
+});
+	    </script>
 	    
 	</body>
 </html>
