@@ -518,43 +518,44 @@
 
 	    <!-- Function used to shrink nav bar removing paddings and adding black background -->
 	    <script>
-			$(window).scroll(function() {
-			    if ($(document).scrollTop() > 50) {
-			        $('.custom_nav').addClass('affix');
-			        $('.custom_nav_text').addClass('affix-text-color');
-			        $('.navTrigger').addClass('affix-bars-color');
-			        $('.social').addClass('affix-social-theme');
-			        $('.theme').addClass('affix-social-theme');
-			        console.log("OK");
-			    } else {
-			        $('.custom_nav').removeClass('affix');
-			        $('.custom_nav_text').removeClass('affix-text-color');
-			        $('.navTrigger').removeClass('affix-bars-color');
-			        $('.social').removeClass('affix-social-theme');
-			        $('.theme').removeClass('affix-social-theme');
-			    }
+			document.addEventListener('DOMContentLoaded', function() {
+			    const navbar = document.querySelector('.custom_nav');
+			    const navTrigger = document.querySelector('.navTrigger');
+			    const collapse = document.querySelector('#navbarNav');
+			    const navTextElements = document.querySelectorAll('.custom_nav_text');
+
+			    // Scroll event for navbar affix styles
+			    window.addEventListener('scroll', function() {
+			        if (document.documentElement.scrollTop > 50) {
+			            navbar.classList.add('affix');
+			            navTextElements.forEach(el => el.classList.add('affix-text-color'));
+			            navTrigger.classList.add('affix-bars-color');
+			            console.log("Added classes on scroll down");
+			        } else {
+			            navbar.classList.remove('affix');
+			            navTextElements.forEach(el => el.classList.remove('affix-text-color'));
+			            navTrigger.classList.remove('affix-bars-color');
+			            console.log("Removed classes on scroll up");
+			        }
+			    });
+
+			    // Hamburger menu toggle
+			    navTrigger.addEventListener('click', function() {
+			        this.classList.toggle('active');
+			        console.log("Clicked menu");
+			    });
+
+			    // Collapse show/hide for backdrop filter
+			    collapse.addEventListener('show.bs.collapse', function() {
+			        navbar.classList.add('has-collapse-show');
+			        console.log("Collapse shown");
+			    });
+
+			    collapse.addEventListener('hide.bs.collapse', function() {
+			        navbar.classList.remove('has-collapse-show');
+			        console.log("Collapse hidden");
+			    });
 			});
-
-			// Toggle the active class for animation
-			$('.navTrigger').click(function() {
-			    $(this).toggleClass('active');
-			    console.log("Clicked menu");
-			});
-	    </script>
-
-	    <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const navbar = document.querySelector('.custom_nav');
-    const collapse = document.querySelector('#navbarNav');
-
-    collapse.addEventListener('show.bs.collapse', function() {
-        navbar.classList.add('has-collapse-show');
-    });
-
-    collapse.addEventListener('hide.bs.collapse', function() {
-        navbar.classList.remove('has-collapse-show');
-    });
-});
 	    </script>
 	    
 	</body>
