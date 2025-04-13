@@ -1,15 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 490 490">
-  <!-- Generator: Adobe Illustrator 29.3.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 146)  -->
-  <defs>
-    <style>
-      .st0 {
-        fill: none;
-        stroke: #707070;
-        stroke-linecap: round;
-        stroke-width: 36px;
-      }
-    </style>
-  </defs>
-  <path class="st0" d="M280,278c59.2-60.3,58.3-157.2-2-216.4C217.7,2.4,120.8,3.3,61.6,63.6,2.4,123.9,3.3,220.8,63.6,280c59.5,58.4,154.9,58.4,214.4,0l170,170M357,333l110,110-26,26-110-110"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490 490" xmlns:v="https://vecta.io/nano"><path d="M280 278c59.2-60.3 58.3-157.2-2-216.4s-157.2-58.3-216.4 2-58.3 157.2 2 216.4c59.5 58.4 154.9 58.4 214.4 0l170 170m-91-117l110 110-26 26-110-110" fill="none" stroke="#707070" stroke-linecap="round" stroke-width="36"/></svg>
