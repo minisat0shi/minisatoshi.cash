@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function swapImage() {
     const theme = document.documentElement.getAttribute('data-bs-theme');
     const images = {
-      bchbull: theme === 'dark' ? 'images/Ecosystem/bchbull-dark.png?v=0.01' : 'images/Ecosystem/bchbull-light.png?v=0.01',
+      bchbull: theme === 'dark' ? 'images/Ecosystem/bchbull-dark.svg' : 'images/Ecosystem/bchbull-light.svg',
       tapswap: theme === 'dark' ? 'images/Ecosystem/tapswap-dark.png?v=0.01' : 'images/Ecosystem/tapswap-light.png?v=0.01',
       XOCash: theme === 'dark' ? 'images/Ecosystem/XO-cash-darkmode.svg?v=0.01' : 'images/Ecosystem/XO-cash-lightmode.svg?v=0.01',
       XOStack: theme === 'dark' ? 'images/Ecosystem/XO-stack-darkmode.svg?v=0.01' : 'images/Ecosystem/XO-stack-lightmode.svg?v=0.01',
