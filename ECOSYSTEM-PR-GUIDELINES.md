@@ -7,7 +7,7 @@
 - When adding images, the order of file type preference is: .svg>.webp>.png>.jpg
 - If there is any pure white or black background to an image, please swap it for an in-between gray. Two images can be used, but the javascript for image swapping will need to be updated. If the javascript is not updated correctly, it will break all image swaps on the page. Unless you are very comfortable with JS, please default to using a single image.
 - Target file size should be <50kb, this is crucial for fast page load times
-- If the image is a square, and can be cropped, in the \<img> tag please use an id="ecosystemCircle" to crop the image to a circle or id="ecosystemRound" to give the image rounded corners. Rounded corners/circle crop is preferred, however, not necessary.
+- If the image is a square, and can be cropped, in the \<img> tag please add "ecosystemCircle" to the \<img> classes crop the image to a circle or "ecosystemRound" to give the image rounded corners. Rounded corners/circle crop is preferred, however, not necessary.
 - There is a class for all images "card-img-standard" -- this should be used for most cards. However, if adding a very limited card (such as an Exchange (CEX), or any other card which won't have a description, please use the class "card-img-small". When using this smaller image format, other changes are needed as well (an example can also be found at the bottom of the doc):
   - \<h4> class needs the added "mb-0"
   - \<div class="d-flex flex-sm-row flex-column"> needs to be modified to \<div class="d-flex flex-sm-row flex-column align-items-center"> (adding the align-items-center class)
@@ -24,7 +24,7 @@
       <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
 	<div class="d-flex flex-sm-row flex-column">
 	  <div class="align-self-center">
-	    <img src="images/logosForEcosystem/BCHPodcast.webp" alt="Bitcoin Cash Podcast logo" class="card-img-standard me-0 me-sm-3 mb-3 mb-sm-0"> <!--Make sure to have an image and to properly update the alt tag--> <!--Additionally, if needing to round corners add: id="ecosystemRound" or if needing to crop image to circle add: id="ecosystemCircle"-->
+	    <img src="images/logosForEcosystem/BCHPodcast.webp" alt="Bitcoin Cash Podcast logo" class="card-img-standard me-0 me-sm-3 mb-3 mb-sm-0"> <!--Make sure to have an image and to properly update the alt tag--> <!--Additionally, if needing to round corners add "ecosystemRound" or if needing to crop image to circle add: "ecosystemCircle" to the end of the class="" -->
 	  </div>
 	  <div>
 	    <h4 class="text-break">Bitcoin Cash Podcast</h4> <!--Title-->
@@ -57,7 +57,7 @@
       <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
         <div class="d-flex flex-sm-row flex-column">
           <div class="align-self-center">
-            <img src="images/logosForEcosystem/BCHPodcast.svg" alt="Bitcoin Cash Podcast logo" class="card-img-standard me-0 me-sm-3 mb-3 mb-sm-0"> <!--Make sure to have an image and to properly update the alt tag--> <!--Additionally, if needing to round corners add: id="ecosystemRound" or if needing to crop image to circle add: id="ecosystemCircle"-->
+            <img src="images/logosForEcosystem/BCHPodcast.svg" alt="Bitcoin Cash Podcast logo" class="card-img-standard me-0 me-sm-3 mb-3 mb-sm-0"> <!--Make sure to have an image and to properly update the alt tag--> <!--Additionally, if needing to round corners add "ecosystemRound" or if needing to crop image to circle add: "ecosystemCircle" to the end of the class="" -->
           </div>
           <div>
             <h4 class="text-break">Bitcoin Cash Podcast</h4> <!--Title-->
