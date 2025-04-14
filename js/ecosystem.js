@@ -113,21 +113,24 @@ document.addEventListener('DOMContentLoaded', function () {
   // Theme-Based Image Swap
   function swapImage() {
     const theme = document.documentElement.getAttribute('data-bs-theme');
-    const images = {
-      bchbull: theme === 'dark' ? 'images/Ecosystem/bchbull-dark.svg' : 'images/Ecosystem/bchbull-light.svg',
-      tapswap: theme === 'dark' ? 'images/Ecosystem/tapswap-dark.png?v=0.01' : 'images/Ecosystem/tapswap-light.png?v=0.01',
-      XOCash: theme === 'dark' ? 'images/Ecosystem/XO-cash-darkmode.svg?v=0.01' : 'images/Ecosystem/XO-cash-lightmode.svg?v=0.01',
-      XOStack: theme === 'dark' ? 'images/Ecosystem/XO-stack-darkmode.svg?v=0.01' : 'images/Ecosystem/XO-stack-lightmode.svg?v=0.01',
-      oraclesCash: theme === 'dark' ? 'images/Ecosystem/oracles-dark.svg?v=2' : 'images/Ecosystem/oracles-light.svg?v=2',
-    };
+    const imageIds = ['bchbull', 'tapswap', 'XOCash', 'XOStack', 'oraclesCash'];
 
-    for (const [id, src] of Object.entries(images)) {
+    imageIds.forEach(id => {
       const img = document.getElementById(id);
-      if (img) img.src = src;
-    }
+      if (img) {
+        const srcAttribute = theme === 'dark' ? 'data-src-dark' : 'data-src-light';
+        const src = img.getAttribute(srcAttribute);
+        if (src) {
+          img.src = src;
+        }
+      }
+    });
   }
 
-  swapImage(); // Initial call
+  // Initial call
+  swapImage();
+
+  // Observer for theme changes
   const observer = new MutationObserver(swapImage);
   observer.observe(document.documentElement, {
     attributes: true,
