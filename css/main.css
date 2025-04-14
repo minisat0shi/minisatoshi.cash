@@ -924,10 +924,10 @@ ul.upgrade-bullets > li::before {
 .EcoStartImg {
     max-width: min(50vw,600px);
 }
-#ecosystemCircle {
+.ecosystemCircle {
     border-radius: 50%;
 }
-#ecosystemRound {
+.ecosystemRound {
     border-radius: 10%;
 }
 
