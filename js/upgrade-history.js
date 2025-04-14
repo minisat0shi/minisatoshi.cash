@@ -37,13 +37,13 @@ document.addEventListener('DOMContentLoaded', function () {
   // === Theme-Based Image Swap ===
   function swapImage() {
     const img = document.getElementById('bchSplitLogo');
-    const theme = document.documentElement.getAttribute('data-bs-theme');
-
     if (img) {
-      img.src =
-        theme === 'dark'
-          ? 'images/UpgradeGraphics/bchLogoFullWhite.svg?v=0.04'
-          : 'images/UpgradeGraphics/bchLogoFullDark.svg?v=0.04';
+      const theme = document.documentElement.getAttribute('data-bs-theme');
+      const srcAttribute = theme === 'dark' ? 'data-src-dark' : 'data-src-light';
+      const src = img.getAttribute(srcAttribute);
+      if (src) {
+        img.src = src;
+      }
     }
   }
 
