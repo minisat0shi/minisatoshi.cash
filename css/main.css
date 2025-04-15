@@ -14,6 +14,8 @@
   --orange-gradient-light-hover: linear-gradient(135deg, rgba(210, 175, 70, 0.5) 0%, rgba(200, 130, 52, 0.5) 100%);
   --orange-gradient-dark-hover: linear-gradient(135deg, rgba(240, 197, 79, 0.4) 0%, rgba(232, 150, 62, 0.4) 100%);
   --green-blue-gradient: linear-gradient(to bottom right, #0AC18E, #23A6D5);
+  --green-blue-gradient-transparent-light: linear-gradient(to bottom right, #0AC18EFF, #23A6D5FF);
+  --green-blue-gradient-transparent-dark: linear-gradient(to bottom right, #0AC18ECC, #23A6D5CC);
   --green-blue-gradient-animation: linear-gradient(-45deg, #0AC18E, #23A6D5, #0AC18E);
 }
 
@@ -269,35 +271,34 @@ html, head, body {
 }
 
 /* Glass Elements ------------------------------------------- */
+/* Glass Soft */
+.glass-soft {
+    border-radius: 16px;
+    backdrop-filter: saturate(180%) blur(10px);
+}
+html[data-bs-theme="dark"] .glass-soft {
+    backdrop-filter: blur(10px);
+}
+html[data-bs-theme="dark"][data-blackout="true"] .glass-soft {
+    background: rgba(0,0,0,0.05);
+}
 /* Glass White */
 .glass-white {
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 16px;
     backdrop-filter: saturate(180%) blur(10px);
 }
 html[data-bs-theme="dark"] .glass-white {
     backdrop-filter: blur(10px);
 }
-/* Black Glass */
 html[data-bs-theme="dark"][data-blackout="true"] .glass-white {
-    background: rgba(0,0,0,0.05);
+    background: rgba(255, 255, 255, 0.3);
 }
-/* White Glass
-html[data-bs-theme="dark"][data-blackout="true"] .glass-white {
-    background: rgba(255, 255, 255, 0.07);
-    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-} */
 /* Green Glass
 html[data-bs-theme="dark"][data-blackout="true"] .glass-white {
     background: rgba(10, 193, 142, 0.07);
-    box-shadow: 0 4px 30px rgba(10, 193, 142, 0.1);
-    border: 1px solid rgba(10, 193, 142, 0.05);
-} */
-/* Radient/Gradient Green Blue Glass
-html[data-bs-theme="dark"][data-blackout="true"] .glass-white {
-    background: var(--glass-gradient);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
     box-shadow: 0 4px 30px rgba(10, 193, 142, 0.1);
     border: 1px solid rgba(10, 193, 142, 0.05);
 } */
@@ -324,6 +325,28 @@ html[data-bs-theme="dark"] .glass-warning {
 }
 html[data-bs-theme="dark"][data-blackout="true"] .glass-warning {
     background: rgba(255, 218, 106, 0.1);
+}
+/* Glass Gradient */
+.glass-gradient::before {
+    background: var(--bs-body-bg);
+    position: absolute;
+}
+.glass-gradient {
+    background: var(--green-blue-gradient-transparent-light);
+    background-size: 200% 200%;
+    animation: gradient 15s ease infinite;
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(10, 193, 142, 0.2);
+    backdrop-filter: saturate(180%) blur(10px);
+    border: 1px solid rgba(255, 218, 106, 0.2);
+}
+html[data-bs-theme="dark"] .glass-gradient {
+    background: var(--green-blue-gradient-transparent-dark);
+    background-size: 200% 200%;
+    animation: gradient 8s ease infinite;
+}
+html[data-bs-theme="dark"][data-blackout="true"] .glass-gradient {
+
 }
 
 
@@ -910,6 +933,12 @@ ul.upgrade-bullets > li::before {
 /* Ecosystem Page ------------------------------------------- */
 .card-img-standard {
     height:6rem;
+    min-height: 1px; /* This fixes odd Safari issue where "0x0 pixels (natural: 500 x 500 pixels)" causes the image to show up as 0x0" */
+    object-fit: contain;
+}
+.card-img-medium {
+    height:4.5rem;
+    min-height: 1px; /* This fixes odd Safari issue where "0x0 pixels (natural: 500 x 500 pixels)" causes the image to show up as 0x0" */
     object-fit: contain;
 }
 .card-img-small {
