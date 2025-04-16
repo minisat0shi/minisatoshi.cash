@@ -264,11 +264,7 @@ html, head, body {
     height: 100vh;
     z-index: -1;
 }
-@supports (height: 100dvh) {
-    #particles-js {
-        height: 100dvh;
-    }
-}
+
 
 /* Glass Elements ------------------------------------------- */
 /* Glass Soft */
