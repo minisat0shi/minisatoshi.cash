@@ -334,6 +334,7 @@ html[data-bs-theme="dark"][data-blackout="true"] .glass-warning {
     box-shadow: 0 4px 30px rgba(10, 193, 142, 0.2);
     backdrop-filter: saturate(180%) blur(10px);
     border: 1px solid rgba(255, 218, 106, 0.2);
+    color: #fff !important;
 }
 html[data-bs-theme="dark"] .glass-gradient {
     background: var(--green-blue-gradient-transparent-dark);
