@@ -585,13 +585,8 @@ html[data-bs-theme="dark"][data-blackout="true"] .custom_nav.affix::before {
     }
 }
 
-.home-text,
-.home-text-small-mobile {
+.home-text {
     color: #fff;
-}
-
-.home-text-small-mobile {
-    display: none;
 }
 
 .home-img {
@@ -609,12 +604,6 @@ html[data-bs-theme="dark"][data-blackout="true"] .custom_nav.affix::before {
 @media (max-width: 650px) {
     .home-img {
         max-width: 90%;
-    }
-    .home-text {
-        display: none;
-    }
-    .home-text-small-mobile {
-        display: block;
     }
 }
 
@@ -1112,7 +1101,7 @@ ul.upgrade-bullets > li::before {
 }
 
 .mcArticleTitle {
-    fontolor: $indigo;
+    font-color: $indigo;
     font-size:2.5rem;
 }
 
