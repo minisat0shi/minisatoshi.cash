@@ -4,9 +4,9 @@
 ##### For Tutorials, please use bi-patch-question
 
 ### Image guidelines:
-- When adding images, the order of file type preference is: .svg>.webp>.png>.jpg
+- When adding images, the order of file type preference is: .svg>.webp>.jpg|.png (.jpg should only be used over .webp if giving smaller file size and no transparency; .png should rarely be used as .webp is more efficient and has transparency)
 - If there is any pure white or black background to an image, please swap it for an in-between gray. Two images can be used, but the javascript for image swapping will need to be updated. If the javascript is not updated correctly, it will break all image swaps on the page. Unless you are very comfortable with JS, please default to using a single image.
-- Target file size should be <50kb, this is crucial for fast page load times
+- Target file size should be <30kb, this is crucial for fast page load times
 - If the image is a square, and can be cropped, in the \<img> tag please add "ecosystemCircle" to the \<img> classes crop the image to a circle or "ecosystemRound" to give the image rounded corners. Rounded corners/circle crop is preferred, however, not necessary.
 - There is a class for all images "card-img-standard" -- this should be used for most cards. However, if adding a very limited card (such as an Exchange (CEX), or any other card which won't have a description, please use the class "card-img-small". When using this smaller image format, other changes are needed as well (an example can also be found at the bottom of the doc):
   - \<h4> class needs the added "mb-0"
