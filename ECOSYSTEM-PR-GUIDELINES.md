@@ -4,7 +4,7 @@
 ##### For Tutorials, please use bi-patch-question
 
 ### Image guidelines:
-- When adding images, the order of file type preference is: .svg>.webp>.jpg|.png (.jpg should onoy be used over .webp if giving smaller file size and no transparency; .png should rarely be used as .webp is more efficient and has transparency)
+- When adding images, the order of file type preference is: .svg>.webp>.jpg|.png (.jpg should only be used over .webp if giving smaller file size and no transparency; .png should rarely be used as .webp is more efficient and has transparency)
 - If there is any pure white or black background to an image, please swap it for an in-between gray. Two images can be used, but the javascript for image swapping will need to be updated. If the javascript is not updated correctly, it will break all image swaps on the page. Unless you are very comfortable with JS, please default to using a single image.
 - Target file size should be <30kb, this is crucial for fast page load times
 - If the image is a square, and can be cropped, in the \<img> tag please add "ecosystemCircle" to the \<img> classes crop the image to a circle or "ecosystemRound" to give the image rounded corners. Rounded corners/circle crop is preferred, however, not necessary.
