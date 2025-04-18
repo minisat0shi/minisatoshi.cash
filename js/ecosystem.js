@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     copyButton.addEventListener('click', function () {
       const query = searchInput.value.trim();
-      const currentUrl = new URL(window.location.href); // Fixed syntax here
+      const currentUrl = new URL(window.location.href);
       currentUrl.search = '';
       currentUrl.searchParams.set('query', encodeURIComponent(query));
       const url = currentUrl.href;
@@ -136,4 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
     attributes: true,
     attributeFilter: ['data-bs-theme'],
   });
+
+  // Ensure layout is updated after all resources are loaded
+  window.addEventListener('load', updateLayout);
 });
