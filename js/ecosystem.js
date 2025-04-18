@@ -22,12 +22,18 @@ document.addEventListener('DOMContentLoaded', function () {
         itemSelector: '.col',
         percentPosition: true,
       });
+      // Initialize Infinite Scroll
+      if (window.InfiniteScroll) {
+        var infScroll = new InfiniteScroll('#cardContainer', {
+          path: '.next-page',
+          append: '.col',
+          outlayer: msnry,
+          history: false,
+        });
+      } else {
+        console.error('Infinite Scroll not loaded');
+      }
     }
-    if (msnry) {
-      cardContainer.offsetHeight; // Force repaint
-      msnry.layout();
-    }
-  }
 
   // Card Filtering
   function filterCards(filter) {
