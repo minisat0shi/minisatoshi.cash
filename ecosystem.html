@@ -159,62 +159,6 @@
     <!-- COMMENTED OUT UNTIL REPLACING HOMEPAGE IMAGE TO BE THEME BASED | Add theme-color meta tag -->
     <!-- <meta name="theme-color" id="themeColorMeta"> -->
 
-<style>
-.image-wrapper {
-  position: relative;
-  width: 6rem; /* Match card-img-standard height for square aspect ratio */
-  height: 6rem; /* Match card-img-standard */
-  min-height: 1px; /* Match card-img-standard for Safari fix */
-  display: inline-block; /* Respect card alignment */
-  overflow: hidden;
-}
-
-.image-wrapper .spinner-border {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Center spinner */
-  width: 2rem; /* Smaller than image for visibility */
-  height: 2rem;
-  z-index: 2; /* Spinner on top */
-  animation: spinner-border 0.75s linear infinite !important; /* Force Bootstrap animation */
-}
-
-.image-wrapper img.lazy-image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* Match card-img-standard */
-  min-height: 1px; /* Match card-img-standard */
-  opacity: 0; /* Hide until loaded */
-  transition: opacity 0.3s ease; /* Smooth fade-in */
-}
-
-.image-wrapper img.lazy-image.loaded {
-  opacity: 1; /* Show when loaded */
-}
-
-/* Match card-img-standard */
-.card-img-standard {
-  height: 6rem;
-  min-height: 1px; /* Fix Safari issue */
-  object-fit: contain;
-}
-
-/* Prevent conflicting animations */
-.image-wrapper, .image-wrapper * {
-  animation-duration: unset !important; /* Override custom animations */
-  animation-name: unset !important;
-  transform-origin: unset !important; /* Prevent transform conflicts */
-}
-
-/* Bootstrap spinner animation (ensure it’s not overridden) */
-@keyframes spinner-border {
-  to {
-    transform: translate(-50%, -50%) rotate(360deg); /* Center and rotate */
-  }
-}
-</style>
-
 	</head>
 
 	<body class="min-vh-100 d-flex flex-column">
@@ -452,35 +396,30 @@
 	            </div>
 	          </div>
 	        </div>
-<div class="col mb-4">
-  <div class="card" data-header="Informational, Educational">
-    <div class="card-header d-flex justify-content-between align-items-center">
-      <div class="fs-6">Informational</div>
-      <button class="btn btn-sm btn-outline-primary fs-7" disabled>General Protocols + BCHF</button>
-    </div>
-    <div class="card-body text-center text-sm-start">
-      <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
-        <div class="d-flex flex-sm-row flex-column">
-          <div class="align-self-center">
-            <div class="image-wrapper me-0 me-sm-3 mb-3 mb-sm-0">
-              <div class="spinner-border text-primary" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-              <img data-src="/images/Ecosystem/discover.png" alt="Discover dot Cash logo" class="card-img-standard lazy-image">
-            </div>
-          </div>
-          <div>
-            <h4 class="text-break">Discover.Cash</h4>
-            <p class="mb-0 fs-6">A website aimed at highlighting the major features and goals of the Bitcoin Cash ecosystem.</p>
-          </div>
-        </div>
-        <div class="align-self-center ms-0 ms-sm-3 mt-3 mt-sm-0">
-          <a href="https://discover.cash" class="btn btn-lg btn-primary" aria-label="Primary link">Visit</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+	        <div class="col mb-4">
+	          <div class="card" data-header="Informational, Educational">
+	            <div class="card-header d-flex justify-content-between align-items-center">
+	            	<div class="fs-6">Informational</div>
+	            	<button class="btn btn-sm btn-outline-primary fs-7" disabled>General Protocols + BCHF</button>
+	            </div>
+	            <div class="card-body text-center text-sm-start">
+	              <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
+	                <div class="d-flex flex-sm-row flex-column">
+	                  <div class="align-self-center">
+	                    <img src="images/Ecosystem/discover.png" alt="Discover dot Cash logo" class="card-img-standard me-0 me-sm-3 mb-3 mb-sm-0">
+	                  </div>
+	                  <div>
+	                    <h4 class="text-break">Discover.Cash</h4>
+	                    <p class="mb-0 fs-6">A website aimed at highlighting the major features and goals of the Bitcoin Cash ecosystem.</p>
+	                  </div>
+	                </div>
+	                <div class="align-self-center ms-0 ms-sm-3 mt-3 mt-sm-0">
+	                  <a href="https://discover.cash" class="btn btn-lg btn-primary" aria-label="Primary link">Visit</a>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
 	        <div class="col mb-4">
 	          <div class="card" data-header="Informational, Educational">
 	            <div class="card-header d-flex justify-content-between align-items-center">

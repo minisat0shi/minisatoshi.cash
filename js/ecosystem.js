@@ -22,70 +22,11 @@ document.addEventListener('DOMContentLoaded', function () {
         itemSelector: '.col',
         percentPosition: true,
       });
-      console.log('Masonry initialized');
     }
     if (msnry) {
       cardContainer.offsetHeight; // Force repaint
       msnry.layout();
-      console.log('Masonry layout updated');
     }
-  }
-
-  // Lazy Load Images with Intersection Observer
-  function setupLazyLoading() {
-    const images = document.querySelectorAll('img[data-src]');
-    console.log('Found', images.length, 'images to lazy load');
-    
-    const observer = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const img = entry.target;
-            const wrapper = img.closest('.image-wrapper');
-            const spinner = wrapper ? wrapper.querySelector('.spinner-border') : null;
-            const src = img.getAttribute('data-src');
-
-            console.log('Loading image:', src);
-
-            img.src = src;
-            img.removeAttribute('data-src');
-
-            img.addEventListener(
-              'load',
-              () => {
-                console.log('Image loaded successfully:', src);
-                img.classList.add('loaded');
-                if (spinner) {
-                  spinner.remove();
-                  console.log('Spinner removed for:', src);
-                }
-                if (msnry) msnry.layout();
-              },
-              { once: true }
-            );
-
-            img.addEventListener(
-              'error',
-              () => {
-                console.error('Failed to load image:', src);
-                if (spinner) spinner.remove();
-                img.style.display = 'none';
-                if (msnry) msnry.layout();
-              },
-              { once: true }
-            );
-
-            observer.unobserve(img);
-          }
-        });
-      },
-      { rootMargin: '0px 0px 200px 0px' }
-    );
-
-    images.forEach((img) => {
-      observer.observe(img);
-      console.log('Observing image:', img.getAttribute('data-src'));
-    });
   }
 
   // Card Filtering
@@ -96,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function () {
         filter === 'all' || isInHeaders(cardHeaders, filter) ? 'block' : 'none';
     });
     updateLayout();
-    setupLazyLoading(); // Re-observe visible images
   }
 
   // Search Functionality
@@ -109,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function () {
         cardText.includes(query) || cardHeaders.includes(query) ? 'block' : 'none';
     });
     updateLayout();
-    setupLazyLoading(); // Re-observe visible images
   }
 
   // Event Listeners
@@ -176,38 +115,28 @@ document.addEventListener('DOMContentLoaded', function () {
     const theme = document.documentElement.getAttribute('data-bs-theme');
     const imageIds = ['bchbull', 'tapswap', 'XOCash', 'XOStack', 'oraclesCash'];
 
-    imageIds.forEach((id) => {
+    imageIds.forEach(id => {
       const img = document.getElementById(id);
       if (img) {
         const srcAttribute = theme === 'dark' ? 'data-src-dark' : 'data-src-light';
         const src = img.getAttribute(srcAttribute);
         if (src) {
           img.src = src;
-          img.classList.add('loaded');
-          if (msnry) msnry.layout();
-          console.log('Theme-swapped image:', src);
         }
       }
     });
   }
 
-  // Initial Setup
-  setupLazyLoading();
+  // Initial call
   swapImage();
 
   // Observer for theme changes
-  const observer = new MutationObserver(() => {
-    swapImage();
-    setupLazyLoading();
-  });
+  const observer = new MutationObserver(swapImage);
   observer.observe(document.documentElement, {
     attributes: true,
     attributeFilter: ['data-bs-theme'],
   });
 
   // Ensure layout is updated after all resources are loaded
-  window.addEventListener('load', () => {
-    updateLayout();
-    setupLazyLoading();
-  });
+  window.addEventListener('load', updateLayout);
 });
