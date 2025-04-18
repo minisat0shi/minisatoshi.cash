@@ -1,5 +1,4 @@
 console.log("main.js loaded successfully");
-console.log("jQuery:", typeof $);
 console.log("Bootstrap:", typeof bootstrap);
 
 // Main initialization function
