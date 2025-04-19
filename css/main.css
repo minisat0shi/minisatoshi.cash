@@ -913,10 +913,10 @@ ul.upgrade-bullets > li::before {
     border-radius: 20%;
 }
 #otherChange.timeline-legend-item:after {
-  height: 0 !important;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+    height: 0 !important;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 
@@ -946,7 +946,7 @@ ul.upgrade-bullets > li::before {
     object-fit: cover;
     z-index: 1;
     opacity: 0.4;
-    filter: blur(10px); /* Blurs the image itself */
+    filter: blur(5px); /* Blurs the image itself */
     transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out, z-index 0s; /* Smooth opacity and transform */
     transform: scale(1); /* Default scale */
 }
