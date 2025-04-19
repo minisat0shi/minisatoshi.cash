@@ -268,6 +268,7 @@ html, head, body {
 /* Glass Elements ------------------------------------------- */
 /* Glass Soft */
 .glass-soft {
+    background: rgba(255,255,255,0.05);
     border-radius: 16px;
     backdrop-filter: saturate(180%) blur(10px);
 }
@@ -686,6 +687,10 @@ html[data-bs-theme="dark"][data-blackout="true"] .custom_nav.affix::before {
     }
 }
 
+.possible-card-body {
+    z-index: 2;
+}
+
 
 /* Network Upgrades Page ------------------------------------------- */
 .upgrade-icon-large {
@@ -931,6 +936,30 @@ ul.upgrade-bullets > li::before {
     min-height: 1px; /* This fixes odd Safari issue where "0x0 pixels (natural: 500 x 500 pixels)" causes the image to show up as 0x0" */
     object-fit: contain;
 }
+.card-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.4;
+    filter: blur(10px); /* Blurs the image itself */
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out, z-index 0s; /* Smooth opacity and transform */
+    transform: scale(1); /* Default scale */
+}
+html[data-bs-theme="dark"] .card-bg-img {
+    opacity: 0.2;
+}
+.possible-card:hover .card-bg-img {
+    z-index: 3;
+    opacity: 1;
+    filter: blur(0px); /* Blurs the image itself */
+    transform: scale(1.02); /* Subtle zoom for smoothness */
+}
+
 .EcoStart {
     flex: 0 0 auto !important;
     width: 20% !important;
