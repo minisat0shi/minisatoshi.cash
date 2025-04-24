@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 	<head>
 	    <meta charset="utf-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -66,7 +66,7 @@
 	    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
 	    
-	    <!-- Dynamically loading main.css and themeInit.js -->
+	    <!-- Dynamically loading main.css -->
 	    <script>
 	        console.log("Dynamic script block running");
 	        const version = Date.now();
@@ -78,12 +78,6 @@
 	        cssLink.onload = () => console.log("main.css loaded");
 	        cssLink.onerror = (e) => console.error("main.css failed to load:", e);
 	        document.head.appendChild(cssLink);
-
-	        const themeScript = document.createElement('script');
-	        themeScript.src = `/js/themeInit.js?v=${version}`;
-	        themeScript.onload = () => console.log("themeInit.js loaded");
-	        themeScript.onerror = (e) => console.error("themeInit.js failed to load:", e);
-	        document.head.appendChild(themeScript);
 	    </script>
 
 	    <!-- Schema -->
@@ -152,28 +146,10 @@
 	                    </li>
 	                </ul>
 	            </div>
-
-				<!-- Grouping theme switcher and toggler together -->
-				<div class="d-flex ms-auto align-items-center">
-				    <div class="dropdown theme-switcher me-xl-0 me-2">
-				        <button class="btn theme-sensitive dropdown-toggle fs-6" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Theme Switcher">
-				            <i id="themeIcon" class="bi bi-moon-stars-fill"></i>
-				        </button>
-				        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="themeDropdown">
-				            <li><a class="dropdown-item fs-6" href="#" data-theme="light"><i class="bi bi-brightness-high-fill me-2"></i> Light</a></li>
-				            <li><a class="dropdown-item fs-6" href="#" data-theme="dark" data-blackout="false"><i class="bi bi-moon-fill me-2"></i> Dark</a></li>
-				            <li><a class="dropdown-item fs-6" href="#" data-theme="dark" data-blackout="true"><i class="bi bi-moon-stars-fill me-2"></i> Blackout</a></li>
-				        </ul>
-				    </div>
-				    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-				        <span class="navbar-toggler-icon"></span>
-				    </button>
-				</div>
 	        </div>
 	    </nav>
 
 	    <!-- Floating Price Display -->
-	    <!-- UNUSED
 		<script defer src="https://www.livecoinwatch.com/static/lcw-widget.js"></script>
 		<div class="livecoinwatch-widget-wrapper position-fixed bottom-0 start-0 m-2 shadow">
 			<div class="livecoinwatch-widget-6 m-0" 
@@ -184,7 +160,13 @@
 			     lcw-color-bg="#1f2434" 
 			     lcw-border-w="1">
 			</div>
-		</div> -->
+		</div>
+
+		<div class="container">
+			<div class="row">
+
+			</div>
+		</div>
 
 	    
 	    <footer class="py-3 px-2 mt-auto text-center bg-info-subtle border-top border-5">
