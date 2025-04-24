@@ -574,7 +574,7 @@ html[data-bs-theme="dark"][data-blackout="true"] .custom_nav.affix::before {
 .home {
     width: 100vw;
     height: 100vh;
-    background: url('../images/homepageBackground.svg?v=2') center bottom / cover;
+    background: url('../images/homepageBackground.svg?v=3') center bottom / cover;
     display: flex;
     justify-content: center;
     align-items: flex-end;
