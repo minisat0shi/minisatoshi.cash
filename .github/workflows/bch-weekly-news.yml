@@ -1,4 +1,4 @@
-name: Create Issue for Bitcoin Cash Foundation Weekly News
+name: Create Issue for BCHF News
 
 on:
   schedule:
@@ -9,32 +9,15 @@ jobs:
   check-bch-news:
     runs-on: ubuntu-latest
     steps:
-      # Checkout the repository
       - name: Checkout
         uses: actions/checkout@v4
-
-      # Debug: List repository contents
-      - name: List repository contents
-        run: |
-          echo "Current directory: $(pwd)"
-          ls -R .github
-          echo "Checking for check_bch_news.py:"
-          find . -name check_bch_news.py
-
-      # Install Python
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-
-      # Install dependencies
       - name: Install dependencies
-        run: |
-          pip install feedparser requests
-
-      # Run script to check RSS feed and create issue
-      - name: Check for new BCH Weekly News
+        run: pip install feedparser requests
+      - name: Check for new BCHF News
         env:
-          GITHUB_TOKEN: ${{ secrets.BCHF_WEEKLY_NEWS }} # Uses BCHF_WEEKLY_NEWS secret
-        run: |
-          python .github/scripts/check_bch_news.py
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python .github/scripts/check_bch_news.py

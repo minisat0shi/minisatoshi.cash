@@ -1,78 +1,39 @@
 import feedparser
 import requests
 import os
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
-# Configuration
+# Config
 RSS_FEED_URL = "https://medium.com/@BCHF_ORG/feed"
-REPO = os.getenv("GITHUB_REPOSITORY")  # e.g., "owner/repo"
+REPO = os.getenv("GITHUB_REPOSITORY")
 TOKEN = os.getenv("GITHUB_TOKEN")
-ISSUE_TITLE = "[BCHF NEWS CHECK] Bitcoin Cash Foundation Weekly News"
-LOOKBACK_DAYS = 7  # Check articles from the last 7 days
 
 def get_latest_article():
-    print(f"Fetching RSS feed: {RSS_FEED_URL}")
+    # Fetch RSS feed and check for recent articles
     feed = feedparser.parse(RSS_FEED_URL)
-    if not feed.entries:
-        print("No entries found in RSS feed.")
-        return None
-    current_time = datetime.utcnow()
-    lookback_time = current_time - timedelta(days=LOOKBACK_DAYS)
-    print(f"Current UTC time: {current_time}")
-    print(f"Looking for articles after: {lookback_time}")
-
+    lookback_time = datetime.utcnow().replace(tzinfo=timezone.utc) - timedelta(days=7)
     for entry in feed.entries:
         try:
-            # Log raw entry data for debugging
-            raw_title = entry.get('title', 'No title')
-            print(f"Raw title: {raw_title}")
-            # Parse publication date
-            pub_date = datetime(*entry.published_parsed[:6])
-            print(f"Checking article: '{raw_title}' (Published: {pub_date})")
-            # Case-insensitive match for "weekly news"
+            pub_date = datetime(*entry.published_parsed[:6]).replace(tzinfo=timezone.utc)
             if pub_date >= lookback_time:
-                print(f"Article is recent (within {LOOKBACK_DAYS} days)")
-                if "weekly news" in raw_title.lower():
-                    print(f"Match found: '{raw_title}'")
-                    return {
-                        "title": raw_title,
-                        "link": entry.link,
-                        "published": pub_date
-                    }
-                else:
-                    print(f"No 'weekly news' in title: '{raw_title}'")
-            else:
-                print(f"Article too old: {pub_date} < {lookback_time}")
-        except (AttributeError, TypeError) as e:
-            print(f"Skipping article with error: {entry.get('title', 'Unknown')} (Error: {e})")
-    print("No matching articles found.")
+                return {"title": entry.title, "link": entry.link, "published": pub_date}
+        except AttributeError:
+            pass
     return None
 
 def create_github_issue(article):
+    # Create GitHub issue with article details
     url = f"https://api.github.com/repos/{REPO}/issues"
-    headers = {
-        "Authorization": f"token {TOKEN}",
-        "Accept": "application/vnd.github.v3+json"
-    }
-    body = f"Latest Bitcoin Cash Foundation Weekly News article:\n\n[{article['title']}]({article['link']})"
+    headers = {"Authorization": f"token {TOKEN}", "Accept": "application/vnd.github.v3+json"}
     data = {
-        "title": f"{ISSUE_TITLE} - {article['published'].strftime('%Y-%m-%d')}",
-        "body": body,
-        "labels": ["bch-weekly-news"]
+        "title": f"[BCHF NEWS] {article['title']} - {article['published'].strftime('%Y-%m-%d')}",
+        "body": f"New BCHF article: [{article['title']}]({article['link']})",
+        "labels": ["bch-news"]
     }
-    print(f"Creating issue at: {url}")
-    print(f"Issue data: {data}")
     response = requests.post(url, json=data, headers=headers)
-    if response.status_code == 201:
-        print(f"Issue created: {response.json()['html_url']}")
-    else:
-        print(f"Failed to create issue: {response.status_code} {response.text}")
+    print("Issue created" if response.status_code == 201 else f"Failed: {response.status_code}")
 
-def main():
-    if not TOKEN:
-        print("Error: GITHUB_TOKEN is not set.")
-        return
-    if not REPO:
-        print("Error: GITHUB_REPOSITORY is not set.")
-        return
-    article = get_latest_article
+# Main: Check for article and create issue
+article = get_latest_article()
+if article and TOKEN and REPO:
+    create_github_issue(article)
