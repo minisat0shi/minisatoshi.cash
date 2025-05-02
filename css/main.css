@@ -591,12 +591,14 @@ html[data-bs-theme="dark"][data-blackout="true"] .custom_nav.affix::before {
 
 .home-text {
     color: #fff;
+    filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.7));
 }
 
 .home-img {
     max-width: 900px;
     width: 100%;
     height: auto;
+    filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.7));
 }
 
 @media (max-width: 1150px) {
