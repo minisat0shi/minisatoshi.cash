@@ -19,5 +19,5 @@ jobs:
         run: pip install feedparser requests
       - name: Check for new BCHF News
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.BCHF_WEEKLY_NEWS }}
         run: python .github/scripts/check_bch_news.py

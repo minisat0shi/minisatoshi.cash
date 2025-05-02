@@ -9,20 +9,21 @@ REPO = os.getenv("GITHUB_REPOSITORY")
 TOKEN = os.getenv("GITHUB_TOKEN")
 
 def get_latest_article():
-    # Fetch RSS feed and check for recent articles
+    # Fetch RSS feed and find recent article
     feed = feedparser.parse(RSS_FEED_URL)
-    lookback_time = datetime.utcnow().replace(tzinfo=timezone.utc) - timedelta(days=7)
+    lookback_time = datetime.now(timezone.utc) - timedelta(days=7)
     for entry in feed.entries:
         try:
             pub_date = datetime(*entry.published_parsed[:6]).replace(tzinfo=timezone.utc)
             if pub_date >= lookback_time:
+                print(f"Found article: {entry.title}")
                 return {"title": entry.title, "link": entry.link, "published": pub_date}
         except AttributeError:
             pass
     return None
 
 def create_github_issue(article):
-    # Create GitHub issue with article details
+    # Create GitHub issue
     url = f"https://api.github.com/repos/{REPO}/issues"
     headers = {"Authorization": f"token {TOKEN}", "Accept": "application/vnd.github.v3+json"}
     data = {
@@ -31,9 +32,9 @@ def create_github_issue(article):
         "labels": ["bch-news"]
     }
     response = requests.post(url, json=data, headers=headers)
-    print("Issue created" if response.status_code == 201 else f"Failed: {response.status_code}")
+    print("Issue created" if response.status_code == 201 else f"Failed: {response.status_code} {response.text}")
 
-# Main: Check for article and create issue
+# Main: Create issue for new article
 article = get_latest_article()
 if article and TOKEN and REPO:
     create_github_issue(article)
