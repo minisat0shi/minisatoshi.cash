@@ -11,20 +11,41 @@ ISSUE_TITLE = "[BCHF NEWS CHECK] Bitcoin Cash Foundation Weekly News"
 LOOKBACK_DAYS = 7  # Check articles from the last 7 days
 
 def get_latest_article():
+    print(f"Fetching RSS feed: {RSS_FEED_URL}")
     feed = feedparser.parse(RSS_FEED_URL)
+    if not feed.entries:
+        print("No entries found in RSS feed.")
+        return None
     current_time = datetime.utcnow()
     lookback_time = current_time - timedelta(days=LOOKBACK_DAYS)
+    print(f"Current UTC time: {current_time}")
+    print(f"Looking for articles after: {lookback_time}")
 
     for entry in feed.entries:
-        # Parse article publication date
-        pub_date = datetime(*entry.published_parsed[:6])
-        # Check if the article is recent and contains "Weekly News" in the title
-        if pub_date >= lookback_time and "Weekly News" in entry.title:
-            return {
-                "title": entry.title,
-                "link": entry.link,
-                "published": pub_date
-            }
+        try:
+            # Log raw entry data for debugging
+            raw_title = entry.get('title', 'No title')
+            print(f"Raw title: {raw_title}")
+            # Parse publication date
+            pub_date = datetime(*entry.published_parsed[:6])
+            print(f"Checking article: '{raw_title}' (Published: {pub_date})")
+            # Case-insensitive match for "weekly news"
+            if pub_date >= lookback_time:
+                print(f"Article is recent (within {LOOKBACK_DAYS} days)")
+                if "weekly news" in raw_title.lower():
+                    print(f"Match found: '{raw_title}'")
+                    return {
+                        "title": raw_title,
+                        "link": entry.link,
+                        "published": pub_date
+                    }
+                else:
+                    print(f"No 'weekly news' in title: '{raw_title}'")
+            else:
+                print(f"Article too old: {pub_date} < {lookback_time}")
+        except (AttributeError, TypeError) as e:
+            print(f"Skipping article with error: {entry.get('title', 'Unknown')} (Error: {e})")
+    print("No matching articles found.")
     return None
 
 def create_github_issue(article):
@@ -39,6 +60,8 @@ def create_github_issue(article):
         "body": body,
         "labels": ["bch-weekly-news"]
     }
+    print(f"Creating issue at: {url}")
+    print(f"Issue data: {data}")
     response = requests.post(url, json=data, headers=headers)
     if response.status_code == 201:
         print(f"Issue created: {response.json()['html_url']}")
@@ -46,12 +69,10 @@ def create_github_issue(article):
         print(f"Failed to create issue: {response.status_code} {response.text}")
 
 def main():
-    article = get_latest_article()
-    if article:
-        print(f"Found article: {article['title']}")
-        create_github_issue(article)
-    else:
-        print("No recent Weekly News article found.")
-
-if __name__ == "__main__":
-    main()
+    if not TOKEN:
+        print("Error: GITHUB_TOKEN is not set.")
+        return
+    if not REPO:
+        print("Error: GITHUB_REPOSITORY is not set.")
+        return
+    article = get_latest_article
