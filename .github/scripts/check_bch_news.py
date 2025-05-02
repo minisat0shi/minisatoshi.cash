@@ -4,7 +4,7 @@ import os
 from datetime import datetime, timedelta
 
 # Configuration
-RSS_FEED_URL = "https://medium.com/@BitcoinCashFoundation/feed"
+RSS_FEED_URL = "https://medium.com/@BCHF_ORG/feed"
 REPO = os.getenv("GITHUB_REPOSITORY")  # e.g., "owner/repo"
 TOKEN = os.getenv("GITHUB_TOKEN")
 ISSUE_TITLE = "[BCHF NEWS CHECK] Bitcoin Cash Foundation Weekly News"
