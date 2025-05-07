@@ -156,6 +156,13 @@
     z-index: 0; /* Enforcing position to ensure it stays above animation */
 }
 
+.bch-green {
+    color: var(--info-green);
+}
+.bg-bch-green {
+    background-color: var(--info-green);
+}
+
 
 /* General HTML settings/fixes ------------------------------------------- */
 /* Prevent Horizontal Overflow */
