@@ -171,6 +171,10 @@ html, head, body {
   overflow-x: hidden;
 }
 
+.icon-green {
+    color: var(--info-green);
+}
+
 /* Icon Gradients */
 .icon-gradient {
     background: var(--green-blue-gradient-animation);
