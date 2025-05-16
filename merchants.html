@@ -1,257 +1,420 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
-	<head>
-	    <meta charset="utf-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-	    <meta name="format-detection" content="telephone=no">
-	    <!--Prevents browsers from trying to make a number a clickable phone number (can still use "tel:" if we want this functionality)-->
-	    
-	    <!-- Favicon + Web App -->
-		<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96">
-		<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
-		<link rel="shortcut icon" href="/favicon/favicon.ico">
-	    <meta name="mobile-web-app-capable" content="yes">
-		<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-		<meta name="apple-mobile-web-app-title" content="minisatoshi">
-	    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-		<link rel="manifest" href="/favicon/site.webmanifest">
-	    <meta name="msapplication-TileImage" content="/favicon/favicon-96x96.png">
-	    
-	    <!-- Canonical link for SEO -->
-	    <link href="https://minisatoshi.cash/merchants" rel="canonical" data-rh="true">
-	    <link href="https://minisatoshi.cash/merchants" hreflang="x-default" rel="alternate" data-rh="true">
-	    
-	    <!-- Primary Meta Tags -->
-	    <title>Accept Bitcoin Cash for Your Business</title>
-		<meta name="title" content="Accept Bitcoin Cash for Your Business">
-		<meta name="description" content="Explore how Bitcoin Cash payments offer low fees and fast transactions for your business. Tap into the global crypto market today.">
-	    
-	    <!-- Use Google Search Console and Bing Webmaster Tools for SEO data -->
-	    
-	    <!-- Open Graph / Facebook -->
-	    <meta property="og:type" content="website">
-	    <meta property="og:url" content="https://minisatoshi.cash/merchants">
-	    <meta property="og:title" content="Accept Bitcoin Cash for Your Business">
-	    <meta property="og:description" content="Explore how Bitcoin Cash payments offer low fees and fast transactions for your business. Tap into the global crypto market today.">
-	    <meta property="og:image" content="https://minisatoshi.cash/images/merchants.jpg">
-	    <meta property="og:image:alt" content="minisatoshi.cash merchant page image.">
-	    <meta property="og:article:section" content="Information">
-	    <meta property="og:article:tag" content="Bitcoin">
-	    <meta property="og:article:tag" content="Bitcoin Cash">
-	    <meta property="og:article:tag" content="BCH">
-	    <meta property="og:article:tag" content="Accept">
-	    <meta property="og:article:tag" content="Crypto">
-	    
-	    <!-- Twitter -->
-	    <meta property="twitter:card" content="summary_large_image">
-	    <meta property="twitter:url" content="https://minisatoshi.cash/merchants">
-	    <meta name="twitter:site" content="@_minisatoshi">
-	    <meta name="twitter:creator" content="@_minisatoshi">
-	    <meta property="twitter:title" content="Accept Bitcoin Cash for Your Business">
-	    <meta property="twitter:description" content="Explore how Bitcoin Cash payments offer low fees and fast transactions for your business. Tap into the global crypto market today.">
-	    <meta property="twitter:image" content="https://minisatoshi.cash/images/merchants.jpg">
-	    
-	    <!-- Meta Tags Generated with https://metatags.io -->
-		<meta name="keywords" content="Bitcoin Cash, BCH, accept Bitcoin Cash, crypto payments, merchant crypto, business crypto, low fee crypto, fast crypto transactions">
-		<meta name="robots" content="index, follow, max-image-preview:large">
-	    <meta name="language" content="English">
-	    <meta name="revisit-after" content="7 days">
-	    <meta name="author" content="_minisatoshi">
-	    
-	    <!-- Fonts -->
-	    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&amp;display=swap" rel="stylesheet" type="text/css" media="all">
-	    
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+        <meta name="format-detection" content="telephone=no">
+        <!--Prevents browsers from trying to make a number a clickable phone number (can still use "tel:" if we want this functionality)-->
+        
+        <!-- Favicon + Web App -->
+        <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
+        <link rel="shortcut icon" href="/favicon/favicon.ico">
+        <meta name="mobile-web-app-capable" content="yes">
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+        <meta name="apple-mobile-web-app-title" content="minisatoshi">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <link rel="manifest" href="/favicon/site.webmanifest">
+        <meta name="msapplication-TileImage" content="/favicon/favicon-96x96.png">
+        
+        <!-- Canonical link for SEO -->
+        <link href="https://minisatoshi.cash/merchants" rel="canonical" data-rh="true">
+        <link href="https://minisatoshi.cash/merchants" hreflang="x-default" rel="alternate" data-rh="true">
+        
+        <!-- Primary Meta Tags -->
+        <title>Accept Bitcoin Cash for Your Business</title>
+        <meta name="title" content="Accept Bitcoin Cash for Your Business">
+        <meta name="description" content="Explore how Bitcoin Cash payments offer low fees and fast transactions for your business. Tap into the global crypto market today.">
+        
+        <!-- Use Google Search Console and Bing Webmaster Tools for SEO data -->
+        
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://minisatoshi.cash/merchants">
+        <meta property="og:title" content="Accept Bitcoin Cash for Your Business">
+        <meta property="og:description" content="Explore how Bitcoin Cash payments offer low fees and fast transactions for your business. Tap into the global crypto market today.">
+        <meta property="og:image" content="https://minisatoshi.cash/images/merchants.jpg">
+        <meta property="og:image:alt" content="minisatoshi.cash merchant page image.">
+        <meta property="og:article:section" content="Information">
+        <meta property="og:article:tag" content="Bitcoin">
+        <meta property="og:article:tag" content="Bitcoin Cash">
+        <meta property="og:article:tag" content="BCH">
+        <meta property="og:article:tag" content="Accept">
+        <meta property="og:article:tag" content="Crypto">
+        
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://minisatoshi.cash/merchants">
+        <meta name="twitter:site" content="@_minisatoshi">
+        <meta name="twitter:creator" content="@_minisatoshi">
+        <meta property="twitter:title" content="Accept Bitcoin Cash for Your Business">
+        <meta property="twitter:description" content="Explore how Bitcoin Cash payments offer low fees and fast transactions for your business. Tap into the global crypto market today.">
+        <meta property="twitter:image" content="https://minisatoshi.cash/images/merchants.jpg">
+        
+        <!-- Meta Tags Generated with https://metatags.io -->
+        <meta name="keywords" content="Bitcoin Cash, BCH, accept Bitcoin Cash, crypto payments, merchant crypto, business crypto, low fee crypto, fast crypto transactions">
+        <meta name="robots" content="index, follow, max-image-preview:large">
+        <meta name="language" content="English">
+        <meta name="revisit-after" content="7 days">
+        <meta name="author" content="_minisatoshi">
+        
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&amp;display=swap" rel="stylesheet" type="text/css" media="all">
+        
         <!-- Bootstrap and Dependencies -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous" defer></script>
-	    
-	    <!-- Dynamically loading main.css -->
-	    <script>
-	        console.log("Dynamic script block running");
-	        const version = Date.now();
-	        console.log("Version:", version);
 
-	        const cssLink = document.createElement('link');
-	        cssLink.rel = 'stylesheet';
-	        cssLink.href = `/css/main.css?v=${version}`;
-	        cssLink.onload = () => console.log("main.css loaded");
-	        cssLink.onerror = (e) => console.error("main.css failed to load:", e);
-	        document.head.appendChild(cssLink);
-	    </script>
+        <!-- Custom JS -->
 
-	    <!-- Schema -->
-	    <script type="application/ld+json">
-		{
-		  "@context": "https://schema.org",
-		  "@type": "WebPage",
-		  "name": "Accept Bitcoin Cash for Your Business",
-		  "description": "Explore how Bitcoin Cash payments offer low fees and fast transactions for your business. Tap into the global crypto market today."
-		},
-		{
-		  "@context": "https://schema.org",
-		  "@type": "FAQPage",
-		  "mainEntity": [
-		    {
-		      "@type": "Question",
-		      "name": "How can I accept Bitcoin Cash at my business?",
-		      "acceptedAnswer": {
-		        "@type": "Answer",
-		        "text": "Bitcoin Cash (BCH) is a fast, low-cost, decentralized cryptocurrency designed with daily commerce in mind."
-		      }
-		    }
-		  ]
-		}
-	    </script>
 
-	    <!-- Add theme-color meta tag -->
-	    <meta name="theme-color" id="themeColorMeta">
-	</head>
+        <!-- Dynamically loading main.css and themeInit.js -->
+        <script>
+            console.log("Dynamic script block running");
+            const version = Date.now();
+            console.log("Version:", version);
 
-	<body data-bs-smooth-scroll="true" class="min-vh-100 d-flex flex-column">
-	    <nav class="navbar bg-dark-subtle border-bottom navbar-bch-glow navbar-expand-xl fixed-top">
-	        <div class="container-fluid">
-	            <a href="/" class="text-decoration-none" aria-label="Go to homepage">
-	                <img src="favicon/favicon.svg" alt="Logo" width="30" height="30" class="me-2">
-	            </a>
-	            <div class="collapse navbar-collapse" id="navbarText">
-	                <ul class="navbar-nav fs-5 me-auto mb-1 mb-lg-0">
-	                    <li class="nav-item">
-	                        <a class="nav-link" href="/" aria-label="Go to homepage">Home</a>
-	                    </li>
-	                    <li class="nav-item">
-	                        <a class="nav-link" href="/#_bch" aria-label="Go to BCH section of homepage">What is BCH?<span style="display:none;">What is Bitcoin Cash?</span></a>
-	                    </li>
-	                    <li class="nav-item">
-	                        <a class="nav-link" href="/#_about" aria-label="Go to Mission section of homepage">The Mission</a>
-	                    </li>
-	                    <li class="nav-item">
-	                        <a class="nav-link" href="/#_socials" aria-label="Go to Social section of homepage">Social System</a>
-	                    </li>
-	                    <li class="nav-item dropdown">
-	                        <a class="nav-link dropdown-toggle" href="#upgrade-timeline" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-	                            <span class="d-none">BCH</span>Network Upgrades
-	                        </a>
-	                        <ul class="dropdown-menu">
-	                            <li><a class="dropdown-item" href="upgrade-history#upgrade-timeline" aria-label="Go to Upgrade History">Upgrade History</a></li>
-	                            <li><a class="dropdown-item" href="upgrade-history#upgrade-earlyDevelopment" aria-label="Go to Proposed Upgrades (CHIPs)">Proposed Upgrades (CHIPs)</a></li>
-	                            <li><a class="dropdown-item" href="upgrade-history#upgrade-discussion" aria-label="Go to Upgrades in Discussion">Upgrades in Discussion</a></li>
-	                        </ul>
-	                    </li>
-	                    <li class="nav-item">
-	                        <a class="nav-link active" aria-current="page" href="ecosystem" aria-label="Go to Ecosystem page">Ecosystem</a>
-	                    </li>
-	                    <li class="nav-item">
-	                        <a class="nav-link" href="resources" aria-label="Go to Resources page">Resources</a>
-	                    </li>
-	                </ul>
-	            </div>
-	        </div>
-	    </nav>
+            const cssLink = document.createElement('link');
+            cssLink.rel = 'stylesheet';
+            cssLink.href = `/css/main.css?v=${version}`;
+            cssLink.onload = () => console.log("main.css loaded");
+            cssLink.onerror = (e) => console.error("main.css failed to load:", e);
+            document.head.appendChild(cssLink);
 
-	    <!-- Floating Price Display -->
-		<script defer src="https://www.livecoinwatch.com/static/lcw-widget.js"></script>
-		<div class="livecoinwatch-widget-wrapper position-fixed bottom-0 start-0 m-2 shadow">
-			<div class="livecoinwatch-widget-6 m-0" 
-			     lcw-coin="BCH" 
-			     lcw-base="USD" 
-			     lcw-period="d" 
-			     lcw-color-tx="#ffffff" 
-			     lcw-color-bg="#1f2434" 
-			     lcw-border-w="1">
-			</div>
-		</div>
+            const themeScript = document.createElement('script');
+            themeScript.src = `/js/themeInit.js?v=${version}`;
+            themeScript.onload = () => console.log("themeInit.js loaded");
+            themeScript.onerror = (e) => console.error("themeInit.js failed to load:", e);
+            document.head.appendChild(themeScript);
+        </script>
+        
+        <!-- Schema -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Accept Bitcoin Cash for Your Business",
+          "description": "Explore how Bitcoin Cash payments offer low fees and fast transactions for your business. Tap into the global crypto market today."
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How can I accept Bitcoin Cash at my business?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Bitcoin Cash (BCH) is a fast, low-cost, decentralized cryptocurrency designed with daily commerce in mind."
+              }
+            }
+          ]
+        }
+        </script>
 
-		<div class="fixed-nav-adjustment"></div>
-		<main class="container-md">
-			<div class="row">
-				<h1 class="display-3 fw-medium text-break text-center pt-5 px-2">Accept <span style="color:#0AC18E;">Bitcoin Cash</span> at your Business</h1>
-				<h2 class="text-secondary fs-3 fw-normal lh-base text-break text-center pt-3 px-2">Placeholder</h2>
-			</div>
-			<div class="row">
-				<p class="display-5 fw-medium text-center pt-5">Why Bitcoin Cash?</p>
-				<p class="text-secondary fs-3 fw-normal lh-base text-break text-center pb-3">Bitcoin Cash is digital cash — that means it’s fast, reliable, and low fee.</p>
-				<div class="row align-items-start">
-				    <div class="col-md-4 d-flex flex-column gap-4">
-				        <div class="d-flex align-items-start">
-				            <i class="bi bi-lightning-fill icon-green me-3 display-2"></i>
-				            <div class="flex-fill">
-				                <h3 class="fs-4 fw-medium">Fast</h3>
-				                <p class="fs-5r mb-0">Quicker than cash without the hassle of making change or depositing at the bank.</p>
-				            </div>
-				        </div>
-				        <div class="d-flex align-items-start">
-				            <i class="bi bi-boxes icon-green me-3 display-2"></i>
-				            <div class="flex-fill">
-				                <h3 class="fs-4 fw-medium">Reliable</h3>
-				                <p class="fs-5r mb-0">100% uptime for over 15 years. Chargebacks are a thing of the past.</p>
-				            </div>
-				        </div>
-				        <div class="d-flex align-items-start">
-				            <i class="bi bi-boxes icon-green me-3 display-2"></i>
-				            <div class="flex-fill">
-				                <h3 class="fs-4 fw-medium">No Chargeback</h3>
-				                <p class="fs-5r mb-0">It is impossible to reverse transactions on BCH, making chargebacks a thing of the past.</p>
-				            </div>
-				        </div>
-				        <div class="d-flex align-items-start">
-				            <i class="bi bi-cash-coin icon-green me-3 display-2"></i>
-				            <div class="flex-fill">
-				                <h3 class="fs-4 fw-medium">Low Fee</h3>
-				                <p class="fs-5r mb-0">Send money to anyone, anywhere for less than a penny.</p>
-				            </div>
-				        </div>
-				    </div>
-				    <div class="col-md-8">
-				        <div class="image-container h-100" style="overflow: hidden;">
-				            <img src="images/Merchants/bch-accepted-pos.jpg" class="img-fluid rounded object-fit-cover object-position-top h-100 w-100">
-				        </div>
-				    </div>
-				</div>
-				<div class="row">
-					<div class="col-md-3">
-						<i class="bi bi-shield-lock"></i>
-						<h3 class="fs-4 fw-medium">Secure</h3>
-						<p class="fs-5r">Bitcoin Cash's blockchain is backed by advanced cryptography; your funds cannot be confiscated or stolen without your key.</p>
-					</div>
-					<div class="col-md-3">
-						<i class="bi bi-speedometer2"></i>
-						<h3 class="fs-4 fw-medium">Fast</h3>
-						<p class="fs-5r">Just as fast as cash without the need to deposit.</p>
-					</div>
-					<div class="col-md-3">
-						<i class="bi bi-cash-coin"></i>
-						<h3 class="fs-4 fw-medium">Cheap</h3>
-						<p class="fs-5r">Whether accepting natively (sub-penny fees) or through a provider (~1% service fees vs 3%+ with credit cards).</p>
-					</div>
-					<div class="col-md">
-						<i class="bi bi-cashcoin"></i>
-						<h3 class="fs-4 fw-medium">Reliable</h3>
-						<p class="fs-5r">100% uptime for over 15 years. Chargebacks are a thing of the past.</p>
-					</div>
-				</div>
-			</div>
-		</main>
+        <!-- COMMENTED OUT UNTIL REPLACING HOMEPAGE IMAGE TO BE THEME BASED | Add theme-color meta tag -->
+        <!-- <meta name="theme-color" id="themeColorMeta"> -->
 
-	    
-	    <footer class="py-3 px-2 mt-auto text-center bg-info-subtle border-top border-5">
-	        <div class="row pb-2">
-	            <p class="fs-5r fw-medium mb-0">Please consider supporting this project</p>
-	            <div>
-	                <p class="user-select-all fs-5r fw-normal text-break d-inline">bitcoincash:qrvns4u27ngn6vf774rlep6873kzadqnavw0szkqx3</p>
-	                <button id="copyButton" class="remove-button-stylings" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to Clipboard" aria-label="Copy BCH Address">
-	                    <i class="bi bi-copy copyButton text-body-emphasis"></i>
-	                  </button>
-	            </div>
-	        </div>
-	        <div class="row">
-	            <p class="fs-6 fw-normal my-1">Want to contribute to the site? <a class="link-body-emphasis link-offset-1 thin-link-1" href="https://github.com/minisat0shi/minisatoshi.cash">Submit a PR!</a></p>
-	        </div>
-	        <!-- <div class="row">
-	            <p class="fs-5r fw-normal">Connect to my SPV Node! node.minisatoshi.cash</p>
-	        </div> -->
-	    </footer>
+    </head>
 
+    <body class="upgrade-history" data-bs-smooth-scroll="true">
+        <nav class="navbar bg-dark-subtle border-bottom navbar-bch-glow navbar-expand-xl fixed-top">
+            <div class="container-fluid">
+                <a href="/" class="text-decoration-none" aria-label="Go to homepage">
+                    <img src="favicon/favicon.svg" alt="Logo" width="30" height="30" class="me-2">
+                </a>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav fs-5 me-auto mb-1 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/" aria-label="Go to homepage">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/#_bch" aria-label="Go to BCH section of homepage">What is BCH?</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/#_about" aria-label="Go to Mission section of homepage">The Mission</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/#_socials" aria-label="Go to Social section of homepage">Social System</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#upgrade-timeline" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="d-none">BCH</span>Network Upgrades
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="upgrade-history#upgrade-timeline" aria-label="Go to Upgrade History">Upgrade History</a></li>
+                                <li><a class="dropdown-item" href="upgrade-history#upgrade-earlyDevelopment" aria-label="Go to Proposed Upgrades (CHIPs)">Proposed Upgrades (CHIPs)</a></li>
+                                <li><a class="dropdown-item" href="upgrade-history#upgrade-discussion" aria-label="Go to Upgrades in Discussion">Upgrades in Discussion</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="ecosystem" aria-label="Go to Ecosystem page">Ecosystem</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="resources" aria-label="Go to Resources page">Resources</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Grouping theme switcher and toggler together -->
+                <div class="d-flex ms-auto align-items-center">
+                    <div class="dropdown theme-switcher me-xl-0 me-2">
+                        <button class="btn theme-sensitive dropdown-toggle fs-6" type="button" id="themeDropdown" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Theme Switcher">
+                            <i id="themeIcon" class="bi bi-moon-stars-fill"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="themeDropdown">
+                            <li><a class="dropdown-item fs-6" href="#" data-theme="light"><i class="bi bi-brightness-high-fill me-2"></i> Light</a></li>
+                            <li><a class="dropdown-item fs-6" href="#" data-theme="dark" data-blackout="false"><i class="bi bi-moon-fill me-2"></i> Dark</a></li>
+                            <li><a class="dropdown-item fs-6" href="#" data-theme="dark" data-blackout="true"><i class="bi bi-moon-stars-fill me-2"></i> Blackout</a></li>
+                        </ul>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Floating Price Display -->
+        <script defer src="https://www.livecoinwatch.com/static/lcw-widget.js"></script>
+        <div class="livecoinwatch-widget-wrapper position-fixed bottom-0 start-0 m-2 shadow">
+            <div class="livecoinwatch-widget-6 m-0" 
+                 lcw-coin="BCH" 
+                 lcw-base="USD" 
+                 lcw-period="d" 
+                 lcw-color-tx="#ffffff" 
+                 lcw-color-bg="#1f2434" 
+                 lcw-border-w="1">
+            </div>
+        </div>
+
+        <style>
+        .merchant-image-main {
+            max-height: 475px;
+        }
+        @media (max-width: 992px) {
+            .merchant-image-main {
+                max-height: 350px;
+            }
+        }
+
+        .product-device {
+            position: absolute;
+            right: 5%;
+            bottom: -18%;
+            width: 300px;
+            height: auto; /* Maintains PNG aspect ratio */
+            transform: rotate(25deg);
+        }
+
+        .product-device-2 {
+            top: -18%;
+            right: auto;
+            bottom: 0;
+            left: 5%;
+            width: 300px;
+            height: auto; /* Maintains PNG aspect ratio */
+            transform: rotate(25deg); /* Optional: adjust rotation to match second device */
+        }
+        @media (max-width: 768px) {
+            .product-device-2 {
+                left: 50%;
+                transform: translateX(-50%) rotate(25deg);
+                top:0;
+            }
+        }
+
+        .merchant-column-custody {
+            width: 48%;
+        }
+        .merchant-column-custody-break {
+            width: 4%;
+        }
+        @media (max-width: 992px) {
+            .merchant-column-custody {
+                width: 100%;
+            }
+        }
+
+        </style>
+
+        <div class="fixed-nav-adjustment"></div>
+        <div class="position-relative overflow-hidden text-center" style=" padding-top: 7.5rem; padding-bottom: 7.5rem;">
+            <div class="col-xl-8 col-md-10 col-12 p-lg-5 mx-auto my-5 z-3">
+                <div class="glass-hard p-2">
+                    <h1 class="display-3 fw-medium mb-4">Accept <span style="color:#0AC18E;">Bitcoin Cash</span> at your Business</h1>
+                    <h3 class="fw-normal text-muted mb-3">Bitcoin Cash is digital cash — that means it’s fast, reliable, and low fee.</h3>
+                </div>
+            </div>
+            <img src="images/Merchants/device1.png" class="product-device d-none d-md-block z-n1" alt="Device 1">
+            <img src="images/Merchants/device2.png" class="product-device product-device-2 z-n1" alt="Device 2">
+        </div>
+
+        <main class="container-fluid bg-info-subtle">
+            <div class="container-md">
+
+                <div class="row mx-auto py-5">
+                    <div class="col-xl-8 d-block d-xl-none mb-5">
+                        <img src="images/Merchants/bch-accepted-pos.jpg" class="img-fluid rounded object-fit-cover object-position-top w-100 merchant-image-main">
+                    </div>
+                    <div class="col-xl-4 d-flex flex-column gap-4">
+                        <div class="d-flex align-items-start">
+                            <i class="bi bi-lightning-fill icon-green me-3 display-2"></i>
+                            <div class="flex-fill">
+                                <h3 class="fs-4 fw-medium">Fast</h3>
+                                <p class="fs-5r mb-0">Quicker than cash without the hassle of making change or depositing at the bank.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start">
+                            <i class="bi bi-boxes icon-green me-3 display-2"></i>
+                            <div class="flex-fill">
+                                <h3 class="fs-4 fw-medium">Reliable</h3>
+                                <p class="fs-5r mb-0">100% uptime for over 15 years. Transactions will always go through.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start">
+                            <i class="bi bi-shield-lock icon-green me-3 display-2"></i>
+                            <div class="flex-fill">
+                                <h3 class="fs-4 fw-medium">No Chargebacks</h3>
+                                <p class="fs-5r mb-0">It is impossible to reverse transactions making chargebacks a thing of the past.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start">
+                            <i class="bi bi-cash-coin icon-green me-3 display-2"></i>
+                            <div class="flex-fill">
+                                <h3 class="fs-4 fw-medium">Low Fee</h3>
+                                <p class="fs-5r mb-0">Send money to anyone, anywhere for less than a penny.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-8 d-none d-xl-block mb-5">
+                        <img src="images/Merchants/bch-accepted-pos.jpg" class="img-fluid rounded object-fit-cover object-position-top w-100 merchant-image-main">
+                    </div>
+                    <!--<p class="fs-5r">Whether accepting natively (sub-penny fees) or through a provider (~1% service fees vs 3%+ with credit cards).</p>-->
+                </div>
+            </div>
+        </main>
+
+        <section class="container-fluid">
+            <div class="container-md">
+                <h3 class="display-6 fw-medium text-break text-center pb-2 mt-5">How can I begin accepting BCH?</h3>
+                <h4 class="fw-normal text-muted text-center mb-5">First, it is important to decide which method is right for you!</h4>
+                <div class="row">
+                    <div class="col-lg-6 merchant-column-custody p-3 glass-gradient rounded-5">
+                        <p class="fs-2 fw-medium mb-2">Self-Custody</p>
+                        <p class="fs-4">Control your payments directly with a self-custody system, keeping your funds secure and independent.</p>
+                        <ul class="list-unstyled">
+                            <li class="d-flex align-items-center">
+                                <i class="bi bi-person-arms-up fs-1 me-3"></i><p class="fs-5r mb-0"><span class="fw-medium">Full Control:</span> You directly manage your BCH funds, free from third-party access.</p>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <i class="bi bi-key fs-1 me-3"></i><p class="fs-5r mb-0"><span class="fw-medium">High Security:</span> Proper key management protects funds from hacks or service failures.</p>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <i class="bi bi-cash fs-1 me-3"></i><p class="fs-5r mb-0"><span class="fw-medium">No Fees:</span> Avoid payment processor fees to keep more revenue.</p>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <i class="bi bi-cone-striped fs-1 me-3"></i><p class="fs-5r mb-0"><span class="fw-medium">Tradeoff:</span> Requires technical know-how and secure key management, with no recovery if keys are lost.</p>
+                            </li>
+                        </ul>
+                        <button class="btn btn-light btn-lg w-100 rounded-5" data-bs-toggle="collapse" href="#self-custody" role="button" aria-expanded="false" aria-controls="self-custody"> Learn More </button>
+                    </div>
+                    <div class="col merchant-column-custody-break d-none d-lg-block"></div>
+                    <div class="col-lg-6 merchant-column-custody p-3 rounded-5">
+                        <p class="fs-2 fw-medium mb-2">Payment Processor</p>
+                        <p class="fs-4">Simplify your transactions with a payment provider, offering easy management and added support.</p>
+                        <ul class="list-unstyled">
+                            <li class="d-flex align-items-center">
+                                <i class="bi bi-leaf icon-green fs-1 me-3"></i><p class="fs-5r mb-0"><span class="fw-medium">User-Friendly:</span> Can simplify BCH payments with more familiar interfaces.</p>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <i class="bi bi-ui-checks icon-green fs-1 me-3"></i><p class="fs-5r mb-0"><span class="fw-medium">Extra Services:</span> Includes fraud protection, support, and system integrations.</p>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <i class="bi bi-fast-forward icon-green fs-1 me-3"></i><p class="fs-5r mb-0"><span class="fw-medium">Quick Setup:</span> Start accepting BCH payments without technical expertise.</p>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <i class="bi bi-cone-striped icon-green fs-1 me-3"></i><p class="fs-5r mb-0"><span class="fw-medium">Tradeoff:</span> Involves fees and risks from relying on a third party.</p>
+                            </li>
+                        </ul>
+                        <button class="btn btn-bch btn-lg w-100 rounded-5" data-bs-toggle="collapse" href="#payment-processor" role="button" aria-expanded="false" aria-controls="payment-processor"> Learn More </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="collapse" id="self-custody">
+                      <div class="card card-body">
+                        Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                      </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <h3 class="display-6 fw-medium text-break text-center pb-2 mt-5">Picked a method? Now it's time to Deploy!</h3>
+                    <h4 class="fw-normal text-muted text-center mb-5">No matter what tool works best for you, there are three simple steps to get started.</h4>
+                    <div class="col-lg-4 mb-4">
+                        <div class="card" data-header="DevTool, BCMR, CashToken, Cash Token">
+                            <div class="card-body text-center text-sm-start">
+                                <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
+                                    <i class="bi bi-1-square display-4 card-img-standard me-sm-3 mb-3 mb-sm-0"></i>
+                                    <div class="flex-grow-1">
+                                        <h4 class="text-break">Flowee BCMR Indexer</h4>
+                                        <p class="mb-0 fs-6">A BCMR indexer by Flowee.</p>
+                                    </div>
+                                    <a href="http://bcmr.flowee.cash" class="btn btn-lg btn-primary align-self-center ms-sm-3 mt-3 mt-sm-0" aria-label="Primary link">Visit</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="card" data-header="DevTool, BCMR, CashToken, Cash Token">
+                            <div class="card-body text-center text-sm-start">
+                                <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
+                                    <i class="bi bi-2-square display-4 card-img-standard me-sm-3 mb-3 mb-sm-0"></i>
+                                    <div class="flex-grow-1">
+                                        <h4 class="text-break">Flowee BCMR Indexer</h4>
+                                        <p class="mb-0 fs-6">A BCMR indexer by Flowee.</p>
+                                    </div>
+                                    <a href="http://bcmr.flowee.cash" class="btn btn-lg btn-primary align-self-center ms-sm-3 mt-3 mt-sm-0" aria-label="Primary link">Visit</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="card" data-header="DevTool, BCMR, CashToken, Cash Token">
+                            <div class="card-body text-center text-sm-start">
+                                <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
+                                    <i class="bi bi-3-square display-4 card-img-standard me-sm-3 mb-3 mb-sm-0"></i>
+                                    <div class="flex-grow-1">
+                                        <h4 class="text-break">Flowee BCMR Indexer</h4>
+                                        <p class="mb-0 fs-6">A BCMR indexer by Flowee.</p>
+                                    </div>
+                                    <a href="http://bcmr.flowee.cash" class="btn btn-lg btn-primary align-self-center ms-sm-3 mt-3 mt-sm-0" aria-label="Primary link">Visit</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <footer class="py-3 px-2 mt-auto text-center bg-info-subtle border-top border-5">
+            <div class="row pb-2">
+                <p class="fs-5r fw-medium mb-0">Please consider supporting this project</p>
+                <div>
+                    <p class="user-select-all fs-5r fw-normal text-break d-inline">bitcoincash:qrvns4u27ngn6vf774rlep6873kzadqnavw0szkqx3</p>
+                    <button id="copyButton" class="remove-button-stylings" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to Clipboard" aria-label="Copy BCH Address">
+                        <i class="bi bi-copy copyButton text-body-emphasis"></i>
+                      </button>
+                </div>
+            </div>
+            <div class="row">
+                <p class="fs-6 fw-normal my-1">Want to contribute to the site? <a class="link-body-emphasis link-offset-1 thin-link-1" href="https://github.com/minisat0shi/minisatoshi.cash">Submit a PR!</a></p>
+            </div>
+            <!-- <div class="row">
+                <p class="fs-5r fw-normal">Connect to my SPV Node! node.minisatoshi.cash</p>
+            </div> -->
+        </footer>
+    
         <!-- Dynamic main.js -->
         <script>
             console.log("Loading main.js dynamically");
@@ -261,6 +424,5 @@
             jsScript.onerror = (e) => console.error("main.js failed to load:", e);
             document.body.appendChild(jsScript);
         </script>
-	    
-	</body>
+    </body>
 </html>
