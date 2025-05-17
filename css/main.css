@@ -314,7 +314,7 @@ html[data-bs-theme="dark"][data-blackout="true"] .glass-soft {
 }
 html[data-bs-theme="dark"] .glass-hard {
     backdrop-filter: blur(10px);
-    background: rgba(0,0,0,0.20);
+    background: rgba(0,0,0,0.65);
 }
 html[data-bs-theme="dark"][data-blackout="true"] .glass-hard {
     background: rgba(0,0,0,0.65);
