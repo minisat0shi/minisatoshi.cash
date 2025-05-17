@@ -300,47 +300,341 @@
             <div class="container-md">
                 <h3 class="display-6 fw-medium text-break text-center pb-2 mt-5">How can I begin accepting BCH?</h3>
                 <h4 class="fw-normal text-muted text-center mb-5">First, it is important to decide which method is right for you!</h4>
-                <div class="row">
-                    <div class="col-lg-6 merchant-column-custody p-3 glass-gradient rounded-5">
-                        <p class="fs-2 fw-medium mb-2">Self-Custody</p>
-                        <p class="fs-4">Control your payments directly with a self-custody system, keeping your funds secure and independent.</p>
-                        <ul class="list-unstyled">
-                            <li class="d-flex align-items-center">
-                                <i class="bi bi-person-arms-up fs-1 me-3"></i><p class="fs-5r mb-0"><span class="fw-medium">Full Control:</span> You directly manage your BCH funds, free from third-party access.</p>
-                            </li>
-                            <li class="d-flex align-items-center">
-                                <i class="bi bi-key fs-1 me-3"></i><p class="fs-5r mb-0"><span class="fw-medium">High Security:</span> Proper key management protects funds from hacks or service failures.</p>
-                            </li>
-                            <li class="d-flex align-items-center">
-                                <i class="bi bi-cash fs-1 me-3"></i><p class="fs-5r mb-0"><span class="fw-medium">No Fees:</span> Avoid payment processor fees to keep more revenue.</p>
-                            </li>
-                            <li class="d-flex align-items-center">
-                                <i class="bi bi-cone-striped fs-1 me-3"></i><p class="fs-5r mb-0"><span class="fw-medium">Tradeoff:</span> Requires technical know-how and secure key management, with no recovery if keys are lost.</p>
-                            </li>
-                        </ul>
-                        <button class="btn btn-light btn-lg w-100 rounded-5" data-bs-toggle="collapse" href="#self-custody" role="button" aria-expanded="false" aria-controls="self-custody"> Learn More </button>
+
+
+                <!-- Desktop Layout (visible on lg and above) -->
+                <div id="merchants_desktop" class="d-none d-lg-block">
+                    <div class="row">
+                        <div class="col-lg-6 merchant-column-custody p-4 glass-gradient rounded-5">
+                            <p class="fs-2 fw-medium mb-2">Self-Custody</p>
+                            <p class="fs-4">Control your payments directly with a self-custody system, keeping your funds secure and independent.</p>
+                            <ul class="list-unstyled">
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-person-arms-up fs-1 me-3"></i><p class="fs-5r mb-0"><span class="fw-medium">Full Control:</span> You directly manage your BCH funds, free from third-party access.</p>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-key fs-1 me-3"></i><p class="fs-5r mb-0"><span class="fw-medium">High Security:</span> Proper key management protects funds from hacks or service failures.</p>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-cash fs-1 me-3"></i><p class="fs-5r mb-0"><span class="fw-medium">No Fees:</span> Avoid payment processor fees to keep more revenue.</p>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-cone-striped fs-1 me-3"></i><p class="fs-5r mb-0"><span class="fw-medium">Tradeoff:</span> Requires technical know-how and secure key management, with no recovery if keys are lost.</p>
+                                </li>
+                            </ul>
+                            <button class="btn btn-light btn-lg w-100 rounded-5" data-bs-toggle="collapse" href="#self-custody_desktop" role="button" aria-expanded="false" aria-controls="self-custody_desktop"> Learn More </button>
+                        </div>
+                        <div class="col merchant-column-custody-break d-none d-lg-block"></div>
+                        <div class="col-lg-6 merchant-column-custody p-4 rounded-5">
+                            <p class="fs-2 fw-medium mb-2">Payment Processor</p>
+                            <p class="fs-4">Simplify your transactions with a payment provider, offering easy management and added support.</p>
+                            <ul class="list-unstyled">
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-leaf icon-green fs-1 me-3"></i><p class="fs-5r mb-0"><span class="fw-medium">User-Friendly:</span> Can simplify BCH payments with more familiar interfaces.</p>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-ui-checks icon-green fs-1 me-3"></i><p class="fs-5r mb-0"><span class="fw-medium">Extra Services:</span> Includes fraud protection, support, and system integrations.</p>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-fast-forward icon-green fs-1 me-3"></i><p class="fs-5r mb-0"><span class="fw-medium">Quick Setup:</span> Start accepting BCH payments without technical expertise.</p>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-cone-striped icon-green fs-1 me-3"></i><p class="fs-5r mb-0"><span class="fw-medium">Tradeoff:</span> Involves fees and risks from relying on a third party.</p>
+                                </li>
+                            </ul>
+                            <button class="btn btn-bch btn-lg w-100 rounded-5" data-bs-toggle="collapse" href="#payment-processor_desktop" role="button" aria-expanded="false" aria-controls="payment-processor_desktop"> Learn More </button>
+                        </div>
                     </div>
-                    <div class="col merchant-column-custody-break d-none d-lg-block"></div>
-                    <div class="col-lg-6 merchant-column-custody p-3 rounded-5">
-                        <p class="fs-2 fw-medium mb-2">Payment Processor</p>
-                        <p class="fs-4">Simplify your transactions with a payment provider, offering easy management and added support.</p>
-                        <ul class="list-unstyled">
-                            <li class="d-flex align-items-center">
-                                <i class="bi bi-leaf icon-green fs-1 me-3"></i><p class="fs-5r mb-0"><span class="fw-medium">User-Friendly:</span> Can simplify BCH payments with more familiar interfaces.</p>
-                            </li>
-                            <li class="d-flex align-items-center">
-                                <i class="bi bi-ui-checks icon-green fs-1 me-3"></i><p class="fs-5r mb-0"><span class="fw-medium">Extra Services:</span> Includes fraud protection, support, and system integrations.</p>
-                            </li>
-                            <li class="d-flex align-items-center">
-                                <i class="bi bi-fast-forward icon-green fs-1 me-3"></i><p class="fs-5r mb-0"><span class="fw-medium">Quick Setup:</span> Start accepting BCH payments without technical expertise.</p>
-                            </li>
-                            <li class="d-flex align-items-center">
-                                <i class="bi bi-cone-striped icon-green fs-1 me-3"></i><p class="fs-5r mb-0"><span class="fw-medium">Tradeoff:</span> Involves fees and risks from relying on a third party.</p>
-                            </li>
-                        </ul>
-                        <button class="btn btn-bch btn-lg w-100 rounded-5" data-bs-toggle="collapse" href="#payment-processor" role="button" aria-expanded="false" aria-controls="payment-processor"> Learn More </button>
+                    <div class="row">
+                        <div class="collapse p-0" id="self-custody_desktop" data-bs-parent="#merchants_desktop">
+                            <div class="d-flex flex-nowrap overflow-x-auto pb-3">
+                                <div class="col-6 col-xl-3 my-2 me-3">
+                                    <div class="card h-100 glass-soft">
+                                        <div class="card-body text-center d-flex flex-column">
+                                            <img src="images/Ecosystem/bitgree.svg" alt="Bitgree logo" class="card-img-medium me-0 mb-3">
+                                            <h4 class="text-break">Bitgree</h4>
+                                            <p class="mb-0 fs-6 flex-grow-1">Bitgree enables users to purchase goods from popular marketplaces including Amazon and MercadoLibre with Bitcoin Cash, and earn BCH by acting as an intermediary.</p>
+                                            <a href="https://bitgree.com" class="btn btn-outline-primary w-100 ms-0 mt-3" aria-label="Primary link">Visit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-xl-3 my-2 me-3">
+                                    <div class="card h-100 glass-soft">
+                                        <div class="card-body text-center d-flex flex-column">
+                                            <img src="images/Ecosystem/bitgree.svg" alt="Bitgree logo" class="card-img-medium me-0 mb-3">
+                                            <h4 class="text-break">Bitgree</h4>
+                                            <p class="mb-0 fs-6 flex-grow-1">Bitgree enables users to purchase goods from popular marketplaces including Amazon and MercadoLibre with Bitcoin Cash, and earn BCH by acting as an intermediary.</p>
+                                            <a href="https://bitgree.com" class="btn btn-outline-primary w-100 ms-0 mt-3" aria-label="Primary link">Visit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-xl-3 my-2 me-3">
+                                    <div class="card h-100 glass-soft">
+                                        <div class="card-body text-center d-flex flex-column">
+                                            <img src="images/Ecosystem/bitgree.svg" alt="Bitgree logo" class="card-img-medium me-0 mb-3">
+                                            <h4 class="text-break">Bitgree</h4>
+                                            <p class="mb-0 fs-6 flex-grow-1">Bitgree enables users to purchase goods from popular marketplaces including Amazon and MercadoLibre with Bitcoin Cash, and earn BCH by acting as an intermediary.</p>
+                                            <a href="https://bitgree.com" class="btn btn-outline-primary w-100 ms-0 mt-3" aria-label="Primary link">Visit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-xl-3 my-2 me-3">
+                                    <div class="card h-100 glass-soft">
+                                        <div class="card-body text-center d-flex flex-column">
+                                            <img src="images/Ecosystem/bitgree.svg" alt="Bitgree logo" class="card-img-medium me-0 mb-3">
+                                            <h4 class="text-break">Bitgree</h4>
+                                            <p class="mb-0 fs-6 flex-grow-1">Bitgree enables users to purchase goods from popular marketplaces including Amazon and MercadoLibre with Bitcoin Cash, and earn BCH by acting as an intermediary.</p>
+                                            <a href="https://bitgree.com" class="btn btn-outline-primary w-100 ms-0 mt-3" aria-label="Primary link">Visit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-xl-3 my-2 me-3">
+                                    <div class="card h-100 glass-soft">
+                                        <div class="card-body text-center d-flex flex-column">
+                                            <img src="images/Ecosystem/bitgree.svg" alt="Bitgree logo" class="card-img-medium me-0 mb-3">
+                                            <h4 class="text-break">Bitgree</h4>
+                                            <p class="mb-0 fs-6 flex-grow-1">Bitgree enables users to purchase goods from popular marketplaces including Amazon and MercadoLibre with Bitcoin Cash, and earn BCH by acting as an intermediary.</p>
+                                            <a href="https://bitgree.com" class="btn btn-outline-primary w-100 ms-0 mt-3" aria-label="Primary link">Visit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-xl-3 my-2 me-3">
+                                    <div class="card h-100 glass-soft">
+                                        <div class="card-body text-center d-flex flex-column">
+                                            <img src="images/Ecosystem/bitgree.svg" alt="Bitgree logo" class="card-img-medium me-0 mb-3">
+                                            <h4 class="text-break">Bitgree</h4>
+                                            <p class="mb-0 fs-6 flex-grow-1">Bitgree enables users to purchase goods from popular marketplaces including Amazon and MercadoLibre with Bitcoin Cash, and earn BCH by acting as an intermediary.</p>
+                                            <a href="https://bitgree.com" class="btn btn-outline-primary w-100 ms-0 mt-3" aria-label="Primary link">Visit</a>
+                                        </div>
+                                    </div>
+                                </div>                                
+                            </div>
+                        </div>
+                        <div class="collapse p-0" id="payment-processor_desktop" data-bs-parent="#merchants_desktop">
+                            <div class="d-flex flex-nowrap overflow-x-auto pb-3">
+                                <div class="col-6 col-xl-3 my-2 me-3">
+                                    <div class="card h-100 glass-soft">
+                                        <div class="card-body text-center d-flex flex-column">
+                                            <img src="images/Ecosystem/bitgree.svg" alt="Bitgree logo" class="card-img-medium me-0 mb-3">
+                                            <h4 class="text-break">Bitgree</h4>
+                                            <p class="mb-0 fs-6 flex-grow-1">Bitgree enables users to purchase goods from popular marketplaces including Amazon and MercadoLibre with Bitcoin Cash, and earn BCH by acting as an intermediary.</p>
+                                            <a href="https://bitgree.com" class="btn btn-outline-primary w-100 ms-0 mt-3" aria-label="Primary link">Visit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-xl-3 my-2 me-3">
+                                    <div class="card h-100 glass-soft">
+                                        <div class="card-body text-center d-flex flex-column">
+                                            <img src="images/Ecosystem/bitgree.svg" alt="Bitgree logo" class="card-img-medium me-0 mb-3">
+                                            <h4 class="text-break">Bitgree</h4>
+                                            <p class="mb-0 fs-6 flex-grow-1">Bitgree enables users to purchase goods from popular marketplaces including Amazon and MercadoLibre with Bitcoin Cash, and earn BCH by acting as an intermediary.</p>
+                                            <a href="https://bitgree.com" class="btn btn-outline-primary w-100 ms-0 mt-3" aria-label="Primary link">Visit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-xl-3 my-2 me-3">
+                                    <div class="card h-100 glass-soft">
+                                        <div class="card-body text-center d-flex flex-column">
+                                            <img src="images/Ecosystem/bitgree.svg" alt="Bitgree logo" class="card-img-medium me-0 mb-3">
+                                            <h4 class="text-break">Bitgree</h4>
+                                            <p class="mb-0 fs-6 flex-grow-1">Bitgree enables users to purchase goods from popular marketplaces including Amazon and MercadoLibre with Bitcoin Cash, and earn BCH by acting as an intermediary.</p>
+                                            <a href="https://bitgree.com" class="btn btn-outline-primary w-100 ms-0 mt-3" aria-label="Primary link">Visit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Mobile Layout (visible below lg) -->
+                <div id="merchants_mobile" class="d-lg-none">
+                    <div class="mb-3">
+                        <div class="col-lg-6 merchant-column-custody p-4 glass-gradient rounded-5">
+                            <p class="fs-2 fw-medium mb-2">Self-Custody</p>
+                            <p class="fs-4">Control your payments directly with a self-custody system, keeping your funds secure and independent.</p>
+                            <ul class="list-unstyled">
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-person-arms-up fs-1 me-3"></i><p class="fs-5r mb-0"><span class="fw-medium">Full Control:</span> You directly manage your BCH funds, free from third-party access.</p>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-key fs-1 me-3"></i><p class="fs-5r mb-0"><span class="fw-medium">High Security:</span> Proper key management protects funds from hacks or service failures.</p>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-cash fs-1 me-3"></i><p class="fs-5r mb-0"><span class="fw-medium">No Fees:</span> Avoid payment processor fees to keep more revenue.</p>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-cone-striped fs-1 me-3"></i><p class="fs-5r mb-0"><span class="fw-medium">Tradeoff:</span> Requires technical know-how and secure key management, with no recovery if keys are lost.</p>
+                                </li>
+                            </ul>
+                            <button class="btn btn-light btn-lg w-100 rounded-5" data-bs-toggle="collapse" href="#self-custody_mobile" role="button" aria-expanded="false" aria-controls="self-custody_mobile"> Learn More </button>
+                        </div>
+                        <div class="collapse" id="self-custody_mobile" data-bs-parent="#merchants_mobile">
+                            <div class="d-flex flex-nowrap overflow-x-auto pt-3">
+                                <div class="col-6 col-xl-3 my-2 me-3">
+                                    <div class="card h-100 glass-soft">
+                                        <div class="card-body text-center d-flex flex-column">
+                                            <img src="images/Ecosystem/bitgree.svg" alt="Bitgree logo" class="card-img-medium me-0 mb-3">
+                                            <h4 class="text-break">Bitgree</h4>
+                                            <p class="mb-0 fs-6 flex-grow-1">Bitgree enables users to purchase goods from popular marketplaces including Amazon and MercadoLibre with Bitcoin Cash, and earn BCH by acting as an intermediary.</p>
+                                            <a href="https://bitgree.com" class="btn btn-outline-primary w-100 ms-0 mt-3" aria-label="Primary link">Visit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-xl-3 my-2 me-3">
+                                    <div class="card h-100 glass-soft possible-card">
+                                        <img src="images/Ecosystem/bchcity-background.webp" alt="Background image" class="card-bg-img">
+                                        <div class="card-body text-center d-flex flex-column possible-card-body">
+                                            <img src="images/Ecosystem/BitcoinCashCity-Full.svg" alt="Bitcoin Cash City logo" class="card-img-medium me-0 mb-3">
+                                            <h4 class="text-break">Bitcoin Cash City</h4>
+                                            <p class="mb-0 fs-6 flex-grow-1">Townsville, Australia is known as Bitcoin Cash City, boasting the highest per capita merchant adoption of Bitcoin Cash in the world.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-xl-3 my-2 me-3">
+                                    <div class="card h-100 glass-soft possible-card">
+                                        <img src="images/Ecosystem/bchcity-background.webp" alt="Background image" class="card-bg-img">
+                                        <div class="card-body text-center d-flex flex-column possible-card-body">
+                                            <img src="images/Ecosystem/bchargentina.webp" alt="BCH Argentina logo" class="card-img-medium me-0 mb-3">
+                                            <h4 class="text-break">Argentina</h4>
+                                            <p class="mb-0 fs-6 flex-grow-1">Argentina is another hotspot for Bitcoin Cash adoption. An incredible team dubbed BCH Argentina has spent years cultivating the local BCH ecosystem with a network of merchants and individuals regularly using BCH.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-xl-3 my-2 me-3">
+                                    <div class="card h-100 glass-soft possible-card">
+                                        <img src="images/Ecosystem/bchcity-background.webp" alt="Background image" class="card-bg-img">
+                                        <div class="card-body text-center d-flex flex-column possible-card-body">
+                                            <img src="images/Ecosystem/island.svg" alt="Island graphic" class="card-img-medium me-0 mb-3">
+                                            <h4 class="text-break">The Caribbean</h4>
+                                            <p class="mb-0 fs-6 flex-grow-1">The Caribbean is a beacon for Bitcoin Cash with hundreds of local merchants accepting BCH, with hotspots in St. Kitts & Nevis, Antigua & Barbuda, Anguilla, and Puerto Rico.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-xl-3 my-2 me-3">
+                                    <div class="card h-100 glass-soft">
+                                        <div class="card-body text-center d-flex flex-column">
+                                            <img src="images/Ecosystem/nanogpt.svg" alt="NanoGPT logo" class="card-img-medium me-0 mb-3">
+                                            <h4 class="text-break">NanoGPT</h4>
+                                            <p class="mb-0 fs-6 flex-grow-1">Access the top LLMs (ChatGPT, Claude, Gemini) plus image generation without subscription and without KYC; pay to use with Bitcoin Cash!</p>
+                                            <a href="https://nano-gpt.com/invite/66G7Nfr9" class="btn btn-outline-primary w-100 ms-0 mt-3" aria-label="Primary link">Visit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-xl-3 my-2 me-3">
+                                    <div class="card h-100 glass-soft">
+                                        <div class="card-body text-center d-flex flex-column">
+                                            <img src="images/Ecosystem/amc.svg" alt="AMC Theaters logo" class="card-img-medium me-0 mb-3">
+                                            <h4 class="text-break">AMC</h4>
+                                            <p class="mb-0 fs-6 flex-grow-1">One of the largest movie theater brands in the United States and began accepting Bitcoin Cash in 2021. Buy your next tickets through the app or website with BCH!</p>
+                                            <a href="https://amctheatres.com/pay-your-way" class="btn btn-outline-primary w-100 ms-0 mt-3" aria-label="Primary link">Visit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-xl-3 my-2 me-3">
+                                    <div class="card h-100 glass-soft">
+                                        <div class="card-body text-center d-flex flex-column">
+                                            <img src="images/Ecosystem/keys4coins.svg" alt="Keys 4 Coins logo" class="card-img-medium me-0 mb-3">
+                                            <h4 class="text-break">Keys4Coins</h4>
+                                            <p class="mb-0 fs-6 flex-grow-1">A platform enabling the purchase of game keys for major gaming platforms including Steam, PlayStation, Xbox. It also lists gift cards for prominent retailers; all using Bitcoin Cash.</p>
+                                            <a href="https://keys4coins.com" class="btn btn-outline-primary w-100 ms-0 mt-3" aria-label="Primary link">Visit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-xl-3 my-2 me-3">
+                                    <div class="card h-100 glass-soft">
+                                        <div class="card-body text-center d-flex flex-column">
+                                            <img src="images/Ecosystem/namecheap.svg" alt="NameCheap logo" class="card-img-medium me-0 mb-3">
+                                            <h4 class="text-break">NameCheap</h4>
+                                            <p class="mb-0 fs-6 flex-grow-1">A popular provider of domain name registration, hosting, security, and managed WordPress services, amongst other tools. All services can be paid for with Bitcoin Cash.</p>
+                                            <a href="https://namecheap.com" class="btn btn-outline-primary w-100 ms-0 mt-3" aria-label="Primary link">Visit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-xl-3 my-2 me-3">
+                                    <div class="card h-100 glass-soft">
+                                        <div class="card-body text-center d-flex flex-column">
+                                            <img src="images/Ecosystem/newegg.svg" alt="Newegg logo" class="card-img-medium me-0 mb-3">
+                                            <h4 class="text-break">Newegg</h4>
+                                            <p class="mb-0 fs-6 flex-grow-1">Newegg is a leading global online retailer specializing in computer hardware, consumer electronics, and other tech related products. They began accepting Bitcoin (Cash) in 2014!</p>
+                                            <a href="https://kb.newegg.com/knowledge-base/using-crypto-on-newegg/#using-bitpay-on-newegg" class="btn btn-outline-primary w-100 ms-0 mt-3" aria-label="Primary link">Visit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-xl-3 my-2 me-3">
+                                    <div class="card h-100 glass-soft">
+                                        <div class="card-body text-center d-flex flex-column">
+                                            <img src="favicon/favicon.svg" alt="Minisatoshi.cash logo" class="card-img-medium me-0 mb-3">
+                                            <h4 class="text-break">And so much more!</h4>
+                                            <p class="mb-0 fs-6 flex-grow-1">Explore more of the vast Bitcoin Cash Ecosystem covering every category you could think of!</p>
+                                            <a href="ecosystem?filter=Commerce" class="btn btn-outline-primary w-100 ms-0 mt-3" aria-label="Primary link">Visit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="col-lg-6 merchant-column-custody p-4 rounded-5">
+                            <p class="fs-2 fw-medium mb-2">Payment Processor</p>
+                            <p class="fs-4">Simplify your transactions with a payment provider, offering easy management and added support.</p>
+                            <ul class="list-unstyled">
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-leaf icon-green fs-1 me-3"></i><p class="fs-5r mb-0"><span class="fw-medium">User-Friendly:</span> Can simplify BCH payments with more familiar interfaces.</p>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-ui-checks icon-green fs-1 me-3"></i><p class="fs-5r mb-0"><span class="fw-medium">Extra Services:</span> Includes fraud protection, support, and system integrations.</p>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-fast-forward icon-green fs-1 me-3"></i><p class="fs-5r mb-0"><span class="fw-medium">Quick Setup:</span> Start accepting BCH payments without technical expertise.</p>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-cone-striped icon-green fs-1 me-3"></i><p class="fs-5r mb-0"><span class="fw-medium">Tradeoff:</span> Involves fees and risks from relying on a third party.</p>
+                                </li>
+                            </ul>
+                            <button class="btn btn-bch btn-lg w-100 rounded-5" data-bs-toggle="collapse" href="#payment-processor_mobile" role="button" aria-expanded="false" aria-controls="payment-processor_mobile"> Learn More </button>
+                        </div>
+                        <div class="collapse" id="payment-processor_mobile" data-bs-parent="#merchants_mobile">
+                            <div class="d-flex flex-nowrap overflow-x-auto pt-3">
+                                <div class="col-6 mb-3 me-3">
+                                    <div class="card h-100 glass-soft">
+                                        <div class="card-body text-center d-flex flex-column">
+                                            <img src="images/Ecosystem/moria.svg" alt="Moria Money MUSD logo" class="card-img-medium me-0 mb-3">
+                                            <h4 class="text-break">MUSD</h4>
+                                            <p class="mb-0 fs-6 flex-grow-1">MUSD is a decentralized USD-pegged stablecoin on the Bitcoin Cash blockchain utilizing the Moria Protocol. It operates within a DeFi ecosystem, enabling transactions, lending, and/or trading without relying on centralized control.</p>
+                                            <a href="https://moria.money" class="btn btn-outline-primary w-100 ms-0 mt-3" aria-label="Primary link">Visit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-8 mb-4 me-3">
+                                    <div class="card h-100 glass-soft">
+                                        <div class="card-body text-center d-flex flex-column">
+                                            <img src="images/Ecosystem/stablehedge.svg" alt="Moria Money MUSD logo" class="card-img-medium me-0 mb-3">
+                                            <h4 class="text-break">StableHedge</h4>
+                                            <p class="mb-0 fs-6 flex-grow-1">StableHedge is a novel DeFi protocol built on the Bitcoin Cash (BCH) blockchain, designed to mitigate price volatility risks while enabling instant liquidity. By tokenizing AnyHedge contracts and integrating strategic hedging, StableHedge offers a stable, redeemable token pegged to USD value, eliminating lock-in periods and reducing counterparty fees.</p>
+                                            <a href="https://paytaca.com" class="btn btn-outline-primary w-100 ms-0 mt-3" aria-label="Primary link">Visit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-8 col-xl-3 mb-3 me-3">
+                                    <div class="card h-100 glass-soft">
+                                        <div class="card-body text-center d-flex flex-column">
+                                            <img src="favicon/favicon.svg" alt="Minisatoshi.cash logo" class="card-img-medium me-0 mb-3">
+                                            <h4 class="text-break">And so much more!</h4>
+                                            <p class="mb-0 fs-6 flex-grow-1">Explore more of the vast Bitcoin Cash Ecosystem covering every category you could think of!</p>
+                                            <a href="https://minisatoshi.cash/ecosystem" class="btn btn-outline-primary w-100 ms-0 mt-3" aria-label="Primary link">Visit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
                 <div class="row">
                     <div class="collapse" id="self-custody">
                       <div class="card card-body">
@@ -348,55 +642,76 @@
                       </div>
                     </div>
                 </div>
+
+
+
+
+
+
+
+
+
                 <div class="row py-5 mb-5">
                     <h3 class="display-6 fw-medium text-break text-center pb-2 mt-5">Picked a method? Now it's time to Deploy!</h3>
                     <h4 class="fw-normal text-muted text-center mb-5">No matter what tool works best for you, there are three simple steps to get started.</h4>
-                    <div class="col-xxl-4 mb-4">
-                        <div class="card rounded-4 h-100">
-                            <div class="card-body text-center text-sm-start">
-                                <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
-                                    <i class="bi bi-1-square-fill bch-green display-2 card-img-standard me-sm-3 mb-3 mb-sm-0"></i>
-                                    <div class="flex-grow-1">
-                                        <h4 class="text-break">Set Up Your Self-Custody or Payment Processor Application</h4>
-                                        <p class="mb-0 fs-6">Check out the below video to see how to set up the Self-Custody BCH Register app.</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex flex-xxl-row flex-column justify-content-center gap-4">
-                                    <a href="http://minisatoshi.cash/resources#Stickers" class="btn btn-bch align-self-center fs-5r lh-sm mt-3 mt-sm-0" aria-label="Download Stickers">Open Video</a>
-                                </div>
+                    <div class="col-xl-6 mb-4">
+                      <div class="card rounded-4 h-100">
+                        <div class="card-body text-center text-sm-start">
+                          <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
+                            <i class="bi bi-1-square-fill bch-green display-2 me-sm-3 mb-3 mb-sm-0"></i>
+                            <div class="flex-grow-1">
+                              <h4 class="text-break">Set Up Your Self-Custody or Payment Processor Application</h4>
+                              <p class="mb-0 fs-6">Press "Watch" to see how to set up the Self-Custody BCH Register app.</p>
                             </div>
+                            <a href="https://www.youtube.com/watch?v=SyU96AGxpBg" class="btn btn-lg btn-bch align-self-center ms-sm-3 mt-3 mt-sm-0" aria-label="Watch how-to video">Watch</a>
+                          </div>
                         </div>
+                      </div>
                     </div>
-                    <div class="col-xxl-4 mb-4">
-                        <div class="card rounded-4 h-100">
-                            <div class="card-body text-center text-sm-start">
-                                <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
-                                    <i class="bi bi-2-square-fill bch-green display-2 card-img-standard me-sm-3 mb-3 mb-sm-0"></i>
-                                    <div class="flex-grow-1">
-                                        <h4 class="text-break">Deploy to Your Staff and Begin Receiving Payments</h4>
-                                        <p class="mb-0 fs-6">Check out the below video to see how to create basic invoices/receipts.</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex flex-xxl-row flex-column justify-content-center gap-4">
-                                    <a href="http://minisatoshi.cash/resources#Stickers" class="btn btn-bch align-self-center fs-5r lh-sm mt-3 mt-sm-0" aria-label="Download Stickers">Open Video</a>
-                                </div>
+                    <div class="col-xl-6 mb-4">
+                      <div class="card rounded-4 h-100">
+                        <div class="card-body text-center text-sm-start">
+                          <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
+                            <i class="bi bi-2-square-fill bch-green display-2 me-sm-3 mb-3 mb-sm-0"></i>
+                            <div class="flex-grow-1">
+                              <h4 class="text-break">Deploy to Your Staff/Website and Begin Receiving Payments</h4>
+                              <p class="mb-0 fs-6">Press "Watch" to see how to create basic invoices/receipts.</p>
                             </div>
+                            <a href="https://www.youtube.com/watch?v=EC9oXVRjor8" class="btn btn-lg btn-bch align-self-center ms-sm-3 mt-3 mt-sm-0" aria-label="Watch how-to video">Watch</a>
+                          </div>
                         </div>
+                      </div>
                     </div>
-                    <div class="col-xxl-4 mb-4">
-                        <div class="card rounded-4 h-100">
-                            <div class="card-body text-center text-sm-start">
-                                <div class="d-flex flex-sm-row flex-column justify-content-between p-md-1">
-                                    <i class="bi bi-3-square-fill bch-green display-2 card-img-standard me-sm-3 mb-3 mb-sm-0"></i>
-                                    <div class="flex-grow-1">
-                                        <h4 class="text-break">Put Bitcoin Cash stickers on your doors!</h4>
-                                        <p class="mb-0 fs-6">Get your business recognized!</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex flex-xxl-row flex-column justify-content-center gap-4">
-                                    <a href="http://minisatoshi.cash/resources#Stickers" class="btn btn-bch align-self-center fs-5r lh-sm mt-3 mt-sm-0" aria-label="Download Stickers">Download Stickers</a>
-                                    <a href="https://bitcoincashfoundation.org/store/" class="btn btn-bch align-self-center fs-5r lh-sm mt-3 mt-sm-0" aria-label="Order Free Stickers">Order Free Stickers</a>
-                                </div>
+                    <div class="col-12 mb-4 d-none d-sm-block">
+                      <div class="card rounded-4 text-white" style="overflow: hidden;">
+                        <img src="images/Merchants/sticker-placement.jpg" class="card-img" alt="Bitcoin Cash background">
+                        <div class="card-img-overlay p-2" style="background-color: rgba(0, 0, 0, 0.5);">
+                          <div class="d-flex flex-row justify-content-between align-items-start glass-soft p-2">
+                            <!-- Left: Icon and Text -->
+                            <div class="d-flex flex-row align-items-start">
+                              <i class="bi bi-3-square-fill bch-green display-2 me-3" style="filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.5));"></i>
+                              <div>
+                                <h4 class="card-title text-break mb-2">Put Bitcoin Cash stickers on your doors!</h4>
+                                <p class="card-text mb-0 fs-6 d-none d-sm-block">Let people know you're accepting Bitcoin Cash!</p>
+                              </div>
+                            </div>
+                            <!-- Right: Buttons -->
+                            <div class="d-flex flex-column flex-wrap align-items-start gap-2 ms-3">
+                              <a href="http://minisatoshi.cash/resources#Stickers" class="btn btn-bch fs-5 lh-sm w-100" aria-label="Download Bitcoin Cash Stickers">Download Stickers</a>
+                              <a href="https://bitcoincashfoundation.org/store/" class="btn btn-bch fs-5 lh-sm w-100" aria-label="Order Free Bitcoin Cash Stickers">Order Free Stickers</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 mb-4 d-sm-none d-block">
+                        <div class="card h-100 glass-soft">
+                            <img src="images/Merchants/sticker-placement.jpg" alt="Background image" class="card-bg-img">
+                            <div class="card-body text-center d-flex flex-column possible-card-body">
+                                <i class="bi bi-3-square-fill bch-green display-2 mb-3 me-0" style="filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.75));"></i>
+                                <h4 class="text-break">Put Bitcoin Cash stickers on your doors!</h4>
+                                  <a href="http://minisatoshi.cash/resources#Stickers" class="btn btn-bch fs-6 lh-sm w-100 d-block d-sm-none mb-2" aria-label="Download Bitcoin Cash Stickers">Download Stickers</a>
+                                  <a href="https://bitcoincashfoundation.org/store/" class="btn btn-bch fs-6 lh-sm w-100 d-block d-sm-none" aria-label="Order Free Bitcoin Cash Stickers">Order Free Stickers</a>
                             </div>
                         </div>
                     </div>
