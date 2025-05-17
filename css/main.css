@@ -233,7 +233,7 @@ html, head, body {
     z-index: 2;
     transition: all 0.4s ease;
 }
-@media (max-width: 1199px) {
+@media (max-width: 1399px) {
     .social {
         display: none;
     }
@@ -563,7 +563,7 @@ html[data-bs-theme="dark"][data-blackout="true"] .custom_nav.affix::before {
 }
 
 /* Mobile Navbar Collapse */
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1399px) {
     .custom_nav .navbar-collapse.show,
     .custom_nav .navbar-collapse.collapsing {
         position: absolute;
