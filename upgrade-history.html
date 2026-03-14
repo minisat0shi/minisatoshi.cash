@@ -679,9 +679,31 @@
                     <li id="final" class="timeline-item mb-5">
                     </li>
                 </ul>
+                <!--<ul id="lockedIn" class="timeline"> <!--Most recently implemented upgrade goes here->
+                    <li id="hardFork" class="timeline-item mb-5">
+                        <img class="upgrade-icon-large" alt="Loops + Pay to Script + Re-enable Bitwise Op-codes + Functions graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/31.svg?v=2" />
+                        <h3 id="upgrade-Layla" class="fw-bold text-break share-item">Layla<span class="fs-5r"><small> (Layla)</small></span><span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                        <p class="fs-4 mb-1">2026-05-15</p>
+
+                        <p class="fs-4 mb-1 text-break">Loops + Pay to Script + Re-enable Bitwise Op-codes + Functions</p>
+                        <p class="fs-5r text-secondary text-break">
+                            The Layla upgrade brings in the ability to perform loops in Bitcoin Cash's VM, sets Pay to Script as the outputs standard, re-enables bitwise op-codes, and adds to ability to declare and invoke functions.<br><br>
+                            <strong>CHIP-2021-05 Loops:</strong><br>
+                            Introduces the well-established, OP_BEGIN/OP_UNTIL loop construction to the Bitcoin Cash VM, bounded by the density-based limits activated in the 2025 upgrade. Loops eliminate duplication in repeated procedures, significantly reducing transaction sizes and enabling previously impractical constructions.<br><br>
+                            <strong>CHIP-2024-12 P2S:</strong><br>
+                            Makes Pay-2-Script (P2S) outputs standard, enables longer token commitments (up to 128 bytes), and unifies the standard unlocking bytecode length limit with the consensus limit (10,000 bytes). These changes improve wallet ecosystem safety, simplify contract design, and reduce transaction sizes for many vault, multi-party covenant, and decentralized financial applications.<br><br>
+                            <strong>CHIP-2025-05 Bitwise:</strong><br>
+                            Re-enables bitwise operations, including OP_INVERT for bit inversion, arithmetic shifts (OP_LSHIFTNUM and OP_RSHIFTNUM) for numeric values, and binary/logical shifts (OP_LSHIFTBIN and OP_RSHIFTBIN) for binary data. These operations allow Bitcoin Cash contracts to more efficiently implement a variety of financial and cryptographic algorithms.<br><br>
+                            <strong>CHIP-2025-05 Functions:</strong><br>
+                            Enables factoring of contract bytecode into reusable functions with OP_DEFINE/OP_INVOKE, eliminating duplicated logic and reducing transaction sizes. Functions improve the efficiency of complex financial and cryptographic computations, including zero-knowledge proof verification, homomorphic encryption, post-quantum cryptography, and more.
+                        </p>
+                    </li>
+                    <li id="final" class="timeline-item mb-5">
+                    </li>
+                </ul>-->
                 <ul id="future" class="timeline"> <!--The next expected/locked-in upgrade goes here-->
                     <li id="hardFork" class="timeline-item mb-5">
-                        <img class="upgrade-icon-large" alt="VM Limits + BigInts graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/31.svg?v=2" />
+                        <img class="upgrade-icon-large" alt="Loops + Pay to Script + Re-enable Bitwise Op-codes + Functions graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/31.svg?v=2" />
                         <h3 id="upgrade-Layla" class="fw-bold text-break share-item">Layla<span class="fs-5r"></span><span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
                         <p class="timelineTitle mb-1">[Locked-In]</p> <!--Only add this line if the upgrade was locked in on November 15th-->
                         <p class="fs-4 mb-1">2026-05-15</p>
