@@ -1208,6 +1208,8 @@ html[data-bs-theme="dark"] .card-bg-img {
 .fa-key:before { content: "\f084"; }
 .fa-user-secret:before { content: "\f21b"; }
 .fa-comments-dollar:before { content: "\f653"; }
+.fa-wallet:before { content: "\f555"; }
+.fa-hand-holding-dollar:before { content: "\f4c0"; }
 .fa-lightbulb:before { content: "\f0eb"; }
 .fa-cash-register:before { content: "\f788"; }
 
