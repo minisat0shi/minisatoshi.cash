@@ -1188,8 +1188,8 @@ html[data-bs-theme="dark"] .card-bg-img {
 /* Custom FontAwesome Icons ------------------------------------------- */
 @font-face {
   font-family: 'FontAwesomeCustom';
-  src: url('../specificFontAwesome/custom-fa-solid.woff2') format('woff2'),
-       url('../specificFontAwesome/custom-fa-solid.woff') format('woff');
+  src: url('../specificFontAwesome/custom-fa-solid.woff2?v=2') format('woff2'),
+       url('../specificFontAwesome/custom-fa-solid.woff?v=2') format('woff');
   font-weight: normal;
   font-style: normal;
 }
