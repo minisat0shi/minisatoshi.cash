@@ -301,6 +301,7 @@ html, head, body {
     backdrop-filter: saturate(180%) blur(10px);
 }
 html[data-bs-theme="dark"] .glass-soft {
+    background: rgba(33, 37, 41, 0.05);
     backdrop-filter: blur(10px);
 }
 html[data-bs-theme="dark"][data-blackout="true"] .glass-soft {
