@@ -674,33 +674,11 @@
                             Lowers the cost of developing, maintaining, and auditing contract systems relying on high-precision math: automated market makers, decentralized exchanges, decentralized stablecoins, collateralized loan protocols, cross-chain and sidechain bridges, and other decentralized financial applications. By allowing Bitcoin Cash to offer contracts maximum-efficiency, native math operations, this proposal would significantly reduce transaction sizes, block space usage, and node CPU utilization vs. existing emulated-math solutions.
                         </p>
                     </li>
-                    </li>
-                    <li id="hardFork" class="timeline-item mb-5">
-                        <img class="upgrade-icon-large" alt="Loops + Pay to Script + Re-enable Bitwise Op-codes + Functions graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/31.svg?v=2" />
-                        <h3 id="upgrade-Layla" class="fw-bold text-break share-item">Layla<span class="fs-5r"></span><span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
-                        <p class="fs-4 mb-1">2026-05-15</p>
-
-                        <p class="fs-4 mb-1 text-break">Loops + Pay to Script + Re-enable Bitwise Op-codes + Functions</p>
-                        <p class="fs-5r text-secondary text-break">
-                            The Layla upgrade brings in the ability to perform loops in Bitcoin Cash's VM, sets Pay to Script as the outputs standard, re-enables bitwise op-codes, and adds to ability to declare and invoke functions.<br><br>
-                            <strong>CHIP-2021-05 Loops:</strong><br>
-                            Introduces the well-established, OP_BEGIN/OP_UNTIL loop construction to the Bitcoin Cash VM, bounded by the density-based limits activated in the 2025 upgrade. Loops eliminate duplication in repeated procedures, significantly reducing transaction sizes and enabling previously impractical constructions.<br><br>
-                            <strong>CHIP-2024-12 P2S:</strong><br>
-                            Makes Pay-2-Script (P2S) outputs standard, enables longer token commitments (up to 128 bytes), and unifies the standard unlocking bytecode length limit with the consensus limit (10,000 bytes). These changes improve wallet ecosystem safety, simplify contract design, and reduce transaction sizes for many vault, multi-party covenant, and decentralized financial applications.<br><br>
-                            <strong>CHIP-2025-05 Bitwise:</strong><br>
-                            Re-enables bitwise operations, including OP_INVERT for bit inversion, arithmetic shifts (OP_LSHIFTNUM and OP_RSHIFTNUM) for numeric values, and binary/logical shifts (OP_LSHIFTBIN and OP_RSHIFTBIN) for binary data. These operations allow Bitcoin Cash contracts to more efficiently implement a variety of financial and cryptographic algorithms.<br><br>
-                            <strong>CHIP-2025-05 Functions:</strong><br>
-                            Enables factoring of contract bytecode into reusable functions with OP_DEFINE/OP_INVOKE, eliminating duplicated logic and reducing transaction sizes. Functions improve the efficiency of complex financial and cryptographic computations, including zero-knowledge proof verification, homomorphic encryption, post-quantum cryptography, and more.
-                        </p>
-                    </li>
-                    <li id="final" class="timeline-item mb-5">
-                    </li>
                 </ul> <!--Make sure second to last upgrade implemented goes above the <ul>-->
-                <!--<ul id="future" class="timeline"> <!--The next expected/locked-in upgrade goes here->
+                <ul id="lockedIn" class="timeline"> <!--Most recently implemented upgrade goes here-->
                     <li id="hardFork" class="timeline-item mb-5">
                         <img class="upgrade-icon-large" alt="Loops + Pay to Script + Re-enable Bitwise Op-codes + Functions graphic" src="images/UpgradeGraphics/BCHUpgrades_Icons/31.svg?v=2" />
                         <h3 id="upgrade-Layla" class="fw-bold text-break share-item">Layla<span class="fs-5r"></span><span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
-                        <p class="timelineTitle mb-1">[Locked-In]</p> <!--Only add this line if the upgrade was locked in on November 15th->
                         <p class="fs-4 mb-1">2026-05-15</p>
 
                         <p class="fs-4 mb-1 text-break">Loops + Pay to Script + Re-enable Bitwise Op-codes + Functions</p>
@@ -716,8 +694,42 @@
                             Enables factoring of contract bytecode into reusable functions with OP_DEFINE/OP_INVOKE, eliminating duplicated logic and reducing transaction sizes. Functions improve the efficiency of complex financial and cryptographic computations, including zero-knowledge proof verification, homomorphic encryption, post-quantum cryptography, and more.
                         </p>
                     </li>
+                </ul>
+                <ul id="future" class="timeline"> <!--The next expected/locked-in upgrade goes here-->
+                    <li id="hardFork" class="timeline-item mb-5">
+                        <!-- Placeholder icon: BCHUpgrades_Icons/32.svg does not exist. Reusing the Bitcoin Cash logo until a Faster Blocks graphic is added. -->
+                        <img class="upgrade-icon-large" alt="Bitcoin Cash logo" src="images/UpgradeGraphics/bchCircle.svg?v=2" />
+                        <h3 id="upgrade-FasterBlocks" class="fw-bold text-break share-item">Faster Blocks<span class="ms-2 share-button" role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Share"><i class="bi bi-share"></i></span></h3>
+                        <p class="timelineTitle mb-1">[Locked-In]</p> <!--Only add this line if the upgrade was locked in on November 15th-->
+                        <p class="fs-4 mb-1">2027-05-15</p>
+
+                        <p class="fs-4 mb-1 text-break">1-Minute Blocks + Block Time "Ticks" (CHIP-2025-03)</p>
+                        <p class="fs-5r text-secondary text-break">
+                            The Faster Blocks upgrade cuts Bitcoin Cash's target block time from 10 minutes to 1 minute. Blocks will arrive 10 times as often. Each block's reward, difficulty and block size limit drop to 1/10th, so coin issuance and throughput per hour stay exactly the same. It is mainly a change to how often blocks come, and little else.<br><br>
+                            <strong>Faster, more predictable confirmations:</strong><br>
+                            Today, 25% of single-confirmation transactions wait more than 14 minutes. With 1-minute blocks, 95% of single-confirmation transactions clear in under 3 minutes. Waits on more confirmations also get much more predictable. A 60-minute target (60 x 1-minute blocks) finishes in under 73 minutes 95% of the time. A 60-minute target today (6 x 10-minute blocks) runs past 79 minutes 20% of the time.<br><br>
+                            <strong>Stronger 0-conf and smoother DeFi:</strong><br>
+                            Sometimes a 0-conf payment falls back to a 1-conf wait, for example a risk-flagged transaction, a mempool desync, an exchange deposit or a swap. That fallback drops from a ~10-minute wait with high variance to under 3 minutes in most cases. Fewer blocks get stuck or delayed by contract contention, which helps BCH DeFi and on-chain DEXes recover faster.<br><br>
+                            <strong>Same 21M schedule:</strong><br>
+                            The 21 million coin supply and the timing of every halving are preserved exactly. The per-block reward is 1/10th of today's, but ten times as many blocks are mined. Already-set transaction timelocks keep their original meaning and will not unlock early.<br><br>
+                            <strong>CHIP-2025-03 "Ticks":</strong><br>
+                            The upgrade adds a 1-second "tick" unit that measures chain height in idealized time (600 ticks per 10-minute block, 60 ticks per 1-minute block). Everything that depends on height is re-expressed in ticks: the block subsidy, the ASERT difficulty adjustment, ABLA, coinbase maturity, block finalization, and transaction locktimes. This keeps the wall-clock meaning of each one the same. It also future-proofs the protocol, so any later block time change becomes a simple schedule entry instead of a protocol rewrite.<br><br>
+                            <strong>What changes per block:</strong>
+                        </p>
+                        <ul class="fs-5r text-secondary text-break upgrade-bullets">
+                            <li>Block size limit floor: 32 MB per 10-minute block becomes 3.2 MB per 1-minute block (same total throughput)</li>
+                            <li>Coinbase maturity: 100 blocks becomes 1,000 blocks (60,000 ticks, the same wall-clock time)</li>
+                            <li>Block finalization: 10 blocks becomes 100 blocks (still ~2 hours)</li>
+                            <li>Median-time-past window: ~100 minutes becomes ~10 minutes</li>
+                        </ul>
+                        <p class="fs-5r text-secondary text-break">
+                            <strong>Network resilience:</strong><br>
+                            Orphan rates are modeled to stay below a tolerable 2% (0.41-1.94% across modeled conditions). If hashrate suddenly drops, the chain degrades gracefully: at 10% of normal hashrate, blocks come about every 10 minutes instead of every ~100.
+                        </p>
+                    </li>
                     <li id="final" class="timeline-item mb-5">
-		    </li>-->
+                    </li>
+                </ul>
             </div>
         </main>
         
@@ -804,18 +816,6 @@
                         <h3 class="fs-2 text-info">Merkle Header Commitment for Enhanced SPV Scalability</h3>
                         <p class="text-light-emphasis fs-5r">This CHIP proposes adding a Merkle tree commitment of all block headers to BCH, with the Merkle root embedded in each block’s coinbase transaction enabling simplified payment verification (SPV) clients to verify past block headers and transactions using a single root and compact proofs, reducing sync data from ~72MB to under 15kB plus a single root and proof.</p>
                         <a href="https://bitcoincashresearch.org/t/chip-2025-03-merkle-header-commitment-for-enhanced-spv-scalability/1518" class="btn btn-info">
-                            More Info
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-6 d-flex align-items-start">
-                    <div class="d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                        <i class="bi bi-fast-forward text-info" style="font-size:2em;"></i>
-                    </div>
-                    <div>
-                        <h3 class="fs-2 text-info">Faster Blocks for Bitcoin Cash</h3>
-                        <p class="text-light-emphasis fs-5r">This CHIP proposes cutting block times from 10 minutes to 2 minutes to boost transaction reliability, accelerate confirmations, refine DeFi precision, and smooth miner rewards while preserving BCH’s scalability, security, and decentralization. Additionally, this CHIP seeks to future-proof the protocol such that future potential upgrades (such as TailStorm or even faster blocks) would be far simpler to implement.</p>
-                        <a href="https://bitcoincashresearch.org/t/chip-2025-03-faster-blocks-for-bitcoin-cash/1513" class="btn btn-info">
                             More Info
                         </a>
                     </div>
